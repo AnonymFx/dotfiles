@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/vimtex"]
 	path = .vim/bundle/vimtex
 	url = git@github.com:lervag/vimtex.git
+[submodule ".vim/bundle/swift.vim"]
+	path = .vim/bundle/swift.vim
+	url = git@github.com:keith/swift.vim.git
