@@ -89,6 +89,7 @@ alias ll='l -a'
 alias cd..='cd ..'
 alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
+alias mvim='gvim'
 
 # List directory after cd
 function chpwd(){
