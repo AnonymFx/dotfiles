@@ -22,6 +22,11 @@ set expandtab
 set nu
 set autoindent
 
+" Search
+set ignorecase
+set smartcase
+
+
 " ------- Key bindings -------
 " New line without insert
 nmap oo o<Esc>k
@@ -31,7 +36,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
-nmap <A-b> ?\sclass\s<Enter>^
+nmap <A-b> ?\sclass\s<Enter>
 nmap <C-s> :w<Enter>
 
 
