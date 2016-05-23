@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ls='ls --color=auto'
-alias l='ls -l --group-directories-first'
+alias l='ls -lh --group-directories-first'
 alias ll='l -a'
 alias cd..='cd ..'
 alias paccc='sudo pacman -Sc'
