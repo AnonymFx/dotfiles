@@ -32,6 +32,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 nmap <A-b> ?\sclass\s<Enter>^
+nmap <C-s> :w<Enter>
 
 
 " ------- GVim options -------
