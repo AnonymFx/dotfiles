@@ -29,18 +29,22 @@ set smartcase
 " Always show status line
 set laststatus=2
 
-
 " ------- Key bindings -------
 " New line without insert
-nmap oo o<Esc>k
-nmap OO O<ESC>j
-imap <C-BS> <C-W>
+nnoremap <leader>o o<Esc>k
+nnoremap <leader>O O<ESC>j
+inoremap <C-BS> <C-W>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
-nmap <A-b> ?\sclass\s<Enter>
-nmap <C-s> :w<Enter>
+nnoremap <A-b> ?\sclass\s<Enter>
+nnoremap <C-s> :w<Enter>
+
+
+" ------- Abbreviations -------
+iab iff if () {<CR>}<ESC>?if<CR>jdt}?(<CR>
+iab ifelse if () {<CR>} else {<CR>}<Esc>kk^jdt}jdt}?(<CR>
 
 
 " ------- GVim options -------
