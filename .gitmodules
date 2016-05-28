@@ -22,6 +22,6 @@
 [submodule ".vim/bundle/vim-table-mode"]
 	path = .vim/bundle/vim-table-mode
 	url = git@github.com:dhruvasagar/vim-table-mode.git
-[submodule ".vim/bundle/vim-powerline"]
-	path = .vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
