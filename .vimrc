@@ -40,6 +40,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <A-b> ?\sclass\s<Enter>
 nnoremap <C-s> :w<Enter>
+noremap <C-Tab> :tabnext<CR>
+noremap <C-S-Tab> :tabprevious<CR>
+noremap <C-w> :tabclose<CR>
+noremap <C-t> :tabnew<CR>
 
 
 " ------- Abbreviations -------
