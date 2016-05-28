@@ -26,6 +26,9 @@ set autoindent
 set ignorecase
 set smartcase
 
+" Always show status line
+set laststatus=2
+
 
 " ------- Key bindings -------
 " New line without insert
