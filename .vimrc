@@ -51,6 +51,9 @@ noremap <C-S-Tab> :tabprevious<CR>
 noremap <leader>d "_d
 " Ctrl+Shift+b for building
 noremap <C-S-b> :w<CR>:make<CR>
+" Keybinding for yanking and pasting from system keyboard
+noremap <leader>p "+p
+noremap <leader>y "+y
 " Correct line movement with line wraps
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
