@@ -31,3 +31,9 @@
 [submodule ".vim/bundle/vim-fontsize"]
 	path = .vim/bundle/vim-fontsize
 	url = git@github.com:drmikehenry/vim-fontsize.git
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
