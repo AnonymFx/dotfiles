@@ -7,7 +7,11 @@ let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
 " Table Mode
 let g:table_mode_header_fillchar= '='
-
+" Vim-Latex
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+filetype indent on
+let g:tex_flavor='latex'
 
 " ------- Default vim -------
 " Use default clipboard
