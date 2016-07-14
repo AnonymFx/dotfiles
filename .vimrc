@@ -5,6 +5,8 @@ execute pathogen#infect()
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
+" Table Mode
+let g:table_mode_header_fillchar= '='
 
 
 " ------- Default vim -------
@@ -12,6 +14,7 @@ let g_ctrlp_working_path_mode = 'ra'
 " set clipboard=unnamedplus
 set nocompatible 
 syntax on
+set relativenumber
 
 " Indent configuration
 filetype plugin indent on
@@ -34,10 +37,10 @@ set laststatus=2
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
 " Split switches
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-L> <C-W><C-L>
+nnoremap <a-j> <C-W><C-J>
+nnoremap <a-k> <C-W><C-K>
+nnoremap <a-h> <C-W><C-H>
+nnoremap <a-l> <C-W><C-L>
 " go to next class definition
 nnoremap <A-b> ?\sclass\s<Enter>
 " Ctrl+s for saving
