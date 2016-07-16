@@ -89,7 +89,6 @@ alias ll='l -a'
 alias cd..='cd ..'
 alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
-alias mvim='gvim'
 alias mr='markdown-reader'
 
 # List directory after cd
