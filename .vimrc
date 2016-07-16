@@ -32,6 +32,7 @@ set autoindent
 " Search
 set ignorecase
 set smartcase
+set gdefault
 
 " Always show status line
 set laststatus=2
@@ -57,15 +58,15 @@ noremap <C-S-Tab> :tabprevious<CR>
 " Delete without yanking
 noremap <leader>d "_d
 " Ctrl+Shift+b for building
-noremap <C-S-b> :w<CR>:make<CR>
+noremap <C-S-b> :w<CR>:!make<CR>
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>y "+y
 " Correct line movement with line wraps
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
+nnoremap  <buffer> <silent> k gk
+nnoremap  <buffer> <silent> j gj
+nnoremap  <buffer> <silent> 0 g0
+nnoremap  <buffer> <silent> $ g$
 " Autocomplete for vim-latex
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
 
