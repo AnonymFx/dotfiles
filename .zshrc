@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='gvim'
  else
-   export EDITOR='mvim'
+   export EDITOR='gvim'
  fi
 
 # Compilation flags
