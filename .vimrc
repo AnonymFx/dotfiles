@@ -62,11 +62,6 @@ noremap <C-S-b> :w<CR>:!make<CR>
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>y "+y
-" Correct line movement with line wraps
-nnoremap  <buffer> <silent> k gk
-nnoremap  <buffer> <silent> j gj
-nnoremap  <buffer> <silent> 0 g0
-nnoremap  <buffer> <silent> $ g$
 " Autocomplete for vim-latex
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
 
