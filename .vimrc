@@ -64,10 +64,6 @@ noremap <leader>p "+p
 noremap <leader>y "+y
 " Autocomplete for vim-latex
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
-" Autoclose brackets
-inoremap { {}<esc>i
-inoremap [ []<esc>i
-inoremap ( ()<esc>i
 
 " ------- Abbreviations -------
 " If statements
