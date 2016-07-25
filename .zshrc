@@ -91,6 +91,7 @@ alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
 alias mr='markdown-reader'
 alias gpom='gp origin master'
+alias open='xdg-open 2>/dev/null'
 
 # List directory after cd
 function chpwd(){
