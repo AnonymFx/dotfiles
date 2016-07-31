@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-textobj-line"]
+	path = .vim/bundle/vim-textobj-line
+	url = git@github.com:kana/vim-textobj-line.git
