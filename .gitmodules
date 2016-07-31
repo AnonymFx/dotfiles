@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/vim-textobj-line"]
 	path = .vim/bundle/vim-textobj-line
 	url = git@github.com:kana/vim-textobj-line.git
+[submodule ".vim/bundle/vim-system-copy"]
+	path = .vim/bundle/vim-system-copy
+	url = git@github.com:christoomey/vim-system-copy.git
