@@ -108,3 +108,4 @@ bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=reset-prompt-and-accept-line
