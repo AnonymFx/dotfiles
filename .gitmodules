@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-system-copy"]
 	path = .vim/bundle/vim-system-copy
 	url = git@github.com:christoomey/vim-system-copy.git
+[submodule ".vim/bundle/vim-textobj-user"]
+	path = .vim/bundle/vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
