@@ -57,6 +57,7 @@ plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+autoload -U zmv 
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -92,6 +93,7 @@ alias gv='gvim --remote-silent'
 alias mr='markdown-reader'
 alias gpom='gp origin master'
 alias open='xdg-open 2>/dev/null'
+alias mmv='noglob zmv -W'
 
 # List directory after cd
 function chpwd(){
