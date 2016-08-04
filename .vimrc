@@ -53,8 +53,8 @@ nnoremap <C-s> :w<Enter>
 " Delete entire words in insert mode with Ctrl+Backspace
 inoremap <C-BS> <C-W>
 " Switch tabs with Ctrl+tab
-noremap <C-Tab> :tabnext<CR>
-noremap <C-S-Tab> :tabprevious<CR>
+nnoremap <C-Tab> :bnext<CR>
+nnoremap <C-S-Tab> :bprevious<CR>
 " Delete without yanking
 noremap <leader>d "_d
 " Ctrl+Shift+b for building
