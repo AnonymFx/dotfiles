@@ -62,6 +62,12 @@ noremap <C-S-b> :w<CR>:!make<CR>
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>y "+y
+" resize horizontal splits
+nnoremap <C-S-r>p :res +5<CR>
+nnoremap <C-S-r>m :res -5<CR>
+"resize vertical splits
+nnoremap <C-r>p :vertical resize +5<CR>
+nnoremap <C-r>m :vertical resize -5<CR>
 " Autocomplete for vim-latex
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
 
