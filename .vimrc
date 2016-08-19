@@ -19,6 +19,7 @@ let g:tex_flavor='latex'
 set nocompatible 
 syntax on
 set relativenumber
+set number
 
 " Indent configuration
 filetype plugin indent on
@@ -26,7 +27,6 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
-set nu
 set autoindent
 
 " Search
