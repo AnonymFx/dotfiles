@@ -18,8 +18,8 @@ let g:tex_flavor='latex'
 " set clipboard=unnamedplus
 set nocompatible 
 syntax on
-set relativenumber
 set number
+set relativenumber
 
 " Indent configuration
 filetype plugin indent on
