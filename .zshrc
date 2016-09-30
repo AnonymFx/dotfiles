@@ -101,10 +101,12 @@ function chpwd(){
   l
 }
 
+# Alias function for backing up all android apps
 function adbba() {
     adb backup -f $1 -apk -obb -all -system
 }
 
+# Alias function for backing up an specific android app
 function adbb() {
     adb backup -f $1 -apk -obb $2
 }
