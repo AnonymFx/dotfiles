@@ -103,7 +103,7 @@ function chpwd(){
 
 # Alias function for backing up all android apps
 function adbba() {
-    adb backup -f $1 -apk -obb -all -system
+    adb backup -f $1 -apk -obb -all -system -shared
 }
 
 # Alias function for backing up an specific android app
@@ -120,4 +120,5 @@ bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
+bindkey "^?" backward-delete-char
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=reset-prompt-and-accept-line
