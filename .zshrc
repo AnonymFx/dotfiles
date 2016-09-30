@@ -101,6 +101,14 @@ function chpwd(){
   l
 }
 
+function adbba() {
+    adb backup -f $1 -apk -obb -all -system
+}
+
+function adbb() {
+    adb backup -f $1 -apk -obb $2
+}
+
 # VIM Mode
 bindkey -v
 export KEYTIMEOUT=1
