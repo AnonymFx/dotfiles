@@ -84,13 +84,9 @@ autoload -U zmv
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# alias ls='ls --color=auto'
-# alias l='ls -lh --group-directories-first'
-# alias ll='l -a'
 alias cd..='cd ..'
 alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
-alias mr='markdown-reader'
 alias open='xdg-open 2>/dev/null'
 alias mmv='noglob zmv -W'
 alias dup='drive pull'
