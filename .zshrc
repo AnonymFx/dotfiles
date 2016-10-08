@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast) 
+plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast common-aliases sudo systemd vi-mode wd) 
 
 # User configuration
 
@@ -84,9 +84,9 @@ autoload -U zmv
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls --color=auto'
-alias l='ls -lh --group-directories-first'
-alias ll='l -a'
+# alias ls='ls --color=auto'
+# alias l='ls -lh --group-directories-first'
+# alias ll='l -a'
 alias cd..='cd ..'
 alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
@@ -115,7 +115,7 @@ function adbb() {
 }
 
 # VIM Mode
-bindkey -v
+# bindkey -v
 export KEYTIMEOUT=1
 
 # History Control (Arrow up and down use already entered text)
