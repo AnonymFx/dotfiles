@@ -93,7 +93,10 @@ alias gv='gvim --remote-silent'
 alias mr='markdown-reader'
 alias open='xdg-open 2>/dev/null'
 alias mmv='noglob zmv -W'
-alias dup='drive pull -no-prompt && drive push -no-prompt'
+alias dup='drive pull'
+alias dupnp='drive pull -no-prompt'
+alias dp='drive push'
+alias dpnp='drive push -no-promt'
 
 # List directory after cd
 function chpwd(){
