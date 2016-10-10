@@ -58,6 +58,7 @@ plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast common-alia
 
 source $ZSH/oh-my-zsh.sh
 autoload -U zmv 
+setopt extendedglob
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
