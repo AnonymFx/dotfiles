@@ -86,6 +86,8 @@ setopt extendedglob
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cd..='cd ..'
+alias sd='shutdown now'
+alias rb='reboot'
 alias paccc='sudo pacman -Sc'
 alias gv='gvim --remote-silent'
 alias open='xdg-open 2>/dev/null'
