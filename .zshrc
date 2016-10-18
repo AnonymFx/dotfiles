@@ -97,6 +97,9 @@ alias dupnp='drive pull -no-prompt'
 alias dp='drive push'
 alias dpnp='drive push -no-promt'
 
+# thefuck aliases
+eval "$(thefuck --alias)"
+
 # List directory after cd
 function chpwd(){
   emulate -LR zsh
