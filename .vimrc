@@ -26,6 +26,8 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" autoformat
+noremap <C-A-l> :Autoformat<CR>
 " Virtualenv support
 py << EOF
 import os
@@ -91,7 +93,7 @@ nnoremap <C-S-r>m :res -5<CR>
 "resize vertical splits
 nnoremap <C-r>p :vertical resize +5<CR>
 nnoremap <C-r>m :vertical resize -5<CR>
-" Autocomplete for vim-latex
+" Autocomplete for vim
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
 " Go to definition for YouCompleteMe
 nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
