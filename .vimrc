@@ -12,6 +12,8 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 filetype indent on
 let g:tex_flavor='latex'
+" SimpylFold
+let g:SimpylFold_docstring_preview=1
 
 " ------- Default vim -------
 " Use default clipboard
