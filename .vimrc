@@ -1,6 +1,9 @@
 " ------- Plugins -------
 " Pathogen package manager
 execute pathogen#infect()
+" Airline
+" show always
+set laststatus=2
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -59,9 +62,6 @@ set autoindent
 set ignorecase
 set smartcase
 set gdefault
-
-" Always show status line
-set laststatus=2
 
 " ------- Key bindings -------
 " New line without insert
