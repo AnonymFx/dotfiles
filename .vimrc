@@ -104,7 +104,7 @@ iab beginenv \begin{}<CR>\end{}<Esc>?{<CR>n
 
 " ------- GVim options -------
 " Good color alts: monokai (sublime default), one (atom default)
-colo one 
+colo monokai 
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
