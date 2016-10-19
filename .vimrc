@@ -12,6 +12,7 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 filetype indent on
 let g:tex_flavor='latex'
+nmap <C-space> <Plug>Tex_FastEnvironmentInsert 
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
 " UltiSnips
@@ -24,6 +25,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<tab>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " autoformat
@@ -40,7 +42,6 @@ EOF
 
 " ------- Default vim -------
 " Use default clipboard
-" set clipboard=unnamedplus
 set nocompatible 
 syntax on
 set number
@@ -71,8 +72,6 @@ nnoremap <a-j> <C-W><C-J>
 nnoremap <a-k> <C-W><C-K>
 nnoremap <a-h> <C-W><C-H>
 nnoremap <a-l> <C-W><C-L>
-" go to next class definition
-nnoremap <A-b> ?\sclass\s<Enter>
 " Ctrl+s for saving
 nnoremap <C-s> :w<Enter>
 " Delete entire words in insert mode with Ctrl+Backspace
@@ -80,8 +79,6 @@ inoremap <C-BS> <C-W>
 " Switch tabs with Ctrl+tab
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
-" Delete without yanking
-noremap <leader>d "_d
 " Ctrl+Shift+b for building
 noremap <C-S-b> :w<CR>:!make<CR>
 " Keybinding for yanking and pasting from system keyboard
@@ -93,16 +90,6 @@ nnoremap <C-S-r>m :res -5<CR>
 "resize vertical splits
 nnoremap <C-r>p :vertical resize +5<CR>
 nnoremap <C-r>m :vertical resize -5<CR>
-" Autocomplete for vim
-nmap <C-space> <Plug>Tex_FastEnvironmentInsert
-" Go to definition for YouCompleteMe
-nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" ------- Abbreviations -------
-" If statements
-iab iff if () {<CR>}<ESC>?if<CR>jdt}?(<CR>
-iab ifelse if () {<CR>} else {<CR>}<Esc>kk^jdt}jdt}?(<CR>
-iab beginenv \begin{}<CR>\end{}<Esc>?{<CR>n
 
 
 " ------- GVim options -------
