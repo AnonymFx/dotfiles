@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/vim-javacomplete2"]
 	path = .vim/bundle/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = git@github.com:nvie/vim-flake8.git
