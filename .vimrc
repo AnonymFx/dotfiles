@@ -14,6 +14,8 @@ filetype indent on
 let g:tex_flavor='latex'
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
+" UltiSnips
+let g:UltiSnipsExpandTrigger='<A-CR>'
 " YouCompleteMe
 " Virtualenv support
 py << EOF
