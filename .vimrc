@@ -15,14 +15,14 @@ let g:tex_flavor='latex'
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
 " UltiSnips
-let g:UltiSnipsExpandTrigger='<A-CR>'
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " Virtualenv support
 py << EOF
 import os
