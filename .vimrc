@@ -15,14 +15,16 @@ let g:tex_flavor='latex'
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
 " UltiSnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<C-n>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
+let g:UltiSnipsExpandTrigger = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 " YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-tab>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<tab>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" javacomplete2
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " Virtualenv support
 py << EOF
 import os
