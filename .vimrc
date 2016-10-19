@@ -14,6 +14,16 @@ filetype indent on
 let g:tex_flavor='latex'
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
+" YouCompleteMe
+" Virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " ------- Default vim -------
 " Use default clipboard
@@ -72,6 +82,8 @@ nnoremap <C-r>p :vertical resize +5<CR>
 nnoremap <C-r>m :vertical resize -5<CR>
 " Autocomplete for vim-latex
 nmap <C-space> <Plug>Tex_FastEnvironmentInsert
+" Go to definition for YouCompleteMe
+nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " ------- Abbreviations -------
 " If statements
