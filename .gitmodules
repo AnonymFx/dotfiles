@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
+[submodule ".vim/bundle/vim-javacomplete2"]
+	path = .vim/bundle/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
