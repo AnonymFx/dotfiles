@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-autoformat"]
 	path = .vim/bundle/vim-autoformat
 	url = git@github.com:Chiel92/vim-autoformat.git
+[submodule ".vim/bundle/oceanic-next"]
+	path = .vim/bundle/oceanic-next
+	url = git@github.com:mhartington/oceanic-next.git

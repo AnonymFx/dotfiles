@@ -97,8 +97,13 @@ nnoremap <C-r>m :vertical resize -5<CR>
 
 
 " ------- GVim options -------
-" Good color alts: monokai (sublime default), one (atom default)
-colo monokai 
+" Good color alts: monokai (sublime default), one (atom default), OceanicNext
+colo OceanicNext
+" used for OceanicNext theme
+set background=dark
+" used for OceanicNext theme
+set t_Co=256
+
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
