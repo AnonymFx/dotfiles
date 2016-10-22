@@ -33,6 +33,7 @@ let g:SuperTabDefaultCompletionType = '<tab>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-A-r> :YcmCompleter GoToReferences<CR>
 " javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " autoformat
