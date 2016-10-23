@@ -6,3 +6,6 @@ set sw=2
 " all the figure labels. Very useful!
 set iskeyword+=:
 
+" Ctrl+Shift+b for building
+noremap <C-S-b> :w<CR>:!make<CR>
+

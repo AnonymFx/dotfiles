@@ -87,8 +87,6 @@ inoremap <C-BS> <C-W>
 " Switch tabs with Ctrl+tab
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
-" Ctrl+Shift+b for building
-noremap <C-S-b> :w<CR>:!make<CR>
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>y "+y
