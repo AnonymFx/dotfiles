@@ -105,7 +105,7 @@ eval "$(thefuck --alias)"
 # List directory after cd
 function chpwd(){
   emulate -LR zsh
-  ll
+  l
 }
 
 # Alias function for backing up all android apps
