@@ -60,6 +60,7 @@ set relativenumber
 
 " Indent configuration
 filetype plugin indent on
+set breakindent 1
 set tabstop=2
 set shiftwidth=0
 set smarttab
