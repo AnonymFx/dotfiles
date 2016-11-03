@@ -100,7 +100,7 @@ alias dup='drive pull'
 alias dupnp='drive pull -no-prompt'
 alias dp='drive push'
 alias dpnp='drive push -no-promt'
-alias ddi='drive diff'
+alias ddi='drive diff -skip-content-check'
 
 # thefuck aliases
 eval "$(thefuck --alias)"
