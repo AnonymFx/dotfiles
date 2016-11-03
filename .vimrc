@@ -1,4 +1,4 @@
-" ------- Plugins -------
+" ------------------ Plugins ----------------------------------
 " Pathogen package manager
 execute pathogen#infect()
 " Airline
@@ -51,7 +51,8 @@ EOF
 " Autocomplete
 let g:PythonAutoAddImports = 1
 
-" ------- Default vim -------
+
+" -------------------------- Genearl ----------------------------
 " Use default clipboard
 set nocompatible 
 syntax on
@@ -72,15 +73,16 @@ set ignorecase
 set smartcase
 set gdefault
 
-" ------- Key bindings -------
+
+" ------------------- Key bindings -----------------------------
 " New line without insert
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
 " Split switches
-nnoremap <a-j> <C-W><C-J>
-nnoremap <a-k> <C-W><C-K>
-nnoremap <a-h> <C-W><C-H>
-nnoremap <a-l> <C-W><C-L>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-h> <C-W><C-H>
+nnoremap <C-l> <C-W><C-L>
 " Ctrl+s for saving
 nnoremap <C-s> :w<Enter>
 " Delete entire words in insert mode with Ctrl+Backspace
@@ -102,13 +104,13 @@ nnoremap j gj
 nnoremap k gk
 
 
-" ------- GVim options -------
+" --------------------- Appearance ---------------------------
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
+set term=screen-256color
 colo OceanicNext
 " used for OceanicNext theme
-set background=dark
-" used for OceanicNext theme
 set t_Co=256
+set background=dark
 
 set guioptions-=m
 set guioptions-=T
@@ -116,7 +118,7 @@ set guioptions-=r
 set guioptions-=L
 set spell
 
-" ------- Functions --------
+" --------------------- Functions ----------------------------
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
