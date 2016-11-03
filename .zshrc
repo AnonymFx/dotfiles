@@ -60,6 +60,9 @@ source $ZSH/oh-my-zsh.sh
 autoload -U zmv 
 setopt extendedglob
 
+# Set 256 colors
+export TERM="xterm-256color"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
