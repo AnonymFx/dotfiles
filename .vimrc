@@ -4,10 +4,6 @@ execute pathogen#infect()
 " Airline
 " show always
 set laststatus=2
-" NERDTree
-" autostart
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
