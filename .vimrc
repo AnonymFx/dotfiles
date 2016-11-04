@@ -96,9 +96,6 @@ nnoremap <C-S-r>m :res -5<CR>
 "resize vertical splits
 nnoremap <C-r>p :vertical resize +5<CR>
 nnoremap <C-r>m :vertical resize -5<CR>
-" line wrapping j,k as default
-nnoremap j gj
-nnoremap k gk
 
 
 " --------------------- Appearance ---------------------------
