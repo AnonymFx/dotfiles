@@ -1,2 +1,3 @@
+# Has to be set with 'git config --global core.excludesfile ~/.gitignore_global'
 #vim swap files
 *.swp

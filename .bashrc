@@ -1,3 +1,4 @@
+# Default location: ~/.bashrc
 #
 # ~/.bashrc
 #

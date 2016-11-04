@@ -1,3 +1,4 @@
+" Default location: ~/.vimrc
 " ------------------ Plugins ----------------------------------
 " Pathogen package manager
 execute pathogen#infect()

@@ -1,3 +1,4 @@
+# Default location: ~/.zshrc
 # Path to your oh-my-zsh installation.
   export ZSH=/home/thomas/.oh-my-zsh
 
