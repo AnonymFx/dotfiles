@@ -89,6 +89,7 @@ nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
+noremap <leader>P "+P
 noremap <leader>y "+y
 " resize horizontal splits
 nnoremap <C-S-r>p :res +5<CR>
