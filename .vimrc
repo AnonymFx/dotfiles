@@ -50,11 +50,11 @@ let g:PythonAutoAddImports = 1
 
 
 " -------------------------- Genearl ----------------------------
-" Use default clipboard
 set nocompatible 
 syntax on
 set number
 set relativenumber
+set ic " case insensitive search
 
 " Indent configuration
 filetype plugin indent on
