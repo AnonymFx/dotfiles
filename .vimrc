@@ -31,6 +31,7 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <C-A-r> :YcmCompleter GoToReferences<CR>
+let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 " autoformat
 noremap <C-A-l> :Autoformat<CR>
 " Virtualenv support
@@ -56,7 +57,7 @@ set ic " case insensitive search
 
 " Indent configuration
 filetype plugin indent on
-set tabstop=2
+set tabstop=4
 set shiftwidth=0
 set smarttab
 set expandtab
