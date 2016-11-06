@@ -46,6 +46,8 @@ EOF
 " python-import
 " Autocomplete
 let g:PythonAutoAddImports = 1
+" vim-router
+let g:rooter_change_directory_for_non_project_files = 'current'
 
 
 " -------------------------- Genearl ----------------------------
