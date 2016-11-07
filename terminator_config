@@ -4,7 +4,11 @@
   go_left = <Alt>h
   go_right = <Alt>l
   go_up = <Alt>k
-  layout_launcher = <Shift><Alt>l
+  layout_launcher = <Primary><Shift>l
+  resize_down = <Shift><Alt>j
+  resize_left = <Shift><Alt>h
+  resize_right = <Shift><Alt>l
+  resize_up = <Shift><Alt>k
 [layouts]
   [[default]]
     [[[child1]]]
