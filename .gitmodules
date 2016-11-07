@@ -88,9 +88,6 @@
 [submodule ".vim/bundle/python-imports.vim"]
 	path = .vim/bundle/python-imports.vim
 	url = git@github.com:vim-scripts/python-imports.vim.git
-[submodule ".vim/bundle/indentLine"]
-	path = .vim/bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
 [submodule ".vim/bundle/vim-rooter"]
 	path = .vim/bundle/vim-rooter
 	url = git@github.com:airblade/vim-rooter.git
