@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
 [submodule ".vim/bundle/swift.vim"]
 	path = .vim/bundle/swift.vim
 	url = git@github.com:keith/swift.vim.git
@@ -55,9 +52,6 @@
 [submodule ".vim/bundle/vim-textobj-line"]
 	path = .vim/bundle/vim-textobj-line
 	url = git@github.com:kana/vim-textobj-line.git
-[submodule ".vim/bundle/vim-system-copy"]
-	path = .vim/bundle/vim-system-copy
-	url = git@github.com:christoomey/vim-system-copy.git
 [submodule ".vim/bundle/vim-textobj-user"]
 	path = .vim/bundle/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
