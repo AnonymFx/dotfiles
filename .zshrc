@@ -105,9 +105,9 @@ alias dpnp='drive push -no-promt'
 alias ddi='drive diff -skip-content-check'
 # Disable interactive mode (set by plugin 'common-aliases') for 
 # basic commands
-alias rm='rm'
-alias mv='mv'
-alias cp='cp'
+unalias rm
+unalias mv
+unalias cp
 
 # thefuck aliases
 eval "$(thefuck --alias)"
