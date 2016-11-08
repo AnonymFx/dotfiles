@@ -1,6 +1,6 @@
 # Default location: ~/.zshrc
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/thomas/.oh-my-zsh
+export ZSH=/home/thomas/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,7 +54,7 @@ plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast common-alia
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools:/home/thomas/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools:/home/thomas/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -69,9 +69,9 @@ export TERM="xterm-256color"
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='gvim'
+   export EDITOR='vim'
  else
-   export EDITOR='gvim'
+   export EDITOR='vim'
  fi
 
 # Compilation flags
