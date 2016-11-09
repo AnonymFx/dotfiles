@@ -1,10 +1,10 @@
 #!/bin/bash
 function print_help_msg() {
-    cat <<-EOF Usage: install.sh TARGET
+    cat <<-EOF
+    Usage: install.sh TARGET
 
     TARGET := {all}
-
-    EOF
+EOF
 }
 
 function install() {
@@ -59,4 +59,8 @@ else
         install tmux
         install vim
         install zsh
+    else
+        echo "$1 is not a valid Target"
+        print_help_msg
     fi
+fi
