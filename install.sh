@@ -30,6 +30,7 @@ function install() {
         vim )
             ln -snf $PWD/vim/vim $HOME/.vim
             ln -snf $PWD/vim/vimrc $HOME/.vimrc
+            ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
             ;;
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc

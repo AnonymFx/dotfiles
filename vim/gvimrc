@@ -1,0 +1,11 @@
+" remove menu bar
+set guioptions-=m
+
+" remove toolbar
+set guioptions-=T
+
+" remove right-hand scrollbar
+set guioptions-=r
+
+" remove left-hand scrollbar
+set guioptions-=L
