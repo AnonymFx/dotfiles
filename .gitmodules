@@ -91,3 +91,6 @@
 [submodule "vim/vim/bundle/vim-markdown"]
 	path = vim/vim/bundle/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown.git
+[submodule "vim/vim/bundle/vim-tmux-navigator"]
+	path = vim/vim/bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
