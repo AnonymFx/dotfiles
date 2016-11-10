@@ -110,7 +110,9 @@ unalias mv
 unalias cp
 
 # thefuck aliases
-eval "$(thefuck --alias)"
+if type thefuck > /dev/null 2>&1; then
+  eval "$(thefuck --alias)"
+fi
 
 # List directory after cd
 function chpwd(){
