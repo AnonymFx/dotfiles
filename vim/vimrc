@@ -24,7 +24,10 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 filetype indent on
 let g:tex_flavor='latex'
-nmap <C-space> <Plug>Tex_FastEnvironmentInsert 
+nmap <C-Space> <Plug>Tex_FastEnvironmentInsert 
+imap <S-CR> <Plug>IMAP_JumpForward
+nmap <S-CR> <Plug>IMAP_JumpForward
+vmap <S-CR> <Plug>IMAP_JumpForward
 
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
