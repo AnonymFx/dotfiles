@@ -1,0 +1,31 @@
+[org/gnome/desktop/wm/keybindings]
+switch-windows-backward=['<Shift><Alt>Tab']
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-applications=@as []
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-down=['<Super>Tab']
+switch-to-workspace-left=['']
+switch-to-workspace-right=@as []
+show-desktop=@as []
+switch-applications-backward=@as []
+switch-group-backward=@as []
+switch-group=@as []
+switch-windows=['<Alt>Tab']
+switch-to-workspace-up=['<Shift><Super>Tab']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Primary><Alt>t'
+command='terminator -e "TERM=xterm-256color tmux"'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>e'
+command='nautilus'
+name='Files'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Shift><Alt>t'
+command='terminator -l split'
+name='Terminal split'
