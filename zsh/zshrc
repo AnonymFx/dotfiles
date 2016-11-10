@@ -103,6 +103,7 @@ alias dupnp='drive pull -no-prompt'
 alias dp='drive push'
 alias dpnp='drive push -no-promt'
 alias ddi='drive diff -skip-content-check'
+alias tmux='TERM=xterm-256color tmux'
 # Disable interactive mode (set by plugin 'common-aliases') for 
 # basic commands
 unalias rm
