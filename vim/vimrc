@@ -10,7 +10,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
 " Table Mode
-let g:table_mode_header_fillchar= '='
+let g:table_mode_header_fillchar= '-'
+let g:table_mode_corner="|"
+nnoremap <leader>tmr :TableModeRealign<CR>
 " Vim-Latex
 filetype plugin on
 set grepprg=grep\ -nH\ $*
@@ -48,7 +50,6 @@ EOF
 let g:PythonAutoAddImports = 1
 " vim-router
 let g:rooter_change_directory_for_non_project_files = 'current'
-
 
 " -------------------------- Genearl ----------------------------
 set nocompatible 
