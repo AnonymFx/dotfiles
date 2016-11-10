@@ -13,6 +13,9 @@ function install() {
         bash )
             ln -snf $PWD/bash/bashrc $HOME/.bashrc
             ;;
+        dconf)
+            dconf load / < $PWD/dconf/keybindings
+            ;;
         git )
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
             git config --global core.excludesfile $HOME/.gitignore_global
@@ -53,6 +56,7 @@ elif [[ $# -gt 1 ]]; then
     exit 1
 else
     if [[ $1 = all ]]; then
+        install dconf
         install bash
         install git
         install readline
