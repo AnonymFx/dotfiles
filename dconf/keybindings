@@ -17,7 +17,7 @@ switch-to-workspace-up=['<Shift><Super>Tab']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>t'
-command='terminator -e "TERM=xterm-256color tmux"'
+command='terminator'
 name='Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
