@@ -109,10 +109,6 @@ set t_Co=256
 hi Normal ctermbg=none
 set background=dark
 
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
 set spell
 
 " --------------------- Functions ----------------------------
