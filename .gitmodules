@@ -94,3 +94,6 @@
 [submodule "vim/vim/bundle/vim-tmux-navigator"]
 	path = vim/vim/bundle/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "vim/vim/bundle/xmledit"]
+	path = vim/vim/bundle/xmledit
+	url = git@github.com:sukima/xmledit.git
