@@ -87,6 +87,9 @@ set breakindent
 set ignorecase
 set smartcase
 
+" Interactive shell (to support aliases)
+set shellcmdflag=-ic
+
 
 
 " ------------------------------------------------------------------------------
