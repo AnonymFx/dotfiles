@@ -126,11 +126,8 @@ nnoremap <C-r>m :vertical resize -5<CR>
 " ------------------------------------------------------------------------------
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
 set t_Co=256
-colo OceanicNext
-" used for OceanicNext theme
+colo neodark
 hi Normal ctermbg=none
-set background=dark
-
 
 
 

@@ -97,3 +97,6 @@
 [submodule "vim/vim/bundle/xmledit"]
 	path = vim/vim/bundle/xmledit
 	url = git@github.com:sukima/xmledit.git
+[submodule "vim/vim/bundle/neodark.vim"]
+	path = vim/vim/bundle/neodark.vim
+	url = git@github.com:KeitaNakamura/neodark.vim.git
