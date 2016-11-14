@@ -119,6 +119,12 @@ nnoremap <C-S-r>m :res -5<CR>
 nnoremap <C-r>p :vertical resize +5<CR>
 nnoremap <C-r>m :vertical resize -5<CR>
 
+" change leader key
+let mapleader=' '
+
+" change register leader key
+nnoremap \ "
+
 
 
 " ------------------------------------------------------------------------------
