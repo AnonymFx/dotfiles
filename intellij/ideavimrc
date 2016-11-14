@@ -6,10 +6,26 @@ source $HOME/.vimrc
 " ------------------------- Additional mappings --------------------------------
 " ------------------------------------------------------------------------------
 
+
+" --------------------------- Navigation ---------------------------------------
 map <C-A-d> :action GotoDeclaration<CR>
-map <C-A-q> :action QuickJavaDoc<CR>
-map <C-A-o> :action OverrideMethods<CR>
-map <C-A-n> :action NewScratchFile<CR>
 map <C-A-u> :action FindUsages<CR>
 map <C-p> :action GotoFile<CR>
+
+
+" --------------------------- Code gen -----------------------------------------
+map <C-A-n> :action NewScratchFile<CR>
+map <C-A-o> :action OverrideMethods<CR>
+
+
+" --------------------------- Run & Debug --------------------------------------
+map <C-S-D> :action Debug<CR>
+map <C-S-l> :action StepInto<CR>
+map <C-S-j> :action StepOver<CR>
+map <C-S-C> :action Resume<CR>
+map <C-S-R> :action Run<CR>
+
+
+" --------------------------- Misc ---------------------------------------------
+map <C-A-q> :action QuickJavaDoc<CR>
 map <C-A-CR> :action ShowErrorDescription<CR>
