@@ -20,6 +20,9 @@ function install() {
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
             git config --global core.excludesfile $HOME/.gitignore_global
             ;;
+        intellij )
+            ln -snf $PWD/intellij/ideavimrc $HOME/.ideavimrc
+            ;;
         readline )
             ln -snf $PWD/readline/inputrc $HOME/.inputrc
             ;;
@@ -59,6 +62,7 @@ else
         install dconf
         install bash
         install git
+        install intellij
         install readline
         install terminator
         install tmux

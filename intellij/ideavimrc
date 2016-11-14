@@ -1,0 +1,14 @@
+" get configuration from default vim
+source $HOME/.vimrc
+
+
+" ------------------------------------------------------------------------------
+" ------------------------- Additional mappings --------------------------------
+" ------------------------------------------------------------------------------
+
+map <C-A-d> :action GotoDeclaration<CR>
+map <C-A-q> :action QuickJavaDoc<CR>
+map <C-A-o> :action OverrideMethods<CR>
+map <C-A-n> :action NewScratchFile<CR>
+map <C-A-u> :action FindUsages<CR>
+map <C-p> :action GotoFile<CR>
