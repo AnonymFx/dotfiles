@@ -12,3 +12,4 @@ map <C-A-o> :action OverrideMethods<CR>
 map <C-A-n> :action NewScratchFile<CR>
 map <C-A-u> :action FindUsages<CR>
 map <C-p> :action GotoFile<CR>
+map <C-A-CR> :action ShowErrorDescription<CR>
