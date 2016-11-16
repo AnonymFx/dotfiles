@@ -18,6 +18,10 @@ set relativenumber
 map <C-A-d> :action GotoDeclaration<CR>
 map <C-A-u> :action FindUsages<CR>
 map <C-p> :action GotoFile<CR>
+map <A-l> :action NextSplitter<CR>
+map <A-j> :action NextSplitter<CR>
+map <A-k> :action PrevSplitter<CR>
+map <A-h> :action PrevSplitter<CR>
 
 
 " --------------------------- Code gen -----------------------------------------
