@@ -26,13 +26,15 @@ map <C-A-o> :action OverrideMethods<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
-map <C-S-D> :action Debug<CR>
+map <C-S-d> :action Debug<CR>
 map <C-S-l> :action StepInto<CR>
 map <C-S-j> :action StepOver<CR>
-map <C-S-C> :action Resume<CR>
-map <C-S-R> :action Run<CR>
+map <C-S-c> :action Resume<CR>
+map <C-S-r> :action Run<CR>
+map <C-S-b> :action ToggleLineBreakpoint<CR>
 
 
 " --------------------------- Misc ---------------------------------------------
 map <C-A-q> :action QuickJavaDoc<CR>
 map <C-A-CR> :action ShowErrorDescription<CR>
+map <C-A-p> :action ParameterInfo<CR>
