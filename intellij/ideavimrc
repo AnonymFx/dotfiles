@@ -27,9 +27,10 @@ map <A-k> :action PrevSplitter<CR>
 map <A-h> :action PrevSplitter<CR>
 
 
-" --------------------------- Code gen -----------------------------------------
+" --------------------------- Editing ------------------------------------------
 map <C-A-n> :action NewScratchFile<CR>
 map <C-A-o> :action OverrideMethods<CR>
+map <C-A-r> :action Refactorings.QuickListPopupAction<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
