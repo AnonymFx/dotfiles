@@ -7,6 +7,9 @@ source $HOME/.vimrc
 set number
 set relativenumber
 
+set ignorecase
+set smartcase
+
 
 
 " ------------------------------------------------------------------------------
