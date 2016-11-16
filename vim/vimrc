@@ -42,20 +42,21 @@ nnoremap <space> "
 " ---------------------------------- Plugins -----------------------------------
 " ------------------------------------------------------------------------------
 
-" Airline
+
+" --------------------------------- Airline ------------------------------------
 set laststatus=2 " show always
 
-" CtrlP
+" ---------------------------------- CtrlP -------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
 
-" Table Mode
+" ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>tmr :TableModeRealign<CR>
 
-" Vim-Latex
+" ------------------------------ Vim-Latex -------------------------------------
 filetype plugin on
 set grepprg=grep\ -nH\ $*
 filetype indent on
@@ -65,15 +66,15 @@ imap <S-CR> <Plug>IMAP_JumpForward
 nmap <S-CR> <Plug>IMAP_JumpForward
 vmap <S-CR> <Plug>IMAP_JumpForward
 
-" SimpylFold
+" ------------------------------ SimpylFold ------------------------------------
 let g:SimpylFold_docstring_preview=1
 
-" UltiSnips
+" ------------------------------ UltiSnips -------------------------------------
 let g:UltiSnipsExpandTrigger = "<C-e>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
-" YouCompleteMe
+" ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<tab>'
@@ -83,13 +84,13 @@ nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <C-A-r> :YcmCompleter GoToReferences<CR>
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 
-" autoformat
+" ---------------------------- autoformat --------------------------------------
 noremap <C-A-l> :Autoformat<CR>
 
-" python-import
+" ------------------------- python-import --------------------------------------
 let g:PythonAutoAddImports = 1 " Autocomplete
 
-" vim-router
+" --------------------------- vim-router ---------------------------------------
 let g:rooter_change_directory_for_non_project_files = 'current'
 
 
@@ -131,6 +132,7 @@ set smartcase
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
 set t_Co=256
 colo neodark
+let g:airline_theme='badwolf' " reset nice airline theme
 hi Normal ctermbg=none
 
 
