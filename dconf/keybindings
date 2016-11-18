@@ -17,7 +17,7 @@ switch-to-workspace-up=['<Shift><Super>Tab']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>t'
-command='terminator -e tmux'
+command='terminator'
 name='Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
