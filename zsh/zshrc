@@ -110,11 +110,6 @@ unalias rm
 unalias mv
 unalias cp
 
-# thefuck aliases
-if type thefuck > /dev/null 2>&1; then
-  eval "$(thefuck --alias)"
-fi
-
 # List directory after cd
 function chpwd(){
   emulate -LR zsh
