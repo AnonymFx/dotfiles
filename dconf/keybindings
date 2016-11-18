@@ -17,15 +17,10 @@ switch-to-workspace-up=['<Shift><Super>Tab']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>t'
-command='terminator'
+command='terminator -e tmux'
 name='Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>e'
 command='nautilus'
 name='Files'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Primary><Shift><Alt>t'
-command='terminator -l split'
-name='Terminal split'
