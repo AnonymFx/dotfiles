@@ -93,6 +93,9 @@ let g:PythonAutoAddImports = 1 " Autocomplete
 " --------------------------- vim-router ---------------------------------------
 let g:rooter_change_directory_for_non_project_files = 'current'
 
+" ------------------------------- Syntastic ------------------------------------
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 
 " ------------------------------------------------------------------------------

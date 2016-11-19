@@ -11,3 +11,5 @@ For the given vim configuration to work, the YouCompleteMe autocomplete plugin h
 Note that submodules have to be pulled with `git submodule update --init --recursive`.
 
 For autoformat, global formatting programs have to be installed. For available options see its Github [page](https://github.com/Chiel92/vim-autoformat).
+
+For javascript completion, the tern modules have to be installed via `npm install` in the vim/vim/bundle/tern_for_vim directory.
