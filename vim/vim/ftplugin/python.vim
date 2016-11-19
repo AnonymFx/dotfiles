@@ -1,5 +1,4 @@
 let python_highlight_all=1
-syntax on
 setlocal tabstop=4
 setlocal softtabstop=4
 setlocal shiftwidth=4
