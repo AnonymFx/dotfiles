@@ -76,9 +76,6 @@
 [submodule "vim/vim/bundle/oceanic-next"]
 	path = vim/vim/bundle/oceanic-next
 	url = git@github.com:mhartington/oceanic-next.git
-[submodule "vim/vim/bundle/python-imports.vim"]
-	path = vim/vim/bundle/python-imports.vim
-	url = git@github.com:vim-scripts/python-imports.vim.git
 [submodule "vim/vim/bundle/vim-snippets"]
 	path = vim/vim/bundle/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
