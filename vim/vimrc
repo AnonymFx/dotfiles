@@ -103,15 +103,41 @@ com! DiffSaved call s:DiffWithSaved()
 " --------------------------------- Airline ------------------------------------
 set laststatus=2 " show always
 
+" ---------------------------- autoformat --------------------------------------
+noremap <C-A-l> :Autoformat<CR>
+
 " ---------------------------------- CtrlP -------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
 
+" ------------------------------ Easytag ---------------------------------------
+let g:easytags_async = 1
+let g:easytags_events = ['BufWritePost']
+set tags=./.vimtags;
+let g:easytags_dynamic_files = 2
+
+" -------------------------------- NERDTree ------------------------------------
+let g:NERDTreeIgnore = ['bin', 'node_modules']
+
+" ---- ------------------------- python-import ---------------------------------
+let g:PythonAutoAddImports = 1 " Autocomplete
+
+" ------------------------------ SimpylFold ------------------------------------
+let g:SimpylFold_docstring_preview=1
+
+" ------------------------------- Syntastic ------------------------------------
+let g:syntastic_javascript_checkers = ['jshint']
+
 " ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>tmr :TableModeRealign<CR>
+
+" ------------------------------ UltiSnips -------------------------------------
+let g:UltiSnipsExpandTrigger = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 " ------------------------------ Vim-Latex -------------------------------------
 filetype plugin on
@@ -123,14 +149,6 @@ imap <S-CR> <Plug>IMAP_JumpForward
 nmap <S-CR> <Plug>IMAP_JumpForward
 vmap <S-CR> <Plug>IMAP_JumpForward
 
-" ------------------------------ SimpylFold ------------------------------------
-let g:SimpylFold_docstring_preview=1
-
-" ------------------------------ UltiSnips -------------------------------------
-let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
-
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -140,21 +158,3 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <C-A-r> :YcmCompleter GoToReferences<CR>
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
-
-" ---------------------------- autoformat --------------------------------------
-noremap <C-A-l> :Autoformat<CR>
-
-" ------------------------- python-import --------------------------------------
-let g:PythonAutoAddImports = 1 " Autocomplete
-
-" --------------------------- vim-router ---------------------------------------
-let g:rooter_change_directory_for_non_project_files = 'current'
-
-" ------------------------------- Syntastic ------------------------------------
-let g:syntastic_javascript_checkers = ['jshint']
-
-" ------------------------------ Easytag ---------------------------------------
-let g:easytags_async = 1
-let g:easytags_events = ['BufWritePost']
-set tags=./.vimtags;
-let g:easytags_dynamic_files = 2
