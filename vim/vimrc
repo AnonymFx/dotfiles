@@ -2,7 +2,6 @@
 " Pathogen package manager
 execute pathogen#infect()
 
-
 " ------------------------------------------------------------------------------
 " --------------------------------- Key bindings -------------------------------
 " ------------------------------------------------------------------------------
@@ -36,6 +35,64 @@ nnoremap <C-r>m :vertical resize -5<CR>
 " change register leader key
 nnoremap <space> "
 
+
+
+" ------------------------------------------------------------------------------
+" --------------------------------- General ------------------------------------
+" ------------------------------------------------------------------------------
+" turn off compat mode for vi
+set nocompatible 
+
+" syntax highlighting
+syntax on 
+
+" spell check
+set spell
+
+" (relative) line numbers
+set number
+set relativenumber
+
+" Indent configuration
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=0
+set smarttab
+set expandtab
+set autoindent
+set breakindent
+
+" Search
+set ignorecase
+set smartcase
+
+" create tags file relative to pwd instead of file
+set cpo+=d
+
+
+
+" ------------------------------------------------------------------------------
+" ---------------------------------- Appearance --------------------------------
+" ------------------------------------------------------------------------------
+" Good color alts: monokai (sublime default), one (atom default), OceanicNext
+set t_Co=256
+colo molokai
+let g:airline_theme='badwolf' " reset nice airline theme
+hi Normal ctermbg=none
+
+
+
+" ------------------------------------------------------------------------------
+" ------------------------------- Functions ------------------------------------
+" ------------------------------------------------------------------------------
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 
 " ------------------------------------------------------------------------------
@@ -96,58 +153,8 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 " ------------------------------- Syntastic ------------------------------------
 let g:syntastic_javascript_checkers = ['jshint']
 
-
-
-" ------------------------------------------------------------------------------
-" --------------------------------- General ------------------------------------
-" ------------------------------------------------------------------------------
-" turn off compat mode for vi
-set nocompatible 
-
-" syntax highlighting
-syntax on 
-
-" spell check
-set spell
-
-" (relative) line numbers
-set number
-set relativenumber
-
-" Indent configuration
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=0
-set smarttab
-set expandtab
-set autoindent
-set breakindent
-
-" Search
-set ignorecase
-set smartcase
-
-
-
-" ------------------------------------------------------------------------------
-" ---------------------------------- Appearance --------------------------------
-" ------------------------------------------------------------------------------
-" Good color alts: monokai (sublime default), one (atom default), OceanicNext
-set t_Co=256
-colo molokai
-let g:airline_theme='badwolf' " reset nice airline theme
-hi Normal ctermbg=none
-
-
-
-" ------------------------------------------------------------------------------
-" ------------------------------- Functions ------------------------------------
-" ------------------------------------------------------------------------------
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
+" ------------------------------ Easytag ---------------------------------------
+let g:easytags_async = 1
+let g:easytags_events = ['BufWritePost']
+set tags=./.vimtags;
+let g:easytags_dynamic_files = 2
