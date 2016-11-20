@@ -123,9 +123,13 @@ let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
 
 " ------------------------------ Easytag ---------------------------------------
-let g:easytags_async = 1
-let g:easytags_events = ['BufWritePost']
 set tags=./.vimtags;
+let g:easytags_events = ['BufWritePost']
+let g:easytags_python_enabled = 1
+let g:easytags_async = 1
+let g:easytags_autorecurse = 0
+let g:easytags_auto_highlight=0
+let g:easytags_updatetime_min = 60000 "1min
 let g:easytags_dynamic_files = 2
 
 " -------------------------------- NERDTree ------------------------------------
