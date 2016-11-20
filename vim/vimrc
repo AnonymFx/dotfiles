@@ -135,7 +135,11 @@ let g:easytags_dynamic_files = 2
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
 
-" ---- ------------------------- python-import ---------------------------------
+" -------------------------------- Markdown ------------------------------------
+let g:markdown_enable_folding = 1
+let g:markdown_enable_conceal = 1
+
+" ------------------------------ python-import ---------------------------------
 let g:PythonAutoAddImports = 1 " Autocomplete
 
 " ------------------------------ SimpylFold ------------------------------------
