@@ -161,8 +161,8 @@ vmap <leader>ta: :Tabularize /:\zs<CR>
 
 " ------------------------------ UltiSnips -------------------------------------
 let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-S-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-S-P>"
 
 " ------------------------------ Vim-Latex -------------------------------------
 filetype plugin on
@@ -180,6 +180,5 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<tab>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-nnoremap <C-A-d> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <C-A-r> :YcmCompleter GoToReferences<CR>
+let g:ycm_python_binary_path = 'python' " Enable python autocomplete
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
