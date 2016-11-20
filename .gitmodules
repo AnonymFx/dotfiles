@@ -97,3 +97,6 @@
 [submodule "vim/vim/bundle/vim-easytags"]
 	path = vim/vim/bundle/vim-easytags
 	url = git@github.com:xolox/vim-easytags.git
+[submodule "vim/vim/bundle/vim-quantum"]
+	path = vim/vim/bundle/vim-quantum
+	url = git@github.com:tyrannicaltoucan/vim-quantum.git
