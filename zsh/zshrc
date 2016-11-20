@@ -120,7 +120,8 @@ alias ddi='drive diff -skip-content-check'
 
 alias tmux='TERM=xterm-256color tmux'
 alias tks='tmux kill-session -t'
-alias ta='tmux attatch -t'
+alias ta='tmux attach -t'
+alias tls='tmux ls'
 
 # List directory after cd
 function chpwd(){
