@@ -115,7 +115,7 @@ com! DiffSaved call s:DiffWithSaved()
 set laststatus=2 " show always
 
 " ---------------------------- autoformat --------------------------------------
-noremap <C-A-l> :Autoformat<CR>
+noremap <leader>af :Autoformat<CR>
 
 " ---------------------------------- CtrlP -------------------------------------
 let g:ctrlp_map = '<c-p>'
