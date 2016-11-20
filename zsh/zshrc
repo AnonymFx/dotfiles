@@ -106,7 +106,7 @@ alias gv='gvim --remote-silent'
 alias gvn='gvim -c NERDTree'
 alias vin='vim -c NERDTree'
 
-alias open='xdg-open 2>/dev/null'
+alias open='xdg-open 2>/dev/null 1>&2'
 
 alias gpu='DRI_PRIME=1'
 
