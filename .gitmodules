@@ -13,9 +13,6 @@
 [submodule "vim/vim/bundle/python-syntax"]
 	path = vim/vim/bundle/python-syntax
 	url = git@github.com:hdima/python-syntax.git
-[submodule "vim/vim/bundle/vim-table-mode"]
-	path = vim/vim/bundle/vim-table-mode
-	url = git@github.com:dhruvasagar/vim-table-mode.git
 [submodule "vim/vim/bundle/vim-airline"]
 	path = vim/vim/bundle/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
@@ -82,9 +79,6 @@
 [submodule "vim/vim/bundle/ultisnips"]
 	path = vim/vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
-[submodule "vim/vim/bundle/vim-markdown"]
-	path = vim/vim/bundle/vim-markdown
-	url = git@github.com:plasticboy/vim-markdown.git
 [submodule "vim/vim/bundle/vim-tmux-navigator"]
 	path = vim/vim/bundle/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
