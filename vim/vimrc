@@ -147,7 +147,13 @@ let g:syntastic_javascript_checkers = ['jshint']
 " ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
-nnoremap <leader>tmr :TableModeRealign<CR>
+nnoremap <leader>tma :TableModeRealign<CR>
+
+" ------------------------------- Tabular --------------------------------------
+nmap <leader>ta= :Tabularize /=<CR>
+vmap <leader>ta= :Tabularize /=<CR>
+nmap <leader>ta: :Tabularize /:\zs<CR>
+vmap <leader>ta: :Tabularize /:\zs<CR>
 
 " ------------------------------ UltiSnips -------------------------------------
 let g:UltiSnipsExpandTrigger = "<C-e>"
