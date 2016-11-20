@@ -104,7 +104,7 @@ alias paccc='sudo pacman -Sc'
 
 alias gv='gvim --remote-silent'
 alias gvn='gvim -c NERDTree'
-alias vin 'vim -c NERDTree'
+alias vin='vim -c NERDTree'
 
 alias open='xdg-open 2>/dev/null'
 
