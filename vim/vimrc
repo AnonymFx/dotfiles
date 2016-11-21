@@ -134,6 +134,7 @@ let g:easytags_dynamic_files = 2
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
+nmap <leader>nt :NERDTreeToggle<CR>
 
 " -------------------------------- Markdown ------------------------------------
 let g:markdown_enable_folding = 1
