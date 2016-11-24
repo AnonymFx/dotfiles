@@ -102,6 +102,7 @@ alias rb='reboot'
 
 alias paccc='sudo pacman -Sc'
 
+# Vim
 alias gv='gvim --remote-silent'
 alias gvn='gvim -c NERDTree'
 alias vin='vim -c NERDTree'
@@ -112,31 +113,28 @@ alias gpu='DRI_PRIME=1'
 
 alias mmv='noglob zmv -W'
 
+# Google Drive
 alias dup='drive pull'
 alias dupnp='drive pull -no-prompt'
 alias dp='drive push'
 alias dpnp='drive push -no-promt'
 alias ddi='drive diff -skip-content-check'
 
+# tmux
 alias tmux='TERM=xterm-256color tmux'
 alias tks='tmux kill-session -t'
 alias ta='tmux attach -t'
 alias tls='tmux ls'
 
+# adb
+alias adbba="adb backup -apk -obb -all -f"
+alias adbb="adb backup -apk -obb -f"
+alias adblp='adb shell "pm list packages -f"'
+
 # List directory after cd
 function chpwd(){
   emulate -LR zsh
   l
-}
-
-# Alias function for backing up all android apps
-function adbba() {
-    adb backup -f $1 -apk -obb -all
-}
-
-# Alias function for backing up an specific android app
-function adbb() {
-    adb backup -f $1 -apk -obb $2
 }
 
 # VIM Mode
