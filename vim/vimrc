@@ -62,6 +62,10 @@ set expandtab
 set autoindent
 set breakindent
 
+" Show trailing whitespaces
+set listchars=tab:•\ ,trail:•,extends:»,precedes:« 
+set invlist
+
 " Search
 set ignorecase
 set smartcase
