@@ -32,6 +32,7 @@ function install() {
             ;;
         tmux )
             ln -snf $PWD/tmux/tmux.conf $HOME/.tmux.conf
+            ln -snf $PWD/tmux/tmux.layouts $HOME/.tmux.layouts
             ;;
         vim )
             ln -snf $PWD/vim/vim $HOME/.vim
@@ -41,6 +42,7 @@ function install() {
         neovim)
             ln -snf $PWD/vim/vim $HOME/.config/nvim
             ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
+            ;;
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
             ;;
