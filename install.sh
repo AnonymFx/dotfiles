@@ -38,6 +38,9 @@ function install() {
             ln -snf $PWD/vim/vimrc $HOME/.vimrc
             ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
             ;;
+        neovim)
+            ln -snf $PWD/vim/vim $HOME/.config/nvim
+            ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
             ;;
