@@ -70,6 +70,7 @@ else
         install terminator
         install tmux
         install vim
+        install neovim
         install zsh
     else
         echo "$1 is not a valid Target"
