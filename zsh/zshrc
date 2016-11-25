@@ -131,6 +131,8 @@ alias adbba="adb backup -apk -obb -all -f"
 alias adbb="adb backup -apk -obb -f"
 alias adblp='adb shell "pm list packages -f"'
 
+alias rscp='rsync --progress -avz -e ssh'
+
 # List directory after cd
 function chpwd(){
   emulate -LR zsh
