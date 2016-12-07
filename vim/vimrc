@@ -140,10 +140,6 @@ let g:easytags_dynamic_files = 2
 let g:NERDTreeIgnore = ['bin', 'node_modules']
 nmap <leader>nt :NERDTreeToggle<CR>
 
-" -------------------------------- Markdown ------------------------------------
-let g:markdown_enable_folding = 1
-let g:markdown_enable_conceal = 1
-
 " ------------------------------ python-import ---------------------------------
 let g:PythonAutoAddImports = 1 " Autocomplete
 
