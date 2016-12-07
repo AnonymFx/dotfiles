@@ -117,6 +117,7 @@ com! DiffSaved call s:DiffWithSaved()
 
 " --------------------------------- Airline ------------------------------------
 set laststatus=2 " show always
+let g:airline_powerline_fonts = 1 " powerline font
 
 " ---------------------------- autoformat --------------------------------------
 noremap <leader>af :Autoformat<CR>
