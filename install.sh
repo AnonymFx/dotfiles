@@ -16,6 +16,10 @@ function install() {
         dconf)
             dconf load / < $PWD/dconf/keybindings
             ;;
+        gdb )
+            ln -snf $PWD/gdb/gdbinit $HOME/.gdbinit
+            ln -snf $PWD/gdb/gdbinit.d $HOME/.gdbinit.d
+            ;;
         git )
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
             git config --global core.excludesfile $HOME/.gitignore_global
@@ -66,6 +70,7 @@ else
     if [[ $1 = all ]]; then
         install dconf
         install bash
+        install gdb
         install git
         install intellij
         install readline
