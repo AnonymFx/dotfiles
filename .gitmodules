@@ -103,3 +103,6 @@
 [submodule "vim/vim/bundle/tabular"]
 	path = vim/vim/bundle/tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule "vim/vim/bundle/YCM-Generator"]
+	path = vim/vim/bundle/YCM-Generator
+	url = git@github.com:rdnetto/YCM-Generator.git

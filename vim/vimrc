@@ -184,4 +184,5 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_python_binary_path = 'python' " Enable python autocomplete
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
-nmap <leader>rr :YcmCompleter RefactorRename 
+nmap <leader>rr :YcmCompleter RefactorRename
+nmap <leader>gt :YcmCompleter GoTo<CR>
