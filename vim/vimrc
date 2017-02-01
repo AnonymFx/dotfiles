@@ -66,10 +66,6 @@ set breakindent
 set listchars=tab:•\ ,trail:•,extends:»,precedes:« 
 set invlist
 
-" Show cursor lines
-set cursorcolumn
-set cursorline
-
 " Search
 set ignorecase
 set smartcase
