@@ -70,6 +70,9 @@ set invlist
 set ignorecase
 set smartcase
 
+" Highlight all occurrences of word under cursor
+autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
 " create tags file relative to pwd instead of file
 set cpo+=d
 
