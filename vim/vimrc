@@ -35,6 +35,9 @@ nnoremap <C-r>m :vertical resize -5<CR>
 " change register leader key
 nnoremap <space> "
 
+" Forward and backward movement in command mode
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
 
 
 " ------------------------------------------------------------------------------
