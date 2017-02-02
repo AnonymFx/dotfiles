@@ -62,6 +62,9 @@ set expandtab
 set autoindent
 set breakindent
 
+" Show cursor column
+set cursorcolumn
+
 " Show trailing whitespaces
 set listchars=tab:•\ ,trail:•,extends:»,precedes:« 
 set invlist
