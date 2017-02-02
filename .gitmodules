@@ -106,3 +106,6 @@
 [submodule "vim/vim/bundle/YCM-Generator"]
 	path = vim/vim/bundle/YCM-Generator
 	url = git@github.com:rdnetto/YCM-Generator.git
+[submodule "vim/vim/bundle/vim-pug"]
+	path = vim/vim/bundle/vim-pug
+	url = git@github.com:digitaltoad/vim-pug.git
