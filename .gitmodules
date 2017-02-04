@@ -109,6 +109,3 @@
 [submodule "vim/vim/bundle/vim-pug"]
 	path = vim/vim/bundle/vim-pug
 	url = git@github.com:digitaltoad/vim-pug.git
-[submodule "vim/vim/bundle/vim"]
-	path = vim/vim/bundle/vim
-	url = git@github.com:dracula/vim.git
