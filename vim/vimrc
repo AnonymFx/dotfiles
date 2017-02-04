@@ -105,7 +105,7 @@ set scrolloff=3 " Keep 3 lines below and above the cursor
 " ------------------------------------------------------------------------------
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
 set t_Co=256
-colo quantum
+colo onedark
 let g:airline_theme='badwolf' " reset nice airline theme
 hi Normal ctermbg=none
 
