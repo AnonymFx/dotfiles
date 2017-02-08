@@ -9,3 +9,5 @@ set iskeyword+=:
 " Ctrl+Shift+b for building
 noremap <C-S-b> :w<CR>:!make<CR>
 
+imap <C-j> <Plug>IMAP_JumpForward
+
