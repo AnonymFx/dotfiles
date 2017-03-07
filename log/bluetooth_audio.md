@@ -4,8 +4,8 @@
 Source: [Bluetooth Headset Arch Wiki](https://wiki.archlinux.org/index.php/Bluetooth_headset) 
 
 1. Install packages: pulseaudio-alsa, pulseaudio-bluetooth, bluez, bluez-libs, bluez-utils, bluez-firmware
-2. Pair and connect to speaker/headset
-3. Set as output
+2. Pair and connect to speaker/headset via bluetoothctl
+3. Set as output (e.g. in gnome settings GUI)
 
 ## Troubleshooting
 
