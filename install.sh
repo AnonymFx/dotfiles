@@ -24,6 +24,8 @@ function install() {
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
             git config --global core.excludesfile $HOME/.gitignore_global
             ;;
+        i3 )
+            ln -snf $PWD/i3/config $HOME/.config/i3/config
         intellij )
             ln -snf $PWD/intellij/ideavimrc $HOME/.ideavimrc
             ;;
@@ -72,6 +74,7 @@ else
         install bash
         install gdb
         install git
+        install i3
         install intellij
         install readline
         install terminator
