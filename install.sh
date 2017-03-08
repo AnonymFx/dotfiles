@@ -61,6 +61,9 @@ function install() {
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
             ;;
+        X )
+            ln -snf $PWD/X/Xresources $HOME/.Xresources
+            ;;
         esac
 }
 
@@ -93,6 +96,7 @@ else
         install vim
         install neovim
         install zsh
+        install X
     else
         echo "$1 is not a valid Target"
         print_help_msg
