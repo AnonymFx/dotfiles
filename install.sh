@@ -24,6 +24,10 @@ function install() {
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
             git config --global core.excludesfile $HOME/.gitignore_global
             ;;
+        gtk )
+            ln -snf $PWD/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
+            ln -snf $PWD/gtk/gtk-3.0-settings.ini $HOME/.config/gtk-3.0/settings.ini
+            ;;
         i3 )
             ln -snf $PWD/i3/config $HOME/.config/i3/config
             ;;
@@ -79,6 +83,7 @@ else
         install bash
         install gdb
         install git
+        install gtk
         install i3
         install intellij
         install polybar
