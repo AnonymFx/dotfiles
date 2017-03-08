@@ -173,6 +173,9 @@ bindsym $mod+r mode "resize"
 # use polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# start compton on all monitors
+exec seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
+
 # Bind Lock Screen
 bindsym $mod+shift+x exec i3lock
 
