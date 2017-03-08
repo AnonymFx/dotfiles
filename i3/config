@@ -201,4 +201,4 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 1 toggle # Increase volume
 
 # Set wallpaper
-exec_always feh --bg-scale ~/Pictures/incolumn_by_cnunes-d4z7q0e.jpg
+exec_always feh --bg-scale ~/Pictures/mainframe.jpg
