@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Start rofi (window switcher)
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i'
 
 # change focus
 bindsym $mod+h focus left
