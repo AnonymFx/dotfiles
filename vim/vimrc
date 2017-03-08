@@ -16,9 +16,6 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-h> <C-W><C-H>
 nnoremap <C-l> <C-W><C-L>
 
-" Ctrl+s for saving
-nnoremap <C-s> :w<Enter>
-
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>P "+P
