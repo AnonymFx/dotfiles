@@ -28,8 +28,8 @@ function install() {
             ln -snf $PWD/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
             ln -snf $PWD/gtk/gtk-3.0-settings.ini $HOME/.config/gtk-3.0/settings.ini
             ;;
-        i3 )
-            ln -snf $PWD/i3/config $HOME/.config/i3/config
+        i3-gaps )
+            ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
             ;;
         intellij )
             ln -snf $PWD/intellij/ideavimrc $HOME/.ideavimrc
@@ -87,7 +87,7 @@ else
         install gdb
         install git
         install gtk
-        install i3
+        install i3-gaps
         install intellij
         install polybar
         install readline
