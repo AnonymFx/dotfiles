@@ -26,8 +26,13 @@ function install() {
             ;;
         i3 )
             ln -snf $PWD/i3/config $HOME/.config/i3/config
+            ;;
         intellij )
             ln -snf $PWD/intellij/ideavimrc $HOME/.ideavimrc
+            ;;
+        polybar )
+            ln -snf $PWD/polybar/config $HOME/.config/polybar/config
+            ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
             ;;
         readline )
             ln -snf $PWD/readline/inputrc $HOME/.inputrc
@@ -76,6 +81,7 @@ else
         install git
         install i3
         install intellij
+        install polybar
         install readline
         install terminator
         install tmux
