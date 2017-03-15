@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Start rofi (window switcher)
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -show -lines 10 -width 40 -yoffset -270 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12" -rnow'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -show -lines 10 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12" -rnow'
 
 # change focus
 bindsym $mod+h focus left
@@ -189,7 +189,7 @@ gaps outer 0
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # start compton on all monitors
-exec seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
+exec compton -b
 
 # Bind Lock Screen
 bindsym $mod+shift+x exec i3lock -i ~/Pictures/mainframe.png -c 000215
@@ -204,4 +204,4 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # Increase volume
 
 # Set wallpaper
-exec_always feh --bg-scale ~/Pictures/mainframe.png
+exec_always feh --bg-scale ~/Pictures/i3-bg.png
