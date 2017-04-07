@@ -38,10 +38,10 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 1
+module-margin-right = 1
 
-font-0 = roboto:pixelsize=11;1
+font-0 = robotomono:pixelsize=11;1
 font-1 = materialicons:pixelsize=11;2
 font-2 = fixed:pixelsize=10;1
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -263,7 +263,7 @@ format-connected-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-connected = <label-connected>
 format-connected-underline = ${colors.foreground-alt}
-label-connected = %essid%   %upspeed%  %downspeed%
+label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -287,7 +287,7 @@ interval = 3.0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.foreground-alt}
-label-connected = %local_ip%   %upspeed%  %downspeed%
+label-connected = %local_ip% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
