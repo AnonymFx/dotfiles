@@ -10,6 +10,9 @@ EOF
 function install() {
     local TARGET="$1"
     case "$TARGET" in
+        autorandr )
+            ln -snf $PWD/autorandr/postswitch $HOME/.config/autorandr/postswitch
+            ;;
         bash )
             ln -snf $PWD/bash/bashrc $HOME/.bashrc
             ;;
@@ -82,6 +85,7 @@ elif [[ $# -gt 1 ]]; then
     exit 1
 else
     if [[ $1 = all ]]; then
+        install autorandr
         install dconf
         install bash
         install gdb
