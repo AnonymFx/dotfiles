@@ -41,7 +41,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = robotomono:pixelsize=11;1
+font-0 = robotomono:pixelsize=10;1
 font-1 = materialicons:pixelsize=11;2
 font-2 = fixed:pixelsize=10;1
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -309,7 +309,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.foreground-alt}
 
-label = %date%   %time%
+label = %date% %time%
 
 [module/volume]
 type = internal/volume
