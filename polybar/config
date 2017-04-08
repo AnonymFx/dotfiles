@@ -356,7 +356,7 @@ label-discharging = %percentage%%
 format-discharging-underline = ${colors.foreground-alt}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+; format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.foreground-alt}
 
 [module/temperature]
