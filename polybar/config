@@ -244,7 +244,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.foreground-alt}
-label = %percentage-core1%%  %percentage-core2%%  %percentage-core3%%  %percentage-core4%%
+label = %percentage-core1:3:3%%  %percentage-core2:3:3%%  %percentage-core3:3:3%%  %percentage-core4:3:3%%
 
 [module/memory]
 type = internal/memory
