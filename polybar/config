@@ -53,7 +53,7 @@ monitor = ${env:MONITOR:eDP-1}
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = volume wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
+modules-right = xbacklight volume wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -220,15 +220,15 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = " "
 
-bar-width = 10
+bar-width = 20
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+; bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
