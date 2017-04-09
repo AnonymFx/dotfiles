@@ -18,7 +18,7 @@ EndSection
 -------------------------------------
 Section "InputClass"
     Identifier "Keyboard"
-    Driver "kbd"
+    Driver "libinput"
     MatchIsKeyboard "on"
     Option "XkbLayout" "us"
     Option "XkbVariant" "intl"
