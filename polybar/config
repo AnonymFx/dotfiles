@@ -222,7 +222,7 @@ type = internal/xbacklight
 format = <label> <bar>
 label = " "
 
-bar-width = 20
+bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -322,7 +322,7 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
-bar-volume-width = 20
+bar-volume-width = 10
 ; bar-volume-foreground-0 = #55aa55
 ; bar-volume-foreground-1 = #55aa55
 ; bar-volume-foreground-2 = #55aa55
