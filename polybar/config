@@ -9,11 +9,11 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #000611
+background-alt = #002c75
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #002c75
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -32,7 +32,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 2
 border-color = #00000000
 
 padding-left = 0
@@ -51,7 +51,7 @@ font-4 = siji:pixelsize=10;1
 inherit = bar/basebar
 monitor = ${env:MONITOR:eDP-1}
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = 
 modules-right = xbacklight volume wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 

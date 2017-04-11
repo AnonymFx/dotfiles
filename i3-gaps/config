@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Roboto Mono 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -168,14 +168,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Window border style
+# Window header style
 # class                 border  backgr. text    indicator
-client.focused          #000215 #000215 #ffffff #000215
-client.focused_inactive #000000 #000000 #888888 #000000
-client.unfocused        #000000 #000000 #888888 #000000
+client.focused          #002c75 #002c75 #ffffff #000215
+client.focused_inactive #000611 #000611 #888888 #000000
+client.unfocused        #000611 #000611 #888888 #000000
 client.urgent           #ffffff #ffffff #000000 #ffffff
-new_window normal 0 px
-for_window [class="^.*"] normal pixel 0
+
+# Window border style
+new_window normal 2 px
+# Make sure every window has a border
+for_window [class="^.*"] normal pixel 2
+
+# Gaps for i3-gaps
 gaps inner 8
 gaps outer 0
 
@@ -192,7 +197,7 @@ exec_always ~/.config/polybar/launch.sh
 exec compton -b
 
 # Bind Lock Screen
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/mainframe.png -c 000215
+bindsym $mod+shift+x exec i3lock -i ~/Pictures/i3-lock.jpg -c 000215
 
 # Screen Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # Increase screen brightness
@@ -209,7 +214,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '\* index: ' | sed -e 's/\* index: //g' | sed -e 's/ //g') toggle # Mute volume
 
 # Set wallpaper
-exec_always feh --bg-scale ~/Pictures/i3-bg.png
+exec_always feh --bg-scale ~/Pictures/i3-bg.jpg
 
 # Adapt monitor setup
 exec_always autorandr --change
