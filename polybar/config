@@ -292,13 +292,13 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date = " %Y-%m-%d"
 date-alt = 
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = 
 
 format-prefix = " "
 format-underline = ${colors.background-alt}
@@ -337,7 +337,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 98
+full-at = 97
 
 format-charging = <label-charging>
 format-charging-prefix = " "
