@@ -13,7 +13,7 @@ background = #000611
 background-alt = #002c75
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #002c75
+foreground-alt = #444
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -127,10 +127,10 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-underline = ${colors.foreground-alt}
+format-prefix-underline = ${colors.background-alt}
 
 label-layout = %layout%
-label-layout-underline = ${colors.foreground-alt}
+label-layout-underline = ${colors.background-alt}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -144,10 +144,10 @@ interval = 25
 mount-0 = /
 
 label-mounted = %mountpoint%%{F-}: %percentage_used%%
-label-mounted-underline = ${colors.foreground-alt}
+label-mounted-underline = ${colors.background-alt}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-label-unmounted-underline = ${colors.foreground-alt}
+label-unmounted-underline = ${colors.background-alt}
 
 [module/bspwm]
 type = internal/bspwm
@@ -241,14 +241,14 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = ""
-format-underline = ${colors.foreground-alt}
+format-underline = ${colors.background-alt}
 label = %percentage-core1:3:3%%  %percentage-core2:3:3%%  %percentage-core3:3:3%%  %percentage-core4:3:3%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = ""
-format-underline = ${colors.foreground-alt}
+format-underline = ${colors.background-alt}
 label = %percentage_used:3:3%%
 
 [module/wlan]
@@ -258,7 +258,7 @@ interval = 3.0
 
 format-connected-prefix = " "
 format-connected = <label-connected>
-format-connected-underline = ${colors.foreground-alt}
+format-connected-underline = ${colors.background-alt}
 label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
@@ -281,7 +281,7 @@ interval = 3.0
 
 ; format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-underline = ${colors.foreground-alt}
+format-connected-underline = ${colors.background-alt}
 label-connected = %local_ip% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
@@ -301,7 +301,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = " "
-format-underline = ${colors.foreground-alt}
+format-underline = ${colors.background-alt}
 
 label = %date% %time%
 
@@ -342,16 +342,16 @@ full-at = 98
 format-charging = <label-charging>
 format-charging-prefix = " "
 label-charging = %percentage%%
-format-charging-underline = ${colors.foreground-alt}
+format-charging-underline = ${colors.background-alt}
 
 format-discharging = <label-discharging>
 format-discharging-prefix = " "
 label-discharging = %percentage%%
-format-discharging-underline = ${colors.foreground-alt}
+format-discharging-underline = ${colors.background-alt}
 
 format-full-prefix = " "
 ; format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${colors.foreground-alt}
+format-full-underline = ${colors.background-alt}
 
 [module/temperature]
 type = internal/temperature
@@ -360,9 +360,9 @@ warn-temperature = 80
 
 format-prefix = " "
 format = <label>
-format-underline = ${colors.foreground-alt}
+format-underline = ${colors.background-alt}
 format-warn = <label-warn>
-format-warn-underline = ${colors.foreground-alt}
+format-warn-underline = ${colors.background-alt}
 
 label = %temperature%
 label-warn = %temperature%
