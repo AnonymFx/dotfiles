@@ -337,7 +337,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 97
+full-at = 95
 
 format-charging = <label-charging>
 format-charging-prefix = " "
