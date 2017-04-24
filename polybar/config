@@ -32,7 +32,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 2
+border-size = 0
 border-color = #00000000
 
 padding-left = 0

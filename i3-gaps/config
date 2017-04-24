@@ -181,7 +181,7 @@ new_window normal 2 px
 for_window [class="^.*"] normal pixel 2
 
 # Gaps for i3-gaps
-gaps inner 8
+gaps inner 12
 gaps outer 0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
