@@ -170,9 +170,9 @@ bindsym $mod+r mode "resize"
 
 # Window header style
 # class                 border  backgr. text    indicator
-client.focused          #002c75 #002c75 #ffffff #000215
-client.focused_inactive #000611 #000611 #888888 #000000
-client.unfocused        #000611 #000611 #888888 #000000
+client.focused          #772f20 #772f20 #ffffff #772f20
+client.focused_inactive #000000 #000000 #888888 #000000
+client.unfocused        #000000 #000000 #888888 #000000
 client.urgent           #ffffff #ffffff #000000 #ffffff
 
 # Window border style
