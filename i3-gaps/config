@@ -176,9 +176,9 @@ client.unfocused        #000000 #000000 #888888 #000000
 client.urgent           #ffffff #ffffff #000000 #ffffff
 
 # Window border style
-new_window normal 2 px
+new_window pixel 2
 # Make sure every window has a border
-for_window [class="^.*"] normal pixel 2
+for_window [class="^.*"] pixel 2
 
 # Gaps for i3-gaps
 gaps inner 12
