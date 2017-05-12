@@ -53,7 +53,8 @@ function install() {
             ln -snf $PWD/tmux/tmux.layouts $HOME/.tmux.layouts
             ;;
         vim )
-            ln -snf $PWD/vim/vim $HOME/.vim
+            mkdir -p $HOME/.vim
+            ln -snf $PWD/vim/vim/autoload $HOME/.vim/autoload
             ln -snf $PWD/vim/vimrc $HOME/.vimrc
             ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
             ;;

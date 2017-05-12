@@ -1,6 +1,166 @@
 " Default location: ~/.vimrc
-" Pathogen package manager
-execute pathogen#infect()
+
+" ------------------------------------------------------------------------------
+" ---------------------------------- Plugins -----------------------------------
+" ------------------------------------------------------------------------------
+"
+" --------------------------------- Vim-Plug -----------------------------------
+" Specify plugin directory
+call plug#begin('~/.vim/plugins')
+
+" YouCompleteMe - code completion engine
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --tern-completer'}
+" YouCompleteMe Generator - generate project files for YouCompleteMe
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+
+" Ctrl-P - Fuzzy finder
+Plug 'kien/ctrlp.vim'
+
+" NERDTree - File Explorer
+Plug 'scrooloose/nerdtree'
+
+" Syntastic - Syntax checker
+Plug 'scrooloose/syntastic'
+
+" Airline - Status line
+Plug 'vim-airline/vim-airline'
+" Airline themes
+Plug 'vim-airline/vim-airline-themes'
+
+" EasyMotion - better vim navigations (f, t,...)
+Plug 'easymotion/vim-easymotion'
+
+" Unimpaired - useful keybindings
+Plug 'tpope/vim-unimpaired'
+
+" Better repeat with . e.g. for maps or other plugins
+Plug 'tpope/vim-repeat'
+
+" Change surroundings of text elements
+Plug 'tpope/vim-surround'
+
+" Comment and uncomment lines
+Plug 'tpope/vim-commentary'
+
+" Framework for new text objects following below
+Plug 'kana/vim-textobj-user'
+" New text objects
+Plug 'kana/vim-textobj-line'
+
+" Edit at multiple places
+Plug 'terryma/vim-multiple-cursors'
+
+" Supertab - tab for insert completions
+Plug 'ervandew/supertab'
+
+" Autoformat files
+Plug 'Chiel92/vim-autoformat'
+
+" Ultisnips - snippet engine
+Plug 'SirVer/ultisnips'
+" Snippets for ultisnips
+Plug 'honza/vim-snippets'
+
+" Better navigation between tmux and vim
+Plug 'christoomey/vim-tmux-navigator'
+
+" Framework for xolox's plugins
+Plug 'xolox/vim-misc'
+
+" Easytags - automated tag file generation
+Plug 'xolox/vim-easytags'
+
+" TableMode - Table creation for vim
+Plug 'dhruvasagar/vim-table-mode'
+
+" Onedark color scheme
+Plug 'joshdick/onedark.vim'
+
+" ---------------- Filetype plugins ---------------------
+" Latex suite
+Plug 'vim-latex/vim-latex', {'for': 'tex'}
+
+" Better XML editing (tag completions, jumps, ...)
+Plug 'sukima/xmledit', {'for': 'xml'}
+
+" Typescript syntax and other settings
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+
+" Swift syntax highlighting
+Plug 'keith/swift.vim', {'for': 'swift'}
+
+" Better Python syntax highlighting
+Plug 'hdima/python-syntax', {'for': 'python'}
+" Python syntax annotations according to pep8
+Plug 'nvie/vim-flake8', {'for': 'python'}
+" Python folding
+Plug 'tmhedberg/SimpylFold', {'for': 'python'}
+" Python indentation
+Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
+
+" Init plugin system
+call plug#end()
+
+" --------------------------------- Airline ------------------------------------
+set laststatus=2 " show always
+let g:airline_powerline_fonts = 1 " powerline font
+
+" ---------------------------- autoformat --------------------------------------
+noremap <leader>af :Autoformat<CR>
+
+" ---------------------------------- CtrlP -------------------------------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g_ctrlp_working_path_mode = 'ra'
+
+" ------------------------------ Easytag ---------------------------------------
+set tags=./.vimtags;
+let g:easytags_events = ['BufWritePost']
+let g:easytags_python_enabled = 1
+let g:easytags_async = 1
+let g:easytags_autorecurse = 0
+let g:easytags_auto_highlight = 0
+let g:easytags_dynamic_files = 2
+
+" -------------------------------- NERDTree ------------------------------------
+let g:NERDTreeIgnore = ['bin', 'node_modules']
+nmap <leader>nt :NERDTreeToggle<CR>
+
+" ------------------------------ SimpylFold ------------------------------------
+let g:SimpylFold_docstring_preview=1
+
+" ------------------------------- Syntastic ------------------------------------
+let g:syntastic_javascript_checkers = ['jshint']
+
+" ------------------------------ Table Mode ------------------------------------
+let g:table_mode_header_fillchar= '-'
+let g:table_mode_corner="|"
+nnoremap <leader>tma :TableModeRealign<CR>
+
+" ------------------------------ UltiSnips -------------------------------------
+let g:UltiSnipsExpandTrigger = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger = "<C-S-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-S-P>"
+
+" ------------------------------ Vim-Latex -------------------------------------
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+nmap <C-Space> <Plug>Tex_FastEnvironmentInsert 
+imap <S-CR> <Plug>IMAP_JumpForward
+nmap <S-CR> <Plug>IMAP_JumpForward
+vmap <S-CR> <Plug>IMAP_JumpForward
+
+" ----------------------------- YouCompleteMe ----------------------------------
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<tab>'
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let g:ycm_python_binary_path = 'python' " Enable python autocomplete
+let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
+nmap <leader>rr :YcmCompleter RefactorRename
+nmap <leader>gt :YcmCompleter GoTo<CR>
+
 
 " ------------------------------------------------------------------------------
 " --------------------------------- Key bindings -------------------------------
@@ -104,6 +264,34 @@ let g:airline_theme='badwolf' " reset nice airline theme
 hi Normal ctermbg=none
 
 
+" ------------------------------------------------------------------------------
+" ------------------------- Filetype specific stuff ----------------------------
+" ------------------------------------------------------------------------------
+" ------------------ Javascript ------------------
+autocmd FileType javascript setlocal tabstop=4
+
+" ------------------ Markdown --------------------
+autocmd FileType markdown set foldlevel=1
+
+" ------------------ Python ----------------------
+autocmd FileType python let python_highlight_all=1
+autocmd FileType python setlocal tabstop=4
+autocmd FileType python setlocal softtabstop=4
+autocmd FileType python setlocal shiftwidth=4
+autocmd FileType python setlocal textwidth=80
+autocmd FileType python setlocal expandtab
+autocmd FileType python setlocal autoindent
+autocmd FileType python setlocal fileformat=unix
+
+" --------------------- Tex ----------------------
+" TIP: if you write your \label's as \label{fig:something}, then if you
+" type in \ref{fig: and press <C-n> you will automatically cycle through
+" all the figure labels. Very useful!
+autocmd FileType tex set iskeyword+=:
+" Ctrl+Shift+b for building
+autocmd FileType tex noremap <C-S-b> :w<CR>:!make<CR>
+autocmd FileType tex imap <C-j> <Plug>IMAP_JumpForward
+
 
 " ------------------------------------------------------------------------------
 " ------------------------------- Functions ------------------------------------
@@ -116,80 +304,3 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
-
-
-" ------------------------------------------------------------------------------
-" ---------------------------------- Plugins -----------------------------------
-" ------------------------------------------------------------------------------
-
-
-" --------------------------------- Airline ------------------------------------
-set laststatus=2 " show always
-let g:airline_powerline_fonts = 1 " powerline font
-
-" ---------------------------- autoformat --------------------------------------
-noremap <leader>af :Autoformat<CR>
-
-" ---------------------------------- CtrlP -------------------------------------
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g_ctrlp_working_path_mode = 'ra'
-
-" ------------------------------ Easytag ---------------------------------------
-set tags=./.vimtags;
-let g:easytags_events = ['BufWritePost']
-let g:easytags_python_enabled = 1
-let g:easytags_async = 1
-let g:easytags_autorecurse = 0
-let g:easytags_auto_highlight = 0
-let g:easytags_dynamic_files = 2
-
-" -------------------------------- NERDTree ------------------------------------
-let g:NERDTreeIgnore = ['bin', 'node_modules']
-nmap <leader>nt :NERDTreeToggle<CR>
-
-" ------------------------------ python-import ---------------------------------
-let g:PythonAutoAddImports = 1 " Autocomplete
-
-" ------------------------------ SimpylFold ------------------------------------
-let g:SimpylFold_docstring_preview=1
-
-" ------------------------------- Syntastic ------------------------------------
-let g:syntastic_javascript_checkers = ['jshint']
-
-" ------------------------------ Table Mode ------------------------------------
-let g:table_mode_header_fillchar= '-'
-let g:table_mode_corner="|"
-nnoremap <leader>tma :TableModeRealign<CR>
-
-" ------------------------------- Tabular --------------------------------------
-nmap <leader>ta= :Tabularize /=<CR>
-vmap <leader>ta= :Tabularize /=<CR>
-nmap <leader>ta: :Tabularize /:\zs<CR>
-vmap <leader>ta: :Tabularize /:\zs<CR>
-
-" ------------------------------ UltiSnips -------------------------------------
-let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger = "<C-S-n>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-S-P>"
-
-" ------------------------------ Vim-Latex -------------------------------------
-filetype plugin on
-set grepprg=grep\ -nH\ $*
-filetype indent on
-let g:tex_flavor='latex'
-nmap <C-Space> <Plug>Tex_FastEnvironmentInsert 
-imap <S-CR> <Plug>IMAP_JumpForward
-nmap <S-CR> <Plug>IMAP_JumpForward
-vmap <S-CR> <Plug>IMAP_JumpForward
-
-" ----------------------------- YouCompleteMe ----------------------------------
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<tab>'
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-let g:ycm_python_binary_path = 'python' " Enable python autocomplete
-let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
-nmap <leader>rr :YcmCompleter RefactorRename
-nmap <leader>gt :YcmCompleter GoTo<CR>
