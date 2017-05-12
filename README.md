@@ -6,10 +6,10 @@ Use at own risk.
 There is an install script which links all configuration files to their proper places.  
 **Warning**: The linking currently is only available in force mode, so if the files already exist, they will be overwritten. This will probably change in the future though, so stay tuned ;)
 
+If you have already installed this before 2017-05-12 and want to do an update/reinstallation, delete your .vim folder in your home directory and execute the install script again.
+This is due to the switch from pathogen to vim-plug as plugin manager for vim.
+
 ## VIM
-For the given vim configuration to work, the YouCompleteMe autocomplete plugin has to be built and properly installed. See the [documentation](https://github.com/Valloric/YouCompleteMe/) for further reference.
-Note that submodules have to be pulled with `git submodule update --init --recursive`.
+To install the plugins, exectue `:PlugInstall` once you've executed the install script in this repo.
 
 For autoformat, global formatting programs have to be installed. For available options see its Github [page](https://github.com/Chiel92/vim-autoformat).
-
-For javascript completion, the tern modules have to be installed via `npm install` in the vim/vim/bundle/tern_for_vim directory.
