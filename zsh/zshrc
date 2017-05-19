@@ -59,6 +59,15 @@ plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast common-alia
 export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools:$HOME/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Check for system update if script is in PATH
+if system_update_script="$(type -p system-update-promt)" && [ -n "$system_update_script" ]; then
+    # Set the amount of days past for system update promt
+    export UPDATE_SYSTEM_DAYS=3
+    # Run the script
+    system-update-promt
+fi
+
+
 source $ZSH/oh-my-zsh.sh
 autoload -U zmv 
 setopt extendedglob
