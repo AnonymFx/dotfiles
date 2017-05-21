@@ -75,30 +75,7 @@ tray-padding = 2
 inherit = bar/basebar
 monitor = ${env:MONITOR}
 
-modules-left = bspwm i3
-modules-center = 
-modules-right = date
-
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-;
-[bar/bar3]
-inherit = bar/basebar
-monitor = ${env:MONITOR}
-modules-left = bspwm i3
+modules-left = i3
 modules-center = 
 modules-right = date
 
