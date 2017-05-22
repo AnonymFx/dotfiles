@@ -230,7 +230,7 @@ label = %percentage_used:3:3%%
 
 [module/wlan]
 type = internal/network
-interface = wlp5s0
+interface = ${env:WLAN}
 interval = 3.0
 
 format-connected-prefix = " "
@@ -253,7 +253,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = ${env:ETH}
 interval = 3.0
 
 ; format-connected-underline = #55aa55
@@ -312,8 +312,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ADP1
+battery = ${env:BAT}
+adapter = ${env:BAT_ADP}
 full-at = 95
 
 format-charging = <label-charging>
