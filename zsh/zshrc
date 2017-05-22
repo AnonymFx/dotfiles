@@ -60,11 +60,11 @@ export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/defaul
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Check for system update if script is in PATH
-if system_update_script="$(type -p system-update-promt)" && [ -n "$system_update_script" ]; then
-    # Set the amount of days past for system update promt
+if system_update_script="$(type -p system-update-prompt)" && [ -n "$system_update_script" ]; then
+    # Set the amount of days past for system update prompt
     export UPDATE_SYSTEM_DAYS=1
     # Run the script
-    system-update-promt
+    system-update-prompt
 fi
 
 
