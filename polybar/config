@@ -41,7 +41,7 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = robotomono:pixelsize=10;1
+font-0 = droidsansmono:pixelsize=11.25;1
 font-1 = materialicons:pixelsize=11;2
 font-2 = fixed:pixelsize=10;1
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -219,7 +219,7 @@ type = internal/cpu
 interval = 2
 format-prefix = ""
 format-underline = ${colors.background-alt}
-label = %percentage-core1:3:3%%  %percentage-core2:3:3%%  %percentage-core3:3:3%%  %percentage-core4:3:3%%
+label = %percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%
 
 [module/memory]
 type = internal/memory
@@ -259,7 +259,7 @@ interval = 3.0
 ; format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
-label-connected = %local_ip% %upspeed:8:8%  %downspeed:8:8%
+label-connected = %local_ip% %upspeed:8:8:%  %downspeed:8:8%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -277,7 +277,7 @@ date-alt =
 time = %H:%M
 time-alt = 
 
-format-prefix = " "
+format-prefix = ""
 format-underline = ${colors.background-alt}
 
 label = %date% %time%
