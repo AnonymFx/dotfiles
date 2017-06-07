@@ -8,8 +8,8 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 # Get primary monitor and set environment variable to load the primary bar on this monitor
-WLAN="$(ls /sys/class/net | grep wlp)" \
-ETH="$(ls /sys/class/net | grep enp)" \
+WLAN="$(ls /sys/class/net | grep wl)" \
+ETH="$(ls /sys/class/net | grep en)" \
 BAT="$(ls /sys/class/power_supply | grep BAT)" \
 BAT_ADP="$(ls /sys/class/power_supply | grep A)" \
 MONITOR="$(xrandr -q | grep -e 'primary' | cut -d " " -f1 | head -n 1)" \
