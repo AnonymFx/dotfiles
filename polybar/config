@@ -21,8 +21,6 @@ alert = #bd2c40
 [bar/basebar]
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
@@ -238,7 +236,7 @@ interval = 3.0
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
-label-connected = %local_ip% %upspeed:8:8:%   %downspeed:8:8%
+label-connected = %upspeed:8:8:%   %downspeed:8:8%
 
 format-disconnected =
 
