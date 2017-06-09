@@ -284,6 +284,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-discharging-underline = ${colors.background-alt}
 
+label-full =  %percentage%%
 format-full-underline = ${colors.background-alt}
 
 ramp-capacity-0 = 
