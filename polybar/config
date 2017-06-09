@@ -42,7 +42,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = droidsansmono:pixelsize=11.25;1
-font-1 = materialicons:pixelsize=11;2
+font-1 = fontawesome:pixelsize=11;2
 font-2 = fixed:pixelsize=10;1
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-4 = siji:pixelsize=10;1
@@ -53,7 +53,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3
 modules-center = 
-modules-right = xbacklight volume wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
+modules-right = volume xbacklight wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -103,7 +103,7 @@ label = %title:1:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-underline = ${colors.background-alt}
 
 label-layout = %layout%
@@ -195,19 +195,9 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = " "
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-; bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+format = <label>
+format-underline = ${colors.background-alt}
+label =  %percentage:3:3%%
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -217,14 +207,14 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
+format-prefix = ""
 format-underline = ${colors.background-alt}
 label = %percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = ""
 format-underline = ${colors.background-alt}
 label = %percentage_used:3:3%%
 
@@ -233,51 +223,35 @@ type = internal/network
 interface = ${env:WLAN}
 interval = 3.0
 
-format-connected-prefix = " "
 format-connected = <label-connected>
+format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
-label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
+label-connected = %essid% %upspeed:8:8%   %downspeed:8:8%
+; label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-; ramp-signal-0 = " "
-; ramp-signal-1 = 
-; ramp-signal-2 = 
-; ramp-signal-3 = 
-; ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = ${env:ETH}
 interval = 3.0
 
-; format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
-label-connected = %local_ip% %upspeed:8:8:%  %downspeed:8:8%
+label-connected = %local_ip% %upspeed:8:8:%   %downspeed:8:8%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
 interval = 1
 
-date = " %Y-%m-%d"
+date = "%Y-%m-%d"
 date-alt = 
 
 time = %H:%M
 time-alt = 
 
-format-prefix = ""
 format-underline = ${colors.background-alt}
 
 label = %date% %time%
@@ -285,30 +259,18 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = " "
+format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.background-alt}
 label-volume-foreground = ${root.foreground}
+label-volume = %percentage:3:3%%
 
-format-muted-prefix = " "
+format-muted-prefix = " "
+format-muted-underline = ${colors.background-alt}
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = muted
 
-bar-volume-width = 10
-; bar-volume-foreground-0 = #55aa55
-; bar-volume-foreground-1 = #55aa55
-; bar-volume-foreground-2 = #55aa55
-; bar-volume-foreground-3 = #55aa55
-; bar-volume-foreground-4 = #55aa55
-; bar-volume-foreground-5 = #f5a70a
-; bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 [module/battery]
 type = internal/battery
@@ -316,41 +278,53 @@ battery = ${env:BAT}
 adapter = ${env:BAT_ADP}
 full-at = 95
 
-format-charging = <label-charging>
-format-charging-prefix = " "
+format-charging = <animation-charging> <label-charging>
 label-charging = %percentage%%
 format-charging-underline = ${colors.background-alt}
 
-format-discharging = <label-discharging>
-format-discharging-prefix = " "
+format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-discharging-underline = ${colors.background-alt}
 
-format-full-prefix = " "
-; format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.background-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 80
 
-format-prefix = " "
-format = <label>
+format = <ramp> <label>
 format-underline = ${colors.background-alt}
+label = %temperature%
+
 format-warn = <label-warn>
 format-warn-underline = ${colors.background-alt}
-
-label = %temperature%
-label-warn = %temperature%
+label-warn =  %temperature%
 label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
 
 [module/powermenu]
 type = custom/menu
 
 format-spacing = 1
 
-label-open = " "
+label-open = " "
 ; label-open-foreground = ${colors.secondary}
 label-close = cancel
 label-close-foreground = ${colors.secondary}

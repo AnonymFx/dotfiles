@@ -17,7 +17,7 @@ polybar bar1 &
 # Show the default bar for other monitors connected
 while read -r monitor; do
     MONITOR=$monitor \
-    polybar bar2 &
+    polybar bar1 &
 done <<< "$(xrandr -q | grep -e ' connected' | grep -v 'primary' | cut -d ' ' -f1)"
 
 echo "Bars launched..."
