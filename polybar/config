@@ -47,7 +47,7 @@ font-2 = fixed:pixelsize=10;1
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-4 = siji:pixelsize=10;1
 
-[bar/bar1]
+[bar/primarybar]
 inherit = bar/basebar
 monitor = ${env:MONITOR}
 
@@ -71,7 +71,7 @@ tray-padding = 2
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 ;
-[bar/bar2]
+[bar/secondarybar]
 inherit = bar/basebar
 monitor = ${env:MONITOR}
 
