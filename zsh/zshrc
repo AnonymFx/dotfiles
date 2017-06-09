@@ -139,6 +139,7 @@ alias tmux='TERM=xterm-256color tmux'
 alias tks='tmux kill-session -t'
 alias ta='tmux attach -t'
 alias tls='tmux ls'
+alias tns='tmux new-session -d -s'
 
 # adb
 alias adbba="adb backup -apk -obb -all -f"
