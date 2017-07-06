@@ -108,8 +108,8 @@ unalias cp
 
 alias cd..='cd ..'
 
-alias sd='shutdown now'
-alias rb='reboot'
+alias sd='systemctl poweroff -i'
+alias rb='systemctl reboot -i'
 
 alias paccc='sudo pacman -Sc'
 
