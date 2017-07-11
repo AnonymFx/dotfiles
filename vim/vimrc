@@ -182,12 +182,12 @@ noremap <leader>P "+P
 noremap <leader>y "+y
 
 " resize horizontal splits
-nnoremap <C-S-r>p :res +5<CR>
-nnoremap <C-S-r>m :res -5<CR>
+nnoremap <leader>hri :res +5<CR>
+nnoremap <leader>hrd :res -5<CR>
 
 "resize vertical splits
-nnoremap <C-r>p :vertical resize +5<CR>
-nnoremap <C-r>m :vertical resize -5<CR>
+nnoremap <leader>vri :vertical resize +5<CR>
+nnoremap <leader>vrd :vertical resize -5<CR>
 
 " change register leader key
 noremap <space> "
