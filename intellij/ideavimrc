@@ -25,6 +25,8 @@ map <A-l> :action NextSplitter<CR>
 map <A-j> :action NextSplitter<CR>
 map <A-k> :action PrevSplitter<CR>
 map <A-h> :action PrevSplitter<CR>
+map ]q :action GotoNextError<CR>
+map [q :action GotoPreviousError<CR>
 
 
 " --------------------------- Editing ------------------------------------------
