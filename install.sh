@@ -34,8 +34,8 @@ function install() {
         i3-gaps )
             ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
             ;;
-        intellij )
-            ln -snf $PWD/intellij/ideavimrc $HOME/.ideavimrc
+        ideavim )
+            ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
             ;;
         polybar )
             ln -snf $PWD/polybar/config $HOME/.config/polybar/config
@@ -93,7 +93,7 @@ else
         install git
         install gtk
         install i3-gaps
-        install intellij
+        install ideavim
         install polybar
         install readline
         install terminator
