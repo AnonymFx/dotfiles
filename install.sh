@@ -58,9 +58,12 @@ function install() {
             ln -snf $PWD/vim/vimrc $HOME/.vimrc
             ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
             ;;
-        neovim)
+        neovim )
             ln -snf $PWD/vim/vim $HOME/.config/nvim
             ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
+            ;;
+        vrapper )
+            ln -snf $PWD/vrapper/vrapperrc $HOME/.vrapperrc
             ;;
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
@@ -100,6 +103,7 @@ else
         install tmux
         install vim
         install neovim
+        install vrapper
         install zsh
         install X
     else
