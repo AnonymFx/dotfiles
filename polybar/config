@@ -9,13 +9,13 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #0d0503
-background-alt = #772f20
+background = #151716
+background-alt = #0049ae
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #444
 primary = #ffb52a
-secondary = #e60053
+secondary = #2bbcf3
 alert = #bd2c40
 
 [bar/basebar]

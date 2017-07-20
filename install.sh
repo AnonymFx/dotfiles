@@ -33,6 +33,7 @@ function install() {
             ;;
         i3-gaps )
             ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
+            ln -snf $PWD/i3-gaps/background.png $HOME/Pictures/i3-bg.png
             ;;
         ideavim )
             ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc

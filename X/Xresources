@@ -1,7 +1,7 @@
 ! ricing rofi
 rofi.color-enabled: true
-rofi.color-normal: #1a0a06, #ffffff, #1a0a06, #1a0a06, #772f20
-rofi.color-urgent: #1a0a06, #ffffff, #1a0a06, #1a0a06, #772f20
-rofi.color-active: #1a0a06, #ffffff, #1a0a06, #1a0a06, #772f20
-rofi.color-window: #1a0a06, #050201
+rofi.color-normal: #192124, #ffffff, #192124, #192124, #0049ae
+rofi.color-urgent: #192124, #ffffff, #192124, #192124, #0049ae
+rofi.color-active: #192124, #ffffff, #192124, #192124, #0049ae
+rofi.color-window: #192124, #151716
 rofi.separator-style: solid
