@@ -311,7 +311,7 @@ label = %temperature%
 format-warn = <label-warn>
 format-warn-underline = ${colors.background-alt}
 label-warn =  %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
 ramp-1 = 
