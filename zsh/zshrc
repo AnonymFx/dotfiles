@@ -148,8 +148,10 @@ alias adblp='adb shell "pm list packages -f"'
 
 alias rscp='rsync --progress -avz -e ssh'
 
-alias la='exa -lag --group-directories-first'
-alias l='exa -lg --group-directories-first'
+if exa="$(type -p exa)" && [ -n "$exa" ]; then
+    alias la='exa -lag --group-directories-first'
+    alias l='exa -lg --group-directories-first'
+fi
 
 # List directory after cd
 function chpwd(){
