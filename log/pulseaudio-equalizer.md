@@ -7,6 +7,12 @@ pactl load-module module-equalizer-sink
 pactl load-module module-dbus-protocol
 ```
 3. Run GUI frontend: `qpaeq`
+4. To start the equalizer on startup, add
+```
+load-module module-equalizer-sink
+load-module module-dbus-protocol
+```
+to `/etc/pulse/default.pa` or `~/.config/pulse/default.pa/`
 
 ## Troubleshooting
 * Equalizer not working:
