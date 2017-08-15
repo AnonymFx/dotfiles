@@ -223,3 +223,6 @@ exec_always feh --bg-scale ~/Pictures/i3-bg.png
 
 # Adapt monitor setup
 exec_always autorandr --change
+
+# Start udiskie (for automount)
+exec_always udiskie -N
