@@ -64,12 +64,6 @@ Plug 'honza/vim-snippets'
 " Better navigation between tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
 
-" Framework for xolox's plugins
-Plug 'xolox/vim-misc'
-
-" Easytags - automated tag file generation
-Plug 'xolox/vim-easytags'
-
 " TableMode - Table creation for vim
 Plug 'dhruvasagar/vim-table-mode'
 
@@ -112,15 +106,6 @@ noremap <leader>af :Autoformat<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g_ctrlp_working_path_mode = 'ra'
-
-" ------------------------------ Easytag ---------------------------------------
-set tags=./.vimtags;
-let g:easytags_events = ['BufWritePost']
-let g:easytags_python_enabled = 1
-let g:easytags_async = 1
-let g:easytags_autorecurse = 0
-let g:easytags_auto_highlight = 0
-let g:easytags_dynamic_files = 2
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
