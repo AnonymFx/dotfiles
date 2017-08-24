@@ -42,6 +42,9 @@ function install() {
             ln -snf $PWD/polybar/config $HOME/.config/polybar/config
             ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
             ;;
+        ranger )
+            ln -snf $PWD/ranger/rifle.conf $HOME/.config/ranger/rifle.conf
+            ;;
         readline )
             ln -snf $PWD/readline/inputrc $HOME/.inputrc
             ;;
@@ -99,6 +102,7 @@ else
         install i3-gaps
         install ideavim
         install polybar
+        install ranger
         install readline
         install terminator
         install tmux
