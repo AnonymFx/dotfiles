@@ -74,6 +74,7 @@ function install() {
             ;;
         X )
             ln -snf $PWD/X/Xresources $HOME/.Xresources
+            ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
             ;;
         esac
 }
