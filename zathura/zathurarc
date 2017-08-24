@@ -1,0 +1,2 @@
+# Set clipboard to system clipboard
+set selection-clipboard clipboard

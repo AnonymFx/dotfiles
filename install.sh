@@ -69,6 +69,9 @@ function install() {
         vrapper )
             ln -snf $PWD/vrapper/vrapperrc $HOME/.vrapperrc
             ;;
+        zathura )
+            ln -snf $PWD/zathura/zathurarc $HOME/.config/zathura/zathurarc
+            ;;
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
             ;;
@@ -110,6 +113,7 @@ else
         install vim
         install neovim
         install vrapper
+        install zathura
         install zsh
         install X
     else
