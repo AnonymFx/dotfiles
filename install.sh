@@ -120,6 +120,16 @@ else
         install zathura
         install zsh
         install X
+	elif [[ $1 == nogui ]]; then
+		install bash
+		install gdb
+		install git
+		install ranger
+		install readline
+		install tmux
+		install vim
+		install neovim
+		install zsh
     else
         echo "$1 is not a valid Target"
         print_help_msg
