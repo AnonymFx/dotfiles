@@ -138,7 +138,7 @@ vmap <S-CR> <Plug>IMAP_JumpForward
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<tab>'
+let g:SuperTabDefaultCompletionType = '<C-n>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_python_binary_path = 'python' " Enable python autocomplete
