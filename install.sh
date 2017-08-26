@@ -299,7 +299,7 @@ function install() {
 		echo "$OS_VERSION not supported"
 		exit 1
 	fi
-	echo "Do you want to install $TARGET [(Y)es/(n)o]: \c"
+	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 		install_dep $OS_VERSION $TARGET
