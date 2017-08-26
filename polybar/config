@@ -118,7 +118,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{A1: baobab:}%mountpoint%%{F-}: %percentage_used%%%{A}
 label-mounted-underline = ${colors.background-alt}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -207,24 +207,24 @@ type = internal/cpu
 interval = 2
 format-prefix = ""
 format-underline = ${colors.background-alt}
-label = %percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%
+label = %{A1: terminator -e htop:}%percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%%{A}
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = ""
 format-underline = ${colors.background-alt}
-label = %percentage_used:3:3%%
+label = %{A1: terminator -e htop:}%percentage_used:3:3%%%{A}
 
 [module/wlan]
 type = internal/network
 interface = ${env:WLAN}
-interval = 3.0
+interval = 1.0
 
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
-label-connected = %essid% %upspeed:8:8%   %downspeed:8:8%
+label-connected = %{A1: gnome-control-center network&:}%essid% %upspeed:8:8%   %downspeed:8:8%%{A}
 ; label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
@@ -232,7 +232,7 @@ format-disconnected =
 [module/eth]
 type = internal/network
 interface = ${env:ETH}
-interval = 3.0
+interval = 1.0
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
