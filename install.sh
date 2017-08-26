@@ -86,7 +86,7 @@ function get_package_list() {
 		i3-gaps )
 			case "$OS_VERSION" in
 				arch )
-					echo "i3-gaps"
+					echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udiskie"
 					return 0
 					;;
 			esac
@@ -102,7 +102,7 @@ function get_package_list() {
 		polybar )
 			case "$OS_VERSION" in
 				arch )
-					echo "polybar-git"
+					echo "polybar-git xbacklight"
 					return 0
 					;;
 			esac
@@ -182,7 +182,7 @@ function get_package_list() {
 		zsh )
 			case "$OS_VERSION" in
 				arch )
-					echo "zsh"
+					echo "zsh curl"
 					return 0
 					;;
 			esac
@@ -292,6 +292,59 @@ function link_config() {
         esac
 }
 
+function install_additional() {
+    local TARGET="$1"
+
+    case "$TARGET" in
+        autorandr )
+            ;;
+        bash )
+            ;;
+        dconf )
+            ;;
+        gdb )
+            ;;
+        git )
+            ;;
+        gtk )
+            ;;
+        i3-gaps )
+            ;;
+        ideavim )
+            ;;
+        polybar )
+            ;;
+        ranger )
+            ;;
+        readline )
+            ;;
+        terminator )
+            ;;
+        tmux )
+            ;;
+        vim )
+            ;;
+        neovim )
+            ;;
+        vimiv )
+            ;;
+        vrapper )
+            ;;
+        zathura )
+            ;;
+        zsh )
+			# Oh-My-Zsh
+			sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+			# Zsh autosuggestions plugin
+			git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+			# spaceship theme
+			curl https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+            ;;
+        X )
+            ;;
+        esac
+}
+
 function install() {
     local TARGET="$1"
 	local OS_VERSION="$(get_os)"
@@ -304,6 +357,7 @@ function install() {
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 		install_dep $OS_VERSION $TARGET
 		link_config $TARGET
+		install_additional $TARGET
 	fi
 }
 
