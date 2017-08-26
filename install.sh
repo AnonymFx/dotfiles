@@ -3,7 +3,29 @@ function print_help_msg() {
     cat <<-EOF
     Usage: install.sh TARGET
 
-    TARGET := {all, nogui}
+    TARGET := { all,
+                nogui
+                autorandr
+                dconf
+                bash
+                gdb
+                git
+                gtk
+                i3-gaps
+                ideavim
+                polybar
+                ranger
+                readline
+                terminator
+                tmux
+                vim
+                neovim
+                vimiv
+                vrapper
+                zathura
+                zsh
+                X
+              }
 EOF
 }
 
@@ -406,6 +428,46 @@ else
 		install vim
 		install neovim
 		install zsh
+	elif [[ $1 = autorandr ]]; then
+        install autorandr
+	elif [[ $1 = dconf ]]; then
+        install dconf
+	elif [[ $1 = bash ]]; then
+        install bash
+	elif [[ $1 = gdb ]]; then
+        install gdb
+	elif [[ $1 = git ]]; then
+        install git
+	elif [[ $1 = gtk ]]; then
+        install gtk
+	elif [[ $1 = i3 ]]; then
+        install i3-gaps
+	elif [[ $1 = ideavim ]]; then
+        install ideavim
+	elif [[ $1 = polybar ]]; then
+        install polybar
+	elif [[ $1 = ranger ]]; then
+        install ranger
+	elif [[ $1 = readline ]]; then
+        install readline
+	elif [[ $1 = terminator ]]; then
+        install terminator
+	elif [[ $1 = tmux ]]; then
+        install tmux
+	elif [[ $1 = vim ]]; then
+        install vim
+	elif [[ $1 = neovim ]]; then
+        install neovim
+	elif [[ $1 = vimiv ]]; then
+        install vimiv
+	elif [[ $1 = vrapper ]]; then
+        install vrapper
+	elif [[ $1 = zathura ]]; then
+        install zathura
+	elif [[ $1 = zsh ]]; then
+        install zsh
+	elif [[ $1 = X ]]; then
+        install X
     else
         echo "$1 is not a valid Target"
         print_help_msg
