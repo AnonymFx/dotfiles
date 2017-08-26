@@ -3,12 +3,219 @@ function print_help_msg() {
     cat <<-EOF
     Usage: install.sh TARGET
 
-    TARGET := {all}
+    TARGET := {all, nogui}
 EOF
 }
 
-function install() {
+function get_os() {
+	echo "$(cat /etc/os-release | head -3 | tail -1 | sed 's/ID=//')"
+}
+
+function get_packager_cmd() {
+	local OS_VERSION="$1"
+	case $OS_VERSION in
+		arch )
+			if yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
+				echo "yaourt -S"
+				return 0
+			elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+				echo "sudo pacman -S"
+				return 0
+			fi
+			;;
+		* )
+			echo ""
+			return 1
+			;;
+
+	esac
+}
+
+function get_package_list() {
+	OS_VERSION="$1"
+	TARGET="$2"
+	case $TARGET in
+		autorandr )
+			case "$OS_VERSION" in
+				arch )
+					echo "autorandr-git"
+					return 0
+					;;
+			esac
+			;;
+		dconf )
+			case "$OS_VERSION" in
+				arch )
+					echo "dconf"
+					return 0
+					;;
+			esac
+			;;
+		bash )
+			case "$OS_VERSION" in
+				arch )
+					echo "bash"
+					return 0
+					;;
+			esac
+			;;
+		gdb )
+			case "$OS_VERSION" in
+				arch )
+					echo "gdb"
+					return 0
+					;;
+			esac
+			;;
+		git )
+			case "$OS_VERSION" in
+				arch )
+					echo "git"
+					return 0
+					;;
+			esac
+			;;
+		gtk )
+			case "$OS_VERSION" in
+				arch )
+					echo "gtk3 gtk2"
+					return 0
+					;;
+			esac
+			;;
+		i3-gaps )
+			case "$OS_VERSION" in
+				arch )
+					echo "i3-gaps"
+					return 0
+					;;
+			esac
+			;;
+		ideavim )
+			case "$OS_VERSION" in
+				arch )
+					echo ""
+					return 1
+					;;
+			esac
+			;;
+		polybar )
+			case "$OS_VERSION" in
+				arch )
+					echo "polybar-git"
+					return 0
+					;;
+			esac
+			;;
+		ranger )
+			case "$OS_VERSION" in
+				arch )
+					echo "ranger"
+					return 0
+					;;
+			esac
+			;;
+		readline )
+			case "$OS_VERSION" in
+				arch )
+					echo "readline"
+					return 0
+					;;
+			esac
+			;;
+		terminator )
+			case "$OS_VERSION" in
+				arch )
+					echo "terminator"
+					return 0
+					;;
+			esac
+			;;
+		tmux )
+			case "$OS_VERSION" in
+				arch )
+					echo "tmux"
+					return 0
+					;;
+			esac
+			;;
+		vim )
+			case "$OS_VERSION" in
+				arch )
+					echo "gvim"
+					return 0
+					;;
+			esac
+			;;
+		neovim )
+			case "$OS_VERSION" in
+				arch )
+					echo "neovim"
+					return 0
+					;;
+			esac
+			;;
+		vimiv )
+			case "$OS_VERSION" in
+				arch )
+					echo "vimiv"
+					return 0
+					;;
+			esac
+			;;
+		vrapper )
+			case "$OS_VERSION" in
+				arch )
+					echo ""
+					return 1
+					;;
+			esac
+			;;
+		zathura )
+			case "$OS_VERSION" in
+				arch )
+					echo "zathura zathura-pdf-mupdf"
+					return 0
+					;;
+			esac
+			;;
+		zsh )
+			case "$OS_VERSION" in
+				arch )
+					echo "zsh"
+					return 0
+					;;
+			esac
+			;;
+		X )
+			case "$OS_VERSION" in
+				arch )
+					echo "xorg-server"
+					return 0
+					;;
+			esac
+			;;
+	esac
+
+	echo ""
+	return 1
+}
+
+function install_dep() {
+	local OS_VERSION="$1"
+	local TARGET="$2"
+
+	PACKAGER_COMMAND=$(get_packager_cmd $OS_VERSION)
+	PACKAGES=$(get_package_list $OS_VERSION $TARGET)
+
+	if [[ ! -z $PACKAGER_COMMAND ]] && [[ ! -z $PACKAGES ]]; then
+		eval $PACKAGER_COMMAND $PACKAGES
+	fi
+}
+
+function link_config() {
     local TARGET="$1"
+
     case "$TARGET" in
         autorandr )
             ln -snf $PWD/autorandr/postswitch $HOME/.config/autorandr/postswitch
@@ -16,7 +223,7 @@ function install() {
         bash )
             ln -snf $PWD/bash/bashrc $HOME/.bashrc
             ;;
-        dconf)
+        dconf )
             dconf load / < $PWD/dconf/keybindings
             ;;
         gdb )
@@ -83,6 +290,21 @@ function install() {
             ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
             ;;
         esac
+}
+
+function install() {
+    local TARGET="$1"
+	local OS_VERSION="$(get_os)"
+	if [[ -z $(get_packager_cmd $OS_VERSION) ]]; then
+		echo "$OS_VERSION not supported"
+		exit 1
+	fi
+	echo "Do you want to install $TARGET [(Y)es/(N)o]: \c"
+	read line
+	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+		install_dep $OS_VERSION $TARGET
+		link_config $TARGET
+	fi
 }
 
 # Check if script is called from the dotfiles folder
