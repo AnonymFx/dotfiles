@@ -53,6 +53,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=reset-prompt-and-accept-line
+ZSH_AUTOSUGGEST_USE_ASYNC=true
 plugins=(git archlinux colored-man-pages zsh-autosuggestions gitfast common-aliases sudo systemd vi-mode wd) 
 
 # User configuration
@@ -171,4 +173,3 @@ bindkey "^[OB" history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 bindkey "^?" backward-delete-char
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=reset-prompt-and-accept-line
