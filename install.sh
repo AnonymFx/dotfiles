@@ -370,14 +370,14 @@ function install_additional() {
 function install() {
     local TARGET="$1"
 	local OS_VERSION="$(get_os)"
-	if [[ -z $(get_packager_cmd $OS_VERSION) ]]; then
-		echo "$OS_VERSION not supported"
-		exit 1
-	fi
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		install_dep $OS_VERSION $TARGET
+		if [[ -z $(get_package_list $OS_VERSION) ]]; then
+			echo "$OS_VERSION not supported for installing $TARGET"
+		else
+			install_dep $OS_VERSION $TARGET
+		fi
 		install_additional $TARGET
 		link_config $TARGET
 	fi
