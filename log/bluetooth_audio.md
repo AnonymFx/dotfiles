@@ -7,6 +7,28 @@ Source: [Bluetooth Headset Arch Wiki](https://wiki.archlinux.org/index.php/Bluet
 2. Pair and connect to speaker/headset via bluetoothctl
 3. Set as output (e.g. in gnome settings GUI or via pactl set-default-sink)
 
+## Connect on startup
+1. enable switch-on-connect module in pulseaudio:
+```
+/etc/pulse/default.pa
+-------------------------------
+# automatically switch to newly-connected devices
+load-module module-switch-on-connect
+```
+2. Trust bluetooth device:
+```
+bluetoothctl (executable)
+-------------------------------
+trust MAC_ADDRESS_OF_DEVICE
+```
+3. Power on bluetooth after boot
+```
+/etc/bluetooth/main.conf
+-------------------------------
+[Policy]
+AutoEnable=true
+```
+
 ## Troubleshooting
 
 ### No audio playing when using GDM
