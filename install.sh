@@ -378,8 +378,8 @@ function install() {
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 		install_dep $OS_VERSION $TARGET
-		link_config $TARGET
 		install_additional $TARGET
+		link_config $TARGET
 	fi
 }
 
