@@ -240,6 +240,7 @@ function link_config() {
 
     case "$TARGET" in
         autorandr )
+			mkdir -p $HOME/.config/autorandr
             ln -snf $PWD/autorandr/postswitch $HOME/.config/autorandr/postswitch
             ;;
         bash )
@@ -257,10 +258,13 @@ function link_config() {
             git config --global core.excludesfile $HOME/.gitignore_global
             ;;
         gtk )
+			mkdir -p $HOME/.config/gtk-3.0
             ln -snf $PWD/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
             ln -snf $PWD/gtk/gtk-3.0-settings.ini $HOME/.config/gtk-3.0/settings.ini
             ;;
         i3-gaps )
+			mkdir -p $HOME/.config/i3
+			mkdir -p $HOME/Pictures
             ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
             ln -snf $PWD/i3-gaps/background.png $HOME/Pictures/i3-bg.png
             ;;
@@ -268,10 +272,12 @@ function link_config() {
             ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
             ;;
         polybar )
+			mkdir -p $HOME/.config/polybar
             ln -snf $PWD/polybar/config $HOME/.config/polybar/config
             ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
             ;;
         ranger )
+			mkdir -p $HOME/.config/ranger
             ln -snf $PWD/ranger/rifle.conf $HOME/.config/ranger/rifle.conf
             ;;
         readline )
@@ -292,6 +298,7 @@ function link_config() {
             ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
             ;;
         neovim )
+			mkdir -p $HOME/.config/nvim
             ln -snf $PWD/vim/vim $HOME/.config/nvim
             ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
             ;;
@@ -302,12 +309,14 @@ function link_config() {
             ln -snf $PWD/vrapper/vrapperrc $HOME/.vrapperrc
             ;;
         zathura )
+			mkdir -p $HOME/.config/zathura
             ln -snf $PWD/zathura/zathurarc $HOME/.config/zathura/zathurarc
             ;;
         zsh )
             ln -snf $PWD/zsh/zshrc $HOME/.zshrc
             ;;
         X )
+			mkdir -p $HOME/.config
             ln -snf $PWD/X/Xresources $HOME/.Xresources
             ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
             ;;
@@ -373,7 +382,7 @@ function install() {
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		if [[ -z $(get_package_list $OS_VERSION) ]]; then
+		if [[ -z $(get_package_list $OS_VERSION $TARGET) ]]; then
 			echo "$OS_VERSION not supported for installing $TARGET"
 		else
 			install_dep $OS_VERSION $TARGET
