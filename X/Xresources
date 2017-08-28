@@ -5,3 +5,6 @@ rofi.color-urgent: #192124, #ffffff, #192124, #192124, #0049ae
 rofi.color-active: #192124, #ffffff, #192124, #192124, #0049ae
 rofi.color-window: #192124, #151716
 rofi.separator-style: solid
+
+! X cursor size
+Xcursor.size: 32
