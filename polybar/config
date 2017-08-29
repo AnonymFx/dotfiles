@@ -50,7 +50,7 @@ inherit = bar/basebar
 monitor = ${env:MONITOR}
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = volume xbacklight wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 
 tray-position = right
@@ -74,7 +74,7 @@ inherit = bar/basebar
 monitor = ${env:MONITOR}
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = date
 
 tray-position = right
@@ -92,10 +92,6 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:1:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
