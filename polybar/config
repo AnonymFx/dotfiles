@@ -204,7 +204,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = ""
 format-underline = ${colors.background-alt}
 label = %{A1: terminator -e htop:}%percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%%{A}
@@ -219,7 +219,7 @@ label = %{A1: terminator -e htop:}%percentage_used:3:3%%%{A}
 [module/wlan]
 type = internal/network
 interface = ${env:WLAN}
-interval = 1.0
+interval = 1
 
 format-connected = <label-connected>
 format-connected-prefix = " "
@@ -232,7 +232,7 @@ format-disconnected =
 [module/eth]
 type = internal/network
 interface = ${env:ETH}
-interval = 1.0
+interval = 1
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.background-alt}
@@ -276,8 +276,8 @@ battery = ${env:BAT}
 adapter = ${env:BAT_ADP}
 full-at = 95
 
-format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%%
+format-charging = <label-charging>
+label-charging =  %percentage%%
 format-charging-underline = ${colors.background-alt}
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -292,12 +292,6 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
 
 [module/temperature]
 type = internal/temperature
