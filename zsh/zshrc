@@ -112,44 +112,72 @@ alias cd..='cd ..'
 alias sd='systemctl poweroff -i'
 alias rb='systemctl reboot -i'
 
-alias paccc='sudo pacman -Sc'
-
-# Vim
-alias gv='gvim --remote-silent'
-alias gvn='gvim -c NERDTree'
-alias vin='vim -c NERDTree'
-
-# Git
-alias gdt='git difftool'
-
-alias open='xdg-open 2>/dev/null 1>&2'
-
-alias gpu='DRI_PRIME=1'
-
 alias mmv='noglob zmv -W'
 
+# pacman ###############################
+if pacman="$(type -p pacman)" && [ -n "$pacman" ]; then
+	alias paccc='sudo pacman -Sc'
+fi
+
+# vim ##################################
+if gvim="$(type -p gvim)" && [ -n "$gvim" ]; then
+	alias gv='gvim --remote-silent'
+	alias gvn='gvim -c NERDTree'
+fi
+if vim="$(type -p vim)" && [ -n "$vim" ]; then
+	alias vin='vim -c NERDTree'
+fi
+
+# git ##################################
+if git="$(type -p git)" && [ -n "$git" ]; then
+	alias gdt='git difftool'
+fi
+
+# xdg-open #############################
+if xdg_open="$(type -p xdg-open)" && [ -n "$xdg_open" ]; then
+	alias open='xdg-open 2>/dev/null 1>&2'
+fi
+
+# dedicated graphics card ##############
+if optirun="$(type -p optirun)" && [ -n "$optirun" ]; then
+	alias gpu='optirun'
+else
+	alias gpu='DRI_PRIME=1'
+fi
+
+
 # Google Drive
-alias dup='drive pull'
-alias dupnp='drive pull -no-prompt'
-alias dp='drive push'
-alias dpnp='drive push -no-promt'
-alias ddi='drive diff -skip-content-check'
+if drive="$(type -p drive)" && [ -n "$drive" ]; then
+	alias dup='drive pull'
+	alias dupnp='drive pull -no-prompt'
+	alias dp='drive push'
+	alias dpnp='drive push -no-promt'
+	alias ddi='drive diff -skip-content-check'
+fi
 
 # tmux
-alias tmux='TERM=xterm-256color tmux'
-alias tks='tmux kill-session -t'
-alias ta='tmux attach -t'
-alias tls='tmux ls'
-alias tns='tmux new-session -d -s'
+if tmux="$(type -p tmux)" && [ -n "$tmux" ]; then
+	alias tmux='TERM=xterm-256color tmux'
+	alias tks='tmux kill-session -t'
+	alias ta='tmux attach -t'
+	alias tls='tmux ls'
+	alias tns='tmux new-session -d -s'
+fi
 
 # adb
-alias adbba="adb backup -apk -obb -all -f"
-alias adbb="adb backup -apk -obb -f"
-alias adblp='adb shell "pm list packages -f"'
+if adb="$(type -p adb)" && [ -n "$adb" ]; then
+	alias adbba="adb backup -apk -obb -all -f"
+	alias adbb="adb backup -apk -obb -f"
+	alias adblp='adb shell "pm list packages -f"'
+fi
 
-alias rscp='rsync --progress -avz -e ssh'
-alias pcp='rsync --info=progress2'
+# rsync ################################
+if rsync="$(type -p rsync)" && [ -n "$rsync" ]; then
+	alias rscp='rsync --progress -avz -e ssh'
+	alias pcp='rsync --info=progress2'
+fi
 
+# exa ##################################
 if exa="$(type -p exa)" && [ -n "$exa" ]; then
     alias la='exa -lag --group-directories-first'
     alias l='exa -lg --group-directories-first'
