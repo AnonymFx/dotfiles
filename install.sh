@@ -108,7 +108,7 @@ function get_package_list() {
 		i3-gaps )
 			case "$OS_VERSION" in
 				arch )
-					echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udiskie"
+					echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udevil"
 					return 0
 					;;
 			esac
@@ -233,6 +233,139 @@ function install_dep() {
 	if [[ ! -z $PACKAGER_COMMAND ]] && [[ ! -z $PACKAGES ]]; then
 		eval $PACKAGER_COMMAND $PACKAGES
 	fi
+}
+
+function post_install() {
+	local OS_VERSION="$1"
+	local TARGET="$2"
+
+	case $TARGET in
+		autorandr )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		dconf )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		bash )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		gdb )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		git )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		gtk )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		i3-gaps )
+			case "$OS_VERSION" in
+				arch )
+					echo "Enabling udevil automount service"
+					sudo systemctl enable --now
+					;;
+			esac
+			;;
+		ideavim )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		polybar )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		ranger )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		readline )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		terminator )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		tmux )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		vim )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		neovim )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		vimiv )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		vrapper )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		zathura )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		zsh )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+		X )
+			case "$OS_VERSION" in
+				arch )
+					;;
+			esac
+			;;
+	esac
+
+	echo ""
+	return 1
 }
 
 function link_config() {
@@ -386,6 +519,7 @@ function install() {
 			echo "$OS_VERSION not supported for installing $TARGET"
 		else
 			install_dep $OS_VERSION $TARGET
+			post_install $OS_VERSION $TARGET
 		fi
 		install_additional $TARGET
 		link_config $TARGET

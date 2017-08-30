@@ -225,6 +225,3 @@ exec_always ~/.config/polybar/launch.sh
 
 # Set wallpaper
 exec_always feh --bg-scale ~/Pictures/i3-bg.png
-
-# Start udiskie (for automount)
-exec_always udiskie -N
