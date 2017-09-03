@@ -501,6 +501,8 @@ function install_additional() {
 			sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 			# Zsh autosuggestions plugin
 			git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+			# Zsh syntax highlighting
+			git clone git://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 			# spaceship theme
 			curl https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh -o $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
             ;;
