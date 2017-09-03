@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Start rofi (window switcher)
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -show -lines 10 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12" -rnow'
+bindsym $mod+d exec i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -i -show -lines 10 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12" -rnow'
 
 # Disable focus follow mouse
 focus_follows_mouse no
