@@ -8,15 +8,14 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #151716
-background-alt = #0049ae
-;foreground = ${xrdb:color7:#222}
+background = #00000000
+background-highlight = #41d9d9
 foreground = #dfdfdf
 foreground-alt = #444
+underline=#41d9d9
 primary = #ffb52a
 secondary = #2bbcf3
-alert = #bd2c40
+alert = #da4141
 
 [bar/basebar]
 width = 100%
@@ -55,20 +54,7 @@ modules-right = volume xbacklight wlan eth filesystem memory cpu temperature bat
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-;
 [bar/secondarybar]
 inherit = bar/basebar
 monitor = ${env:MONITOR}
@@ -79,34 +65,20 @@ modules-right = date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-underline = ${colors.background-alt}
+format-prefix-underline = ${colors.underline}
 
 label-layout = %layout%
-label-layout-underline = ${colors.background-alt}
+label-layout-underline = ${colors.underline}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-; label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -115,29 +87,10 @@ interval = 25
 mount-0 = /
 
 label-mounted = %{A1: baobab:}%mountpoint%%{F-}: %percentage_used%%%{A}
-label-mounted-underline = ${colors.background-alt}
+label-mounted-underline = ${colors.underline}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-label-unmounted-underline = ${colors.background-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-; label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-unmounted-underline = ${colors.underline}
 
 [module/i3]
 type = internal/i3
@@ -154,43 +107,30 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-; label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-foreground = #000
+label-focused-background = ${colors.background-highlight}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
+label-visible-foreground = ${self.label-focused-foreground}
 label-visible-background = ${self.label-focused-background}
-; label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
 
 format = <label>
-format-underline = ${colors.background-alt}
+format-underline = ${colors.underline}
 label =  %percentage:3:3%%
 
 [module/backlight-acpi]
@@ -202,14 +142,14 @@ card = intel_backlight
 type = internal/cpu
 interval = 1
 format-prefix = ""
-format-underline = ${colors.background-alt}
+format-underline = ${colors.underline}
 label = %{A1: terminator -e htop:}%percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%%{A}
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = ""
-format-underline = ${colors.background-alt}
+format-underline = ${colors.underline}
 label = %{A1: terminator -e htop:}%percentage_used:3:3%%%{A}
 
 [module/wlan]
@@ -219,7 +159,7 @@ interval = 1
 
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-underline = ${colors.background-alt}
+format-connected-underline = ${colors.underline}
 label-connected = %{A1: gnome-control-center network&:}%essid% %upspeed:8:8%   %downspeed:8:8%%{A}
 ; label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
@@ -231,7 +171,7 @@ interface = ${env:ETH}
 interval = 1
 
 format-connected-prefix = " "
-format-connected-underline = ${colors.background-alt}
+format-connected-underline = ${colors.underline}
 label-connected = %upspeed:8:8:%   %downspeed:8:8%
 
 format-disconnected =
@@ -241,25 +181,21 @@ type = internal/date
 interval = 1
 
 date = "%Y-%m-%d"
-date-alt = 
-
 time = %H:%M
-time-alt = 
-
-format-underline = ${colors.background-alt}
 
 label = %date% %time%
+format-underline = ${colors.underline}
 
 [module/volume]
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-underline = ${colors.background-alt}
+format-volume-underline = ${colors.underline}
 label-volume-foreground = ${root.foreground}
 label-volume = %percentage:3:3%%
 
 format-muted-prefix = " "
-format-muted-underline = ${colors.background-alt}
+format-muted-underline = ${colors.underline}
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = muted
 
@@ -274,14 +210,14 @@ full-at = 95
 
 format-charging = <label-charging>
 label-charging =  %percentage%%
-format-charging-underline = ${colors.background-alt}
+format-charging-underline = ${colors.underline}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
-format-discharging-underline = ${colors.background-alt}
+format-discharging-underline = ${colors.underline}
 
 label-full =  %percentage%%
-format-full-underline = ${colors.background-alt}
+format-full-underline = ${colors.underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -295,11 +231,11 @@ thermal-zone = 0
 warn-temperature = 80
 
 format = <ramp> <label>
-format-underline = ${colors.background-alt}
+format-underline = ${colors.underline}
 label = %temperature%
 
 format-warn = <label-warn>
-format-warn-underline = ${colors.background-alt}
+format-warn-underline = ${colors.underline}
 label-warn =  %temperature%
 label-warn-foreground = ${colors.alert}
 
@@ -337,13 +273,7 @@ menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-
-; vim:ft=dosini
