@@ -473,6 +473,8 @@ function install_additional() {
         gtk )
             ;;
         i3-gaps )
+			echo 'Enabling udevil for automounting'
+			sudo systemctl enable --now 'devmon@$USER.service'
             ;;
         ideavim )
             ;;
