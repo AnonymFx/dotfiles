@@ -172,7 +172,7 @@ interval = 1
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %upspeed:8:8:%   %downspeed:8:8%
+label-connected = %{A1: gnome-control-center network&:}%upspeed:8:8:%   %downspeed:8:8%%{A}
 
 format-disconnected =
 
