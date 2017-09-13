@@ -134,6 +134,10 @@ nmap <C-Space> <Plug>Tex_FastEnvironmentInsert
 imap <S-CR> <Plug>IMAP_JumpForward
 nmap <S-CR> <Plug>IMAP_JumpForward
 vmap <S-CR> <Plug>IMAP_JumpForward
+let g:Tex_Env_figure="\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>"
+let g:Tex_Env_enumerate="\\begin{enumerate}\<CR>\\item <++>\<CR>\\end{enumerate}<++>"
+let g:Tex_Env_itemize="\\begin{itemize}\<CR>\\item <++>\<CR>\\end{itemize}<++>"
+
 
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -269,7 +273,6 @@ autocmd FileType python setlocal fileformat=unix
 autocmd FileType tex set iskeyword+=:
 " Ctrl+Shift+b for building
 autocmd FileType tex noremap <C-S-b> :w<CR>:!make<CR>
-autocmd FileType tex imap <C-j> <Plug>IMAP_JumpForward
 
 
 " ------------------------------------------------------------------------------
