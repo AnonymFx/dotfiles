@@ -216,9 +216,6 @@ set smartcase
 " Highlight all occurrences of word under cursor
 autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
 
-" create tags file relative to pwd instead of file
-set cpo+=d
-
 " folding
 set foldmethod=syntax
 set foldlevelstart=1
@@ -252,6 +249,7 @@ hi Normal ctermbg=none
 autocmd FileType javascript setlocal tabstop=4
 
 " ------------------ Markdown --------------------
+autocmd FileType markdown set foldmethod=indent
 autocmd FileType markdown set foldlevel=1
 
 " ------------------ Python ----------------------
