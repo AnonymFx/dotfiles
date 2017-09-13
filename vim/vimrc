@@ -221,7 +221,7 @@ set cpo+=d
 
 " folding
 set foldmethod=syntax
-set foldlevelstart=0
+set foldlevelstart=1
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP
