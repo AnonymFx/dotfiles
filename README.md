@@ -4,9 +4,8 @@ Use at own risk.
 
 ## Installation
 There is an install script available for the following distros in their respective branches:
-
-	* Arch
-	* Ubuntu (only linking currently)
+* Arch
+* Ubuntu (only linking currently)
 
 You might want to merge master before installing, it's not guaranteed that the distro branches are up to date.
 
