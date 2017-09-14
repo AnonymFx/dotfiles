@@ -29,193 +29,94 @@ function print_help_msg() {
 EOF
 }
 
-function get_os() {
-	echo "$(cat /etc/os-release | head -3 | tail -1 | sed 's/ID=//')"
-}
-
 function get_packager_cmd() {
-	local OS_VERSION="$1"
-	case $OS_VERSION in
-		arch )
-			if yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
-				echo "yaourt -S"
-				return 0
-			elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
-				echo "sudo pacman -S"
-				return 0
-			fi
-			;;
-		* )
-			echo ""
-			return 1
-			;;
-
-	esac
+	if yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
+		echo "yaourt -S"
+		return 0
+	elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+		echo "sudo pacman -S"
+		return 0
+	fi
 }
 
 function get_package_list() {
-	OS_VERSION="$1"
-	TARGET="$2"
+	TARGET="$1"
 	case $TARGET in
 		autorandr )
-			case "$OS_VERSION" in
-				arch )
-					echo "autorandr-git"
-					return 0
-					;;
-			esac
+			echo "autorandr-git"
+			return 0
 			;;
 		dconf )
-			case "$OS_VERSION" in
-				arch )
-					echo "dconf"
-					return 0
-					;;
-			esac
+			echo "dconf"
+			return 0
 			;;
 		bash )
-			case "$OS_VERSION" in
-				arch )
-					echo "bash"
-					return 0
-					;;
-			esac
+			echo "bash"
+			return 0
 			;;
 		gdb )
-			case "$OS_VERSION" in
-				arch )
-					echo "gdb"
-					return 0
-					;;
-			esac
+			echo "gdb"
+			return 0
 			;;
 		git )
-			case "$OS_VERSION" in
-				arch )
-					echo "git"
-					return 0
-					;;
-			esac
+			echo "git"
+			return 0
 			;;
 		gtk )
-			case "$OS_VERSION" in
-				arch )
-					echo "gtk3 gtk2"
-					return 0
-					;;
-			esac
+			echo "gtk3 gtk2"
+			return 0
 			;;
 		i3-gaps )
-			case "$OS_VERSION" in
-				arch )
-					echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udevil"
-					return 0
-					;;
-			esac
+			echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udevil"
+			return 0
 			;;
 		ideavim )
-			case "$OS_VERSION" in
-				arch )
-					echo ""
-					return 1
-					;;
-			esac
+			echo ""
+			return 1
 			;;
 		polybar )
-			case "$OS_VERSION" in
-				arch )
-					echo "polybar-git xbacklight"
-					return 0
-					;;
-			esac
+			echo "polybar-git xbacklight"
+			return 0
 			;;
 		ranger )
-			case "$OS_VERSION" in
-				arch )
-					echo "ranger"
-					return 0
-					;;
-			esac
+			echo "ranger"
+			return 0
 			;;
 		readline )
-			case "$OS_VERSION" in
-				arch )
-					echo "readline"
-					return 0
-					;;
-			esac
+			echo "readline"
+			return 0
 			;;
 		terminator )
-			case "$OS_VERSION" in
-				arch )
-					echo "terminator"
-					return 0
-					;;
-			esac
+			echo "terminator"
+			return 0
 			;;
 		tmux )
-			case "$OS_VERSION" in
-				arch )
-					echo "tmux"
-					return 0
-					;;
-			esac
+			echo "tmux"
+			return 0
 			;;
 		vim )
-			case "$OS_VERSION" in
-				arch )
-					echo "gvim"
-					return 0
-					;;
-			esac
+			echo "gvim"
+			return 0
 			;;
 		neovim )
-			case "$OS_VERSION" in
-				arch )
-					echo "neovim"
-					return 0
-					;;
-			esac
+			echo "neovim"
+			return 0
 			;;
 		vimiv )
-			case "$OS_VERSION" in
-				arch )
-					echo "vimiv"
-					return 0
-					;;
-			esac
-			;;
-		vrapper )
-			case "$OS_VERSION" in
-				arch )
-					echo ""
-					return 1
-					;;
-			esac
+			echo "vimiv"
+			return 0
 			;;
 		zathura )
-			case "$OS_VERSION" in
-				arch )
-					echo "zathura zathura-pdf-mupdf"
-					return 0
-					;;
-			esac
+			echo "zathura zathura-pdf-mupdf"
+			return 0
 			;;
 		zsh )
-			case "$OS_VERSION" in
-				arch )
-					echo "zsh curl"
-					return 0
-					;;
-			esac
+			echo "zsh curl"
+			return 0
 			;;
 		X )
-			case "$OS_VERSION" in
-				arch )
-					echo "xorg-server"
-					return 0
-					;;
-			esac
+			echo "xorg-server"
+			return 0
 			;;
 	esac
 
@@ -223,12 +124,13 @@ function get_package_list() {
 	return 1
 }
 
-function install_dep() {
-	local OS_VERSION="$1"
-	local TARGET="$2"
+function install_packages() {
+	local TARGET="$1"
 
-	PACKAGER_COMMAND=$(get_packager_cmd $OS_VERSION)
-	PACKAGES=$(get_package_list $OS_VERSION $TARGET)
+	PACKAGER_COMMAND=$(get_packager_cmd)
+	PACKAGES=$(get_package_list $TARGET)
+
+	echo "Installing $PACKAGES with $PACKAGER_COMMAND"
 
 	if [[ ! -z $PACKAGER_COMMAND ]] && [[ ! -z $PACKAGES ]]; then
 		eval $PACKAGER_COMMAND $PACKAGES
@@ -236,131 +138,12 @@ function install_dep() {
 }
 
 function post_install() {
-	local OS_VERSION="$1"
-	local TARGET="$2"
+	local TARGET="$1"
 
 	case $TARGET in
-		autorandr )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		dconf )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		bash )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		gdb )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		git )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		gtk )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
 		i3-gaps )
-			case "$OS_VERSION" in
-				arch )
-					echo "Enabling udevil automount service"
-					sudo systemctl enable --now
-					;;
-			esac
-			;;
-		ideavim )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		polybar )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		ranger )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		readline )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		terminator )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		tmux )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		vim )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		neovim )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		vimiv )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		vrapper )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		zathura )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		zsh )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
-			;;
-		X )
-			case "$OS_VERSION" in
-				arch )
-					;;
-			esac
+			echo "Enabling udevil automount service"
+			sudo systemctl enable --now
 			;;
 	esac
 
@@ -370,6 +153,8 @@ function post_install() {
 
 function link_config() {
     local TARGET="$1"
+
+	echo "Linking config files for $TARGET"
 
     case "$TARGET" in
         autorandr )
@@ -460,75 +245,70 @@ function install_additional() {
     local TARGET="$1"
 
     case "$TARGET" in
-        autorandr )
-            ;;
-        bash )
-            ;;
-        dconf )
-            ;;
-        gdb )
-            ;;
-        git )
-            ;;
-        gtk )
-            ;;
-        i3-gaps )
-			echo 'Enabling udevil for automounting'
-			sudo systemctl enable --now 'devmon@$USER.service'
-            ;;
-        ideavim )
-            ;;
-        polybar )
-            ;;
-        ranger )
-            ;;
-        readline )
-            ;;
-        terminator )
-            ;;
-        tmux )
-            ;;
-        vim )
-            ;;
-        neovim )
-            ;;
-        vimiv )
-            ;;
-        vrapper )
-            ;;
-        zathura )
-            ;;
         zsh )
 			# Oh-My-Zsh
+			echo "Installing oh-my-zsh"
 			sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 			# Zsh autosuggestions plugin
-			git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+			if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
+				echo "Updating zsh-autosuggestions"
+				pushd $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+				git pull
+				popd
+			else
+				echo "Installing zsh-autosuggestions"
+				git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+			fi
 			# Zsh syntax highlighting
-			git clone git://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+			if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
+				echo "Updating zsh-syntax-highlighting"
+				pushd $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+				git pull
+				popd
+			else
+				echo "Installing zsh-syntax-highlighting"
+				git clone git://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+			fi
 			# spaceship theme
+			echo "Installing/Updating spaceship theme"
 			curl https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh -o $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
-            ;;
-        X )
             ;;
         esac
 }
 
 function install() {
     local TARGET="$1"
-	local OS_VERSION="$(get_os)"
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		if [[ -z $(get_package_list $OS_VERSION $TARGET) ]]; then
-			echo "$OS_VERSION not supported for installing $TARGET"
-		else
-			install_dep $OS_VERSION $TARGET
-			post_install $OS_VERSION $TARGET
-		fi
+		install_packages $TARGET
 		install_additional $TARGET
+		post_install $TARGET
 		link_config $TARGET
 	fi
 }
+
+echo "Running the install script for Arch Linux"
+echo "-----------------------------------------"
+echo "                   ##"
+echo "                  ####"
+echo "                 ######"
+echo "                ########"
+echo "               ##########"
+echo "              ############"
+echo "             ##############"
+echo "            ################"
+echo "           ##################"
+echo "          ####################"
+echo "         ######################"
+echo "        #########      #########"
+echo "       ##########      ##########"
+echo "      ###########      ###########"
+echo "     ##########          ##########"
+echo "    #######                  #######"
+echo "   ####                          ####"
+echo "  ###                              ###"
+echo "-----------------------------------------"
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
