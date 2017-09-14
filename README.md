@@ -5,8 +5,7 @@ Use at own risk.
 ## Installation
 There is an install script available for the following distros in their respective branches:
 	* Arch
-Planned distros (no guarantee if or when):
-	* Ubuntu
+	* Ubuntu (only linking currently)
 
 
 **Warning**: The linking currently is only available in force mode, so if the files already exist, they will be overwritten.  
