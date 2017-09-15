@@ -30,6 +30,8 @@ EOF
 }
 
 function get_packager_cmd() {
+	echo ""
+	return 1
 }
 
 function get_package_list() {
@@ -205,7 +207,7 @@ function install() {
 echo "This is a template script, use the ones in the distro branches"
 echo "Remember to merge master before installing"
 echo "Aborting!"
-return 1
+exit 1
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
