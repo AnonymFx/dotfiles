@@ -202,6 +202,7 @@ function install() {
 }
 
 echo "This is a template script, use the ones in the distro branches"
+echo "Remember to merge master before installing"
 echo "Aborting!"
 return 1
 
