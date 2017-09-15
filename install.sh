@@ -86,6 +86,7 @@ function link_config() {
             ;;
         git )
             ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
+			ln -snf $PWD/git/gitconfig $HOME/.gitconfig
             git config --global core.excludesfile $HOME/.gitignore_global
             ;;
         gtk )
