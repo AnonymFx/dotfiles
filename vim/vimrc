@@ -131,6 +131,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-S-P>"
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 nmap <C-Space> <Plug>Tex_FastEnvironmentInsert 
+imap <C-j> <Plug>IMAP_JumpForward
 imap <S-CR> <Plug>IMAP_JumpForward
 nmap <S-CR> <Plug>IMAP_JumpForward
 vmap <S-CR> <Plug>IMAP_JumpForward
