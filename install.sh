@@ -205,9 +205,18 @@ function install() {
 }
 
 echo "This is a template script, use the ones in the distro branches"
-echo "Remember to merge master before installing"
 echo "Aborting!"
 exit 1
+
+echo "Trying to merge master branch..."
+if git_loc="$(type -p git)" && [ -n "$(git_loc)" ]; then
+	if git_dir="$(git rev-parse --git-dir > /dev/null 2>&1)" && [ -d git_dir ]; then
+		if ! "$(git merge master)"; then
+			echo "There were some merge conflicts, please resolve them and run the script again."
+			return 1
+		fi
+	fi
+fi
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
