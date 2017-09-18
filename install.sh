@@ -1,7 +1,7 @@
 #!/bin/bash
 function print_help_msg() {
-    cat <<-EOF
-    Usage: install.sh TARGET
+	cat <<-EOF
+	Usage: install.sh TARGET
 
     TARGET := { all,
                 nogui
@@ -314,10 +314,28 @@ echo "-----------------------------------------"
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
 if [[ $0 != "./install.sh" ]]; then
-    echo "Please execute the install script in the dotfiles folder"
-    exit 1
+	echo "Please execute the install script in the dotfiles folder"
+	exit 1
 fi
 
+echo "Trying to find git repository to merge master branch..."
+if git_loc="$(type -p git)" && [ -n "$(git_loc)" ]; then
+	if git_dir="$(git rev-parse --git-dir > /dev/null 2>&1)" && [ -d git_dir ]; then
+		echo "Starting merge..."
+		if ! "$(git merge master)"; then
+			echo "There were some merge conflicts, please resolve them and run the script again."
+			return 1
+		else
+			echo "Success!"
+		fi
+	else
+		echo "Git repository not found, continuing without merging"
+	fi
+else
+	echo "Git command not found, continuing without merging"
+fi
+
+echo "Starting installation..."
 if [[ $# -eq 0 ]]; then
     print_help_msg
     exit 0
@@ -357,47 +375,47 @@ else
 		install neovim
 		install zsh
 	elif [[ $1 = autorandr ]]; then
-        install autorandr
+		install autorandr
 	elif [[ $1 = dconf ]]; then
-        install dconf
+		install dconf
 	elif [[ $1 = bash ]]; then
-        install bash
+		install bash
 	elif [[ $1 = gdb ]]; then
-        install gdb
+		install gdb
 	elif [[ $1 = git ]]; then
-        install git
+		install git
 	elif [[ $1 = gtk ]]; then
-        install gtk
+		install gtk
 	elif [[ $1 = i3 ]]; then
-        install i3-gaps
+		install i3-gaps
 	elif [[ $1 = ideavim ]]; then
-        install ideavim
+		install ideavim
 	elif [[ $1 = polybar ]]; then
-        install polybar
+		install polybar
 	elif [[ $1 = ranger ]]; then
-        install ranger
+		install ranger
 	elif [[ $1 = readline ]]; then
-        install readline
+		install readline
 	elif [[ $1 = terminator ]]; then
-        install terminator
+		install terminator
 	elif [[ $1 = tmux ]]; then
-        install tmux
+		install tmux
 	elif [[ $1 = vim ]]; then
-        install vim
+		install vim
 	elif [[ $1 = neovim ]]; then
-        install neovim
+		install neovim
 	elif [[ $1 = vimiv ]]; then
-        install vimiv
+		install vimiv
 	elif [[ $1 = vrapper ]]; then
-        install vrapper
+		install vrapper
 	elif [[ $1 = zathura ]]; then
-        install zathura
+		install zathura
 	elif [[ $1 = zsh ]]; then
-        install zsh
+		install zsh
 	elif [[ $1 = X ]]; then
-        install X
-    else
-        echo "$1 is not a valid Target"
-        print_help_msg
-    fi
+		install X
+	else
+		echo "$1 is not a valid Target"
+		print_help_msg
+	fi
 fi
