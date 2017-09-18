@@ -56,11 +56,6 @@ Plug 'ervandew/supertab'
 " Autoformat files
 Plug 'Chiel92/vim-autoformat'
 
-" Ultisnips - snippet engine
-Plug 'SirVer/ultisnips'
-" Snippets for ultisnips
-Plug 'honza/vim-snippets'
-
 " Better navigation between tmux and vim
 Plug 'christoomey/vim-tmux-navigator'
 
