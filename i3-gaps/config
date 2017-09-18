@@ -175,7 +175,7 @@ bindsym $mod+r mode "resize"
 
 # Window header style
 # class                 border  backgr. text    indicator
-client.focused          #41d9d9 #41d9d9 #ffffff #41d9d9
+client.focused          #bb5d15 #bb5d15 #ffffff #bb5d15
 client.focused_inactive #000000 #000000 #ffffff #000000
 client.unfocused        #000000 #000000 #ffffff #000000
 client.urgent           #ffffff #ffffff #000000 #ffffff
@@ -218,7 +218,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sink
 exec_always autorandr --change
 
 # start compton on all monitors
-exec_always compton -b
+exec_always compton
 
 # use polybar
 exec_always ~/.config/polybar/launch.sh

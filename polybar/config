@@ -8,13 +8,13 @@
 ;=====================================================
 
 [colors]
-background = #33444444
-background-highlight = #41d9d9
+background = #99000000
+background-highlight = #bb5d15
 foreground = #dfdfdf
 foreground-alt = #444
-underline=#41d9d9
+underline=#bb5d15
 primary = #ffb52a
-secondary = #2bbcf3
+secondary = #bb5d15
 alert = #da4141
 
 [bar/basebar]
@@ -100,12 +100,11 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = #000
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-highlight}
 label-focused-padding = 2
 
