@@ -117,17 +117,12 @@ let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>at :TableModeRealign<CR>
 
-" ------------------------------ UltiSnips -------------------------------------
-let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger = "<C-S-n>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-S-P>"
-
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
 set grepprg=grep\ -nH\ $*
 let g:tex_indent_items = 0
 set iskeyword+=:
-nmap <C-Space> <Plug>Tex_FastEnvironmentInsert 
+nmap <C-Space> <Plug>Tex_FastEnvironmentInsert
 imap <C-j> <Plug>IMAP_JumpForward
 imap <S-CR> <Plug>IMAP_JumpForward
 nmap <S-CR> <Plug>IMAP_JumpForward
@@ -150,7 +145,6 @@ let g:ycm_python_binary_path = 'python' " Enable python autocomplete
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 " Set ycm identifier completion to 5 (problems with enumerate expansion if
 " lower)
-autocmd FileType tex let g:ycm_min_num_of_chars_for_completion = 5
 nmap <leader>rr :YcmCompleter RefactorRename
 nmap <leader>gt :YcmCompleter GoTo<CR>
 
