@@ -217,8 +217,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sink
 # Adapt monitor setup
 exec_always autorandr --change
 
-# start compton on all monitors
-exec_always compton
+# start xcompmgr on all monitors
+exec_always xcompmgr
 
 # use polybar
 exec_always ~/.config/polybar/launch.sh
