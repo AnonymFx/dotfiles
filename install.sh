@@ -67,7 +67,7 @@ function get_package_list() {
 			return 0
 			;;
 		i3-gaps )
-			echo "i3-gaps i3-lock-color-git dmenu rofi compton feh polybar autorandr-git udevil"
+			echo "i3-gaps i3-lock-color-git dmenu rofi xcompmgr feh polybar autorandr-git udevil"
 			return 0
 			;;
 		ideavim )
