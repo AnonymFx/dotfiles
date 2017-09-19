@@ -62,8 +62,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " TableMode - Table creation for vim
 Plug 'dhruvasagar/vim-table-mode'
 
-" Onedark color scheme
-Plug 'joshdick/onedark.vim'
+" Molokai color scheme
+Plug 'tomasr/molokai'
 
 " " ---------------- Filetype plugins ---------------------
 " Latex suite
@@ -239,9 +239,15 @@ set scrolloff=3 " Keep 3 lines below and above the cursor
 " ------------------------------------------------------------------------------
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
 set t_Co=256
-colo onedark
+colo molokai
 let g:airline_theme='badwolf' " reset nice airline theme
+" Using terminal background
 hi Normal ctermbg=none
+hi LineNr ctermbg=none
+hi VertSplit ctermbg=none
+hi Folded ctermbg=none
+" Brighter grey for comments
+hi Comment ctermfg=246
 
 
 " ------------------------------------------------------------------------------
