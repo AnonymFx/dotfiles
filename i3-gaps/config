@@ -186,7 +186,7 @@ new_window pixel 2
 for_window [class="^.*"] pixel 2
 
 # Gaps for i3-gaps
-gaps inner 12
+gaps inner 24
 gaps outer 0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
