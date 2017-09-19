@@ -11,7 +11,7 @@
 background = #99000000
 background-highlight = #bb5d15
 foreground = #dfdfdf
-foreground-alt = #444
+foreground-alt = #949494
 underline=#bb5d15
 primary = #ffb52a
 secondary = #bb5d15
