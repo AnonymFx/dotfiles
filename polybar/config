@@ -191,7 +191,7 @@ format-volume-underline = ${colors.underline}
 label-volume-foreground = ${root.foreground}
 label-volume = %percentage:3:3%%
 
-format-muted-prefix = ""
+format-muted-prefix = " "
 format-muted-underline = ${colors.underline}
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = muted
