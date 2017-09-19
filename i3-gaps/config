@@ -186,7 +186,7 @@ new_window pixel 2
 for_window [class="^.*"] pixel 2
 
 # Gaps for i3-gaps
-gaps inner 24
+gaps inner 16
 gaps outer 0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -221,7 +221,7 @@ exec_always autorandr --change
 exec_always xcompmgr
 
 # use polybar
-exec_always ~/.config/polybar/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 
 # Set wallpaper
 exec_always feh --bg-scale ~/Pictures/i3-bg.png
