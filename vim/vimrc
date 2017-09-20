@@ -274,6 +274,7 @@ autocmd FileType python setlocal fileformat=unix
 " --------------------- Tex ----------------------
 " Ctrl+Shift+b for building
 autocmd FileType tex noremap <C-S-b> :w<CR>:!make<CR>
+autocmd FileType tex set spell
 
 
 " ------------------------------------------------------------------------------
