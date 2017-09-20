@@ -247,6 +247,7 @@ hi LineNr ctermbg=none
 hi VertSplit ctermbg=none
 hi Folded ctermbg=none
 hi Pmenu ctermbg=none
+hi SignColumn ctermbg=none
 " Brighter grey for comments
 hi Comment ctermfg=246
 
