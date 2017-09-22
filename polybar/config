@@ -249,7 +249,7 @@ label-open = " "
 ; label-open-foreground = ${colors.secondary}
 label-close = cancel
 label-close-foreground = ${colors.secondary}
-label-separator = |
+label-separator = " | "
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
