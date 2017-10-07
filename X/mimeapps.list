@@ -117,3 +117,4 @@ text/markdown=google-chrome-beta.desktop
 application/pdf=zathura.desktop
 image/png=vimiv.desktop;eog.desktop
 image/jpeg=vimiv.desktop;eog.desktop
+image/gif=vimiv.desktop
