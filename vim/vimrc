@@ -233,6 +233,8 @@ let xml_syntax_folding=1      " XML
 " Scrolling
 set scrolloff=3 " Keep 3 lines below and above the cursor
 
+" Enabling mouse scrolling
+set mouse=a
 
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
