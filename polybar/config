@@ -8,18 +8,18 @@
 ;=====================================================
 
 [colors]
-background = #00000000
-background-highlight = #41d9d9
+background = #99000000
+background-highlight = #bb5d15
 foreground = #dfdfdf
-foreground-alt = #444
-underline=#41d9d9
+foreground-alt = #949494
+underline=#bb5d15
 primary = #ffb52a
-secondary = #2bbcf3
+secondary = #bb5d15
 alert = #da4141
 
 [bar/basebar]
 width = 100%
-height = 27
+height = 40
 radius = 0.0
 fixed-center = false
 
@@ -38,10 +38,11 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = droidsansmono:pixelsize=11.25;1
-font-1 = fontawesome:pixelsize=11;2
-font-2 = fixed:pixelsize=10;1
-font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
+tray-position = right
+tray-padding = 2
+
+font-0 = droidsansmono:pixelsize=10;1
+font-1 = fontawesome:pixelsize=11;1
 font-4 = siji:pixelsize=10;1
 
 [bar/primarybar]
@@ -51,9 +52,6 @@ monitor = ${env:MONITOR}
 modules-left = i3
 modules-center =
 modules-right = volume xbacklight wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
-
-tray-position = right
-tray-padding = 2
 
 [bar/secondarybar]
 inherit = bar/basebar
@@ -102,12 +100,11 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = #000
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-highlight}
 label-focused-padding = 2
 
@@ -246,14 +243,13 @@ ramp-3 = 
 
 [module/powermenu]
 type = custom/menu
-
-format-spacing = 1
+label-padding = 1
 
 label-open = " "
 ; label-open-foreground = ${colors.secondary}
 label-close = cancel
 label-close-foreground = ${colors.secondary}
-label-separator = |
+label-separator = " | "
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot

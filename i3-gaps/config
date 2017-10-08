@@ -175,7 +175,7 @@ bindsym $mod+r mode "resize"
 
 # Window header style
 # class                 border  backgr. text    indicator
-client.focused          #41d9d9 #41d9d9 #ffffff #41d9d9
+client.focused          #bb5d15 #bb5d15 #ffffff #bb5d15
 client.focused_inactive #000000 #000000 #ffffff #000000
 client.unfocused        #000000 #000000 #ffffff #000000
 client.urgent           #ffffff #ffffff #000000 #ffffff
@@ -186,7 +186,7 @@ new_window pixel 2
 for_window [class="^.*"] pixel 2
 
 # Gaps for i3-gaps
-gaps inner 12
+gaps inner 22
 gaps outer 0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -217,11 +217,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sink
 # Adapt monitor setup
 exec_always autorandr --change
 
-# start compton on all monitors
-exec_always compton -b
+# start xcompmgr on all monitors
+exec_always xcompmgr
 
 # use polybar
-exec_always ~/.config/polybar/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 
 # Set wallpaper
 exec_always feh --bg-scale ~/Pictures/i3-bg.png
