@@ -2,7 +2,6 @@
 function print_help_msg() {
 	cat <<-EOF
 	Usage: install.sh TARGET
-
 	TARGET := { all,
 				nogui
 				autorandr
@@ -30,94 +29,13 @@ EOF
 }
 
 function get_packager_cmd() {
-	if yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
-		echo "yaourt -S"
-		return 0
-	elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
-		echo "sudo pacman -S"
-		return 0
-	fi
+	echo ""
+	return 1
 }
 
 function get_package_list() {
 	TARGET="$1"
 	case $TARGET in
-		autorandr )
-			echo "autorandr-git"
-			return 0
-			;;
-		dconf )
-			echo "dconf"
-			return 0
-			;;
-		bash )
-			echo "bash"
-			return 0
-			;;
-		gdb )
-			echo "gdb"
-			return 0
-			;;
-		git )
-			echo "git"
-			return 0
-			;;
-		gtk )
-			echo "gtk3 gtk2"
-			return 0
-			;;
-		i3-gaps )
-			echo "i3-gaps i3-lock-color-git dmenu rofi xcompmgr feh polybar autorandr-git udevil"
-			return 0
-			;;
-		ideavim )
-			echo ""
-			return 1
-			;;
-		polybar )
-			echo "polybar-git xbacklight"
-			return 0
-			;;
-		ranger )
-			echo "ranger"
-			return 0
-			;;
-		readline )
-			echo "readline"
-			return 0
-			;;
-		terminator )
-			echo "terminator"
-			return 0
-			;;
-		tmux )
-			echo "tmux"
-			return 0
-			;;
-		vim )
-			echo "gvim"
-			return 0
-			;;
-		neovim )
-			echo "neovim"
-			return 0
-			;;
-		vimiv )
-			echo "vimiv"
-			return 0
-			;;
-		zathura )
-			echo "zathura zathura-pdf-mupdf"
-			return 0
-			;;
-		zsh )
-			echo "zsh curl"
-			return 0
-			;;
-		X )
-			echo "xorg-server"
-			return 0
-			;;
 	esac
 
 	echo ""
@@ -141,10 +59,6 @@ function post_install() {
 	local TARGET="$1"
 
 	case $TARGET in
-		i3-gaps )
-			echo "Enabling udevil automount service"
-			sudo systemctl enable --now
-			;;
 	esac
 
 	echo ""
@@ -289,27 +203,9 @@ function install() {
 	fi
 }
 
-echo "Running the install script for Arch Linux"
-echo "-----------------------------------------"
-echo "                   ##"
-echo "                  ####"
-echo "                 ######"
-echo "                ########"
-echo "               ##########"
-echo "              ############"
-echo "             ##############"
-echo "            ################"
-echo "           ##################"
-echo "          ####################"
-echo "         ######################"
-echo "        #########      #########"
-echo "       ##########      ##########"
-echo "      ###########      ###########"
-echo "     ##########          ##########"
-echo "    #######                  #######"
-echo "   ####                          ####"
-echo "  ###                              ###"
-echo "-----------------------------------------"
+echo "This is a template script, use the ones in the distro branches"
+echo "Aborting!"
+exit 1
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
