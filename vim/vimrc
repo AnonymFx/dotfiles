@@ -232,7 +232,6 @@ let xml_syntax_folding=1      " XML
 
 " Scrolling
 set scrolloff=3 " Keep 3 lines below and above the cursor
-set nowrap "Disable line wrapping for too long lines
 
 " Enabling mouse scrolling
 set mouse=a
@@ -264,6 +263,7 @@ autocmd FileType javascript setlocal tabstop=4
 " ------------------ Markdown --------------------
 autocmd FileType markdown set foldmethod=indent
 autocmd FileType markdown set foldlevel=1
+autocmd FileType markdown set nowrap "Disable line wrapping for too long lines
 
 " ------------------ Python ----------------------
 autocmd FileType python let python_highlight_all=1
