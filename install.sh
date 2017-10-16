@@ -220,7 +220,7 @@ fi
 
 echo "Trying to find git repository to merge master branch..."
 if git_loc="$(type -p git)" && [ -n "$git_loc" ]; then
-	if git_dir="$(git rev-parse --git-dir 2>/dev/null)" && [ -d git_dir ]; then
+	if git_dir="$(git rev-parse --git-dir 2>/dev/null)" && [ -d "$git_dir" ]; then
 		echo "Starting merge..."
 		if ! "$(git merge master)"; then
 			echo "There were some merge conflicts, please resolve them and run the script again."
