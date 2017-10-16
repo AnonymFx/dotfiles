@@ -15,6 +15,7 @@ function print_help_msg() {
 				polybar
 				ranger
 				readline
+				redshift
 				terminator
 				tmux
 				vim
@@ -115,6 +116,9 @@ function link_config() {
 			;;
 		readline )
 			ln -snf $PWD/readline/inputrc $HOME/.inputrc
+			;;
+		redshift )
+			ln -snf $PWD/redshift/redshift.conf $HOME/.config/redshift.conf
 			;;
 		terminator )
 			mkdir -p $HOME/.config/terminator
@@ -251,6 +255,7 @@ else
 		install polybar
 		install ranger
 		install readline
+		install redshift
 		install terminator
 		install tmux
 		install vim
@@ -292,6 +297,8 @@ else
 		install ranger
 	elif [[ $1 = readline ]]; then
 		install readline
+	elif [[$1 = redshift ]]; then
+		install redshift
 	elif [[ $1 = terminator ]]; then
 		install terminator
 	elif [[ $1 = tmux ]]; then
