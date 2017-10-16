@@ -219,7 +219,7 @@ if [[ $0 != "./install.sh" ]]; then
 fi
 
 echo "Trying to find git repository to merge master branch..."
-if git_loc="$(type -p git)" && [ -n "$(git_loc)" ]; then
+if git_loc="$(type -p git)" && [ -n "$git_loc" ]; then
 	if git_dir="$(git rev-parse --git-dir > /dev/null 2>&1)" && [ -d git_dir ]; then
 		echo "Starting merge..."
 		if ! "$(git merge master)"; then
