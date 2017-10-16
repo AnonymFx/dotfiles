@@ -297,7 +297,7 @@ else
 		install ranger
 	elif [[ $1 = readline ]]; then
 		install readline
-	elif [[$1 = redshift ]]; then
+	elif [[ $1 = redshift ]]; then
 		install redshift
 	elif [[ $1 = terminator ]]; then
 		install terminator
