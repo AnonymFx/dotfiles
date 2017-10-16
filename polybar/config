@@ -59,7 +59,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3
 modules-center =
-modules-right = date
+modules-right = xbacklight date
 
 tray-position = right
 tray-padding = 2
