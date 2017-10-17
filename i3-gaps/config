@@ -227,4 +227,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 
 # Start redshift
-exec_always redshift-gtk
+exec --no-startup-id redshift
