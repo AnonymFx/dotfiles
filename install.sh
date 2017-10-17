@@ -218,21 +218,21 @@ if [[ $0 != "./install.sh" ]]; then
 	exit 1
 fi
 
-echo "Trying to find git repository to merge master branch..."
+echo "Trying to find git repository to rebase master branch..."
 if git_loc="$(type -p git)" && [ -n "$git_loc" ]; then
 	if git_dir="$(git rev-parse --git-dir 2>/dev/null)" && [ -d "$git_dir" ]; then
-		echo "Starting merge..."
-		if ! git merge master; then
-			echo "There were some merge conflicts, please resolve them and run the script again."
+		echo "Starting rebase..."
+		if ! git rebase master; then
+			echo "There were some conflicts, please resolve them and run the script again."
 			exit 1
 		else
 			echo "Success!"
 		fi
 	else
-		echo "Git repository not found, continuing without merging"
+		echo "Git repository not found, continuing without rebasing"
 	fi
 else
-	echo "Git command not found, continuing without merging"
+	echo "Git command not found, continuing without rebasing"
 fi
 
 echo "Starting installation..."
