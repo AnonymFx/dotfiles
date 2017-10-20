@@ -3,7 +3,7 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-/*	font: "mono 12";*/
+	font: "inconsolata 12";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -64,17 +64,17 @@ configuration {
 /*	display-keys: ;*/
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
 /*	kb-secondary-paste: "Control+v,Insert";*/
-/*	kb-clear-line: "Control+w";*/
+	kb-clear-line: "Control+d";
 /*	kb-move-front: "Control+a";*/
-/*	kb-move-end: "Control+e";*/
-/*	kb-move-word-back: "Alt+b";*/
-/*	kb-move-word-forward: "Alt+f";*/
-/*	kb-move-char-back: "Left,Control+b";*/
-/*	kb-move-char-forward: "Right,Control+f";*/
-/*	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";*/
-/*	kb-remove-word-forward: "Control+Alt+d";*/
-/*	kb-remove-char-forward: "Delete,Control+d";*/
-/*	kb-remove-char-back: "BackSpace,Control+h";*/
+/*	kb-move-end: "Control+e"; */
+	kb-move-word-back: "Control+b";
+	kb-move-word-forward: "Control+w";
+	kb-move-char-back: "Left,Control+h";
+	kb-move-char-forward: "Right,Control+l";
+	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";
+	kb-remove-word-forward: "Control+Alt+d";
+	kb-remove-char-forward: "Delete";
+	kb-remove-char-back: "BackSpace";
 /*	kb-remove-to-eol: "Control+k";*/
 /*	kb-remove-to-sol: "Control+u";*/
 /*	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter";*/
