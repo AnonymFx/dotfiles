@@ -239,8 +239,8 @@ set mouse=a
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
+set termguicolors
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
-set t_Co=256
 colo molokai
 let g:airline_theme='badwolf' " reset nice airline theme
 " Using terminal background
