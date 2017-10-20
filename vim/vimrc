@@ -153,6 +153,8 @@ nmap <leader>gt :YcmCompleter GoTo<CR>
 " --------------------------------- Key bindings -------------------------------
 " ------------------------------------------------------------------------------
 
+set timeoutlen=500
+
 " New line without insert
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
