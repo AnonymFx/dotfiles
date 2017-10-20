@@ -94,6 +94,10 @@ function get_package_list() {
 			echo "redshift"
 			return 0
 			;;
+		rofi )
+			echo "rofi"
+			return 0
+			;;
 		terminator )
 			echo "terminator"
 			return 0
