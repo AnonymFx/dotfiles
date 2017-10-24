@@ -39,13 +39,21 @@ fi
 
 player_status="$(getitem '.playing')"
 
+# Show max 1/3 of the length the author and on the rest the title
+maxauthorlen=$((maxlen/3))
+authorlen=${#author}
+if [[ authorlen -gt maxauthorlen ]]; then
+	authorlen = maxauthorlen
+fi
+titlelen=$((maxlen - authorlen))
+
 # Cut output to maxlen
-if [[ ${#title} -gt $((maxlen/2)) ]]; then
-	title="$(echo $title | head -c $((maxlen/2-3)))..."
+if [[ ${#artist} -gt authorlen ]]; then
+	title="$(echo $artits | head -c $((titlelen-3)))..."
 fi
 
-if [[ ${#artist} -gt $((maxlen/2)) ]]; then
-	title="$(echo $artits | head -c $((maxlen/2-3)))..."
+if [[ ${#title} -gt titlelen ]]; then
+	title="$(echo $title | head -c $((titlelen-3)))..."
 fi
 
 metadata="$title - $artits"
