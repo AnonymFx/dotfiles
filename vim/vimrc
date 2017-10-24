@@ -216,8 +216,28 @@ set invlist
 set ignorecase
 set smartcase
 
-" Highlight all occurrences of word under cursor
-autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=500
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
 
 " folding
 set foldmethod=syntax
@@ -256,7 +276,7 @@ autocmd FileType javascript setlocal tabstop=4
 
 " ------------------ Markdown --------------------
 autocmd FileType markdown set foldmethod=indent
-autocmd FileType markdown set foldlevel=1
+autocmd FileType markdown set foldlevel=0
 autocmd FileType markdown set nowrap "Disable line wrapping for too long lines
 
 " ------------------ Python ----------------------
