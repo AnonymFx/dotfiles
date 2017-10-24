@@ -51,7 +51,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3
 modules-center =
-modules-right = volume xbacklight wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
+modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 
 [bar/secondarybar]
 inherit = bar/basebar
@@ -266,6 +266,14 @@ menu-2-0 = power off
 menu-2-0-exec = systemctl poweroff -i
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = ${colors.underline}
+format-prefix = " "
 
 [settings]
 screenchange-reload = true
