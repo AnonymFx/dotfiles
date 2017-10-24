@@ -231,3 +231,6 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 
 # Start redshift
 exec --no-startup-id redshift
+
+# Start Google Play Music
+exec gpmdp
