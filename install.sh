@@ -198,6 +198,18 @@ function install_additional() {
 			echo "Installing/Updating spaceship theme"
 			curl https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh -o $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 			;;
+
+		polybar | vim )
+			# Install powerline fonts
+			# clone
+			git clone https://github.com/powerline/fonts.git --depth=1
+			# install
+			cd fonts
+			./install.sh
+			# clean-up a bit
+			cd ..
+			rm -rf fonts
+			;;
 	esac
 }
 
