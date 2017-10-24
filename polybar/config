@@ -178,7 +178,7 @@ interval = 1
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%local_ip%{A}
+label-connected = %{A1: gnome-control-center network&:}%local_ip%%{A}
 
 format-disconnected =
 
