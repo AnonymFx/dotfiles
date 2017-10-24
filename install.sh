@@ -79,7 +79,7 @@ function get_package_list() {
 			return 1
 			;;
 		polybar )
-			echo "polybar-git xbacklight jq"
+			echo "polybar-git xorg-xbacklight jq"
 			return 0
 			;;
 		ranger )
