@@ -110,6 +110,7 @@ function link_config() {
 			mkdir -p $HOME/.config/polybar
 			ln -snf $PWD/polybar/config $HOME/.config/polybar/config
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
+			ln -snf $PWD/polybar/gpm.sh $HOME/.config/polybar/gpm.sh
 			;;
 		ranger )
 			mkdir -p $HOME/.config/ranger

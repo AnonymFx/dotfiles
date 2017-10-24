@@ -50,7 +50,7 @@ inherit = bar/basebar
 monitor = ${env:MONITOR}
 
 modules-left = i3
-modules-center =
+modules-center = music
 modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
 
 [bar/secondarybar]
@@ -140,7 +140,7 @@ type = internal/cpu
 interval = 1
 format-prefix = ""
 format-underline = ${colors.underline}
-label = %{A1: terminator -e htop:}%percentage-core1:3:3%% %percentage-core2:3:3%% %percentage-core3:3:3%% %percentage-core4:3:3%%%{A}
+label = %{A1: terminator -e htop:}%percentage:3:3%%%{A}
 
 [module/memory]
 type = internal/memory
@@ -157,7 +157,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%essid% %upspeed:8:8%   %downspeed:8:8%%{A}
+label-connected = %{A1: gnome-control-center network&:}%essid%%{A}
 ; label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
 
 format-disconnected =
@@ -169,7 +169,7 @@ interval = 1
 
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%upspeed:8:8:%   %downspeed:8:8%%{A}
+label-connected = %{A1: gnome-control-center network&:}%local_ip%{A}
 
 format-disconnected =
 
@@ -274,6 +274,12 @@ interval = 5
 label = vpn
 format-underline = ${colors.underline}
 format-prefix = " "
+
+[module/music]
+type = custom/script
+interval=1
+format-underline = ${colors.underline}
+exec=$HOME/.config/polybar/gpm.sh 50
 
 [settings]
 screenchange-reload = true
