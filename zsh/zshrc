@@ -111,9 +111,6 @@ unalias cp
 
 alias cd..='cd ..'
 
-alias sd='systemctl poweroff -i'
-alias rb='systemctl reboot -i'
-
 alias mmv='noglob zmv -W'
 
 # pacman ###############################
