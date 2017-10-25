@@ -13,14 +13,18 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --tern-com
 " YouCompleteMe Generator - generate project files for YouCompleteMe
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
-" Ctrl-P - Fuzzy finder
-Plug 'kien/ctrlp.vim'
+" fzf fuzzy finder
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Git dots
+Plug 'airblade/vim-gitgutter'
 
 " NERDTree - File Explorer
 Plug 'scrooloose/nerdtree'
 
-" Syntastic - Syntax checker
-Plug 'scrooloose/syntastic'
+" ALE Linter
+Plug 'w0rp/ale'
 
 " Airline - Status line
 Plug 'vim-airline/vim-airline'
