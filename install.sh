@@ -115,7 +115,7 @@ function get_package_list() {
 			return 0
 			;;
 		vimiv )
-			echo "vimiv"
+			echo "vimiv fzf-git"
 			return 0
 			;;
 		zathura )
