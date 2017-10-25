@@ -107,7 +107,7 @@ function get_package_list() {
 			return 0
 			;;
 		vim )
-			echo "gvim fzf-git the_silver_searcher"
+			echo "gvim ack fzf-git the_silver_searcher"
 			return 0
 			;;
 		neovim )
