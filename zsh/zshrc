@@ -55,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-plugins=(git archlinux colored-man-pages zsh-autosuggestions zsh-syntax-highlighting gitfast common-aliases sudo systemd vi-mode wd) 
+plugins=(git archlinux colored-man-pages zsh-autosuggestions zsh-syntax-highlighting gitfast common-aliases sudo systemd vi-mode wd)
 
 # User configuration
 
@@ -64,15 +64,15 @@ export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/defaul
 
 # Check for system update if script is in PATH
 if system_update_script="$(type -p system-update-prompt)" && [ -n "$system_update_script" ]; then
-    # Set the amount of days past for system update prompt
-    export UPDATE_SYSTEM_DAYS=3
-    # Run the script
-    system-update-prompt
+	# Set the amount of days past for system update prompt
+	export UPDATE_SYSTEM_DAYS=3
+	# Run the script
+	system-update-prompt
 fi
 
 
 source $ZSH/oh-my-zsh.sh
-autoload -U zmv 
+autoload -U zmv
 setopt extendedglob
 
 # Set 256 colors
@@ -82,17 +82,30 @@ export TERM="xterm-256color"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='vim'
+else
+	export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# fzf integration
+if [[ -e /etc/profile.d/fzf.zsh ]]; then
+	source /etc/profile.d/fzf.zsh
+fi
+
+if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; then
+	export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+	export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+	export FZF_DEFAULT_OPTS=' --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108 --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+	'
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -103,7 +116,7 @@ export TERM="xterm-256color"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Disable interactive mode (set by plugin 'common-aliases') for 
+# Disable interactive mode (set by plugin 'common-aliases') for
 # basic commands
 unalias rm
 unalias mv
@@ -179,14 +192,14 @@ fi
 
 # exa ##################################
 if exa="$(type -p exa)" && [ -n "$exa" ]; then
-    alias la='exa -lag --group-directories-first'
-    alias l='exa -lg --group-directories-first'
+	alias la='exa -lag --group-directories-first'
+	alias l='exa -lg --group-directories-first'
 fi
 
 # List directory after cd
 function chpwd(){
-  emulate -LR zsh
-  l
+	emulate -LR zsh
+	l
 }
 
 # VIM Mode
