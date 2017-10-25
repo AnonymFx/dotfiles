@@ -233,12 +233,12 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 # Start redshift
 exec --no-startup-id redshift
 
+# Start Terminal
+exec --no-startup-id terminator
+
 # Start Google Play Music
 exec --no-startup-id gpmdp
 exec i3-msg 'workspace 10'
-
-# Start Terminal
-exec --no-startup-id terminator
 
 # Open chrome windows with some delay so that they open on the proper workspaces
 # Has to be last command, else there will be chaos (chrome starting on random workspaces)
