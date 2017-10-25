@@ -107,7 +107,7 @@ function get_package_list() {
 			return 0
 			;;
 		vim )
-			echo "gvim"
+			echo "gvim fzf-git the_silver_searcher"
 			return 0
 			;;
 		neovim )
@@ -115,7 +115,7 @@ function get_package_list() {
 			return 0
 			;;
 		vimiv )
-			echo "vimiv fzf-git"
+			echo "vimiv"
 			return 0
 			;;
 		zathura )
@@ -123,7 +123,7 @@ function get_package_list() {
 			return 0
 			;;
 		zsh )
-			echo "zsh curl"
+			echo "zsh curl fzf-git the_silver_searcher"
 			return 0
 			;;
 		X )
