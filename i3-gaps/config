@@ -234,3 +234,7 @@ exec --no-startup-id redshift
 
 # Start Google Play Music
 exec --no-startup-id gpmdp
+exec i3-msg 'workspace 10'
+
+# Open chrome windows with some delay so that they open on the proper workspaces
+exec --no-startup-id $HOME/.config/i3/start_chrome_windows.sh
