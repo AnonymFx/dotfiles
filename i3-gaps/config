@@ -233,14 +233,8 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 # Start redshift
 exec --no-startup-id redshift
 
-# Start Terminal
-exec --no-startup-id terminator
-
-# Start Google Play Music
-exec --no-startup-id gpmdp
-exec i3-msg 'workspace 10'
-
 # Open chrome windows with some delay so that they open on the proper workspaces
 # Has to be last command, else there will be chaos (chrome starting on random workspaces)
 # Script also switches back to workspace 1
-exec --no-startup-id $HOME/.config/i3/start_chrome_windows.sh
+# exec i3-nagbar -t warning -m 'Do you want to autostart applications' -b 'Yes' '$HOME/.config/i3/start_chrome_windows.sh'
+exec i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '

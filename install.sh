@@ -101,7 +101,7 @@ function link_config() {
 			mkdir -p $HOME/.config/i3
 			mkdir -p $HOME/Pictures
 			ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
-			ln -snf $PWD/i3-gaps/start_chrome_windows.sh $HOME/.config/i3/start_chrome_windows.sh
+			ln -snf $PWD/i3-gaps/autostart.sh $HOME/.config/i3/autostart.sh
 			ln -snf $PWD/i3-gaps/background.png $HOME/Pictures/i3-bg.png
 			;;
 		ideavim )
