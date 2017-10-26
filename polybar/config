@@ -53,7 +53,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3
 modules-center = music
-modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery xkeyboard date powermenu
+modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
 
 [bar/secondarybar]
 inherit = bar/basebar
@@ -166,8 +166,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%essid%%{A}
-; label-connected = %essid% %upspeed:8:8%  %downspeed:8:8%
+label-connected = %{A1: gnome-control-center network&:}%essid:0:10%%{A}
 
 format-disconnected =
 
@@ -288,7 +287,7 @@ format-prefix = " "
 type = custom/script
 interval=1
 format-underline = ${colors.underline}
-exec=$HOME/.config/polybar/gpm.sh 50
+exec=$HOME/.config/polybar/gpm.sh 30
 
 [settings]
 screenchange-reload = true
