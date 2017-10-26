@@ -233,8 +233,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 # Start redshift
 exec --no-startup-id redshift
 
-# Open chrome windows with some delay so that they open on the proper workspaces
-# Has to be last command, else there will be chaos (chrome starting on random workspaces)
-# Script also switches back to workspace 1
-# exec i3-nagbar -t warning -m 'Do you want to autostart applications' -b 'Yes' '$HOME/.config/i3/start_chrome_windows.sh'
-exec i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
+# Promt for autostarting applications
+exec_always --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
+# Bind key for autostart promt (in case it was accidently dismissed)
+bindsym $mod+Shift+a exec --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
