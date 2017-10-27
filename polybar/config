@@ -166,7 +166,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%essid:0:10%%{A}
+label-connected = %{A1: gnome-control-center network&:}%essid:0:16:...%%{A}
 
 format-disconnected =
 
@@ -175,9 +175,8 @@ type = internal/network
 interface = ${env:ETH}
 interval = 1
 
-format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%local_ip%%{A}
+label-connected = %{A1: gnome-control-center network&:}%{A}
 
 format-disconnected =
 
@@ -287,7 +286,7 @@ format-prefix = " "
 type = custom/script
 interval=1
 format-underline = ${colors.underline}
-exec=$HOME/.config/polybar/gpm.sh 30
+exec=$HOME/.config/polybar/gpm.sh 39
 
 [settings]
 screenchange-reload = true
