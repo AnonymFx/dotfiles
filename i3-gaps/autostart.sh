@@ -19,6 +19,8 @@ case $1 in
 		google-chrome-beta --new-window &
 		sleep 6
 		i3-msg "workspace 1"
+		sleep 0.1
+		terminator &
 		;;
 	p )
 		gpmdp &

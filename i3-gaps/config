@@ -141,7 +141,6 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Assign applications to workspaces
-assign [class="Terminator"] 1
 assign [class="Google Play Music Desktop Player"] 10
 
 # reload the configuration file
@@ -234,6 +233,6 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/i3-bg.png
 exec --no-startup-id redshift
 
 # Promt for autostarting applications
-exec_always --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
+exec_always --no-startup-id sh -c "sleep 1; i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '"
 # Bind key for autostart promt (in case it was accidently dismissed)
 bindsym $mod+Shift+a exec --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
