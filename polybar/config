@@ -166,7 +166,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%essid:0:16:...%%{A}
+label-connected = %{A1: XDG_CURRENT_DESKTOP=GNOME gnome-control-center network&:}%essid:0:16:...%%{A}
 
 format-disconnected =
 
@@ -176,7 +176,7 @@ interface = ${env:ETH}
 interval = 1
 
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: gnome-control-center network&:}%{A}
+label-connected = %{A1: XDG_CURRENT_DESKTOP=GNOME gnome-control-center network&:}%{A}
 
 format-disconnected =
 
