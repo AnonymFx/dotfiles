@@ -186,7 +186,6 @@ fi
 if rsync="$(type -p rsync)" && [ -n "$rsync" ]; then
 	alias rscp='rsync --progress -avz -e ssh'
 	alias pcp='rsync --info=progress2'
-	alias backup='rsync -a --delete --info=progress2'
 fi
 
 # exa ##################################
