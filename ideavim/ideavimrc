@@ -32,6 +32,7 @@ nmap [q :action GotoPreviousError<CR>
 nmap <leader>n :action NewScratchFile<CR>
 nmap <leader>om :action OverrideMethods<CR>
 nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>af :action ReformatCode<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
