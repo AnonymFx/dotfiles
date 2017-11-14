@@ -31,6 +31,9 @@ case $1 in
 		sleep 0.1
 		google-chrome-beta --new-window calendar.google.com todoist.com &
 		sleep 6
+		i3-msg "workspace 7"
+		google-chrome-beta --new-window &
+		sleep 6
 		i3-msg "workspace 1; exec terminator"
 		sleep 1
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
