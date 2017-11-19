@@ -204,7 +204,7 @@ gaps outer 0
 # }
 
 # Bind Lock Screen
-bindsym $mod+shift+x exec i3lock -n -c 000000 -S=0 --insidevercolor=ffffffbb --insidewrongcolor=ff3a3a88 -insidecolor=ffffffbb --ringvercolor=ffffff88 --ringwrongcolor=ff3a3aff --ringcolor=ffffffff --linecolor=00000000 --keyhlcolor=474747ff --bshlcolor=ff3a3aff --veriftext="Checking" --wrongtext="Nope"
+bindsym $mod+shift+x exec i3lock -n -c 000000 -S=0 --insidevercolor=ffffffbb --insidewrongcolor=ff3a3a88 -insidecolor=ffffffbb --ringvercolor=ffffff88 --ringwrongcolor=ff3a3aff --ringcolor=ffffffff --linecolor=00000000 --keyhlcolor=474747ff --bshlcolor=ff3a3aff --veriftext="" --wrongtext="" --radius=16
 
 # Screen Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # Increase screen brightness
