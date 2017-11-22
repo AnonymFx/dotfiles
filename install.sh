@@ -6,6 +6,7 @@ function print_help_msg() {
 				nogui
 				autorandr
 				dconf
+				dunst
 				bash
 				gdb
 				git
@@ -82,6 +83,10 @@ function link_config() {
 			;;
 		dconf )
 			dconf load / < $PWD/dconf/keybindings
+			;;
+		dunst )
+			mkdir -p $HOME/.config/dunst
+			ln -snf $PWD/dunst/dunstrc $HOME/.config/dunst
 			;;
 		gdb )
 			ln -snf $PWD/gdb/gdbinit $HOME/.gdbinit
@@ -265,6 +270,7 @@ else
 	if [[ $1 = all ]]; then
 		install autorandr
 		install dconf
+		install dunst
 		install bash
 		install gdb
 		install git
@@ -299,6 +305,8 @@ else
 		install autorandr
 	elif [[ $1 = dconf ]]; then
 		install dconf
+	elif [[ $1 = dunst ]]; then
+		install dunst
 	elif [[ $1 = bash ]]; then
 		install bash
 	elif [[ $1 = gdb ]]; then
