@@ -54,6 +54,10 @@ function get_package_list() {
 			echo "dconf"
 			return 0
 			;;
+		dunst )
+			echo "dunst"
+			return 0
+			;;
 		bash )
 			echo "bash"
 			return 0
