@@ -146,7 +146,6 @@ assign [class="Veracrypt"] 6
 
 # Make Veracrypt non floating and disable urgency notification
 for_window [title="^VeraCrypt$"] floating disable
-for_window [title="^VeraCrypt$"] urgency disable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
