@@ -282,6 +282,7 @@ colo molokai
 let g:airline_theme='badwolf' " reset nice airline theme
 " Brighter number column
 hi LineNr guifg=#aaaaaa
+hi SpellBad guibg=#6d0000
 
 
 " ------------------------------------------------------------------------------
