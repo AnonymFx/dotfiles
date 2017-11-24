@@ -1,3 +1,44 @@
 " Search
 set ignorecase
 set smartcase
+
+" --------------------------- Navigation ---------------------------------------
+eclipseaction gotodeclaration org.eclipse.wst.jsdt.ui.edit.text.java.search.references.in.workspace
+nmap <leader>gd :gotodeclaration<CR>
+eclipseaction findreferences org.eclipse.wst.jsdt.ui.edit.text.java.search.references.in.workspace
+nmap <leader>fu :findreferences<CR>
+eclipseaction openresource org.eclipse.ui.navigate.openResource
+nmap <C-p> :openresource<CR>
+eclipseaction gotoprevious org.eclipse.ui.navigate.previous
+nmap [q :gotoprevious<CR>
+eclipseaction gotonext org.eclipse.ui.navigate.next
+nmap ]q :gotonext<CR>
+
+" --------------------------- Editing ------------------------------------------
+" nmap <leader>n :action NewScratchFile<CR>
+eclipseaction overridemethods org.eclipse.jdt.ui.edit.text.java.override.methods
+nmap <leader>om :overridemethods<CR>
+eclipseaction refactormenu org.eclipse.jdt.ui.edit.text.java.surround.with.quickMenu
+map <leader>rf :refactormenu<CR>
+eclipseaction surroundwith org.eclipse.jdt.ui.edit.text.java.surround.with.quickMenu
+map ys :surroundwith<CR>
+
+" --------------------------- Run & Debug --------------------------------------
+eclipseaction debuglast org.eclipse.debug.ui.commands.DebugLast
+nmap <leader>db :debuglast<CR>
+eclipseaction stepinto org.eclipse.debug.ui.commands.StepInto
+nmap <leader>si :stepinto<CR>
+eclipseaction stepover org.eclipse.debug.ui.commands.StepOver
+nmap <leader>so :stepover<CR>
+eclipseaction resume org.eclipse.debug.ui.commands.Resume
+nmap <leader>re :resume<CR>
+eclipseaction runlast org.eclipse.debug.ui.commands.RunLast
+nmap <leader>rn :runlast<CR>
+eclipseaction togglebp org.eclipse.debug.ui.commands.ToggleBreakpoint
+nmap <leader>bp :togglebp<CR>
+
+" --------------------------- Misc ---------------------------------------------
+eclipseaction tooltip org.eclipse.ui.edit.text.showInformation
+nmap <leader>ed :tooltip<CR>
+
+" vi:syntax=vim
