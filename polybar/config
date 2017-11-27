@@ -8,11 +8,11 @@
 ;=====================================================
 
 [colors]
-background = #99000000
+background = #00000000
 background-highlight = #bb5d15
 foreground = #dfdfdf
 foreground-alt = #949494
-underline=#bb5d15
+underline=#00bb5d15
 primary = #ffb52a
 secondary = #bb5d15
 alert = #da4141
