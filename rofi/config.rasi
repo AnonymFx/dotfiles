@@ -49,9 +49,9 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-	color-normal: "#171717, #ffffff, #171717, #171717, #bb5d15";
-	color-urgent: "#171717, #ffffff, #171717, #171717, #bb5d15";
-	color-active: "#171717, #ffffff, #171717, #171717, #bb5d15";
+	color-normal: "#171717, #8c8c8c, #171717, #171717, #ffffff";
+	color-urgent: "#171717, #8c8c8c, #171717, #171717, #ffffff";
+	color-active: "#171717, #8c8c8c, #171717, #171717, #ffffff";
 	color-window: "#171717, #000000";
 /*	plugin-path: "/usr/lib/rofi";*/
 /*	pid: "/run/user/1000/rofi.pid";*/

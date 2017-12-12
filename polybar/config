@@ -8,13 +8,11 @@
 ;=====================================================
 
 [colors]
-background = #00000000
-background-highlight = #bb5d15
+background = #0000000
+background-highlight = #ffffff
 foreground = #dfdfdf
 foreground-alt = #949494
-underline=#00bb5d15
-primary = #ffb52a
-secondary = #bb5d15
+underline=#00ffffff
 alert = #da4141
 
 [bar/basebar]
@@ -75,7 +73,7 @@ label-layout-underline = ${colors.underline}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-background = ${colors.foreground-alt}
 
 [module/filesystem]
 type = internal/fs
@@ -109,11 +107,11 @@ ws-icon-9=10;
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = "%icon%"
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = #000000
 label-focused-background = ${colors.background-highlight}
 label-focused-padding = 2
 
@@ -253,9 +251,8 @@ type = custom/menu
 label-padding = 1
 
 label-open = " "
-; label-open-foreground = ${colors.secondary}
 label-close = cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.foreground-alt}
 label-separator = " | "
 label-separator-foreground = ${colors.foreground-alt}
 
