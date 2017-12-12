@@ -159,7 +159,7 @@ function post_install() {
 	case $TARGET in
 		i3-gaps )
 			echo "Enabling udevil automount service"
-			sudo systemctl enable --now
+			sudo systemctl enable --now devmon@$USER.service
 			;;
 	esac
 
