@@ -108,6 +108,7 @@ pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-background = ${colors.foreground}
+label-mode-foreground = #000000
 
 ; focused = Active workspace on focused monitor
 label-focused = "%icon%"
