@@ -41,7 +41,7 @@ tray-padding = 2
 tray-maxsize = 2
 
 font-0 = droidsansmono:pixelsize=10;1
-font-1 = fontawesome:pixelsize=11;1
+font-1 = AnonymiceNerdFontMono:pixelsize=18;4
 font-2 = d2coding:pixelsize=12;1
 font-4 = siji:pixelsize=10;1
 
