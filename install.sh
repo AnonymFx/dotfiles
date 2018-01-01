@@ -83,7 +83,7 @@ function get_package_list() {
 			return 1
 			;;
 		polybar )
-			echo "polybar-git xorg-xbacklight jq"
+			echo "polybar-git xorg-xbacklight jq nerd-fonts-complete"
 			return 0
 			;;
 		ranger )
