@@ -5,7 +5,7 @@
 	`<swap>` can be 'UUID=...' or '/dev/sd...'
 3. If using a swap file, also add the `resume_offset=<offset>` parameter  
 	The <offset> can be determinded by running `filefrag -v <swapfile>` and using the first physical_offset value (row 0)
-4. Add resume to HOOKS in `/etc/mkinitcpio.conf`
+4. Add `resume` to HOOKS in `/etc/mkinitcpio.conf`
 5. Rebuild the initramfs using `mkinitcpio`
 
 ## Adding boot parameters to grub
