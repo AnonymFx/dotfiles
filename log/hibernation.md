@@ -12,3 +12,24 @@
 [Source](https://wiki.archlinux.org/index.php/Kernel_parameters#GRUB)
 1. Edit `/etc/default/grub` and add parameters to `GRUB_CMDLINE_LINUX_DEFAULT`
 2. Regenerate grub.cfg by running `grub-mkconfig -o /boot/grub/grub.cfg`
+
+## Screen lock before hibernate
+- Create a systemd service file `/etc/systemd/system/hibernate@.service` with the following contents 
+
+```
+[Unit]
+Description=User hibernation actions
+Before=hibernate.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=<lock command here>
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=hibernate.target
+```
+
+- Enable with `systemctl enable hibernate@<user>.service`
