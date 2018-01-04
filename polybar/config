@@ -37,8 +37,10 @@ module-margin-left = 1
 module-margin-right = 1
 
 tray-position = right
-tray-padding = 2
-tray-maxsize = 2
+tray-detached = true
+tray-offset-y = 30
+tray-maxsize = 10
+tray-scale = 0.8
 
 font-0 = droidsansmono:pixelsize=10;1
 font-1 = ArimoNerdFontMono:pixelsize=11;1
