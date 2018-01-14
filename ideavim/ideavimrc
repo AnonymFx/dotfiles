@@ -29,25 +29,35 @@ nmap [q :action GotoPreviousError<CR>
 
 
 " --------------------------- Editing ------------------------------------------
-nmap <leader>n :action NewScratchFile<CR>
 nmap <leader>om :action OverrideMethods<CR>
 nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
+vmap ys :action SurroundWith<CR>
 nmap ys :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
-nmap <leader>db :action Debug<CR>
-nmap <leader>hs :action Android.HotswapChanges<CR>
-nmap <leader>si :action StepInto<CR>
-nmap <leader>so :action StepOver<CR>
-nmap <leader>re :action Resume<CR>
-nmap <leader>rn :action Run<CR>
+nmap <C-r><C-d> :action Debug<CR>
+nmap <C-r>d :action Debug<CR>
+nmap <C-r><C-r> :action Run<CR>
+nmap <C-r>r :action Run<CR>
+nmap <C-r><C-e> :action Resume<CR>
+nmap <C-r>e :action Resume<CR>
+nmap <C-r><C-s> :action Stop<CR>
+nmap <C-r>s :action Stop<CR>
+nmap <C-r><C-h> :action Android.HotswapChanges<CR>
+nmap <C-r>h :action Android.HotswapChanges<CR>
+nmap <C-r><C-o> :action StepOver<CR>
+nmap <C-r>o :action StepOver<CR>
+nmap <C-r><C-i> :action StepInto<CR>
+nmap <C-r>i :action StepInto<CR>
+nmap <C-r><C-k> :action StepOut<CR>
+nmap <C-r>k :action StepOut<CR>
 nmap <leader>bp :action ToggleLineBreakpoint<CR>
 
 
 " --------------------------- Misc ---------------------------------------------
 nmap <leader>qd :action QuickJavaDoc<CR>
 nmap <leader>ed :action ShowErrorDescription<CR>
-nmap <leader>pi :action ParameterInfo<CR>
+nmap <leader>ai :action ParameterInfo<CR>

@@ -9,3 +9,5 @@
 	prompt = false
 [merge]
 	tool = vimdiff
+[color]
+	ui = auto
