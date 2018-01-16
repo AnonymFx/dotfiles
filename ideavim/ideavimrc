@@ -40,8 +40,8 @@ nmap ys :action SurroundWith<CR>
 " --------------------------- Run & Debug --------------------------------------
 nmap <C-r><C-d> :action Debug<CR>
 nmap <C-r>d :action Debug<CR>
-nmap <C-r><C-r> :action Run<CR>
-nmap <C-r>r :action Run<CR>
+nmap <C-r><C-n> :action Run<CR>
+nmap <C-r>n :action Run<CR>
 nmap <C-r><C-e> :action Resume<CR>
 nmap <C-r>e :action Resume<CR>
 nmap <C-r><C-s> :action Stop<CR>
