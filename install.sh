@@ -116,6 +116,7 @@ function link_config() {
 			;;
 		intellij_idea)
 			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
+			rm -r $HOME/.IntelliJIdea/config/fileTemplates/*
 			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.IntelliJIdea/config/colors
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
