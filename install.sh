@@ -13,6 +13,7 @@ function print_help_msg() {
 				gtk
 				i3-gaps
 				ideavim
+				intellij_idea
 				polybar
 				ranger
 				readline
@@ -112,6 +113,13 @@ function link_config() {
 			;;
 		ideavim )
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
+			;;
+		intellij_idea)
+			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
+			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.IntelliJIdea/config/colors
+			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
+			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
+			ln -snf $PWD/intellij_idea/config/options/* $HOME/.IntelliJIdea/config/options
 			;;
 		polybar )
 			mkdir -p $HOME/.config/polybar
@@ -278,6 +286,7 @@ else
 		install gtk
 		install i3-gaps
 		install ideavim
+		install intellij_idea
 		install polybar
 		install ranger
 		install readline
@@ -320,6 +329,8 @@ else
 		install i3-gaps
 	elif [[ $1 = ideavim ]]; then
 		install ideavim
+	elif [[ $1 = intellij_idea ]]; then
+		install intellij_idea
 	elif [[ $1 = polybar ]]; then
 		install polybar
 	elif [[ $1 = ranger ]]; then
