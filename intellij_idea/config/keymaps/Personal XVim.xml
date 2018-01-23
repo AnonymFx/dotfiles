@@ -33,6 +33,7 @@
   <action id="EditorUnSelectWord" />
   <action id="EditorUnindentSelection" />
   <action id="ExpressionTypeInfo" />
+  <action id="FileChooser.TogglePathShowing" />
   <action id="FindUsages">
     <keyboard-shortcut first-keystroke="ctrl alt u" />
   </action>
@@ -48,6 +49,9 @@
   <action id="GotoDeclaration">
     <mouse-shortcut keystroke="control button1" />
     <keyboard-shortcut first-keystroke="ctrl alt d" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="GotoImplementation">
     <mouse-shortcut keystroke="control alt button1" />
