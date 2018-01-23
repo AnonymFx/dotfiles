@@ -194,6 +194,11 @@ if exa="$(type -p exa)" && [ -n "$exa" ]; then
 	alias l='exa -lg --group-directories-first'
 fi
 
+# ag ###################################
+if ag="$(type -p ag)" && [ -n "$ag" ]; then
+	alias ag='ag --color -S'
+	alias -g AG='| ag'
+fi
 # List directory after cd
 function chpwd(){
 	emulate -LR zsh

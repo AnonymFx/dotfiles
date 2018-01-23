@@ -5,6 +5,8 @@ function print_help_msg() {
 
 	TARGET := { all,
 				nogui
+				android_studio_canary
+				android_studio_release
 				autorandr
 				dconf
 				dunst
@@ -173,6 +175,22 @@ function link_config() {
 	echo "Linking config files for $TARGET"
 
 	case "$TARGET" in
+		android_studio_canary )
+			mkdir -p $HOME/.AndroidStudioCanary/config/{colors,fileTemplates,keymaps,options}
+			rm -r $HOME/.AndroidStudioCanary/config/fileTemplates/*
+			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioCanary/config/colors
+			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioCanary/config/fileTemplates
+			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioCanary/config/keymaps
+			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioCanary/config/options
+			;;
+		android_studio_release )
+			mkdir -p $HOME/.AndroidStudioRelease/config/{colors,fileTemplates,keymaps,options}
+			rm -r $HOME/.AndroidStudioRelease/config/fileTemplates/*
+			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioRelease/config/colors
+			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioRelease/config/fileTemplates
+			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioRelease/config/keymaps
+			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioRelease/config/options
+			;;
 		autorandr )
 			mkdir -p $HOME/.config/autorandr
 			ln -snf $PWD/autorandr/postswitch $HOME/.config/autorandr/postswitch
@@ -207,7 +225,7 @@ function link_config() {
 			ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
 			ln -snf $PWD/i3-gaps/lock.sh $HOME/.config/i3/lock.sh
 			ln -snf $PWD/i3-gaps/autostart.sh $HOME/.config/i3/autostart.sh
-			ln -snf $PWD/i3-gaps/background.png $HOME/Pictures/i3-bg.png
+			ln -snf $PWD/i3-gaps/background $HOME/Pictures/i3-bg
 			;;
 		ideavim )
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
@@ -368,22 +386,23 @@ if [[ $0 != "./install.sh" ]]; then
 	exit 1
 fi
 
-echo "Trying to find git repository to rebase master branch..."
+echo "Trying to find git repository to merge master branch..."
 if git_loc="$(type -p git)" && [ -n "$git_loc" ]; then
 	if git_dir="$(git rev-parse --git-dir 2>/dev/null)" && [ -d "$git_dir" ]; then
-		echo "Starting rebase..."
-		if ! git rebase master; then
-			echo "There were some conflicts, please resolve them and run the script again."
+		echo "Starting merge..."
+		if ! git merge master; then
+			echo "There were some merge conflicts, please resolve them and run the script again."
 			exit 1
 		else
 			echo "Success!"
 		fi
 	else
-		echo "Git repository not found, continuing without rebasing"
+		echo "Git repository not found, continuing without merging"
 	fi
 else
-	echo "Git command not found, continuing without rebasing"
+	echo "Git command not found, continuing without merging"
 fi
+
 
 echo "Starting installation..."
 if [[ $# -eq 0 ]]; then
@@ -394,6 +413,8 @@ elif [[ $# -gt 1 ]]; then
 	exit 1
 else
 	if [[ $1 = all ]]; then
+		install android_studio_canary
+		install android_studio_release
 		install autorandr
 		install dconf
 		install dunst
@@ -428,6 +449,10 @@ else
 		install vim
 		install neovim
 		install zsh
+	elif [[ $1 = android_studio_canary ]]; then
+		install android_studio_canary
+	elif [[ $1 = android_studio_release ]]; then
+		install android_studio_release
 	elif [[ $1 = autorandr ]]; then
 		install autorandr
 	elif [[ $1 = dconf ]]; then

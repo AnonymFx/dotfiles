@@ -1,4 +1,8 @@
 <keymap version="1" name="Personal XVim" parent="Default for XWin">
+  <action id="Android.HotswapChanges">
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl h" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="h" />
+  </action>
   <action id="Android.RestartActivity" />
   <action id="CIDR.Debugger.CopyAddress" />
   <action id="CIDR.Lang.IntroduceDefine" />
@@ -19,7 +23,8 @@
   <action id="CopyPaths" />
   <action id="CopyReference" />
   <action id="Debug">
-    <keyboard-shortcut first-keystroke="shift ctrl d" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl d" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="d" />
   </action>
   <action id="Diff.ShowSettingsPopup" />
   <action id="EditorJoinLines" />
@@ -28,6 +33,7 @@
   <action id="EditorUnSelectWord" />
   <action id="EditorUnindentSelection" />
   <action id="ExpressionTypeInfo" />
+  <action id="FileChooser.TogglePathShowing" />
   <action id="FindUsages">
     <keyboard-shortcut first-keystroke="ctrl alt u" />
   </action>
@@ -43,6 +49,9 @@
   <action id="GotoDeclaration">
     <mouse-shortcut keystroke="control button1" />
     <keyboard-shortcut first-keystroke="ctrl alt d" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="GotoImplementation">
     <mouse-shortcut keystroke="control alt button1" />
@@ -88,12 +97,15 @@
     <keyboard-shortcut first-keystroke="shift ctrl b" />
   </action>
   <action id="RecentChangedFiles" />
+  <action id="Replace" />
   <action id="ReplaceInPath" />
   <action id="Resume">
-    <keyboard-shortcut first-keystroke="shift ctrl c" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl e" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="e" />
   </action>
   <action id="Run">
-    <keyboard-shortcut first-keystroke="shift ctrl r" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl n" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="n" />
   </action>
   <action id="RunClass">
     <keyboard-shortcut first-keystroke="shift ctrl w" />
@@ -104,16 +116,20 @@
     <keyboard-shortcut first-keystroke="ctrl alt enter" />
   </action>
   <action id="StepInto">
-    <keyboard-shortcut first-keystroke="shift ctrl h" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl l" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="l" />
   </action>
   <action id="StepOut">
-    <keyboard-shortcut first-keystroke="shift ctrl k" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl k" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="k" />
   </action>
   <action id="StepOver">
-    <keyboard-shortcut first-keystroke="shift ctrl j" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl j" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="j" />
   </action>
   <action id="Stop">
-    <keyboard-shortcut first-keystroke="shift ctrl alt c" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl s" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="s" />
   </action>
   <action id="SurroundWith">
     <keyboard-shortcut first-keystroke="shift ctrl t" />
