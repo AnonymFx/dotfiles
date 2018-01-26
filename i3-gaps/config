@@ -144,6 +144,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 assign [class="Google Play Music Desktop Player"] 10
 assign [class="Veracrypt"] 6
 assign [class="Keepassx"] 6
+assign [class="keepassxc"] 6
 
 # Make Veracrypt non floating and disable urgency notification
 for_window [title="^VeraCrypt$"] floating disable
