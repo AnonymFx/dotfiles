@@ -53,6 +53,10 @@ function get_package_list() {
 			echo "autorandr-git"
 			return 0
 			;;
+		compton )
+			echo "compton"
+			return 0
+			;;
 		dconf )
 			echo "dconf"
 			return 0
