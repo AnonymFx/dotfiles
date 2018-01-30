@@ -8,6 +8,7 @@ function print_help_msg() {
 				android_studio_canary
 				android_studio_release
 				autorandr
+				compton
 				dconf
 				dunst
 				bash
@@ -194,6 +195,9 @@ function link_config() {
 		autorandr )
 			mkdir -p $HOME/.config/autorandr
 			ln -snf $PWD/autorandr/postswitch $HOME/.config/autorandr/postswitch
+			;;
+		compton )
+			ln -snf $PWD/compton/compton.conf $HOME/.config/compton.conf
 			;;
 		bash )
 			ln -snf $PWD/bash/bashrc $HOME/.bashrc
@@ -416,6 +420,7 @@ else
 		install android_studio_canary
 		install android_studio_release
 		install autorandr
+		install compton
 		install dconf
 		install dunst
 		install bash
@@ -455,6 +460,8 @@ else
 		install android_studio_release
 	elif [[ $1 = autorandr ]]; then
 		install autorandr
+	elif [[ $1 = compton ]]; then
+		install compton
 	elif [[ $1 = dconf ]]; then
 		install dconf
 	elif [[ $1 = dunst ]]; then
