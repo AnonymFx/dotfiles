@@ -314,29 +314,39 @@ function install_additional() {
 			# Oh-My-Zsh
 			echo "Installing oh-my-zsh"
 			sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+			if [ -e $HOME/.zshrc ]; then
+				source $HOME/.zshrc
+			fi
+
 			# Zsh autosuggestions plugin
-			if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
+			if [[ -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
 				echo "Updating zsh-autosuggestions"
-				pushd $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+				pushd $ZSH_CUSTOM/plugins/zsh-autosuggestions
 				git pull
 				popd
 			else
 				echo "Installing zsh-autosuggestions"
-				git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+				git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 			fi
 			# Zsh syntax highlighting
-			if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
+			if [[ -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
 				echo "Updating zsh-syntax-highlighting"
-				pushd $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+				pushd $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 				git pull
 				popd
 			else
 				echo "Installing zsh-syntax-highlighting"
-				git clone git://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+				git clone git://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 			fi
 			# spaceship theme
 			echo "Installing/Updating spaceship theme"
-			curl https://raw.githubusercontent.com/denysdovhan/spaceship-zsh-theme/master/spaceship.zsh -o $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+			SPACESHIP_TARGET="$ZSH_CUSTOM/themes/spaceship-prompt"
+			if [ ! -e "$SPACESHIP_TARGET" ]; then
+				git clone https://github.com/denysdovhan/spaceship-prompt.git "$SPACESHIP_TARGET"
+				ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+			else
+				git pull $SPACESHIP_TARGET
+			fi
 			;;
 
 		polybar | vim )

@@ -7,6 +7,8 @@ set relativenumber
 set ignorecase
 set smartcase
 
+let mapleader=" "
+
 set timoutlen=500
 
 " ------------------------------------------------------------------------------
