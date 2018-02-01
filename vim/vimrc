@@ -95,6 +95,47 @@ Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
 " Init plugin system
 call plug#end()
 
+" ------------------------------------------------------------------------------
+" --------------------------------- Key bindings -------------------------------
+" ------------------------------------------------------------------------------
+
+set timeoutlen=500
+let mapleader=" "
+
+" New line without insert
+nnoremap <leader>o o<Esc>k
+nnoremap <leader>O O<ESC>j
+
+" Split switches
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-h> <C-W><C-H>
+nnoremap <C-l> <C-W><C-L>
+
+" Keybinding for yanking and pasting from system keyboard
+noremap <leader>p "+p
+noremap <leader>P "+P
+noremap <leader>y "+y
+
+" resize horizontal splits
+nnoremap <leader>hr :resize
+"resize vertical splits
+nnoremap <leader>vr :vertical resize
+
+" change register leader key
+noremap \ "
+
+" Forward and backward movement in command mode
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-k> <Up>
+cnoremap <C-j> <Down>
+
+
+" ------------------------------------------------------------------------------
+" ------------------------------ Plugin Settings -------------------------------
+" ------------------------------------------------------------------------------
+
 " Ack/Ag -----------------------------------------------------------------------
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep'
@@ -159,41 +200,6 @@ let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 nmap <leader>rr :YcmCompleter RefactorRename
 nmap <leader>gt :YcmCompleter GoTo<CR>
 
-
-" ------------------------------------------------------------------------------
-" --------------------------------- Key bindings -------------------------------
-" ------------------------------------------------------------------------------
-
-set timeoutlen=500
-
-" New line without insert
-nnoremap <leader>o o<Esc>k
-nnoremap <leader>O O<ESC>j
-
-" Split switches
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-h> <C-W><C-H>
-nnoremap <C-l> <C-W><C-L>
-
-" Keybinding for yanking and pasting from system keyboard
-noremap <leader>p "+p
-noremap <leader>P "+P
-noremap <leader>y "+y
-
-" resize horizontal splits
-nnoremap <leader>hr :resize
-"resize vertical splits
-nnoremap <leader>vr :vertical resize
-
-" change register leader key
-noremap <space> "
-
-" Forward and backward movement in command mode
-cnoremap <C-h> <Left>
-cnoremap <C-l> <Right>
-cnoremap <C-k> <Up>
-cnoremap <C-j> <Down>
 
 " ------------------------------------------------------------------------------
 " --------------------------------- General ------------------------------------
