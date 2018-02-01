@@ -7,6 +7,8 @@ set relativenumber
 set ignorecase
 set smartcase
 
+let mapleader=" "
+
 set timoutlen=500
 
 " ------------------------------------------------------------------------------
@@ -38,6 +40,8 @@ nmap ys :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
+nmap <C-r><C-b> :action CompileDirty<CR>
+nmap <C-r>b action CompileDirty<CR>
 nmap <C-r><C-d> :action Debug<CR>
 nmap <C-r>d :action Debug<CR>
 nmap <C-r><C-n> :action Run<CR>

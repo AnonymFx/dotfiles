@@ -19,6 +19,10 @@
   </action>
   <action id="CloseActiveTab" />
   <action id="CloseContent" />
+  <action id="CompileDirty">
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl b" />
+    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="b" />
+  </action>
   <action id="ConvertJavaToKotlin" />
   <action id="CopyPaths" />
   <action id="CopyReference" />
