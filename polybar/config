@@ -44,7 +44,7 @@ tray-scale = 0.8
 
 font-0 = droidsansmono:pixelsize=10;1
 font-1 = ArimoNerdFontMono:pixelsize=11;1
-font-2 = MaterialIcons:pixelsize=14;4
+font-2 = MaterialIcons:pixelsize=14;3
 font-4 = siji:pixelsize=10;1
 
 [bar/primarybar]
@@ -232,7 +232,7 @@ ramp-capacity-4 = 
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = ${env:THERMAL_ZONE}
 warn-temperature = 80
 
 format = <ramp> <label>
