@@ -82,7 +82,7 @@ function get_package_list() {
 			return 0
 			;;
 		i3-gaps )
-			echo "i3-gaps i3lock-color-git dmenu rofi compton feh autorandr-git udevil"
+			echo "i3-gaps i3lock-color-git dmenu rofi compton feh autorandr-git udevil gnome-keyring"
 			return 0
 			;;
 		ideavim )
