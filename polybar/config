@@ -232,7 +232,7 @@ ramp-capacity-4 = 
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = ${env:THERMAL_ZONE}
 warn-temperature = 80
 
 format = <ramp> <label>
