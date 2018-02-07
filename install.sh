@@ -200,6 +200,7 @@ function link_config() {
 			mkdir -p $HOME/.config
 			ln -snf $PWD/X/Xresources $HOME/.Xresources
 			ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
+			ln -snf $PWD/X/xprofile $HOME/.xprofile
 			;;
 	esac
 }
