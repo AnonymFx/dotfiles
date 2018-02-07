@@ -18,6 +18,7 @@ function print_help_msg() {
 				ideavim
 				intellij_idea
 				polybar
+				qt
 				ranger
 				readline
 				redshift
@@ -149,6 +150,11 @@ function link_config() {
 			ln -snf $PWD/polybar/config $HOME/.config/polybar/config
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 			ln -snf $PWD/polybar/gpm.sh $HOME/.config/polybar/gpm.sh
+			;;
+		qt )
+			mkdir -p $HOME/.config/qt5ct
+			ln -snf $PWD/qt/qt5ct.conf $HOME/.config/qt5ct/qt5ct.conf
+			ln -snf $PWD/qt/qt4.conf $HOME/.config/Trolltech.conf
 			;;
 		ranger )
 			mkdir -p $HOME/.config/ranger
@@ -326,6 +332,7 @@ else
 		install ideavim
 		install intellij_idea
 		install polybar
+		install qt
 		install ranger
 		install readline
 		install redshift
@@ -377,6 +384,8 @@ else
 		install intellij_idea
 	elif [[ $1 = polybar ]]; then
 		install polybar
+	elif [[ $1 = qt ]]; then
+		install qt
 	elif [[ $1 = ranger ]]; then
 		install ranger
 	elif [[ $1 = readline ]]; then
