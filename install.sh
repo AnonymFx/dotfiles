@@ -94,6 +94,9 @@ function get_package_list() {
 			echo "polybar-git xorg-xbacklight jq nerd-fonts-complete ttf-material-icons"
 			return 0
 			;;
+		qt )
+			echo "qt4 qt5-base qt5ct"
+			;;
 		ranger )
 			echo "ranger"
 			return 0
