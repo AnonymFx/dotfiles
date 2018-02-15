@@ -7,7 +7,6 @@
 " --------------------------------- Vim-Plug -----------------------------------
 " Specify plugin directory
 call plug#begin('~/.vim/plugins')
-cal
 
 " YouCompleteMe - code completion engine
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer --system-libclang'}
