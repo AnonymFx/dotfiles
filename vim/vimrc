@@ -7,6 +7,7 @@
 " --------------------------------- Vim-Plug -----------------------------------
 " Specify plugin directory
 call plug#begin('~/.vim/plugins')
+cal
 
 " YouCompleteMe - code completion engine
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer --system-libclang'}
@@ -54,9 +55,6 @@ Plug 'kana/vim-textobj-line'
 
 " Edit at multiple places
 Plug 'terryma/vim-multiple-cursors'
-
-" Supertab - tab for insert completions
-Plug 'ervandew/supertab'
 
 " Autoformat files
 Plug 'Chiel92/vim-autoformat'
@@ -190,7 +188,6 @@ autocmd BufEnter *.tex call IMAP('IT', '\item <++>', 'tex')
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_python_binary_path = 'python' " Enable python autocomplete
