@@ -126,31 +126,31 @@ alias cd..='cd ..'
 alias mmv='noglob zmv -W'
 
 # pacman ###############################
-if pacman="$(type -p pacman)" && [ -n "$pacman" ]; then
+if pacman_l="$(type -p pacman)" && [ -n "$pacman_l" ]; then
 	alias paccc='sudo pacman -Sc'
 fi
 
 # vim ##################################
-if gvim="$(type -p gvim)" && [ -n "$gvim" ]; then
+if gvim_l="$(type -p gvim)" && [ -n "$gvim_l" ]; then
 	alias gv='gvim --remote-silent'
 	alias gvn='gvim -c NERDTree'
 fi
-if vim="$(type -p vim)" && [ -n "$vim" ]; then
+if vim_l="$(type -p vim)" && [ -n "$vim_l" ]; then
 	alias vin='vim -c NERDTree'
 fi
 
 # git ##################################
-if git="$(type -p git)" && [ -n "$git" ]; then
+if git_l="$(type -p git)" && [ -n "$git_l" ]; then
 	alias gdt='git difftool'
 fi
 
 # xdg-open #############################
-if xdg_open="$(type -p xdg-open)" && [ -n "$xdg_open" ]; then
+if xdg_open_l="$(type -p xdg-open)" && [ -n "$xdg_open_l" ]; then
 	alias open='xdg-open 2>/dev/null 1>&2'
 fi
 
 # dedicated graphics card ##############
-if optirun="$(type -p optirun)" && [ -n "$optirun" ]; then
+if optirun_l="$(type -p optirun)" && [ -n "$optirun_l" ]; then
 	alias gpu='optirun'
 else
 	alias gpu='DRI_PRIME=1'
@@ -158,7 +158,7 @@ fi
 
 
 # Google Drive
-if drive="$(type -p drive)" && [ -n "$drive" ]; then
+if drive_l="$(type -p drive)" && [ -n "$drive_l" ]; then
 	alias dup='drive pull'
 	alias dupnp='drive pull -no-prompt'
 	alias dp='drive push'
@@ -167,7 +167,7 @@ if drive="$(type -p drive)" && [ -n "$drive" ]; then
 fi
 
 # tmux
-if tmux="$(type -p tmux)" && [ -n "$tmux" ]; then
+if tmux_l="$(type -p tmux)" && [ -n "$tmux_l" ]; then
 	alias tmux='TERM=xterm-256color tmux'
 	alias tks='tmux kill-session -t'
 	alias ta='tmux attach -t'
@@ -176,26 +176,26 @@ if tmux="$(type -p tmux)" && [ -n "$tmux" ]; then
 fi
 
 # adb
-if adb="$(type -p adb)" && [ -n "$adb" ]; then
+if adb_l="$(type -p adb)" && [ -n "$adb_l" ]; then
 	alias adbba="adb backup -apk -obb -all -f"
 	alias adbb="adb backup -apk -obb -f"
 	alias adblp='adb shell "pm list packages -f"'
 fi
 
 # rsync ################################
-if rsync="$(type -p rsync)" && [ -n "$rsync" ]; then
+if rsync_l="$(type -p rsync)" && [ -n "$rsync_l" ]; then
 	alias rscp='rsync --progress -avz -e ssh'
 	alias pcp='rsync --info=progress2'
 fi
 
 # exa ##################################
-if exa="$(type -p exa)" && [ -n "$exa" ]; then
+if exa_l="$(type -p exa)" && [ -n "$exa_l" ]; then
 	alias la='exa -lag --group-directories-first'
 	alias l='exa -lg --group-directories-first'
 fi
 
 # ag ###################################
-if ag="$(type -p ag)" && [ -n "$ag" ]; then
+if ag_l="$(type -p ag)" && [ -n "$ag_l" ]; then
 	alias ag='ag --color -S'
 	alias -g AG='| ag'
 fi
