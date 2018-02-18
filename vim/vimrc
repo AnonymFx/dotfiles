@@ -9,7 +9,7 @@
 call plug#begin('~/.vim/plugins')
 
 " YouCompleteMe - code completion engine
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer --system-libclang'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer'}
 " YouCompleteMe Generator - generate project files for YouCompleteMe
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
