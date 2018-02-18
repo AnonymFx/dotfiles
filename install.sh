@@ -138,7 +138,7 @@ function get_package_list() {
 			return 0
 			;;
 		zsh )
-			echo "zsh curl fzf-git the_silver_searcher"
+			echo "zsh curl fzf-git the_silver_searcher exa"
 			return 0
 			;;
 		X )
