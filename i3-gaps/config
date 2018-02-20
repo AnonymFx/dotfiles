@@ -140,14 +140,15 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+# Make Veracrypt non floating and disable urgency notification
+for_window [title="VeraCrypt" window_type="normal"] floating disable
+for_window [class="Keepassx"] floating disable
+
 # Assign applications to workspaces
 assign [class="Google Play Music Desktop Player"] 10
-assign [class="Veracrypt"] 6
-assign [class="Keepassx"] 6
-assign [class="keepassxc"] 6
-
-# Make Veracrypt non floating and disable urgency notification
-for_window [title="^VeraCrypt$"] floating disable
+assign [class="Veracrypt" tiling] 6
+assign [class="Keepassx" tiling] 6
+assign [class="keepassxc" tiling] 6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
