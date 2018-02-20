@@ -130,6 +130,14 @@ if pacman_l="$(type -p pacman)" && [ -n "$pacman_l" ]; then
 	alias paccc='sudo pacman -Sc'
 fi
 
+if trizen_l="$(type -p trizen)" && [ -n "$trizen_l" ]; then
+	alias trizupg='trizen -Syu --noedit'
+	alias trizin='trizen -S'
+	alias trizins='trizen -U'
+	alias trizrem='trizen -Rns'
+	alias trizre='trizen -R'
+fi
+
 # vim ##################################
 if gvim_l="$(type -p gvim)" && [ -n "$gvim_l" ]; then
 	alias gv='gvim --remote-silent'
