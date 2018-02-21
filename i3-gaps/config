@@ -241,6 +241,7 @@ exec --no-startup-id redshift
 
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
+exec_always --no-startup-id $HOME/.config/i3/custom_config.sh -a
 
 # Promt for autostarting applications
 exec --no-startup-id sh -c "sleep 2; i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '"
