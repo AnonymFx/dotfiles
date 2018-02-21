@@ -309,7 +309,7 @@ autocmd FileType python setlocal autoindent
 autocmd FileType python setlocal fileformat=unix
 
 " --------------------- Tex ----------------------
-autocmd FileType tex noremap <C-r>b :w<CR>:!make<CR><CR>
+autocmd FileType tex noremap <C-r>b :w<CR>:!make<CR>
 autocmd FileType tex set spell
 
 
