@@ -38,7 +38,10 @@ EOF
 }
 
 function get_packager_cmd() {
-	if yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
+	if trizen_location="$(type -p trizen)" && [ -n "$trizen_location" ]; then
+		echo "trizen -S"
+		return 0
+	elif yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
 		echo "yaourt -S"
 		return 0
 	elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
