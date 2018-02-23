@@ -151,7 +151,7 @@ nnoremap <leader>af :Autoformat<CR>
 
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-nnoremap <C-h> :Buffers<CR>
+nnoremap <C-g> :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
 " -------------------------------- NERDTree ------------------------------------
