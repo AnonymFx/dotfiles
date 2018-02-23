@@ -82,10 +82,13 @@ Plug 'keith/swift.vim', {'for': 'swift'}
 
 " Better Python syntax highlighting
 Plug 'hdima/python-syntax', {'for': 'python'}
+
 " Python syntax annotations according to pep8
 Plug 'nvie/vim-flake8', {'for': 'python'}
+
 " Python folding
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}
+
 " Python indentation
 Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
 
@@ -148,7 +151,7 @@ nnoremap <leader>af :Autoformat<CR>
 
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-nnoremap <C-i> :Buffers<CR>
+nnoremap <C-h> :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
 " -------------------------------- NERDTree ------------------------------------
