@@ -258,7 +258,7 @@ endfunction
 
 " folding
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=100
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP
@@ -299,7 +299,6 @@ autocmd FileType javascript setlocal tabstop=4
 
 " ------------------ Markdown --------------------
 autocmd FileType markdown set foldmethod=indent
-autocmd FileType markdown set foldlevel=0
 
 " ------------------ Python ----------------------
 autocmd FileType python let python_highlight_all=1
