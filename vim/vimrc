@@ -154,6 +154,9 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <C-g> :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
+" gitgutter --------------------------------------------------------------------
+set updatetime=100
+
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
 nmap <leader>nt :NERDTreeToggle<CR>
@@ -241,7 +244,6 @@ function! AutoHighlightToggle()
 	if exists('#auto_highlight')
 		au! auto_highlight
 		augroup! auto_highlight
-		setl updatetime=4000
 		echo 'Highlight current word: off'
 		return 0
 	else
@@ -249,7 +251,6 @@ function! AutoHighlightToggle()
 			au!
 			au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
 		augroup end
-		setl updatetime=500
 		echo 'Highlight current word: ON'
 		return 1
 	endif
