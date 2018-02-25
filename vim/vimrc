@@ -279,6 +279,9 @@ set splitbelow
 " Enabling mouse scrolling
 set mouse=a
 
+" Show as much as possible of a wrapped last line, not just "@".
+set display=lastline
+
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
