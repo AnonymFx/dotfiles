@@ -101,6 +101,8 @@ call plug#end()
 
 set timeoutlen=500
 let mapleader=" "
+noremap \ "
+
 
 " New line without insert
 nnoremap <leader>o o<Esc>k
@@ -116,14 +118,12 @@ nnoremap <C-l> <C-W><C-L>
 noremap <leader>p "+p
 noremap <leader>P "+P
 noremap <leader>y "+y
+noremap <leader>d "+d
 
 " resize horizontal splits
 nnoremap <leader>hr :resize
 "resize vertical splits
 nnoremap <leader>vr :vertical resize
-
-" change register leader key
-noremap \ "
 
 " Forward and backward movement in command mode
 cnoremap <C-h> <Left>
