@@ -103,7 +103,6 @@ set timeoutlen=500
 let mapleader=" "
 noremap \ "
 
-
 " New line without insert
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
@@ -130,6 +129,9 @@ cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
+
+" Toggle highlight search
+noremap <leader>hls :set hls!<CR>
 
 
 " ------------------------------------------------------------------------------
