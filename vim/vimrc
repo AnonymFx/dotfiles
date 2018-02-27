@@ -107,12 +107,6 @@ noremap \ "
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
 
-" Split switches
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-h> <C-W><C-H>
-nnoremap <C-l> <C-W><C-L>
-
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>P "+P
