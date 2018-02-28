@@ -186,7 +186,6 @@ let g:Tex_Env_figure="\\begin{figure}[<+htpb+>]\<CR>\\caption{<+caption text+>}\
 autocmd BufEnter *.tex call IMAP('EGR', "\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
 autocmd BufEnter *.tex call IMAP('DIT', '\item[<+label+>] <++>', 'tex')
 autocmd BufEnter *.tex call IMAP('IT', '\item <++>', 'tex')
-autocmd BufEnter *.tex set foldlevel=100
 
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -314,7 +313,10 @@ autocmd FileType python setlocal fileformat=unix
 
 " --------------------- Tex ----------------------
 autocmd FileType tex noremap <C-r>b :w<CR>:!make<CR>
-autocmd FileType tex set spell
+autocmd FileType tex setlocal spell
+autocmd FileType tex setlocal foldlevel=100
+" Automatically enter a comment leader when hitting Enter or o/O
+autocmd FileType tex setlocal formatoptions+=ro
 
 
 " ------------------------------------------------------------------------------
