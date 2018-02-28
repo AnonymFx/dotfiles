@@ -176,9 +176,8 @@ let g:tex_indent_items = 0
 set iskeyword+=:
 nmap <C-Space> <Plug>Tex_FastEnvironmentInsert
 imap <C-j> <Plug>IMAP_JumpForward
-imap <S-CR> <Plug>IMAP_JumpForward
-nmap <S-CR> <Plug>IMAP_JumpForward
-vmap <S-CR> <Plug>IMAP_JumpForward
+
+" Better and more latex environment insertions
 let g:Tex_Env_figure="\\begin{figure}[<+htpb+>]\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>"
 " IMAP is a function provided by vim-latex which is an alternative for imap
 " and also matches if you don't type in the chars in the exact sequence
