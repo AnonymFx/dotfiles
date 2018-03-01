@@ -147,7 +147,7 @@ let g:airline_powerline_fonts = 1 " powerline font
 nnoremap <leader>af :Autoformat<CR>
 
 " fzf --------------------------------------------------------------------------
-let $FZF_DEFAULT_COMMAND = 'ag -g "!.git/*"'
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <C-g> :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
