@@ -125,7 +125,7 @@ function get_package_list() {
 			return 0
 			;;
 		vim )
-			echo "gvim ack fzf-git ripgrep"
+			echo "gvim ack fzf-git the_silver_searcher"
 			return 0
 			;;
 		neovim )
@@ -141,7 +141,7 @@ function get_package_list() {
 			return 0
 			;;
 		zsh )
-			echo "zsh curl fzf-git ripgrep exa"
+			echo "zsh curl fzf-git the_silver_searcher exa"
 			return 0
 			;;
 		X )
