@@ -99,7 +99,8 @@ if [[ -e /etc/profile.d/fzf.zsh ]]; then
 	source /etc/profile.d/fzf.zsh
 fi
 
-if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; then
+if fzf_l="$(type -p fzf)" && [ -n "$fzf_l" ] && rg_l="$(type -p rg)" && [ -n "$rg_l" ]; then
+	export FZF_DEFAULT_COMMAND='rg --files --ignore --hidden --follow --glob "!.git/*"'
 	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 	export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 	export FZF_DEFAULT_OPTS=' --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108 --color info:108,prompt:109,spinner:108,pointer:168,marker:168
@@ -202,10 +203,10 @@ if exa_l="$(type -p exa)" && [ -n "$exa_l" ]; then
 	alias l='exa -lg --group-directories-first'
 fi
 
-# ag ###################################
-if ag_l="$(type -p ag)" && [ -n "$ag_l" ]; then
-	alias ag='ag --color -S'
-	alias -g AG='| ag'
+# rg ###################################
+if rg_l="$(type -p rg)" && [ -n "$rg_l" ]; then
+	alias rg='rg --color -S'
+	alias -g G='| rg'
 fi
 # List directory after cd
 function chpwd(){
