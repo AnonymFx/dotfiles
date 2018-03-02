@@ -291,8 +291,13 @@ colo molokai
 let g:airline_theme='badwolf' " reset nice airline theme
 " Brighter number column
 hi LineNr guifg=#aaaaaa
+" Curly line does not work in terminal, so set the background color to read
+" for spell checking
 hi SpellBad guibg=#6d0000
+" Nicer background color
 hi Normal guibg=#262626
+" Better parenthesis highlight color
+hi MatchParen guifg=#FD971F guibg=#000000
 
 
 " ------------------------------------------------------------------------------
