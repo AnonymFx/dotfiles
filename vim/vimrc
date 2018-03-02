@@ -67,6 +67,12 @@ Plug 'dhruvasagar/vim-table-mode'
 " Molokai color scheme
 Plug 'tomasr/molokai'
 
+" Automatic tag file generation
+Plug 'ludovicchabant/vim-gutentags'
+
+" Tagbar
+Plug 'majutsushi/tagbar'
+
 " " ---------------- Filetype plugins ---------------------
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
@@ -146,6 +152,9 @@ let g:airline_powerline_fonts = 1 " powerline font
 " ---------------------------- autoformat --------------------------------------
 nnoremap <leader>af :Autoformat<CR>
 
+" Gutentags---------------------------------------------------------------------
+let g:gutentags_ctags_tagfile = '.tags'
+
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <C-g> :Buffers<CR>
@@ -168,6 +177,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>at :TableModeRealign<CR>
+
+" Tagbar------------------------------------------------------------------------
+nmap <leader>tb :TagbarToggle<CR>
 
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
