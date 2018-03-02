@@ -1,2 +1,4 @@
 # Set clipboard to system clipboard
 set selection-clipboard clipboard
+
+set recolor true
