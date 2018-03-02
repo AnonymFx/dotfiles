@@ -4,7 +4,7 @@ Use at own risk.
 
 ## Installation
 There is an install script available for the following distros in their respective branches:
-* Arch
+* Arch (for some packages only available via the AUR, yaourt or trizen is necessary)
 * Ubuntu (only linking currently)
 
 You might want to merge master before installing, it's not guaranteed that the distro branches are up to date.
