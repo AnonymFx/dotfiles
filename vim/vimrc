@@ -205,8 +205,11 @@ autocmd FileType tex nmap <C-j> :TmuxNavigateDown<CR>
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup YCMInsertTrigger
+	autocmd!
+	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
 let g:ycm_python_binary_path = 'python' " Enable python autocomplete
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 " Set ycm identifier completion to 5 (problems with enumerate expansion if
@@ -332,7 +335,7 @@ autocmd FileType python setlocal autoindent
 autocmd FileType python setlocal fileformat=unix
 
 " --------------------- Tex ----------------------
-autocmd FileType tex noremap <buffer> <C-r>b :w<CR>:!make<CR>
+autocmd FileType tex nmap <C-r>b :w<CR>:!make<CR>
 autocmd FileType tex setlocal spell
 autocmd FileType tex setlocal foldlevel=100
 " Automatically enter a comment leader when hitting Enter or o/O
