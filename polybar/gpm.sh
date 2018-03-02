@@ -61,6 +61,6 @@ metadata="$title - $artits"
 # Foreground color formatting tags are optional
 if [[ $player_status = "true" ]]; then
 	echo "$icon $metadata"
-else
+elif [[ $player_status = "false" ]]; then
 	echo ""
 fi
