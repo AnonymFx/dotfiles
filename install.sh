@@ -125,7 +125,7 @@ function get_package_list() {
 			return 0
 			;;
 		vim )
-			echo "gvim ack fzf-git the_silver_searcher"
+			echo "gvim ack fzf-git the_silver_searcher universal-ctags-git"
 			return 0
 			;;
 		neovim )
