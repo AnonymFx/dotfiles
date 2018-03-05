@@ -9,7 +9,8 @@
 call plug#begin('~/.vim/plugins')
 
 " YouCompleteMe - code completion engine
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py
+			\ --clang-completer --go-completer --js-completer --java-completer'}
 " YouCompleteMe Generator - generate project files for YouCompleteMe
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
@@ -23,6 +24,8 @@ Plug 'airblade/vim-gitgutter'
 
 " NERDTree - File Explorer
 Plug 'scrooloose/nerdtree'
+" NERDTree git icons
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " ALE Linter
 Plug 'w0rp/ale'
@@ -47,14 +50,6 @@ Plug 'tpope/vim-surround'
 " Comment and uncomment lines
 Plug 'tpope/vim-commentary'
 
-" Framework for new text objects following below
-Plug 'kana/vim-textobj-user'
-" New text objects
-Plug 'kana/vim-textobj-line'
-
-" Edit at multiple places
-Plug 'terryma/vim-multiple-cursors'
-
 " Autoformat files
 Plug 'Chiel92/vim-autoformat'
 
@@ -73,31 +68,8 @@ Plug 'ludovicchabant/vim-gutentags'
 " Tagbar
 Plug 'majutsushi/tagbar'
 
-" " ---------------- Filetype plugins ---------------------
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
-
-" Better XML editing (tag completions, jumps, ...)
-Plug 'sukima/xmledit', {'for': 'xml'}
-
-" Typescript syntax and other settings
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-
-" Swift syntax highlighting
-Plug 'keith/swift.vim', {'for': 'swift'}
-
-" Better Python syntax highlighting
-Plug 'hdima/python-syntax', {'for': 'python'}
-
-" Python syntax annotations according to pep8
-Plug 'nvie/vim-flake8', {'for': 'python'}
-
-" Python folding
-Plug 'tmhedberg/SimpylFold', {'for': 'python'}
-
-" Python indentation
-Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
-
 " Init plugin system
 call plug#end()
 
@@ -167,11 +139,8 @@ set updatetime=100
 let g:NERDTreeIgnore = ['bin', 'node_modules']
 nmap <leader>nt :NERDTreeToggle<CR>
 
-" ------------------------------ SimpylFold ------------------------------------
-let g:SimpylFold_docstring_preview=1
-
-" ------------------------------- Syntastic ------------------------------------
-let g:syntastic_javascript_checkers = ['jshint']
+" Polyglot ---------------------------------------------------------------------
+let g:polyglot_disabled = ['']
 
 " ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
