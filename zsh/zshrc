@@ -214,12 +214,16 @@ function chpwd(){
 	l
 }
 
-# VIM Mode
+# (Nearly) remove key timeout for escape
 export KEYTIMEOUT=1
 
 # History Control (Arrow up and down use already entered text)
 bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
+# Same for k an j in vi mode
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
+# Re-enable backspace button (overwrite vi mode behavior)
 bindkey "^?" backward-delete-char
+# Shift+Tab for backwards autocomplete navigation
+bindkey -M menuselect '^[[Z' reverse-menu-complete
