@@ -24,7 +24,7 @@ LOCK_CMD="i3lock --nofork --screen=0 --color=000000
 
 DISPLAY_RE="([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)" # Regex to find display dimensions
 FOLDER=`pwd` # Current folder
-CACHE_FOLDER="$HOME/.config/i3/lock_cache" # Cache folder"
+CACHE_FOLDER="$HOME/.config/i3/lock_cache/" # Cache folder"
 if ! [ -e $CACHE_FOLDER ]; then
 	mkdir $CACHE_FOLDER
 fi
