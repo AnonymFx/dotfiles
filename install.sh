@@ -200,7 +200,9 @@ function link_config() {
 			ln -snf $PWD/zathura/zathurarc $HOME/.config/zathura/zathurarc
 			;;
 		zsh )
+			mkdir -p $HOME/bin
 			ln -snf $PWD/zsh/zshrc $HOME/.zshrc
+			ln -snf $PWD/zsh/system-update-prompt.sh $HOME/bin/system-update-prompt
 			;;
 		X )
 			mkdir -p $HOME/.config
