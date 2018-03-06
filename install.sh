@@ -376,7 +376,7 @@ else
 		install git
 	elif [[ $1 = gtk ]]; then
 		install gtk
-	elif [[ $1 = i3 ]]; then
+	elif [[ $1 = i3-gaps ]]; then
 		install i3-gaps
 	elif [[ $1 = ideavim ]]; then
 		install ideavim
