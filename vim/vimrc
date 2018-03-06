@@ -168,8 +168,10 @@ autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
 autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
 
 " Vim-tmux-navigator -----------------------------------------------------------
-" Override vim-latex binding
+" Override vim-latex binding, for some reason both lines are necessary for
+" also enabling resourcing the vimrc
 autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
