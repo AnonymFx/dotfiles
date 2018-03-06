@@ -68,6 +68,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Tagbar
 Plug 'majutsushi/tagbar'
 
+" Language support for over 100 languages
+Plug 'sheerun/vim-polyglot'
+
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 " Init plugin system
@@ -137,7 +140,7 @@ set updatetime=100
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
-nmap <leader>nt :NERDTreeToggle<CR>
+nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Polyglot ---------------------------------------------------------------------
 let g:polyglot_disabled = ['']
@@ -148,7 +151,7 @@ let g:table_mode_corner="|"
 nnoremap <leader>at :TableModeRealign<CR>
 
 " Tagbar------------------------------------------------------------------------
-nmap <leader>tb :TagbarToggle<CR>
+nmap <silent> <leader>tb :TagbarToggle<CR>
 
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
