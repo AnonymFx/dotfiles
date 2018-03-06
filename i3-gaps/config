@@ -158,8 +158,7 @@ client.urgent           #da4141 #da4141 #000000 #da4141
 
 # Window border style
 new_window pixel 2
-# Make sure every window has a border
-for_window [class="^.*"] pixel 2
+new_float pixel 2
 
 # Gaps for i3-gaps
 gaps inner 22
