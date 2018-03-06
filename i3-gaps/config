@@ -199,7 +199,7 @@ exec_always --no-startup-id compton --unredir-if-possible
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/background
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/background
 
 # Start redshift
 exec --no-startup-id redshift
