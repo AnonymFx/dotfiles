@@ -383,7 +383,11 @@ function install() {
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		install_packages $TARGET
+		echo -e "Do you want to install the packages for \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
+		read line
+		if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+			install_packages $TARGET
+		fi
 		install_additional $TARGET
 		post_install $TARGET
 		link_config $TARGET
