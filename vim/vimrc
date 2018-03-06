@@ -68,6 +68,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Tagbar
 Plug 'majutsushi/tagbar'
 
+" Language support for over 100 languages
+Plug 'sheerun/vim-polyglot'
+
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 " Init plugin system
