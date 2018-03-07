@@ -128,7 +128,7 @@ let g:airline_powerline_fonts = 1 " powerline font
 nnoremap <leader>af :Autoformat<CR>
 
 " Gutentags---------------------------------------------------------------------
-let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_tagfile = '.vimtags'
 
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
