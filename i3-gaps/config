@@ -114,6 +114,7 @@ for_window [class="^Keepassx$"] floating disable
 
 # Assign applications to workspaces
 assign [class="Google Play Music Desktop Player"] 10
+for_window [class="Spotify"] move to workspace 10
 assign [class="^Veracrypt$"] 6
 assign [class="^Keepassx$"] 6
 assign [class="^keepassxc$" window_type="normal"] 6
