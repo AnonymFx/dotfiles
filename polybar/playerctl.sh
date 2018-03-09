@@ -8,14 +8,14 @@ if [ "$playerstatus" == "Playing" ]; then
 	# Show max 1/3 of the length the author and on the rest the title
 	maxartistlen=$((maxlen/3))
 	artistlen=${#artist}
-	if [[ artistlen -gt maxartistlen ]]; then
+	if [[ $artistlen -gt $maxartistlen ]]; then
 		artistlen=$maxartistlen
 	fi
 	titlelen=$((maxlen - artistlen))
 
 	# Cut output to maxlen
-	if [[ ${#artist} -gt artistlen ]]; then
-		artist="$(echo $artits | head -c $((artistlen-3)))..."
+	if [[ ${#artist} -gt $artistlen ]]; then
+		artist="$(echo $artist | head -c $((artistlen-3)))..."
 	fi
 
 	if [[ ${#title} -gt titlelen ]]; then
@@ -23,6 +23,6 @@ if [ "$playerstatus" == "Playing" ]; then
 	fi
 
 	echo "$title - $artist"
-else 
+else
 	echo ""
 fi
