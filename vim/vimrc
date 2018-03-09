@@ -9,7 +9,8 @@
 call plug#begin('~/.vim/plugins')
 
 " YouCompleteMe - code completion engine
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --js-completer --system-libclang'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py
+			\ --clang-completer --go-completer --js-completer --java-completer'}
 " YouCompleteMe Generator - generate project files for YouCompleteMe
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
@@ -23,6 +24,8 @@ Plug 'airblade/vim-gitgutter'
 
 " NERDTree - File Explorer
 Plug 'scrooloose/nerdtree'
+" NERDTree git icons
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " ALE Linter
 Plug 'w0rp/ale'
@@ -47,17 +50,6 @@ Plug 'tpope/vim-surround'
 " Comment and uncomment lines
 Plug 'tpope/vim-commentary'
 
-" Framework for new text objects following below
-Plug 'kana/vim-textobj-user'
-" New text objects
-Plug 'kana/vim-textobj-line'
-
-" Edit at multiple places
-Plug 'terryma/vim-multiple-cursors'
-
-" Supertab - tab for insert completions
-Plug 'ervandew/supertab'
-
 " Autoformat files
 Plug 'Chiel92/vim-autoformat'
 
@@ -70,28 +62,17 @@ Plug 'dhruvasagar/vim-table-mode'
 " Molokai color scheme
 Plug 'tomasr/molokai'
 
-" " ---------------- Filetype plugins ---------------------
+" Automatic tag file generation
+Plug 'ludovicchabant/vim-gutentags'
+
+" Tagbar
+Plug 'majutsushi/tagbar'
+
+" Language support for over 100 languages
+Plug 'sheerun/vim-polyglot'
+
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
-
-" Better XML editing (tag completions, jumps, ...)
-Plug 'sukima/xmledit', {'for': 'xml'}
-
-" Typescript syntax and other settings
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-
-" Swift syntax highlighting
-Plug 'keith/swift.vim', {'for': 'swift'}
-
-" Better Python syntax highlighting
-Plug 'hdima/python-syntax', {'for': 'python'}
-" Python syntax annotations according to pep8
-Plug 'nvie/vim-flake8', {'for': 'python'}
-" Python folding
-Plug 'tmhedberg/SimpylFold', {'for': 'python'}
-" Python indentation
-Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
-
 " Init plugin system
 call plug#end()
 
@@ -100,36 +81,33 @@ call plug#end()
 " ------------------------------------------------------------------------------
 
 set timeoutlen=500
+set ttimeoutlen=10
 let mapleader=" "
+noremap \ "
 
 " New line without insert
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<ESC>j
 
-" Split switches
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-h> <C-W><C-H>
-nnoremap <C-l> <C-W><C-L>
-
 " Keybinding for yanking and pasting from system keyboard
 noremap <leader>p "+p
 noremap <leader>P "+P
 noremap <leader>y "+y
+noremap <leader>d "+d
 
 " resize horizontal splits
 nnoremap <leader>hr :resize
 "resize vertical splits
 nnoremap <leader>vr :vertical resize
 
-" change register leader key
-noremap \ "
-
 " Forward and backward movement in command mode
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
+
+" Toggle highlight search
+noremap <leader>hls :set hls!<CR>
 
 
 " ------------------------------------------------------------------------------
@@ -149,50 +127,63 @@ let g:airline_powerline_fonts = 1 " powerline font
 " ---------------------------- autoformat --------------------------------------
 nnoremap <leader>af :Autoformat<CR>
 
+" Gutentags---------------------------------------------------------------------
+let g:gutentags_ctags_tagfile = '.vimtags'
+
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-nnoremap <C-i> :Buffers<CR>
+nnoremap <leader>bu :Buffers<CR>
 nnoremap <C-p> :Files<CR>
+
+" gitgutter --------------------------------------------------------------------
+set updatetime=100
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
-nmap <leader>nt :NERDTreeToggle<CR>
+nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
-" ------------------------------ SimpylFold ------------------------------------
-let g:SimpylFold_docstring_preview=1
-
-" ------------------------------- Syntastic ------------------------------------
-let g:syntastic_javascript_checkers = ['jshint']
+" Polyglot ---------------------------------------------------------------------
+let g:polyglot_disabled = ['']
 
 " ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>at :TableModeRealign<CR>
 
+" Tagbar------------------------------------------------------------------------
+nmap <silent> <leader>tb :TagbarToggle<CR>
+
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
 set grepprg=grep\ -nH\ $*
-let g:tex_indent_items = 0
 set iskeyword+=:
-nmap <C-Space> <Plug>Tex_FastEnvironmentInsert
-imap <C-j> <Plug>IMAP_JumpForward
-imap <S-CR> <Plug>IMAP_JumpForward
-nmap <S-CR> <Plug>IMAP_JumpForward
-vmap <S-CR> <Plug>IMAP_JumpForward
+let g:tex_indent_items = 0
+
+" Better and more latex environment insertions
 let g:Tex_Env_figure="\\begin{figure}[<+htpb+>]\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>"
 " IMAP is a function provided by vim-latex which is an alternative for imap
 " and also matches if you don't type in the chars in the exact sequence
 " indicated
-autocmd BufEnter *.tex call IMAP('EGR', "\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
-autocmd BufEnter *.tex call IMAP('DIT', '\item[<+label+>] <++>', 'tex')
-autocmd BufEnter *.tex call IMAP('IT', '\item <++>', 'tex')
+autocmd FileType tex call IMAP('EGR', "\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
+autocmd FileType tex call IMAP('DIT', '\item[<+label+>] <++>', 'tex')
+autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
+
+autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
+
+" Vim-tmux-navigator -----------------------------------------------------------
+" Override vim-latex binding, for some reason both lines are necessary for
+" also enabling resourcing the vimrc
+autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 
 " ----------------------------- YouCompleteMe ----------------------------------
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup YCMInsertTrigger
+	autocmd!
+	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
 let g:ycm_python_binary_path = 'python' " Enable python autocomplete
 let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
 " Set ycm identifier completion to 5 (problems with enumerate expansion if
@@ -204,8 +195,6 @@ nmap <leader>gt :YcmCompleter GoTo<CR>
 " ------------------------------------------------------------------------------
 " --------------------------------- General ------------------------------------
 " ------------------------------------------------------------------------------
-" turn off compat mode for vi
-set nocompatible
 
 " syntax highlighting
 syntax on
@@ -242,7 +231,6 @@ function! AutoHighlightToggle()
 	if exists('#auto_highlight')
 		au! auto_highlight
 		augroup! auto_highlight
-		setl updatetime=4000
 		echo 'Highlight current word: off'
 		return 0
 	else
@@ -250,7 +238,6 @@ function! AutoHighlightToggle()
 			au!
 			au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
 		augroup end
-		setl updatetime=500
 		echo 'Highlight current word: ON'
 		return 1
 	endif
@@ -258,7 +245,7 @@ endfunction
 
 " folding
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=100
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP
@@ -279,6 +266,9 @@ set splitbelow
 " Enabling mouse scrolling
 set mouse=a
 
+" Show as much as possible of a wrapped last line, not just "@".
+set display=lastline
+
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
@@ -288,7 +278,13 @@ colo molokai
 let g:airline_theme='badwolf' " reset nice airline theme
 " Brighter number column
 hi LineNr guifg=#aaaaaa
+" Curly line does not work in terminal, so set the background color to read
+" for spell checking
 hi SpellBad guibg=#6d0000
+" Nicer background color
+hi Normal guibg=#262626
+" Better parenthesis highlight color
+hi MatchParen guifg=#FD971F guibg=#000000
 
 
 " ------------------------------------------------------------------------------
@@ -298,9 +294,7 @@ hi SpellBad guibg=#6d0000
 autocmd FileType javascript setlocal tabstop=4
 
 " ------------------ Markdown --------------------
-autocmd FileType markdown set foldmethod=indent
-autocmd FileType markdown set foldlevel=0
-autocmd FileType markdown setlocal nowrap "Disable line wrapping for too long lines
+autocmd FileType markdown setlocal foldmethod=indent
 
 " ------------------ Python ----------------------
 autocmd FileType python let python_highlight_all=1
@@ -313,8 +307,11 @@ autocmd FileType python setlocal autoindent
 autocmd FileType python setlocal fileformat=unix
 
 " --------------------- Tex ----------------------
-autocmd FileType tex noremap <C-r>b :w<CR>:!make<CR><CR>
-autocmd FileType tex set spell
+autocmd FileType tex nmap <C-r>b :w<CR>:!make<CR>
+autocmd FileType tex setlocal spell
+autocmd FileType tex setlocal foldlevel=100
+" Automatically enter a comment leader when hitting Enter or o/O
+autocmd FileType tex setlocal formatoptions+=ro
 
 
 " ------------------------------------------------------------------------------

@@ -18,6 +18,7 @@ function print_help_msg() {
 				ideavim
 				intellij_idea
 				polybar
+				qt
 				ranger
 				readline
 				redshift
@@ -131,7 +132,7 @@ function link_config() {
 			ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
 			ln -snf $PWD/i3-gaps/lock.sh $HOME/.config/i3/lock.sh
 			ln -snf $PWD/i3-gaps/autostart.sh $HOME/.config/i3/autostart.sh
-			ln -snf $PWD/i3-gaps/background $HOME/Pictures/i3-bg
+			ln -snf $PWD/i3-gaps/background $HOME/.config/i3/background
 			;;
 		ideavim )
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
@@ -148,7 +149,12 @@ function link_config() {
 			mkdir -p $HOME/.config/polybar
 			ln -snf $PWD/polybar/config $HOME/.config/polybar/config
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
-			ln -snf $PWD/polybar/gpm.sh $HOME/.config/polybar/gpm.sh
+			ln -snf $PWD/polybar/playerctl.sh $HOME/.config/polybar/playerctl.sh
+			;;
+		qt )
+			mkdir -p $HOME/.config/qt5ct
+			ln -snf $PWD/qt/qt5ct.conf $HOME/.config/qt5ct/qt5ct.conf
+			ln -snf $PWD/qt/qt4.conf $HOME/.config/Trolltech.conf
 			;;
 		ranger )
 			mkdir -p $HOME/.config/ranger
@@ -194,12 +200,15 @@ function link_config() {
 			ln -snf $PWD/zathura/zathurarc $HOME/.config/zathura/zathurarc
 			;;
 		zsh )
+			mkdir -p $HOME/bin
 			ln -snf $PWD/zsh/zshrc $HOME/.zshrc
+			ln -snf $PWD/zsh/system-update-prompt.sh $HOME/bin/system-update-prompt
 			;;
 		X )
 			mkdir -p $HOME/.config
 			ln -snf $PWD/X/Xresources $HOME/.Xresources
 			ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
+			ln -snf $PWD/X/xprofile $HOME/.xprofile
 			;;
 	esac
 }
@@ -266,7 +275,11 @@ function install() {
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		install_packages $TARGET
+		echo -e "Do you want to install the packages for \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
+		read line
+		if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
+			install_packages $TARGET
+		fi
 		install_additional $TARGET
 		post_install $TARGET
 		link_config $TARGET
@@ -342,6 +355,7 @@ else
 		install ideavim
 		install intellij_idea
 		install polybar
+		install qt
 		install ranger
 		install readline
 		install redshift
@@ -385,7 +399,7 @@ else
 		install git
 	elif [[ $1 = gtk ]]; then
 		install gtk
-	elif [[ $1 = i3 ]]; then
+	elif [[ $1 = i3-gaps ]]; then
 		install i3-gaps
 	elif [[ $1 = ideavim ]]; then
 		install ideavim
@@ -393,6 +407,8 @@ else
 		install intellij_idea
 	elif [[ $1 = polybar ]]; then
 		install polybar
+	elif [[ $1 = qt ]]; then
+		install qt
 	elif [[ $1 = ranger ]]; then
 		install ranger
 	elif [[ $1 = readline ]]; then
