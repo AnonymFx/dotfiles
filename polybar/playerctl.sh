@@ -1,5 +1,6 @@
 #!/bin/bash
-if [ "$(playerctl status 2>/dev/null)" = "Playing" ]; then
+playerstatus="$(playerctl status 2>/dev/null)"
+if [ "$playerstatus" == "Playing" ]; then
 	maxlen=$1
 	title=`exec playerctl metadata xesam:title 2>/dev/null`
 	artist=`exec playerctl metadata xesam:artist 2>/dev/null`
@@ -22,7 +23,6 @@ if [ "$(playerctl status 2>/dev/null)" = "Playing" ]; then
 	fi
 
 	echo "$title - $artist"
-else if [ "$(playerctl status 2>/dev/null)" = "Paused" ]; then
+else 
 	echo ""
-fi
 fi
