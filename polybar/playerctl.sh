@@ -8,7 +8,7 @@ if [ "$(playerctl status 2>/dev/null)" = "Playing" ]; then
 	maxartistlen=$((maxlen/3))
 	artistlen=${#artist}
 	if [[ artistlen -gt maxartistlen ]]; then
-		artistlen = maxartistlen
+		artistlen=$maxartistlen
 	fi
 	titlelen=$((maxlen - artistlen))
 
