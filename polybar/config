@@ -293,7 +293,7 @@ format-prefix = " "
 type = custom/script
 interval=.1
 format-underline = ${colors.underline}
-exec=$HOME/.config/polybar/playerctl.sh 39
+exec=$HOME/.config/polybar/playerctl.sh 45
 
 [settings]
 screenchange-reload = true
