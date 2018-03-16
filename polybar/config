@@ -291,7 +291,7 @@ format-prefix = " "
 
 [module/music]
 type = custom/script
-interval=1
+interval=.1
 format-underline = ${colors.underline}
 exec=$HOME/.config/polybar/playerctl.sh 39
 
