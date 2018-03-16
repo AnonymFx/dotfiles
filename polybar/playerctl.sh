@@ -8,11 +8,11 @@ if [ "$playerstatus" == "Playing" ]; then
 	titlelen=${#title}
 	artist=`exec playerctl metadata xesam:artist 2>/dev/null`
 	artistlen=${#artist}
-	
+
 	# Show max 1/3 of the length the author and on the rest the title
 	maxartistlen=$((maxlen/3))
 	# Or, if the title is very short, allow a longer artist
-	if [ $((maxlen - titlelen)) > $maxartistlen ]; then
+	if [ $((maxlen - titlelen)) -gt $maxartistlen ]; then
 		maxartistlen=$((maxlen - titlelen))
 	fi
 
