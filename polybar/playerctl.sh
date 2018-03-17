@@ -23,11 +23,11 @@ if [ "$playerstatus" == "Playing" ]; then
 
 	# Cut output to maxlen
 	if [[ ${#artist} -gt $artistlen ]]; then
-		artist="$(echo $artist | head -c $((artistlen-3)))..."
+		artist="$(echo $artist | head -c $((artistlen-1)))…"
 	fi
 
 	if [[ ${#title} -gt titlelen ]]; then
-		title="$(echo $title | head -c $((titlelen-3)))..."
+		title="$(echo $title | head -c $((titlelen-1)))…"
 	fi
 
 	echo "$title - $artist"
