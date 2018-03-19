@@ -208,8 +208,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # Start Applications
 # ------------------
 # Adapt monitor setup
-exec --no-startup-id autorandr --change
-bindsym $mod+ctrl+r exec autorandr --change
+exec_always --no-startup-id autorandr --change
 
 # start xcompmgr on all monitors
 exec_always --no-startup-id compton --unredir-if-possible
