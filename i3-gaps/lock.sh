@@ -28,7 +28,7 @@ CACHE_FOLDER="$HOME/.config/i3/lock_cache/" # Cache folder"
 if ! [ -e $CACHE_FOLDER ]; then
 	mkdir $CACHE_FOLDER
 fi
-BKG_IMG="$HOME/.config/i3/background"  # Passed image
+BKG_IMG="$HOME/.config/i3/lockscreen"  # Passed image
 if ! [ -e "$BKG_IMG" ]; then
 	eval $LOCK_CMD
 	exit 0
