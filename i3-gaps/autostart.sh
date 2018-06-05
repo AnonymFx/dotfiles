@@ -1,7 +1,7 @@
 #!/bin/sh
 case $1 in
 	w ) # Work
-		i3-msg "workspace 10; exec gpmdp"
+		i3-msg "workspace 10; exec spotify"
 		sleep 3
 		i3-msg "workspace 9"
 		sleep 0.1
@@ -21,7 +21,7 @@ case $1 in
 		fi
 		;;
 	p ) # Private
-		i3-msg "workspace 10; exec gpmdp"
+		i3-msg "workspace 10; exec spotify"
 		sleep 3
 		i3-msg "workspace 9"
 		sleep 0.1
