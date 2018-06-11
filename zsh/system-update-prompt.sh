@@ -12,12 +12,16 @@ function _update_system_update() {
 
 function _upgrade_system() {
 	# Do system update, try AUR helpers first, fallback is pacman
-	if trizen_location="$(type -p trizen)" && [ -n "$trizen_location" ]; then
+	if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
+		if yay -Syu; then
+			# update the system update file
+			_update_system_update
+		fi
+	elif trizen_location="$(type -p trizen)" && [ -n "$trizen_location" ]; then
 		if trizen -Syu --noedit; then
 			# update the system update file
 			_update_system_update
 		fi
-		# otherwise use pacman
 	elif yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
 		if yaourt -Syua; then
 			# update the system update file
