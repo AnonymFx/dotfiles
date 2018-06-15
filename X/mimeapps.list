@@ -63,6 +63,7 @@ text/csv=google-chrome-beta.desktop;
 application/x-desktop=gvim.desktop;
 
 [Default Applications]
+application/pdf=kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
 video/mpeg=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/dv=vlc.desktop

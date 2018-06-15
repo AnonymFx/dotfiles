@@ -208,7 +208,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # Start Applications
 # ------------------
 # Adapt monitor setup
-exec_always --no-startup-id autorandr --change
+exec --no-startup-id autorandr --change
+bindsym $mod+ctrl+r exec autorandr --change
 
 # start xcompmgr on all monitors
 exec_always --no-startup-id compton --unredir-if-possible
@@ -221,9 +222,6 @@ exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/background
 
 # Start redshift
 exec --no-startup-id redshift
-
-# Start insync
-exec --no-startup-id insync start
 
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh

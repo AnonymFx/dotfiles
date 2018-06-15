@@ -5,13 +5,13 @@
 2. Link system libs
 3. Do the same for lib32
 ```
-mkdir $SDK_HOME/emulator/lib64/libstdc++/old
-mv $SDK_HOME/emulator/lib64/libstdc++/* $SDK_HOME/emulator/lib64/libstdc++/old
-ln -s /usr/lib/libstdc++.so.6
-ln -s /usr/lib/libstdc++.so.6.0.23
+mkdir $ANDROID_HOME/emulator/lib64/libstdc++/old
+mv $ANDROID_HOME/emulator/lib64/libstdc++/* $ANDROID_HOME/emulator/lib64/libstdc++/old
+ln -s /usr/lib/libstdc++.so.6 $ANDROID_HOME/emulator/lib64/libstdc++/
+ln -s /usr/lib/libstdc++.so.6.0.* $ANDROID_HOME/emulator/lib64/libstdc++/
 
-mkdir $SDK_HOME/emulator/lib/libstdc++/old
-mv $SDK_HOME/emulator/lib/libstdc++/* $SDK_HOME/emulator/lib/libstdc++/old
-ln -s /usr/lib32/libstdc++.so.6
-ln -s /usr/lib32/libstdc++.so.6.0.23
+mkdir $ANDROID_HOME/emulator/lib/libstdc++/old
+mv $ANDROID_HOME/emulator/lib/libstdc++/* $ANDROID_HOME/emulator/lib/libstdc++/old
+ln -s /usr/lib32/libstdc++.so.6 $ANDROID_HOME/emulator/lib/libstdc++/
+ln -s /usr/lib32/libstdc++.so.6.0.* $ANDROID_HOME/emulator/lib/libstdc++/
 ```

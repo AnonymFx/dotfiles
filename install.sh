@@ -133,6 +133,7 @@ function link_config() {
 			ln -snf $PWD/i3-gaps/lock.sh $HOME/.config/i3/lock.sh
 			ln -snf $PWD/i3-gaps/autostart.sh $HOME/.config/i3/autostart.sh
 			ln -snf $PWD/i3-gaps/background $HOME/.config/i3/background
+			ln -snf $PWD/i3-gaps/lockscreen $HOME/.config/i3/lockscreen
 			;;
 		ideavim )
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
