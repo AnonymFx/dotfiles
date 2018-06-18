@@ -97,7 +97,7 @@ function get_package_list() {
 			return 1
 			;;
 		polybar )
-			echo "polybar-git xorg-xbacklight jq nerd-fonts-complete ttf-material-icons playerctl wireless_tools"
+			echo "polybar xorg-xbacklight jq nerd-fonts-complete ttf-material-icons playerctl wireless_tools"
 			return 0
 			;;
 		qt )
