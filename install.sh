@@ -116,11 +116,11 @@ function get_package_list() {
 			return 0
 			;;
 		rofi )
-			echo "rofi"
+			echo "rofi ttf-dejavu"
 			return 0
 			;;
 		terminator )
-			echo "terminator"
+			echo "terminator ttf-inconsolata"
 			return 0
 			;;
 		tmux )
