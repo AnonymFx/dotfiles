@@ -128,7 +128,6 @@ function link_config() {
 			;;
 		i3-gaps )
 			mkdir -p $HOME/.config/i3
-			mkdir -p $HOME/Pictures
 			ln -snf $PWD/i3-gaps/config $HOME/.config/i3/config
 			ln -snf $PWD/i3-gaps/lock.sh $HOME/.config/i3/lock.sh
 			ln -snf $PWD/i3-gaps/autostart.sh $HOME/.config/i3/autostart.sh
