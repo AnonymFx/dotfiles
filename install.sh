@@ -30,6 +30,7 @@ function print_help_msg() {
 				neovim
 				vimiv
 				vrapper
+				webstorm
 				zathura
 				zsh
 				X
@@ -306,6 +307,14 @@ function link_config() {
 		vrapper )
 			ln -snf $PWD/vrapper/vrapperrc $HOME/.vrapperrc
 			;;
+		webstorm )
+			mkdir -p $HOME/.WebStorm/config/{colors,fileTemplates,keymaps,options}
+			rm -r $HOME/.WebStorm/config/fileTemplates/*
+			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.WebStorm/config/colors
+			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.WebStorm/config/fileTemplates
+			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.WebStorm/config/keymaps
+			ln -snf $PWD/intellij_idea/config/options/* $HOME/.WebStorm/config/options
+			;;
 		zathura )
 			mkdir -p $HOME/.config/zathura
 			ln -snf $PWD/zathura/zathurarc $HOME/.config/zathura/zathurarc
@@ -478,6 +487,7 @@ else
 		install neovim
 		install vimiv
 		install vrapper
+		install webstorm
 		install zathura
 		install zsh
 		install X
@@ -541,6 +551,8 @@ else
 		install vimiv
 	elif [[ $1 = vrapper ]]; then
 		install vrapper
+	elif [[ $1 = webstorm ]]; then
+		install webstorm
 	elif [[ $1 = zathura ]]; then
 		install zathura
 	elif [[ $1 = zsh ]]; then
