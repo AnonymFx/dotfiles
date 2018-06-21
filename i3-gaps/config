@@ -162,6 +162,10 @@ mode "power" {
 }
 bindsym $mod+ctrl+p mode "power"
 
+# Silence/unsilence dunst notifications
+bindsym $mod+ctrl+s exec "notify-send 'Silencing notifications' -t 3000 && sleep 3 &&  killall -SIGUSR1 dunst"
+bindsym $mod+shift+s exec "killall -SIGUSR2 dunst && notify-send 'Unsilenced notifications' -t 3000"
+
 # Window header style
 # class                 border  backgr. text    indicator
 client.focused          #ffffff #ffffff #000000 #ffffff
@@ -227,7 +231,7 @@ exec --no-startup-id redshift
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
 exec_always --no-startup-id $HOME/.config/i3/custom_config.sh -a
 
-# Promt for autostarting applications
+# Prompt for autostarting applications
 exec --no-startup-id sh -c "sleep 2; i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '"
 # Bind key for autostart promt (in case it was accidently dismissed)
 bindsym $mod+ctrl+a exec --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
