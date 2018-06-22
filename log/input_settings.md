@@ -34,5 +34,6 @@ Section "InputClass"
     Option "XkbLayout" "us"
     Option "XkbVariant" "intl"
     Option "XkbOptions" "caps:swapescape"
+    Option "XkbOptions" "compose:caps"
 EndSection
 ```

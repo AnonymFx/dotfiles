@@ -165,7 +165,7 @@
 
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.
-    sticky_history = yes
+    sticky_history = no
 
     # Maximum amount of notifications kept in history
     history_length = 20
@@ -255,7 +255,7 @@
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
-    timeout = 0
+    timeout = 60
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
 
