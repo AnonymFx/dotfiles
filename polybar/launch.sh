@@ -15,7 +15,7 @@ fi
 WLAN="$(ls /sys/class/net | grep wl)" \
 ETH="$(ls /sys/class/net | grep en)" \
 BAT="$(ls /sys/class/power_supply | grep BAT)" \
-BAT_ADP="$(ls /sys/class/power_supply | grep A)" \
+BAT_ADP="$(ls /sys/class/power_supply | grep "A[CD]")" \
 MONITOR="$(xrandr -q | grep -e 'primary' | cut -d " " -f1 | head -n 1)" \
 THERMAL_ZONE=$THERMAL_ZONE \
 polybar primarybar &
