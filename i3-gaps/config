@@ -227,6 +227,12 @@ exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/background
 # Start redshift
 exec --no-startup-id redshift
 
+# Start insync
+exec --no-startup-id insync start
+
+# Start NetworkManager applet
+exec --not-startup-id nm-applet
+
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
 exec_always --no-startup-id $HOME/.config/i3/custom_config.sh -a
