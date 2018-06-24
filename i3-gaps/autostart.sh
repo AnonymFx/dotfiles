@@ -10,12 +10,7 @@ case $1 in
 		i3-msg "workspace 8"
 		sleep 0.1
 		google-chrome-beta --new-window calendar.google.com todoist.com &
-		sleep 6
-		i3-msg "workspace 7"
-		google-chrome-beta --new-window &
-		sleep 6
-		i3-msg "workspace 1; exec terminator"
-		sleep 1
+		sleep 5
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh w
 		fi
@@ -26,16 +21,11 @@ case $1 in
 		i3-msg "workspace 9"
 		sleep 0.1
 		google-chrome-beta --new-window messenger.com web.whatsapp.com &
-		sleep 6
+		sleep 5
 		i3-msg "workspace 8"
 		sleep 0.1
 		google-chrome-beta --new-window calendar.google.com todoist.com &
-		sleep 6
-		i3-msg "workspace 7"
-		google-chrome-beta --new-window &
-		sleep 6
-		i3-msg "workspace 1; exec terminator"
-		sleep 1
+		sleep 5
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh p
 		fi
