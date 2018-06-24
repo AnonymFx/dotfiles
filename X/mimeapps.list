@@ -1,6 +1,6 @@
 [Added Associations]
 video/x-msvideo=vlc.desktop;
-application/pdf=kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
+application/pdf=org.pwmt.zathura.dekstop;kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
 video/mp2t=vlc.desktop;
 video/mp4=org.gnome.Totem.desktop;google-chrome-beta.desktop;vlc.desktop;
 application/octet-stream=gvim.desktop;sublime_text_3.desktop;wireshark-gtk.desktop;sublime-text.desktop;
@@ -63,7 +63,7 @@ text/csv=google-chrome-beta.desktop;
 application/x-desktop=gvim.desktop;
 
 [Default Applications]
-application/pdf=kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
+application/pdf=org.pwmt.zathura.desktop;kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
 video/mpeg=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/dv=vlc.desktop
@@ -115,7 +115,6 @@ audio/amr-wb=vlc.desktop
 text/plain=gvim.desktop
 application/xml=yed.desktop
 text/markdown=google-chrome-beta.desktop
-application/pdf=zathura.desktop
 image/png=vimiv.desktop;eog.desktop
 image/jpeg=vimiv.desktop;eog.desktop
 image/gif=vimiv.desktop
