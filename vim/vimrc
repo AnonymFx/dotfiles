@@ -73,6 +73,10 @@ Plug 'sheerun/vim-polyglot'
 
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
+
+" Language support for Google Soy Tempaltes
+Plug 'duganchen/vim-soy'
+
 " Init plugin system
 call plug#end()
 
