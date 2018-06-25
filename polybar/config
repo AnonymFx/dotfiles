@@ -233,7 +233,7 @@ ramp-capacity-5 = 
 ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
-ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 [module/temperature]
 type = internal/temperature
