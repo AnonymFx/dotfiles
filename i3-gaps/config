@@ -233,6 +233,9 @@ exec --no-startup-id insync start
 # Start NetworkManager applet
 exec --not-startup-id nm-applet
 
+# Start Authentication agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
 exec_always --no-startup-id $HOME/.config/i3/custom_config.sh -a

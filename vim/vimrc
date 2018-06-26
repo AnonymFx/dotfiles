@@ -73,6 +73,10 @@ Plug 'sheerun/vim-polyglot'
 
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
+
+" Language support for Google Soy Tempaltes
+Plug 'duganchen/vim-soy'
+
 " Init plugin system
 call plug#end()
 
@@ -108,7 +112,6 @@ cnoremap <C-j> <Down>
 
 " Toggle highlight search
 noremap <leader>hls :set hls!<CR>
-
 
 " ------------------------------------------------------------------------------
 " ------------------------------ Plugin Settings -------------------------------
@@ -330,3 +333,10 @@ function! s:DiffWithSaved()
 	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+function! RunMake()
+	if filereadable("Makefile")
+		make!
+	endif
+endfunction
+nmap <silent> <C-r>b :call RunMake()<CR>
