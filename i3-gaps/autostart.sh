@@ -5,11 +5,11 @@ case $1 in
 		sleep 3
 		i3-msg "workspace 9"
 		sleep 0.1
-		google-chrome-beta --new-window messenger.com web.whatsapp.com cqse.slack.com "https://inbox.google.com/u/0/?pli=1" "https://inbox.google.com/u/1/?pli=1" &
+		google-chrome-beta --new-window messenger.com web.whatsapp.com cqse.slack.com "https://inbox.google.com/u/0/?pli=1" "https://inbox.google.com/u/1/?pli=1" cqse.highrisehq.com &
 		sleep 8
 		i3-msg "workspace 8"
 		sleep 0.1
-		google-chrome-beta --new-window calendar.google.com todoist.com &
+		google-chrome-beta --new-window calendar.google.com todoist.com trello.com &
 		sleep 5
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh w
