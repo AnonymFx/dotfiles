@@ -30,8 +30,6 @@
     <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl d" />
     <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="d" />
   </action>
-  <action id="Diff.FocusOppositePane" />
-  <action id="Diff.FocusOppositePaneAndScroll" />
   <action id="Diff.ShowSettingsPopup" />
   <action id="EditorJoinLines" />
   <action id="EditorSelectWord" />
@@ -81,9 +79,6 @@
     <keyboard-shortcut first-keystroke="alt l" />
     <keyboard-shortcut first-keystroke="alt k" />
   </action>
-  <action id="NextTab">
-    <keyboard-shortcut first-keystroke="ctrl tab" />
-  </action>
   <action id="OverrideMethods">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
@@ -97,9 +92,6 @@
     <keyboard-shortcut first-keystroke="alt j" />
   </action>
   <action id="PrevTemplateParameter" />
-  <action id="PreviousTab">
-    <keyboard-shortcut first-keystroke="shift ctrl tab" />
-  </action>
   <action id="PreviousTemplateVariable" />
   <action id="QuickJavaDoc">
     <mouse-shortcut keystroke="alt button2" />
@@ -161,7 +153,6 @@
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
-  <action id="Switcher" />
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="ctrl alt b" />
   </action>
