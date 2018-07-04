@@ -38,13 +38,13 @@ nmap <leader>om :action OverrideMethods<CR>
 nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
-vmap ys :action SurroundWith<CR>
-nmap ys :action SurroundWith<CR>
+vmap cs :action SurroundWith<CR>
+nmap cs :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
 nmap <leader>b :action CompileDirty<CR>
-nmap <leader>d :action Debug<CR>
+nmap <leader>g :action Debug<CR>
 nmap <leader>r :action Run<CR>
 nmap <leader>e :action Resume<CR>
 nmap <leader>s :action Stop<CR>
