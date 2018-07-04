@@ -46,7 +46,7 @@ nmap cs :action SurroundWith<CR>
 nmap <leader>b :action CompileDirty<CR>
 nmap <leader>g :action Debug<CR>
 nmap <leader>r :action Run<CR>
-nmap <leader>e :action Resume<CR>
+nmap <leader>c :action Resume<CR>
 nmap <leader>s :action Stop<CR>
 nmap <leader>a :action Android.HotswapChanges<CR>
 nmap <leader>j :action StepOver<CR>

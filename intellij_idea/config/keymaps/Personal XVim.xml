@@ -104,8 +104,7 @@
   <action id="Replace" />
   <action id="ReplaceInPath" />
   <action id="Resume">
-    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="ctrl e" />
-    <keyboard-shortcut first-keystroke="ctrl r" second-keystroke="e" />
+    <keyboard-shortcut first-keystroke="alt e" />
   </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="alt r" />
