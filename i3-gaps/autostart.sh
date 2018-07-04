@@ -5,7 +5,7 @@ case $1 in
 		sleep 3
 		i3-msg "workspace 9"
 		sleep 0.1
-		google-chrome-beta --new-window messenger.com web.whatsapp.com cqse.slack.com "https://inbox.google.com/u/0/?pli=1" "https://inbox.google.com/u/1/?pli=1" cqse.highrisehq.com &
+		google-chrome-beta --new-window messenger.com web.whatsapp.com cqse.slack.com "https://mail.google.com/mail/u/0" "https://mail.google.com/mail/u/1" cqse.highrisehq.com &
 		sleep 8
 		i3-msg "workspace 8"
 		sleep 0.1
