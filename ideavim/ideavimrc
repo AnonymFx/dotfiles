@@ -43,12 +43,12 @@ nmap cs :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
-nmap <leader>b :action CompileDirty<CR>
-nmap <leader>g :action Debug<CR>
-nmap <leader>r :action Run<CR>
-nmap <leader>c :action Resume<CR>
-nmap <leader>s :action Stop<CR>
-nmap <leader>a :action Android.HotswapChanges<CR>
+nmap <leader>bu :action CompileDirty<CR>
+nmap <leader>de :action Debug<CR>
+nmap <leader>ru :action Run<CR>
+nmap <leader>re :action Resume<CR>
+nmap <leader>st :action Stop<CR>
+nmap <leader>ap :action Android.HotswapChanges<CR>
 nmap <leader>j :action StepOver<CR>
 nmap <leader>l :action StepInto<CR>
 nmap <leader>h :action StepOut<CR>
