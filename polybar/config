@@ -52,7 +52,6 @@ modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temper
 tray-position = right
 tray-detached = false
 tray-maxsize = 10
-tray-scale = 0.8
 tray-transparent = true
 
 
@@ -259,7 +258,7 @@ ramp-3 = 
 type = custom/menu
 label-padding = 1
 
-label-open = " "
+label-open = ""
 label-close = 
 label-close-foreground = ${colors.foreground-alt}
 label-separator = " | "
