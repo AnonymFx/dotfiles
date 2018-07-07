@@ -4,4 +4,7 @@
     <option name="showTipsOnStartup" value="false" />
     <option name="useDefaultBrowser" value="false" />
   </component>
+  <component name="Registry">
+    <entry key="bigger.font.in.project.view" value="true" />
+  </component>
 </application>
