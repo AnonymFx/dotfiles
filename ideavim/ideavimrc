@@ -1,3 +1,4 @@
+" To get a list of actions execute ':actionlist' in IntelliJ
 " ------------------------------------------------------------------------------
 " -------------------------------- General -------------------------------------
 " ------------------------------------------------------------------------------
@@ -24,10 +25,10 @@ map \ "
 nmap <leader>gd :action GotoDeclaration<CR>
 nmap <leader>fu :action FindUsages<CR>
 nmap <C-p> :action GotoFile<CR>
-nmap <A-l> :action NextSplitter<CR>
-nmap <A-j> :action NextSplitter<CR>
-nmap <A-k> :action PrevSplitter<CR>
-nmap <A-h> :action PrevSplitter<CR>
+nmap <C-l> :action NextSplitter<CR>
+nmap <C-j> :action NextSplitter<CR>
+nmap <C-k> :action PrevSplitter<CR>
+nmap <C-h> :action PrevSplitter<CR>
 nmap ]q :action GotoNextError<CR>
 nmap [q :action GotoPreviousError<CR>
 
@@ -37,29 +38,20 @@ nmap <leader>om :action OverrideMethods<CR>
 nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
-vmap ys :action SurroundWith<CR>
-nmap ys :action SurroundWith<CR>
+vmap cs :action SurroundWith<CR>
+nmap cs :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
-nmap <C-r><C-b> :action CompileDirty<CR>
-nmap <C-r>b action CompileDirty<CR>
-nmap <C-r><C-d> :action Debug<CR>
-nmap <C-r>d :action Debug<CR>
-nmap <C-r><C-n> :action Run<CR>
-nmap <C-r>n :action Run<CR>
-nmap <C-r><C-e> :action Resume<CR>
-nmap <C-r>e :action Resume<CR>
-nmap <C-r><C-s> :action Stop<CR>
-nmap <C-r>s :action Stop<CR>
-nmap <C-r><C-h> :action Android.HotswapChanges<CR>
-nmap <C-r>h :action Android.HotswapChanges<CR>
-nmap <C-r><C-o> :action StepOver<CR>
-nmap <C-r>o :action StepOver<CR>
-nmap <C-r><C-i> :action StepInto<CR>
-nmap <C-r>i :action StepInto<CR>
-nmap <C-r><C-k> :action StepOut<CR>
-nmap <C-r>k :action StepOut<CR>
+nmap <leader>bu :action CompileDirty<CR>
+nmap <leader>de :action Debug<CR>
+nmap <leader>ru :action Run<CR>
+nmap <leader>re :action Resume<CR>
+nmap <leader>st :action Stop<CR>
+nmap <leader>ap :action Android.HotswapChanges<CR>
+nmap <leader>j :action StepOver<CR>
+nmap <leader>l :action StepInto<CR>
+nmap <leader>h :action StepOut<CR>
 nmap <leader>bp :action ToggleLineBreakpoint<CR>
 
 
