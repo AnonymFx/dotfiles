@@ -3,7 +3,7 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "inconsolata 12";
+	font: "droidsansmono 11";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/

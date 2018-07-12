@@ -283,16 +283,11 @@ set display=lastline
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
-set termguicolors
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
 set background=dark
 color one
 let g:airline_theme='one' " reset nice airline theme
-" Brighter number column
-hi LineNr guifg=#aaaaaa
-" Curly line does not work in terminal, so set the background color to read
-" for spell checking
-hi SpellBad guibg=#6d0000
+highlight Normal ctermbg='none'
 
 
 
