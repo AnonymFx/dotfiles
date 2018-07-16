@@ -14,22 +14,22 @@
 2. Regenerate grub.cfg by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## Screen lock before hibernate
-- Create a systemd service file `/etc/systemd/system/hibernate@.service` with the following contents 
+- Create a systemd service file `/etc/systemd/system/suspend@.service` with the following contents 
 
 ```
 [Unit]
-Description=User hibernation actions
-Before=hibernate.target
+Description=User suspend actions
+Before=sleep.target
 
 [Service]
 User=%I
-Type=forking
+Type=simple
 Environment=DISPLAY=:0
-ExecStart=<lock command here>
+ExecStart=/home/thomas/.config/i3/lock.sh
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]
-WantedBy=hibernate.target
+WantedBy=sleep.target
 ```
 
-- Enable with `systemctl enable hibernate@<user>.service`
+- Enable with `systemctl enable suspend@<user>.service`

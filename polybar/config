@@ -36,12 +36,6 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-tray-position = right
-tray-detached = true
-tray-offset-y = 30
-tray-maxsize = 10
-tray-scale = 0.8
-
 font-0 = droidsansmono:pixelsize=10;1
 font-1 = ArimoNerdFontMono:pixelsize=11;1
 font-2 = MaterialIcons:pixelsize=14;3
@@ -54,6 +48,12 @@ monitor = ${env:MONITOR}
 modules-left = i3
 modules-center = music
 modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 10
+tray-transparent = true
+
 
 [bar/secondarybar]
 inherit = bar/basebar
@@ -99,8 +99,8 @@ ws-icon-1=2;
 ws-icon-2=3;
 ws-icon-3=4;
 ws-icon-4=5;
-ws-icon-5=6;
-ws-icon-6=7;
+ws-icon-5=6;
+ws-icon-6=7;
 ws-icon-7=8;
 ws-icon-8=9;
 ws-icon-9=10;
@@ -148,14 +148,14 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = ""
+format-prefix = ""
 format-underline = ${colors.underline}
 label = %{A1: terminator -e htop:}%percentage:3:3%%%{A}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = ""
 format-underline = ${colors.underline}
 label = %{A1: terminator -e htop:}%percentage_used:3:3%%%{A}
 
@@ -167,7 +167,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-underline = ${colors.underline}
-label-connected = %{A1: XDG_CURRENT_DESKTOP=GNOME gnome-control-center network&:}%essid:0:16:...%%{A}
+label-connected = %{A1: XDG_CURRENT_DESKTOP=GNOME gnome-control-center network&:}%signal%% %essid:0:16:…%%{A}
 
 format-disconnected =
 
@@ -192,7 +192,7 @@ label = %date% %time%
 format-underline = ${colors.underline}
 
 [module/volume]
-type = internal/alsa
+type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.underline}
@@ -214,21 +214,26 @@ adapter = ${env:BAT_ADP}
 full-at = 95
 
 format-charging = <label-charging>
-label-charging =  %percentage%%
+label-charging =  %percentage%%
 format-charging-underline = ${colors.underline}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-discharging-underline = ${colors.underline}
 
-label-full =  %percentage%%
+label-full =  %percentage%%
 format-full-underline = ${colors.underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 [module/temperature]
 type = internal/temperature
@@ -253,7 +258,7 @@ ramp-3 = 
 type = custom/menu
 label-padding = 1
 
-label-open = " "
+label-open = ""
 label-close = 
 label-close-foreground = ${colors.foreground-alt}
 label-separator = " | "

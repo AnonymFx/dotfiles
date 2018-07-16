@@ -2,5 +2,17 @@
   <component name="GeneralSettings">
     <option name="confirmExit" value="false" />
     <option name="showTipsOnStartup" value="false" />
+    <option name="useDefaultBrowser" value="false" />
+  </component>
+  <component name="Registry">
+    <entry key="bigger.font.in.project.view" value="true" />
+    <entry key="win.editor.thumb.default.alpha.base" value="0" />
+    <entry key="win.editor.thumb.default.alpha.delta" value="102" />
+    <entry key="win.editor.thumb.darcula.alpha.base" value="0" />
+    <entry key="win.editor.thumb.darcula.alpha.delta" value="102" />
+    <entry key="win.editor.thumb.default.fill.min" value="102" />
+    <entry key="win.editor.thumb.default.fill.max" value="150" />
+    <entry key="win.editor.thumb.darcula.fill.min" value="102" />
+    <entry key="ide.balloon.shadow.size" value="0" />
   </component>
 </application>
