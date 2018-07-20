@@ -13,7 +13,7 @@ function _update_system_update() {
 function _upgrade_system() {
 	# Do system update, try AUR helpers first, fallback is pacman
 	if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
-		if yay -Syu; then
+		if yay --combinedupgrade -Syu; then
 			# update the system update file
 			_update_system_update
 		fi
