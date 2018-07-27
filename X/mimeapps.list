@@ -61,6 +61,7 @@ image/x-xfig=sublime_text_3.desktop;gimp.desktop;
 application/illustrator=evince.desktop;
 text/csv=google-chrome-beta.desktop;
 application/x-desktop=gvim.desktop;
+application/octet-stream=vlc.desktop
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;kde4-okularApplication_pdf.desktop;evince.desktop;apvlv.desktop;acroread.desktop;foxitreader.desktop;
@@ -114,6 +115,7 @@ audio/amr=vlc.desktop
 audio/amr-wb=vlc.desktop
 text/plain=gvim.desktop
 application/xml=yed.desktop
+application/octet-stream=vlc.desktop
 text/markdown=google-chrome-beta.desktop
 image/png=vimiv.desktop;eog.desktop
 image/jpeg=vimiv.desktop;eog.desktop
