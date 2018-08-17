@@ -45,7 +45,9 @@ fi
 if mkdir "$HOME/system-update.lock" 2>/dev/null; then
 	# Remove lock file on interrupt
 	trap 'rmdir "$HOME/system-update.lock" 2>/dev/null; exit' INT
-	if [ -f ~/.system-update ]; then
+	if [ "$1" = "-f" ]; then
+		_upgrade_system
+	elif [ -f ~/.system-update ]; then
 		# Source the file with the LAST_EPOCH variable
 		. ~/.system-update
 
