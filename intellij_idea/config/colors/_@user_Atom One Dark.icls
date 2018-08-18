@@ -1,10 +1,10 @@
 <scheme name="_@user_Atom One Dark" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2018-07-07T13:08:18</property>
-    <property name="ide">AndroidStudio</property>
-    <property name="ideVersion">3.2.0.17</property>
-    <property name="modified">2018-07-07T14:01:22</property>
+    <property name="created">2018-07-27T14:28:55</property>
+    <property name="ide">Idea</property>
+    <property name="ideVersion">2018.2.0.0</property>
+    <property name="modified">2018-07-27T14:31:37</property>
     <property name="originalScheme">Atom One Dark</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.2" />
@@ -14,11 +14,10 @@
   </font>
   <font>
     <option name="EDITOR_FONT_NAME" value="DejaVu Sans Mono" />
-    <option name="EDITOR_FONT_SIZE" value="15" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
   </font>
   <option name="CONSOLE_FONT_NAME" value="DejaVu Sans Mono" />
-  <option name="CONSOLE_FONT_SIZE" value="12" />
-  <option name="CONSOLE_LINE_SPACING" value="1.4" />
+  <option name="CONSOLE_FONT_SIZE" value="13" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="98c379" />
     <option name="ANNOTATIONS_COLOR" value="fffbf7" />
