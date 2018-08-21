@@ -194,7 +194,7 @@ function link_config() {
 		android_studio_canary )
 			mkdir -p $HOME/.AndroidStudioCanary/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioCanary/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioCanary/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.AndroidStudioCanary/config/colors
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioCanary/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioCanary/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioCanary/config/options
@@ -202,7 +202,7 @@ function link_config() {
 		android_studio_release )
 			mkdir -p $HOME/.AndroidStudioRelease/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioRelease/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioRelease/config/colors
+			ln -snf $PWD/intellij_idea/config/colors* $HOME/.AndroidStudioRelease/config/colors
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioRelease/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioRelease/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioRelease/config/options
@@ -252,7 +252,7 @@ function link_config() {
 		intellij_idea)
 			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.IntelliJIdea/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.IntelliJIdea/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.IntelliJIdea/config/colors
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.IntelliJIdea/config/options
@@ -310,7 +310,7 @@ function link_config() {
 		webstorm )
 			mkdir -p $HOME/.WebStorm/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.WebStorm/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.WebStorm/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.WebStorm/config/colors
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.WebStorm/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.WebStorm/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.WebStorm/config/options
