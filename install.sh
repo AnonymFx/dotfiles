@@ -194,6 +194,7 @@ function link_config() {
 		android_studio_canary )
 			mkdir -p $HOME/.AndroidStudioCanary/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioCanary/config/fileTemplates/*
+			rm -r $HOME/.AndroidStudioCanary/config/colors
 			ln -snf $PWD/intellij_idea/config/colors $HOME/.AndroidStudioCanary/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioCanary/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioCanary/config/keymaps
@@ -202,6 +203,7 @@ function link_config() {
 		android_studio_release )
 			mkdir -p $HOME/.AndroidStudioRelease/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioRelease/config/fileTemplates/*
+			rm -r $HOME/.AndroidStudioCanary/config/colors
 			ln -snf $PWD/intellij_idea/config/colors* $HOME/.AndroidStudioRelease/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioRelease/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioRelease/config/keymaps
@@ -252,6 +254,7 @@ function link_config() {
 		intellij_idea)
 			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.IntelliJIdea/config/fileTemplates/*
+			rm -r $HOME/.AndroidStudioCanary/config/colors
 			ln -snf $PWD/intellij_idea/config/colors $HOME/.IntelliJIdea/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
@@ -310,6 +313,7 @@ function link_config() {
 		webstorm )
 			mkdir -p $HOME/.WebStorm/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.WebStorm/config/fileTemplates/*
+			rm -r $HOME/.AndroidStudioCanary/config/colors
 			ln -snf $PWD/intellij_idea/config/colors $HOME/.WebStorm/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.WebStorm/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.WebStorm/config/keymaps
