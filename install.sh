@@ -17,6 +17,7 @@ function print_help_msg() {
 				i3-gaps
 				ideavim
 				intellij_idea
+				kitty
 				polybar
 				qt
 				ranger
@@ -149,6 +150,9 @@ function link_config() {
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.IntelliJIdea/config/options
 			;;
+		kitty )
+			mkdir -p $HOME/.config/
+			ln -snf $PWD/kitty ~/$HOME/.config/
 		polybar )
 			mkdir -p $HOME/.config/polybar
 			ln -snf $PWD/polybar/config $HOME/.config/polybar/config
@@ -350,6 +354,7 @@ else
 		install i3-gaps
 		install ideavim
 		install intellij_idea
+		install kitty
 		install polybar
 		install qt
 		install ranger
@@ -402,6 +407,8 @@ else
 		install ideavim
 	elif [[ $1 = intellij_idea ]]; then
 		install intellij_idea
+	elif [[ $1 = kitty ]]; then
+		install kitty
 	elif [[ $1 = polybar ]]; then
 		install polybar
 	elif [[ $1 = qt ]]; then
