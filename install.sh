@@ -98,6 +98,9 @@ function get_package_list() {
 			echo ""
 			return 1
 			;;
+		kitty )
+			echo "kitty"
+			;;
 		polybar )
 			echo "polybar xorg-xbacklight jq nerd-fonts-complete ttf-material-icons playerctl wireless_tools"
 			return 0
