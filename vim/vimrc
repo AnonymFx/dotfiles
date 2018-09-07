@@ -288,7 +288,7 @@ set background=dark
 color one
 let g:airline_theme='one' " reset nice airline theme
 highlight Normal ctermbg='none'
-
+highlight SpellBad cterm=underline ctermbg=88
 
 
 " ------------------------------------------------------------------------------

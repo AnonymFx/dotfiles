@@ -1,0 +1,3 @@
+# Run tmux with default session
+launch tmux new-session -A -s default
+
