@@ -152,7 +152,7 @@ function link_config() {
 			;;
 		kitty )
 			mkdir -p $HOME/.config/
-			ln -snf $PWD/kitty ~/$HOME/.config/
+			ln -snf $PWD/kitty $HOME/.config/
 			;;
 		polybar )
 			mkdir -p $HOME/.config/polybar
