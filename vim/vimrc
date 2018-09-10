@@ -146,6 +146,8 @@ set updatetime=100
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
+let g:NERDTreeMapJumpNextSibling = '<leader>j'
+let g:NERDTreeMapJumpPreviousSibling = '<leader>k'
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Polyglot ---------------------------------------------------------------------
