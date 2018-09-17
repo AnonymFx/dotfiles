@@ -146,6 +146,7 @@ if gvim_l="$(type -p gvim)" && [ -n "$gvim_l" ]; then
 fi
 if vim_l="$(type -p vim)" && [ -n "$vim_l" ]; then
 	alias vin='vim -c NERDTree'
+	alias vi='vim'
 fi
 
 # git ##################################
