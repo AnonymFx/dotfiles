@@ -1,3 +1,4 @@
 # Run tmux with default session
-launch tmux new-session -A -s default
+cd ~
+launch sh .tmux_launch_default.sh
 

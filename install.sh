@@ -185,6 +185,7 @@ function link_config() {
 			;;
 		tmux )
 			ln -snf $PWD/tmux/tmux.conf $HOME/.tmux.conf
+			ln -snf $PWD/tmux/tmux_launch_default.sh $HOME/.tmux_launch_default.sh
 			ln -snf $PWD/tmux/tmux.layouts $HOME/.tmux.layouts
 			;;
 		vim )
