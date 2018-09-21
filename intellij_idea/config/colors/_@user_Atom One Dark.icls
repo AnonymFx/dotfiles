@@ -3,7 +3,7 @@
     <property name="created">2018-08-21T14:19:14</property>
     <property name="ide">Idea</property>
     <property name="ideVersion">2018.2.1.0.0</property>
-    <property name="modified">2018-08-21T14:26:35</property>
+    <property name="modified">2018-09-21T08:37:10</property>
     <property name="originalScheme">Atom One Dark</property>
   </metaInfo>
   <colors>
@@ -1315,12 +1315,27 @@
         <option name="FOREGROUND" value="1a1f29" />
       </value>
     </option>
+    <option name="JS.DEBUGGER_STMT">
+      <value>
+        <option name="FOREGROUND" value="c679dd" />
+      </value>
+    </option>
     <option name="JS.DECORATOR">
       <value>
         <option name="FOREGROUND" value="61aeef" />
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="e06c75" />
+      </value>
+    </option>
+    <option name="JS.MODULE_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="e06c75" />
+      </value>
+    </option>
+    <option name="JS.THIS_SUPER">
       <value>
         <option name="FOREGROUND" value="e06c75" />
       </value>

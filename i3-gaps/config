@@ -8,7 +8,7 @@ font pango:droidsans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec 'kitty'
+bindsym $mod+Return exec "export TERMINAL=kitty; i3-sensible-terminal"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -56,7 +56,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+q layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -101,6 +101,7 @@ bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewi
 # Make Veracrypt non floating and disable urgency notification
 for_window [title="^VeraCrypt$" window_type="normal"] floating disable
 for_window [class="^Keepassx$"] floating disable
+for_window [title="^Insync$"] floating enable
 
 # Assign applications to workspaces
 assign [class="Google Play Music Desktop Player"] 10
