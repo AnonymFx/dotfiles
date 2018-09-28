@@ -45,7 +45,7 @@ font-4 = siji:pixelsize=10;1
 inherit = bar/basebar
 monitor = ${env:MONITOR}
 
-modules-left = i3
+modules-left = i3 window_title
 modules-center = music
 modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
 
@@ -299,6 +299,12 @@ type = custom/script
 interval=.1
 format-underline = ${colors.underline}
 exec=$HOME/.config/polybar/playerctl.sh 45
+
+[module/window_title]
+type = custom/script
+interval=.1
+format-underline = ${colors.underline}
+exec = $HOME/.config/polybar/window_title.sh
 
 [settings]
 screenchange-reload = true
