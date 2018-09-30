@@ -46,7 +46,9 @@ if mkdir "$HOME/system-update.lock" 2>/dev/null; then
 	# Remove lock file on interrupt
 	trap 'rmdir "$HOME/system-update.lock" 2>/dev/null; exit' INT
 	if [ "$1" = "-f" ]; then
-		_upgrade_system
+		echo "Please check https://www.archlinux.org/news/ before updating. Press Enter to continue..."
+		read line
+	 	_upgrade_system
 	elif [ -f ~/.system-update ]; then
 		# Source the file with the LAST_EPOCH variable
 		. ~/.system-update
@@ -62,7 +64,7 @@ if mkdir "$HOME/system-update.lock" 2>/dev/null; then
 			if [ "$DISABLE_UPDATE_PROMPT" = "true" ]; then
 				_upgrade_system
 			else
-				echo "[System Update] Would you like to check for updates? [(Y)es/(n)o/(p)ostpone]: \c"
+				echo "[System Update] Would you like to check for updates? Please check https://www.archlinux.org/news/ before updating. [(Y)es/(n)o/(p)ostpone]: \c"
 				read line
 				if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 					_upgrade_system
