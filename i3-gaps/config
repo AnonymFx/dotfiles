@@ -102,8 +102,6 @@ bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewi
 for_window [title="^VeraCrypt$" window_type="normal"] floating disable
 for_window [class="^Keepassx$"] floating disable
 for_window [title="^Insync$"] floating enable
-# Fix edit not focused when switching to IntelliJ
-for_window [class="^jetbrains-.+"][window_type=dialog] focus 
 
 # Assign applications to workspaces
 assign [class="Google Play Music Desktop Player"] 10
