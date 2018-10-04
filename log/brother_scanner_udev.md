@@ -1,5 +1,5 @@
 # Fix IO error for Brother scanners
-Add the following at the bottom of the file:
+Add the following at the bottom of the file and reboot:
 ```
 /usr/lib/udev/rules.d/49-sane.rules
 ------------------------------------
