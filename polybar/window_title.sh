@@ -7,7 +7,7 @@ if  [[ $? -gt 0 ]]; then
 	exit
 fi
 
-window_title_short=$(echo '$window_title' | grep -oP ".*? -" | head -1)
+window_title_short=$(echo "$window_title" | grep -oP ".*? -" | head -1)
 if [[ ! -z "$window_title_short" ]]; then
 	window_title="$window_title_short"
 	window_title=${window_title::-2}
