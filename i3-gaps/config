@@ -238,11 +238,11 @@ exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/background
 # Start redshift
 exec --no-startup-id redshift
 
-# Start insync
-exec --no-startup-id insync start
-
 # Start NetworkManager applet
 exec --no-startup-id nm-applet
+
+# Start insync
+exec --no-startup-id "sleep 3 && insync start"
 
 # Start Authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
