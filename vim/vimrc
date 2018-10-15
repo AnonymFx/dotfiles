@@ -116,6 +116,8 @@ cnoremap <C-j> <Down>
 " Toggle highlight search
 noremap <leader>hls :set hls!<CR>
 
+nnoremap <leader>spot :%s/(ft.*)//ge <bar> %s/(feat.*)//ge <bar> %s/\[.*\]//ge <bar> %s/&\s.*-/-/ge <bar> %s/\sx\s.*-/-/ge <bar> %s/ft.*\s-/-/ge <bar> %s/feat.*\s -/-/ge <bar> %y+<CR>
+
 " ------------------------------------------------------------------------------
 " ------------------------------ Plugin Settings -------------------------------
 " ------------------------------------------------------------------------------
@@ -146,6 +148,8 @@ set updatetime=100
 
 " -------------------------------- NERDTree ------------------------------------
 let g:NERDTreeIgnore = ['bin', 'node_modules']
+let g:NERDTreeMapJumpNextSibling = '<leader>j'
+let g:NERDTreeMapJumpPreviousSibling = '<leader>k'
 nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Polyglot ---------------------------------------------------------------------
@@ -288,7 +292,7 @@ set background=dark
 color one
 let g:airline_theme='one' " reset nice airline theme
 highlight Normal ctermbg='none'
-
+highlight SpellBad cterm=underline ctermbg=88
 
 
 " ------------------------------------------------------------------------------

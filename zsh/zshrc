@@ -132,7 +132,7 @@ if pacman_l="$(type -p pacman)" && [ -n "$pacman_l" ]; then
 fi
 
 if yay_l="$(type -p yay)" && [ -n "$yay_l" ]; then
-	alias yayupg='yay -Syu'
+	alias yayupg='yay --combinedupgrade -Syu'
 	alias yayin='yay -S'
 	alias yayins='yay -U'
 	alias yayrem='yay -Rns'
@@ -146,6 +146,7 @@ if gvim_l="$(type -p gvim)" && [ -n "$gvim_l" ]; then
 fi
 if vim_l="$(type -p vim)" && [ -n "$vim_l" ]; then
 	alias vin='vim -c NERDTree'
+	alias vi='vim'
 fi
 
 # git ##################################

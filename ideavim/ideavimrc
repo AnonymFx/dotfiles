@@ -16,6 +16,7 @@ set timoutlen=500
 " ------------------------- Additional mappings --------------------------------
 " ------------------------------------------------------------------------------
 map <leader>p "+p
+map <leader>P "+P
 map <leader>y "+y
 map <leader>d "+d
 map \ "
@@ -25,10 +26,10 @@ map \ "
 nmap <leader>gd :action GotoDeclaration<CR>
 nmap <leader>fu :action FindUsages<CR>
 nmap <C-p> :action GotoFile<CR>
-nmap <C-l> :action NextSplitter<CR>
-nmap <C-j> :action NextSplitter<CR>
-nmap <C-k> :action PrevSplitter<CR>
-nmap <C-h> :action PrevSplitter<CR>
+nmap <A-l> :action NextSplitter<CR>
+nmap <A-j> :action NextSplitter<CR>
+nmap <A-k> :action PrevSplitter<CR>
+nmap <A-h> :action PrevSplitter<CR>
 nmap ]q :action GotoNextError<CR>
 nmap [q :action GotoPreviousError<CR>
 
@@ -38,8 +39,8 @@ nmap <leader>om :action OverrideMethods<CR>
 nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
-vmap cs :action SurroundWith<CR>
-nmap cs :action SurroundWith<CR>
+vmap <leader>cs :action SurroundWith<CR>
+nmap <leader>cs :action SurroundWith<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------

@@ -45,7 +45,7 @@ font-4 = siji:pixelsize=10;1
 inherit = bar/basebar
 monitor = ${env:MONITOR}
 
-modules-left = i3
+modules-left = i3 window_title
 modules-center = music
 modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
 
@@ -104,6 +104,17 @@ ws-icon-6=7;
 ws-icon-7=8;
 ws-icon-8=9;
 ws-icon-9=10;
+ws-icon-10=11;11
+ws-icon-11=12;12
+ws-icon-12=13;13
+ws-icon-13=14;14
+ws-icon-14=15;15
+ws-icon-15=16;16
+ws-icon-16=17;17
+ws-icon-17=18;18
+ws-icon-18=19;19
+ws-icon-19=20;20
+
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
@@ -299,6 +310,12 @@ type = custom/script
 interval=.1
 format-underline = ${colors.underline}
 exec=$HOME/.config/polybar/playerctl.sh 45
+
+[module/window_title]
+type = custom/script
+interval=.1
+format-underline = ${colors.underline}
+exec = $HOME/.config/polybar/window_title.sh
 
 [settings]
 screenchange-reload = true

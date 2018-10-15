@@ -17,6 +17,7 @@ function print_help_msg() {
 				i3-gaps
 				ideavim
 				intellij_idea
+				kitty
 				polybar
 				qt
 				ranger
@@ -83,7 +84,8 @@ function link_config() {
 		android_studio_canary )
 			mkdir -p $HOME/.AndroidStudioCanary/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioCanary/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioCanary/config/colors
+			rm -r $HOME/.AndroidStudioCanary/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.AndroidStudioCanary/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioCanary/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioCanary/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioCanary/config/options
@@ -91,7 +93,8 @@ function link_config() {
 		android_studio_release )
 			mkdir -p $HOME/.AndroidStudioRelease/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.AndroidStudioRelease/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.AndroidStudioRelease/config/colors
+			rm -r $HOME/.AndroidStudioRelease/config/colors
+			ln -snf $PWD/intellij_idea/config/colors* $HOME/.AndroidStudioRelease/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioRelease/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioRelease/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioRelease/config/options
@@ -141,16 +144,22 @@ function link_config() {
 		intellij_idea)
 			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.IntelliJIdea/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.IntelliJIdea/config/colors
+			rm -r $HOME/.IntelliJIdea/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.IntelliJIdea/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.IntelliJIdea/config/options
+			;;
+		kitty )
+			mkdir -p $HOME/.config/
+			ln -snf $PWD/kitty $HOME/.config/
 			;;
 		polybar )
 			mkdir -p $HOME/.config/polybar
 			ln -snf $PWD/polybar/config $HOME/.config/polybar/config
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 			ln -snf $PWD/polybar/playerctl.sh $HOME/.config/polybar/playerctl.sh
+			ln -snf $PWD/polybar/window_title.sh $HOME/.config/polybar/window_title.sh
 			;;
 		qt )
 			mkdir -p $HOME/.config/qt5ct
@@ -177,6 +186,7 @@ function link_config() {
 			;;
 		tmux )
 			ln -snf $PWD/tmux/tmux.conf $HOME/.tmux.conf
+			ln -snf $PWD/tmux/tmux_launch_default.sh $HOME/.tmux_launch_default.sh
 			ln -snf $PWD/tmux/tmux.layouts $HOME/.tmux.layouts
 			;;
 		vim )
@@ -199,7 +209,8 @@ function link_config() {
 		webstorm )
 			mkdir -p $HOME/.WebStorm/config/{colors,fileTemplates,keymaps,options}
 			rm -r $HOME/.WebStorm/config/fileTemplates/*
-			ln -snf $PWD/intellij_idea/config/colors/* $HOME/.WebStorm/config/colors
+			rm -r $HOME/.WebStorm/config/colors
+			ln -snf $PWD/intellij_idea/config/colors $HOME/.WebStorm/config
 			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.WebStorm/config/fileTemplates
 			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.WebStorm/config/keymaps
 			ln -snf $PWD/intellij_idea/config/options/* $HOME/.WebStorm/config/options
@@ -363,6 +374,7 @@ else
 		install i3-gaps
 		install ideavim
 		install intellij_idea
+		install kitty
 		install polybar
 		install qt
 		install ranger
@@ -415,6 +427,8 @@ else
 		install ideavim
 	elif [[ $1 = intellij_idea ]]; then
 		install intellij_idea
+	elif [[ $1 = kitty ]]; then
+		install kitty
 	elif [[ $1 = polybar ]]; then
 		install polybar
 	elif [[ $1 = qt ]]; then
