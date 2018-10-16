@@ -75,6 +75,16 @@ function post_install() {
 	return 1
 }
 
+function link_idea_files () {
+	mkdir -p $HOME/"$1"/config/{colors,fileTemplates,keymaps,options}
+	rm -r $HOME/"$1"/config/fileTemplates/*
+	rm -r $HOME/"$1"/config/colors
+	ln -snf $PWD/intellij_idea/config/colors $HOME/"$1"/config
+	ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/"$1"/config/fileTemplates
+	ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/"$1"/config/keymaps
+	ln -snf $PWD/intellij_idea/config/options/* $HOME/"$1"/config/options
+}
+
 function link_config() {
 	local TARGET="$1"
 
@@ -82,22 +92,10 @@ function link_config() {
 
 	case "$TARGET" in
 		android_studio_canary )
-			mkdir -p $HOME/.AndroidStudioCanary/config/{colors,fileTemplates,keymaps,options}
-			rm -r $HOME/.AndroidStudioCanary/config/fileTemplates/*
-			rm -r $HOME/.AndroidStudioCanary/config/colors
-			ln -snf $PWD/intellij_idea/config/colors $HOME/.AndroidStudioCanary/config
-			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioCanary/config/fileTemplates
-			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioCanary/config/keymaps
-			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioCanary/config/options
+			link_idea_files ".AndroidStudioCanary"
 			;;
 		android_studio_release )
-			mkdir -p $HOME/.AndroidStudioRelease/config/{colors,fileTemplates,keymaps,options}
-			rm -r $HOME/.AndroidStudioRelease/config/fileTemplates/*
-			rm -r $HOME/.AndroidStudioRelease/config/colors
-			ln -snf $PWD/intellij_idea/config/colors* $HOME/.AndroidStudioRelease/config
-			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.AndroidStudioRelease/config/fileTemplates
-			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.AndroidStudioRelease/config/keymaps
-			ln -snf $PWD/intellij_idea/config/options/* $HOME/.AndroidStudioRelease/config/options
+			link_idea_files ".AndroidStudioRelease"
 			;;
 		autorandr )
 			mkdir -p $HOME/.config/autorandr
@@ -142,13 +140,7 @@ function link_config() {
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
 			;;
 		intellij_idea)
-			mkdir -p $HOME/.IntelliJIdea/config/{colors,fileTemplates,keymaps,options}
-			rm -r $HOME/.IntelliJIdea/config/fileTemplates/*
-			rm -r $HOME/.IntelliJIdea/config/colors
-			ln -snf $PWD/intellij_idea/config/colors $HOME/.IntelliJIdea/config
-			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.IntelliJIdea/config/fileTemplates
-			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.IntelliJIdea/config/keymaps
-			ln -snf $PWD/intellij_idea/config/options/* $HOME/.IntelliJIdea/config/options
+			link_idea_files ".IntelliJIdea"
 			;;
 		kitty )
 			mkdir -p $HOME/.config/
@@ -160,6 +152,9 @@ function link_config() {
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 			ln -snf $PWD/polybar/playerctl.sh $HOME/.config/polybar/playerctl.sh
 			ln -snf $PWD/polybar/window_title.sh $HOME/.config/polybar/window_title.sh
+			;;
+		pycharm )
+			link_idea_files ".PyCharm"
 			;;
 		qt )
 			mkdir -p $HOME/.config/qt5ct
@@ -207,13 +202,7 @@ function link_config() {
 			ln -snf $PWD/vrapper/vrapperrc $HOME/.vrapperrc
 			;;
 		webstorm )
-			mkdir -p $HOME/.WebStorm/config/{colors,fileTemplates,keymaps,options}
-			rm -r $HOME/.WebStorm/config/fileTemplates/*
-			rm -r $HOME/.WebStorm/config/colors
-			ln -snf $PWD/intellij_idea/config/colors $HOME/.WebStorm/config
-			ln -snf $PWD/intellij_idea/config/fileTemplates/* $HOME/.WebStorm/config/fileTemplates
-			ln -snf $PWD/intellij_idea/config/keymaps/* $HOME/.WebStorm/config/keymaps
-			ln -snf $PWD/intellij_idea/config/options/* $HOME/.WebStorm/config/options
+			link_idea_files ".WebStorm"
 			;;
 		zathura )
 			mkdir -p $HOME/.config/zathura
