@@ -105,6 +105,7 @@ ws-icon-7=8;
 ws-icon-8=9;
 ws-icon-9=10;
 
+
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 

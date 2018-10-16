@@ -167,7 +167,11 @@
     <keyboard-shortcut first-keystroke="ctrl alt p" />
   </action>
   <action id="VcsHistory.ShowAllAffected" />
+  <action id="com.teamscale.ide.perform-precommit-analysis-from-teamscale-menu">
+    <keyboard-shortcut first-keystroke="shift alt t" />
+  </action>
   <action id="context.load" />
   <action id="context.save" />
   <action id="hg4idea.QFold" />
+  <action id="tasks.switch" />
 </keymap>

@@ -1,6 +1,7 @@
 #!/bin/sh
-max_len=42
-window_title="$(xdotool getactivewindow getwindowname 2>/dev/null)" 
+max_len=25
+set -f # Prevent string substitution of e.g. *
+window_title="$(xdotool getactivewindow getwindowname 2>/dev/null)"
 if  [[ $? -gt 0 ]]; then
 	echo ""
 	exit
