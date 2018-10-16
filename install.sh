@@ -20,6 +20,7 @@ function print_help_msg() {
 				intellij_idea
 				kitty
 				polybar
+				pycharm
 				qt
 				ranger
 				readline
@@ -480,6 +481,7 @@ else
 		install intellij_idea
 		install kitty
 		install polybar
+		install pycharm
 		install qt
 		install ranger
 		install readline
@@ -535,6 +537,8 @@ else
 		install kitty
 	elif [[ $1 = polybar ]]; then
 		install polybar
+	elif [[ $1 = pycharm ]]; then
+		install pycharm
 	elif [[ $1 = qt ]]; then
 		install qt
 	elif [[ $1 = ranger ]]; then
