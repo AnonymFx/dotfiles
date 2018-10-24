@@ -297,13 +297,13 @@ format-prefix = " "
 
 [module/music]
 type = custom/script
-interval=.1
+interval=.5
 format-underline = ${colors.underline}
 exec=$HOME/.config/polybar/playerctl.sh 45
 
 [module/window_title]
 type = custom/script
-interval=.1
+interval=.2
 format-underline = ${colors.underline}
 exec = $HOME/.config/polybar/window_title.sh
 
