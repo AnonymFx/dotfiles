@@ -1,4 +1,4 @@
-# Automatically disable/enable Nvidia card when plugging/unplugging AC
+# Automatically enable/disable Nvidia card when plugging/unplugging AC
 
 1. Create scripts for loading/unloading:
 
