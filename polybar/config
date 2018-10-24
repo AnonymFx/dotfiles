@@ -212,7 +212,7 @@ ramp-volume-1 = 
 type = internal/battery
 battery = ${env:BAT}
 adapter = ${env:BAT_ADP}
-full-at = 95
+full-at = ${env:BATTERY_FULL}
 
 format-charging = <label-charging>
 label-charging =  %percentage%%
