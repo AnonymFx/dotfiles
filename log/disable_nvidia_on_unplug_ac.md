@@ -22,7 +22,7 @@
 2. Create udev rules to trigger them
 
 	```
-	/etc/udev/rules.d/80.nvidia-power.rules
+	/etc/udev/rules.d/80-nvidia_power.rules
 	---------------------------------------
 	SUBSYSTEM=="power_supply", KERNEL=="AC", ATTR{online}=="1" RUN+="/usr/bin/nvidia-load"
 
