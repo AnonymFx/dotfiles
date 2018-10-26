@@ -1,16 +1,16 @@
 configuration {
-/*	modi: "window,run,ssh";*/
+	modi: "window,run,ssh,drun";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "droidsansmono 11";
+	font: "fira code 13";
 /*	bw: 1;*/
 /*	location: 0;*/
-/*	padding: 5;*/
+	padding: 4;
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+	show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
@@ -18,7 +18,7 @@ configuration {
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "xkill -id {window}";*/
-/*	drun-icon-theme: ;*/
+/*	drun-icon-theme: ; */
 /*	disable-history: false;*/
 /*	sort: false;*/
 /*	levenshtein-sort: false;*/
@@ -34,7 +34,7 @@ configuration {
 /*	tokenize: true;*/
 /*	m: "-5";*/
 /*	line-margin: 2;*/
-/*	line-padding: 1;*/
+	line-padding: 4;
 /*	filter: ;*/
 	separator-style: "solid";
 /*	hide-scrollbar: false;*/
