@@ -19,7 +19,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "xkill -id {window}";*/
 /*	drun-icon-theme: ; */
-/*	disable-history: false;*/
+	disable-history: true;
 /*	sort: false;*/
 /*	levenshtein-sort: false;*/
 /*	case-sensitive: false;*/
