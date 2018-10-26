@@ -20,7 +20,7 @@ configuration {
 /*	window-command: "xkill -id {window}";*/
 /*	drun-icon-theme: ; */
 	disable-history: true;
-/*	sort: false;*/
+	sort: true;
 /*	levenshtein-sort: false;*/
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
