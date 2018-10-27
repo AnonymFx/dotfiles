@@ -35,6 +35,7 @@ nmap <A-k> :action PrevSplitter<CR>
 nmap <A-h> :action PrevSplitter<CR>
 nmap ]q :action GotoNextError<CR>
 nmap [q :action GotoPreviousError<CR>
+nmap <leader>tb :action FileStructurePopup<CR>
 
 
 " --------------------------- Editing ------------------------------------------
