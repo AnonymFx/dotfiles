@@ -190,8 +190,8 @@ new_float pixel 2
 for_window [class="^.*"] border pixel 2
 
 # Gaps for i3-gaps
-gaps inner 12
-gaps outer 0
+gaps inner 6
+gaps outer -6
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
