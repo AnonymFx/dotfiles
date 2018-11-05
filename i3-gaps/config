@@ -116,6 +116,10 @@ bindsym $mod+ctrl+Shift+10 move container to workspace number 20
 
 bindsym $mod+Tab workspace back_and_forth
 
+bindsym $mod+x move scratchpad
+bindsym $mod+c scratchpad show
+bindsym $mod+g exec $HOME/.config/i3/scratchpad.py
+
 bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewindow getwindowname)\"
 
 # Make Veracrypt non floating and disable urgency notification
