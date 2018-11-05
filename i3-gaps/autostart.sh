@@ -1,7 +1,7 @@
 #!/bin/sh
 case $1 in
 	w ) # Work
-		i3-msg "exec spotify"
+		i3-msg "exec spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 3
 		i3-msg "workspace 10"
 		sleep 0.1
