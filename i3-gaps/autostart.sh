@@ -1,13 +1,13 @@
 #!/bin/sh
 case $1 in
 	w ) # Work
-		i3-msg "workspace 10; exec spotify"
+		i3-msg "exec spotify"
 		sleep 3
-		i3-msg "workspace 9"
+		i3-msg "workspace 10"
 		sleep 0.1
 		google-chrome-beta --new-window messenger.com web.whatsapp.com cqse.slack.com "https://mail.google.com/mail/u/0" "https://mail.google.com/mail/u/1" cqse.highrisehq.com &
 		sleep 8
-		i3-msg "workspace 8"
+		i3-msg "workspace 9"
 		sleep 0.1
 		google-chrome-beta --new-window calendar.google.com/b/0 calendar.google.com/b/1 todoist.com 'https://dev.azure.com/apps-munichre/QualityTools/_sprints' 'https://intra.cqse.eu/pdash2/#/' & 
 		sleep 5
@@ -16,13 +16,13 @@ case $1 in
 		fi
 		;;
 	p ) # Private
-		i3-msg "workspace 10; exec spotify"
+		i3-msg "exec spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 3
-		i3-msg "workspace 9"
+		i3-msg "workspace 10"
 		sleep 0.1
 		google-chrome-beta --new-window messenger.com web.whatsapp.com &
 		sleep 5
-		i3-msg "workspace 8"
+		i3-msg "workspace 9"
 		sleep 0.1
 		google-chrome-beta --new-window calendar.google.com/b/0 todoist.com &
 		sleep 5

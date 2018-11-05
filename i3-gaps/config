@@ -117,8 +117,8 @@ bindsym $mod+ctrl+Shift+10 move container to workspace number 20
 bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+x move scratchpad
-bindsym $mod+c scratchpad show
-bindsym $mod+g exec $HOME/.config/i3/scratchpad.py
+bindsym $mod+v scratchpad show
+bindsym $mod+c exec $HOME/.config/i3/scratchpad.py
 
 bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewindow getwindowname)\"
 
@@ -126,13 +126,6 @@ bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewi
 for_window [title="^VeraCrypt$" window_type="normal"] floating disable
 for_window [class="^Keepassx$"] floating disable
 for_window [title="^Insync$"] floating enable
-
-# Assign applications to workspaces
-assign [class="Google Play Music Desktop Player"] 10
-for_window [class="Spotify"] move to workspace 10
-assign [class="^Veracrypt$"] 7
-assign [class="^Keepassx$"] 7
-assign [class="^keepassxc$" window_type="normal"] 7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
