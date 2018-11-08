@@ -29,4 +29,4 @@
 	SUBSYSTEM=="power_supply", KERNEL=="AC", ATTR{online}=="0" RUN+="/usr/bin/nvidia-unload"
 
 	```
-	Make sure, to add the newlines after the rules and to adapt the name of the power supply
+	Make sure, to add the newlines after the rules and to adapt the name of the power supply (search under `/sys/class/power_supply`).
