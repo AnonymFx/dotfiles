@@ -239,7 +239,7 @@ ramp-capacity-9 = 
 [module/temperature]
 type = internal/temperature
 thermal-zone = ${env:THERMAL_ZONE}
-warn-temperature = 80
+warn-temperature = ${env:THERMAL_THRESHOLD}
 
 format = <ramp> <label>
 format-underline = ${colors.underline}
