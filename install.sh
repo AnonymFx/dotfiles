@@ -88,7 +88,7 @@ function get_package_list() {
 			return 0
 			;;
 		gtk )
-			echo "gtk3 gtk2 adapta-gtk-theme paper-icon-theme-git"
+			echo "gtk3 gtk2 arc-gtk-theme paper-icon-theme-git"
 			return 0
 			;;
 		i3-gaps )
