@@ -1,7 +1,7 @@
 #!/bin/sh
 case $1 in
 	w ) # Work
-		i3-msg "exec spotify & sleep 0.5 && i3-msg move scratchpad"
+		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 3
 		i3-msg "workspace 10"
 		sleep 0.1
@@ -16,11 +16,11 @@ case $1 in
 		fi
 		;;
 	p ) # Private
-		i3-msg "exec spotify & sleep 0.5 && i3-msg move scratchpad"
+		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 3
 		i3-msg "workspace 10"
 		sleep 0.1
-		google-chrome-beta --new-window messenger.com web.whatsapp.com &
+		google-chrome-beta --new-window messenger.com web.whatsapp.com mail.google.com &
 		sleep 5
 		i3-msg "workspace 9"
 		sleep 0.1
