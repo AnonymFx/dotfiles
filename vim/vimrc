@@ -177,15 +177,17 @@ let g:Tex_Env_figure="\\begin{figure}[<+htpb+>]\<CR>\\caption{<+caption text+>}\
 " IMAP is a function provided by vim-latex which is an alternative for imap
 " and also matches if you don't type in the chars in the exact sequence
 " indicated
-autocmd FileType tex call IMAP('EGR', "\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
-autocmd FileType tex call IMAP('DIT', '\item[<+label+>] <++>', 'tex')
-autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
-
-autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
+augroup VimLatex
+	autocmd!
+	autocmd FileType tex call IMAP('EGR', "\\begin{figure}[<+htpb+>]\<CR>\\centering\<CR>\\includegraphics[<+figopt+>]{<+file+>}\<CR>\\caption{<+caption text+>}\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
+	autocmd FileType tex call IMAP('DIT', '\item[<+label+>] <++>', 'tex')
+	autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
+	autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
+augroup END
 
 " Vim-markdown -----------------------------------------------------------------
-autocmd FileType markdown set conceallevel=3
 let g:vim_markdown_toc_autofit = 1
+autocmd FileType markdown set conceallevel=3
 autocmd FileType markdown nnoremap <silent> <leader>tb :Toc<CR>
 
 " Vim-tmux-navigator -----------------------------------------------------------
