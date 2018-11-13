@@ -77,6 +77,9 @@ Plug 'sheerun/vim-polyglot'
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 
+" Vim-markdown
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+
 " Language support for Google Soy Tempaltes
 Plug 'duganchen/vim-soy'
 
@@ -181,9 +184,7 @@ autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
 autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
 
 " Vim-markdown -----------------------------------------------------------------
-let g:vim_markdown_new_list_item_indent=0
-let g:text_conceal=""
-autocmd FileType markdown setlocal conceallevel=2
+set conceallevel=3
 
 " Vim-tmux-navigator -----------------------------------------------------------
 " Override vim-latex binding, for some reason both lines are necessary for
