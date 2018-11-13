@@ -117,7 +117,7 @@ bindsym $mod+ctrl+Shift+10 move container to workspace number 20
 bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+x move scratchpad
-bindsym $mod+v scratchpad show
+bindsym $mod+v scratchpad show, resize set 1800 1012, move position center
 bindsym $mod+c exec $HOME/.config/i3/scratchpad.py
 
 bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewindow getwindowname)\"

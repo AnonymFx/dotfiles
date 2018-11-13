@@ -24,4 +24,4 @@ wins, names = get_windows()
 index, key = menu.select("Scratchpad",names)#,select="0 -theme /home/brian/.config/rofi/i3scratch.rasi")
 
 for i in range((index+1)*2-1):
-    i3.command("scratchpad show")
+    i3.command("scratchpad show, resize set 1800 1012, move position center")
