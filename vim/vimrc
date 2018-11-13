@@ -184,7 +184,9 @@ autocmd FileType tex call IMAP('IT', '\item <++>', 'tex')
 autocmd FileType tex imap <buffer> <C-j> <Plug>IMAP_JumpForward
 
 " Vim-markdown -----------------------------------------------------------------
-set conceallevel=3
+autocmd FileType markdown set conceallevel=3
+let g:vim_markdown_toc_autofit = 1
+autocmd FileType markdown nnoremap <leader>tb :Toc<CR>
 
 " Vim-tmux-navigator -----------------------------------------------------------
 " Override vim-latex binding, for some reason both lines are necessary for
