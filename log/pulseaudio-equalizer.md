@@ -1,4 +1,9 @@
-# Set up pulseaudio equalizer
+# Setup pulseaudio-equalizer-ladspa
+1. Install `pulseaudio-equalizer-ladspa`
+2. Enable it with `pulseaudio-euqalizer enable` or via front-end `pulseaudio-equalizer-gtk`
+3. Maybe add it to autostart
+
+# Set up pulseaudio equalizer [old way, better way above]
 
 1. Install pulseaudio-equalizer
 2. Load required pulseaudio modules
