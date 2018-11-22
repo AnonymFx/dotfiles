@@ -20,8 +20,10 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# Start rofi (window switcher)
+# Start rofi (application launcher mode)
 bindsym $mod+d exec rofi -show drun -drun-match-fields name
+# Start rofi (window switcher)
+bindsym $mod+g exec rofi -show window
 
 # Disable focus follow mouse
 focus_follows_mouse no
