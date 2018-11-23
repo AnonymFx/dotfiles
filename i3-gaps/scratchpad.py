@@ -2,6 +2,8 @@
 
 import i3ipc
 import rofi
+import sys
+import time
 from time import sleep
 
 i3 = i3ipc.Connection()
@@ -15,14 +17,22 @@ def scratchpad():
 def get_windows():
     wins = []
     names = []
+    numEntries = 0
     for con in scratchpad():
         wins += con
     for con in wins:
         names.append(con.name)
-    return wins,names
+        numEntries += 1
+    return reversed(wins),reversed(names), numEntries
 
-wins, names = get_windows()
+wins, names, numEntries = get_windows()
 index, key = menu.select("Scratchpad",names)#,select="0 -theme /home/brian/.config/rofi/i3scratch.rasi")
 
-for i in range((index+1)*2-1):
-    i3.command("exec i3-msg 'scratchpad show' && sleep 0.1 && i3-msg 'resize set 1800 1012' && i3-msg 'move position center'")
+if index < 0:
+    sys.exit()
+
+for i in range((numEntries - index)*2-1):
+    i3.command("scratchpad show")
+
+i3.command("resize set 1800 1012")
+i3.command("move position center")
