@@ -309,6 +309,9 @@ autocmd FileType javascript setlocal tabstop=4
 " ------------------ Markdown --------------------
 autocmd FileType markdown setlocal foldmethod=indent
 
+" ------------------ Scratchpad ------------------
+autocmd BufNewFile,BufRead *.scratchpad* setlocal foldlevel=0
+
 " ------------------ Python ----------------------
 autocmd FileType python let python_highlight_all=1
 autocmd FileType python setlocal tabstop=4
