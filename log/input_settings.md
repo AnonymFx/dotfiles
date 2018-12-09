@@ -32,8 +32,9 @@ Section "InputClass"
     Driver "libinput"
     MatchIsKeyboard "on"
     Option "XkbLayout" "us"
-    Option "XkbVariant" "intl"
+    Option "XkbVariant" "altgr-intl"
     Option "XkbOptions" "caps:swapescape"
     Option "XkbOptions" "compose:caps"
+    Option "XkbOptions" "nodeadkeys"
 EndSection
 ```
