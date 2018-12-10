@@ -39,14 +39,139 @@ function print_help_msg() {
 EOF
 }
 
+function get_distribution_name() {
+	IFS="="
+	read -a test < /etc/os-release
+	echo "${test[1]:1:-1}"
+}
+
 function get_packager_cmd() {
+	case "$(get_distribution_name)" in
+		"Arch Linux" )
+			if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
+				echo "yay -S"
+				return 0
+			elif trizen_location="$(type -p trizen)" && [ -n "$trizen_location" ]; then
+				echo "trizen -S"
+				return 0
+			elif yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
+				echo "yaourt -S"
+				return 0
+			elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+				echo "sudo pacman -S"
+				return 0
+			fi
+			;;
+	esac
 	echo ""
 	return 1
 }
 
 function get_package_list() {
 	TARGET="$1"
-	case $TARGET in
+	case "$(get_distribution_name)" in
+		"Arch Linux")
+			case $TARGET in
+				autorandr )
+					echo "autorandr-git"
+					return 0
+					;;
+				compton )
+					echo "compton"
+					return 0
+					;;
+				dconf )
+					echo "dconf"
+					return 0
+					;;
+				dunst )
+					echo "dunst"
+					return 0
+					;;
+				bash )
+					echo "bash"
+					return 0
+					;;
+				gdb )
+					echo "gdb"
+					return 0
+					;;
+				git )
+					echo "git"
+					return 0
+					;;
+				gtk )
+					echo "gtk3 gtk2 arc-gtk-theme paper-icon-theme-git"
+					return 0
+					;;
+				i3-gaps )
+					echo "i3-gaps light-locker dmenu rofi compton feh autorandr-git udevil gnome-keyring libnotify xdotool imagemagick playerctl network-manager-applet insync polkit polkit-gnome xdg-user-dirs python python-rofi i3ipc-python"
+					return 0
+					;;
+				ideavim )
+					echo ""
+					return 1
+					;;
+				kitty )
+					echo "kitty"
+					;;
+				polybar )
+					echo "polybar xorg-xbacklight jq nerd-fonts-complete ttf-material-icons playerctl wireless_tools"
+					return 0
+					;;
+				qt )
+					echo "qt4 qt5-base qt5ct"
+					;;
+				ranger )
+					echo "ranger"
+					return 0
+					;;
+				readline )
+					echo "readline"
+					return 0
+					;;
+				redshift )
+					echo "redshift"
+					return 0
+					;;
+				rofi )
+					echo "rofi ttf-dejavu"
+					return 0
+					;;
+				terminator )
+					echo "terminator ttf-inconsolata"
+					return 0
+					;;
+				tmux )
+					echo "tmux"
+					return 0
+					;;
+				vim )
+					echo "gvim ack fzf the_silver_searcher universal-ctags-git vim-spell-de"
+					return 0
+					;;
+				neovim )
+					echo "neovim"
+					return 0
+					;;
+				vimiv )
+					echo "vimiv"
+					return 0
+					;;
+				zathura )
+					echo "zathura zathura-pdf-mupdf"
+					return 0
+					;;
+				zsh )
+					echo "zsh curl fzf the_silver_searcher exa"
+					return 0
+					;;
+				X )
+					echo "xorg-server"
+					return 0
+					;;
+			esac
+			;;
 	esac
 
 	echo ""
@@ -297,9 +422,7 @@ function install() {
 	fi
 }
 
-echo "This is a template script, use the ones in the distro branches"
-echo "Aborting!"
-exit 1
+echo "Detected distribution $(get_distribution_name)"
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
@@ -307,24 +430,6 @@ if [[ $0 != "./install.sh" ]]; then
 	echo "Please execute the install script in the dotfiles folder"
 	exit 1
 fi
-
-echo "Trying to find git repository to merge master branch..."
-if git_loc="$(type -p git)" && [ -n "$git_loc" ]; then
-	if git_dir="$(git rev-parse --git-dir 2>/dev/null)" && [ -d "$git_dir" ]; then
-		echo "Starting merge..."
-		if ! git merge master; then
-			echo "There were some merge conflicts, please resolve them and run the script again."
-			exit 1
-		else
-			echo "Success!"
-		fi
-	else
-		echo "Git repository not found, continuing without merging"
-	fi
-else
-	echo "Git command not found, continuing without merging"
-fi
-
 
 echo "Starting installation..."
 if [[ $# -eq 0 ]]; then
