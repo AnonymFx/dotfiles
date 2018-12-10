@@ -94,26 +94,16 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-ws-icon-0=1;
-ws-icon-1=2;
-ws-icon-2=3;
-ws-icon-3=4;
-ws-icon-4=5;
-ws-icon-5=6;
-ws-icon-6=7;
-ws-icon-7=8;
-ws-icon-8=9;
-ws-icon-9=10;
-ws-icon-10=11;11
-ws-icon-11=12;12
-ws-icon-12=13;13
-ws-icon-13=14;14
-ws-icon-14=15;15
-ws-icon-15=16;16
-ws-icon-16=17;17
-ws-icon-17=18;18
-ws-icon-18=19;19
-ws-icon-19=20;20
+ws-icon-0=1;
+ws-icon-1=2;
+ws-icon-2=3;
+ws-icon-3=4;
+ws-icon-4=5;
+ws-icon-5=6;
+ws-icon-6=7;
+ws-icon-7=8;
+ws-icon-8=9;
+ws-icon-9=10;
 
 
 ; Only show workspaces on the same output as the bar
@@ -222,7 +212,7 @@ ramp-volume-1 = 
 type = internal/battery
 battery = ${env:BAT}
 adapter = ${env:BAT_ADP}
-full-at = 95
+full-at = ${env:BATTERY_FULL}
 
 format-charging = <label-charging>
 label-charging =  %percentage%%
@@ -249,7 +239,7 @@ ramp-capacity-9 = 
 [module/temperature]
 type = internal/temperature
 thermal-zone = ${env:THERMAL_ZONE}
-warn-temperature = 80
+warn-temperature = ${env:THERMAL_THRESHOLD}
 
 format = <ramp> <label>
 format-underline = ${colors.underline}
@@ -307,13 +297,13 @@ format-prefix = " "
 
 [module/music]
 type = custom/script
-interval=.1
+interval=.5
 format-underline = ${colors.underline}
 exec=$HOME/.config/polybar/playerctl.sh 45
 
 [module/window_title]
 type = custom/script
-interval=.1
+interval=.2
 format-underline = ${colors.underline}
 exec = $HOME/.config/polybar/window_title.sh
 

@@ -1,11 +1,29 @@
 <scheme name="_@user_Atom One Dark" version="142" parent_scheme="Darcula">
+  <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
     <property name="created">2018-08-21T14:19:14</property>
     <property name="ide">Idea</property>
     <property name="ideVersion">2018.2.1.0.0</property>
-    <property name="modified">2018-09-21T08:37:10</property>
+    <property name="modified">2018-11-23T07:16:55</property>
     <property name="originalScheme">Atom One Dark</property>
   </metaInfo>
+  <option name="LINE_SPACING" value="1.2" />
+  <font>
+    <option name="EDITOR_FONT_NAME" value="Fira Code" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </font>
+  <font>
+    <option name="EDITOR_FONT_NAME" value="DejaVu Sans Mono" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </font>
+  <console-font>
+    <option name="EDITOR_FONT_NAME" value="Fira Code" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </console-font>
+  <console-font>
+    <option name="EDITOR_FONT_NAME" value="DejaVu Sans Mono" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </console-font>
   <colors>
     <option name="ADDED_LINES_COLOR" value="98c379" />
     <option name="ANNOTATIONS_COLOR" value="fffbf7" />
@@ -40,6 +58,7 @@
     <option name="INDENT_GUIDE" value="37474f" />
     <option name="INFORMATION_HINT" value="282c34" />
     <option name="LINE_NUMBERS_COLOR" value="475f63" />
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="c6c6c6" />
     <option name="METHOD_SEPARATORS_COLOR" value="2e3c43" />
     <option name="MODIFIED_LINES_COLOR" value="e5c17c" />
     <option name="MT_ADDED" value="73c990" />

@@ -20,8 +20,10 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Start rofi (application launcher mode)
+bindsym $mod+d exec rofi -show drun -drun-match-fields name
 # Start rofi (window switcher)
-bindsym $mod+d exec i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -i -show -lines 10 -width 40 -yoffset -100 -padding 0 -hide-scrollbar -eh 2 -bw 5 -font "System San Francisco Display 12" -rnow'
+bindsym $mod+g exec rofi -show window
 
 # Disable focus follow mouse
 focus_follows_mouse no
@@ -33,10 +35,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 25 px
+bindsym $mod+Shift+j move down 25 px
+bindsym $mod+Shift+k move up 25 px
+bindsym $mod+Shift+l move right 25 px
 
 # move workspace
 bindsym $mod+Mod1+h move workspace to output left
@@ -81,16 +83,16 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
-bindsym $mod+Mod1+1 workspace number 11
-bindsym $mod+Mod1+2 workspace number 12
-bindsym $mod+Mod1+3 workspace number 13
-bindsym $mod+Mod1+4 workspace number 14
-bindsym $mod+Mod1+5 workspace number 15
-bindsym $mod+Mod1+6 workspace number 16
-bindsym $mod+Mod1+7 workspace number 17
-bindsym $mod+Mod1+8 workspace number 18
-bindsym $mod+Mod1+9 workspace number 19
-bindsym $mod+Mod1+10 workspace number 20
+bindsym $mod+ctrl+1 workspace number 11
+bindsym $mod+ctrl+2 workspace number 12
+bindsym $mod+ctrl+3 workspace number 13
+bindsym $mod+ctrl+4 workspace number 14
+bindsym $mod+ctrl+5 workspace number 15
+bindsym $mod+ctrl+6 workspace number 16
+bindsym $mod+ctrl+7 workspace number 17
+bindsym $mod+ctrl+8 workspace number 18
+bindsym $mod+ctrl+9 workspace number 19
+bindsym $mod+ctrl+10 workspace number 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -103,18 +105,22 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-bindsym $mod+Mod1+Shift+1 move container to workspace number 11
-bindsym $mod+Mod1+Shift+2 move container to workspace number 12
-bindsym $mod+Mod1+Shift+3 move container to workspace number 13
-bindsym $mod+Mod1+Shift+4 move container to workspace number 14
-bindsym $mod+Mod1+Shift+5 move container to workspace number 15
-bindsym $mod+Mod1+Shift+6 move container to workspace number 16
-bindsym $mod+Mod1+Shift+7 move container to workspace number 17
-bindsym $mod+Mod1+Shift+8 move container to workspace number 18
-bindsym $mod+Mod1+Shift+9 move container to workspace number 19
-bindsym $mod+Mod1+Shift+10 move container to workspace number 20
+bindsym $mod+ctrl+Shift+1 move container to workspace number 11
+bindsym $mod+ctrl+Shift+2 move container to workspace number 12
+bindsym $mod+ctrl+Shift+3 move container to workspace number 13
+bindsym $mod+ctrl+Shift+4 move container to workspace number 14
+bindsym $mod+ctrl+Shift+5 move container to workspace number 15
+bindsym $mod+ctrl+Shift+6 move container to workspace number 16
+bindsym $mod+ctrl+Shift+7 move container to workspace number 17
+bindsym $mod+ctrl+Shift+8 move container to workspace number 18
+bindsym $mod+ctrl+Shift+9 move container to workspace number 19
+bindsym $mod+ctrl+Shift+10 move container to workspace number 20
 
 bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+x move scratchpad
+bindsym $mod+v scratchpad show
+bindsym $mod+c exec $HOME/.config/i3/scratchpad.py
 
 bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewindow getwindowname)\"
 
@@ -122,13 +128,6 @@ bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewi
 for_window [title="^VeraCrypt$" window_type="normal"] floating disable
 for_window [class="^Keepassx$"] floating disable
 for_window [title="^Insync$"] floating enable
-
-# Assign applications to workspaces
-assign [class="Google Play Music Desktop Player"] 10
-for_window [class="Spotify"] move to workspace 10
-assign [class="^Veracrypt$"] 7
-assign [class="^Keepassx$"] 7
-assign [class="^keepassxc$" window_type="normal"] 7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -143,16 +142,10 @@ mode "resize" {
 	# Pressing right will grow the window’s width.
 	# Pressing up will shrink the window’s height.
 	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 5 px or 5 ppt
-	bindsym j resize grow height 5 px or 5 ppt
-	bindsym k resize shrink height 5 px or 5 ppt
-	bindsym l resize grow width 5 px or 5 ppt
-
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 5 px or 5 ppt
-	bindsym Down resize grow height 5 px or 5 ppt
-	bindsym Up resize shrink height 5 px or 5 ppt
-	bindsym Right resize grow width 5 px or 5 ppt
+	bindsym h resize shrink width 25 px or 2 ppt
+	bindsym j resize grow height 25 px or 2 ppt
+	bindsym k resize shrink height 25 px or 2 ppt
+	bindsym l resize grow width 25 px or 2 ppt
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -187,10 +180,11 @@ client.urgent           #da4141 #da4141 #000000 #da4141
 # Window border style
 new_window pixel 2
 new_float pixel 2
+for_window [class="^.*"] border pixel 2
 
 # Gaps for i3-gaps
-gaps inner 12
-gaps outer 0
+gaps inner 6
+gaps outer -6
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -242,10 +236,13 @@ exec --no-startup-id redshift
 exec --no-startup-id "sleep 2 && nm-applet"
 
 # Start insync
-exec --no-startup-id "sleep 2 && insync start"
+exec --no-startup-id "sleep 4 && insync start"
 
 # Start Authentication agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Start light-locker
+exec --no-startup-id light-locker
 
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh

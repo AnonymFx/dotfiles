@@ -25,8 +25,10 @@ Before=sleep.target
 User=%I
 Type=simple
 Environment=DISPLAY=:0
+# Required for playerctl or light-lock for example, might be necessary to adapt
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus 
 ExecStart=/home/thomas/.config/i3/lock.sh
-ExecStartPost=/usr/bin/sleep 1
+ExecStartPost=/usr/bin/sleep 2
 
 [Install]
 WantedBy=sleep.target
