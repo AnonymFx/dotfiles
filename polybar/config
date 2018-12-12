@@ -8,9 +8,9 @@
 ;=====================================================
 
 [colors]
-background = #0000000
+background = #00000000
 background-highlight = #ffffff
-foreground = #dfdfdf
+foreground = #ffffff
 foreground-alt = #949494
 underline=#00ffffff
 alert = #da4141
