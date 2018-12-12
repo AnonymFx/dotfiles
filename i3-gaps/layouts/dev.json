@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "layout": "splitv",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [{
+            "percent": 0.75,
+            "swallows": [{
+                "class": "^Google\\-chrome\\-beta$"
+            }],
+            "type": "con"
+        },
+        {
+            "percent": 0.25,
+            "swallows": [{
+                "class": "^kitty$"
+            }],
+            "type": "con"
+        }
+    ]
+}

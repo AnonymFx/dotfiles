@@ -253,4 +253,7 @@ exec --no-startup-id sh -c "sleep 2; i3-input -l 1 -F 'exec $HOME/.config/i3/aut
 # Bind key for autostart promt (in case it was accidently dismissed)
 bindsym $mod+ctrl+a exec --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
 
+# Append development layout
+bindsym $mod+shift+d append_layout ~/.config/i3/layouts/dev.json; exec google-chrome-beta; exec kitty
+
 # vim:filetype=i3
