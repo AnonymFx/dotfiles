@@ -47,7 +47,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3 window_title
 modules-center = music
-modules-right = num_updates volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
+modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
 
 tray-position = right
 tray-detached = false

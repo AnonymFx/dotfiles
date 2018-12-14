@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-updates="$(yay -Qu 2>/dev/null)"
+yay -Syy > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
-	echo $($updates | wc -l)
+	yay -Qu 2>/dev/null | wc -l
 else
 	echo -
 fi
