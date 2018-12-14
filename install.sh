@@ -280,6 +280,7 @@ function link_config() {
 			ln -snf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 			ln -snf $PWD/polybar/playerctl.sh $HOME/.config/polybar/playerctl.sh
 			ln -snf $PWD/polybar/window_title.sh $HOME/.config/polybar/window_title.sh
+			ln -snf $PWD/polybar/num_updates.sh $HOME/.config/polybar/num_updates.sh
 			;;
 		pycharm )
 			link_idea_files ".PyCharm"
