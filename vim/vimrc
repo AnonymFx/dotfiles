@@ -289,6 +289,9 @@ set mouse=a
 " Show as much as possible of a wrapped last line, not just "@".
 set display=lastline
 
+" Automatically resize splits when the window gets resized
+autocmd VimResized * wincmd =
+
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
