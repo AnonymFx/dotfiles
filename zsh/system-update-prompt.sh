@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 zmodload zsh/datetime
+lock_folder="/tmp/system-update.lock"
 
 function _current_epoch() {
 	echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
@@ -42,7 +43,7 @@ if [[ -z "$epoch_target" ]]; then
 	epoch_target=7
 fi
 
-if mkdir "$HOME/system-update.lock" 2>/dev/null; then
+if mkdir "$lock_folder" 2>/dev/null; then
 	# Remove lock file on interrupt
 	trap 'rmdir "$HOME/system-update.lock" 2>/dev/null; exit' INT
 	if [ "$1" = "-f" ]; then
@@ -78,7 +79,7 @@ if mkdir "$HOME/system-update.lock" 2>/dev/null; then
 		_update_system_update
 	fi
 
-	rmdir "$HOME/system-update.lock"
+	rmdir "$lock_folder"
 	# Restore default interrupt
 	trap - INT
 fi
