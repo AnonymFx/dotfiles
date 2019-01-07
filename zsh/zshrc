@@ -59,7 +59,7 @@ plugins=(git archlinux colored-man-pages zsh-autosuggestions zsh-syntax-highligh
 
 # User configuration
 
-export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools:$HOME/bin"
+export PATH="$HOME/bin:${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Check for system update if script is in PATH
