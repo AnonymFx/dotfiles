@@ -7,7 +7,7 @@
     "nodes": [{
             "percent": 0.75,
             "swallows": [{
-                "class": "^Google\\-chrome\\-beta$"
+                "class": "^Firefox$"
             }],
             "type": "con"
         },
