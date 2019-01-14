@@ -105,7 +105,7 @@ function get_package_list() {
 					return 0
 					;;
 				i3-gaps )
-					echo "i3-gaps light-locker dmenu rofi compton feh autorandr-git udevil gnome-keyring libnotify xdotool imagemagick playerctl network-manager-applet insync polkit polkit-gnome xdg-user-dirs python python-rofi i3ipc-python"
+					echo "i3-gaps light-locker dmenu rofi compton feh autorandr-git udevil gnome-keyring libnotify xdotool imagemagick playerctl network-manager-applet insync polkit polkit-gnome xdg-user-dirs python python-rofi i3ipc-python rofimoji-git"
 					return 0
 					;;
 				ideavim )
