@@ -9,9 +9,10 @@
 
 [colors]
 background = #00000000
-background-highlight = #ffffff
-foreground = #ffffff
-foreground-alt = #949494
+background-alt = #ffffff
+background-highlight = #cccccc
+foreground = #444444
+foreground-alt = #cccccc
 underline=#00ffffff
 alert = #da4141
 
@@ -111,7 +112,7 @@ pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-background = ${colors.foreground}
-label-mode-foreground = #000000
+label-mode-foreground = ${colors.background-alt}
 
 ; focused = Active workspace on focused monitor
 label-focused = "%icon%"
