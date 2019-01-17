@@ -167,9 +167,9 @@ bindsym $mod+shift+s exec "killall -SIGUSR2 dunst && notify-send 'Unsilenced not
 
 # Window header style
 # class                 border  backgr. text    indicator
-client.focused          #ffffff #ffffff #000000 #ffffff
-client.focused_inactive #000000 #000000 #ffffff #000000
-client.unfocused        #000000 #000000 #ffffff #000000
+client.focused          #00a05e #00a05e #000000 #00a05e
+client.focused_inactive #000000 #000000 #00a05e #000000
+client.unfocused        #000000 #000000 #00a05e #000000
 client.urgent           #da4141 #da4141 #000000 #da4141
 
 # Window border style
