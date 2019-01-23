@@ -40,7 +40,7 @@ nmap <leader>tb :action FileStructurePopup<CR>
 
 " --------------------------- Editing ------------------------------------------
 nmap <leader>om :action OverrideMethods<CR>
-nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
+map <leader>rf :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
 vmap <leader>cs :action SurroundWith<CR>
