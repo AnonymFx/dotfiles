@@ -7,8 +7,10 @@ font pango:droidsans 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# binding for  terminal
 bindsym $mod+Return exec "export TERMINAL=kitty; i3-sensible-terminal"
+# binding for browser
+bindsym $mod+b exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
