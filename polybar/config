@@ -10,9 +10,9 @@
 [colors]
 background = #00000000
 background-alt = #000000
-background-highlight = #00e387
-foreground = #00e387
-foreground-alt = #00e387
+background-highlight = #ffffff
+foreground = #ffffff
+foreground-alt = #ffffff
 underline=#00ffffff
 alert = #da4141
 
