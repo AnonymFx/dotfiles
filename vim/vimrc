@@ -187,8 +187,12 @@ augroup END
 
 " Vim-markdown -----------------------------------------------------------------
 let g:vim_markdown_toc_autofit = 1
-autocmd FileType markdown set conceallevel=3
-autocmd FileType markdown nnoremap <silent> <leader>tb :Toc<CR>
+augroup VimMarkdown
+	autocmd FileType markdown set conceallevel=3
+	autocmd FileType markdown nnoremap <silent> <leader>tb :Toc<CR>
+augroup END
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 " Vim-tmux-navigator -----------------------------------------------------------
 " Override vim-latex binding, for some reason both lines are necessary for
