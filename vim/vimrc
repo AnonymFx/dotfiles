@@ -59,17 +59,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " TableMode - Table creation for vim
 Plug 'dhruvasagar/vim-table-mode'
 
-" Molokai color scheme
-Plug 'tomasr/molokai'
-
 " One color scheme
 Plug 'rakr/vim-one'
-
-" Automatic tag file generation
-Plug 'ludovicchabant/vim-gutentags'
-
-" Tagbar
-Plug 'majutsushi/tagbar'
 
 " Language support for over 100 languages
 Plug 'sheerun/vim-polyglot'
@@ -77,11 +68,14 @@ Plug 'sheerun/vim-polyglot'
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 
+" Automatic tag file generation
+Plug 'ludovicchabant/vim-gutentags', {'for': 'tex'}
+
+" Tagbar
+Plug 'majutsushi/tagbar', {'for': 'tex'}
+
 " Vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-
-" Language support for Google Soy Tempaltes
-Plug 'duganchen/vim-soy'
 
 " Init plugin system
 call plug#end()
