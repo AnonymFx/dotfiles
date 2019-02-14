@@ -45,7 +45,7 @@ fi
 
 if mkdir "$lock_folder" 2>/dev/null; then
 	# Remove lock file on interrupt
-	trap 'rmdir "$HOME/system-update.lock" 2>/dev/null; exit' INT
+	trap 'rmdir "$lock_folder" 2>/dev/null; exit' INT
 	if [ "$1" = "-f" ]; then
 		echo "Please check https://www.archlinux.org/news/ before updating. Press Enter to continue..."
 		read line
