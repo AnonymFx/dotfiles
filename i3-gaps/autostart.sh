@@ -4,7 +4,7 @@ case $1 in
 		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 1
 
-		firefox messenger.com web.whatsapp.com cqse.slack.com "https://mail.google.com/mail/u/0" "https://mail.google.com/mail/u/1" &
+		firefox cqse.slack.com "https://mail.google.com/mail/u/1" &
 		sleep 2
 		i3-msg "move window to workspace 10"
 
