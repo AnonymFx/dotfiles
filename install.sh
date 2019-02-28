@@ -351,6 +351,14 @@ function link_config() {
 			ln -snf $PWD/X/Xresources $HOME/.Xresources
 			ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
 			ln -snf $PWD/X/xprofile $HOME/.xprofile
+			# Desktop entries
+			mkdir -p $HOME/.local/share/applications $HOME/.icons
+			ln -snf $PWD/X/desktop_entries/*.desktop $HOME/.local/share/applications
+			curl https://www.iconfinder.com/icons/3146791/download/png/64 -o $HOME/.icons/whatsapp.png
+			curl https://www.iconfinder.com/icons/1688848/download/png/64 -o $HOME/.icons/messaging.png
+			curl https://www.iconfinder.com/icons/299092/download/png/64 -o $HOME/.icons/organization.png
+			curl https://www.iconfinder.com/icons/1298720/download/png/64 -o $HOME/.icons/facebook_messenger.png
+			curl http://icons.iconarchive.com/icons/blackvariant/button-ui-requests-15/64/YNAB-icon.png -o $HOME/.icons/ynab.png
 			;;
 	esac
 }

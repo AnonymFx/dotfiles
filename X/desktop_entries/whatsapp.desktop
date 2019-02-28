@@ -1,0 +1,6 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=WhatsApp
+Exec=firefox https://web.whatsapp.com
+Icon=whatsapp
