@@ -24,6 +24,7 @@ function print_help_msg() {
 				ranger
 				readline
 				redshift
+				rider
 				rofi
 				terminator
 				tmux
@@ -300,6 +301,9 @@ function link_config() {
 		redshift )
 			ln -snf $PWD/redshift/redshift.conf $HOME/.config/redshift.conf
 			;;
+		rider )
+			link_idea_files ".Rider"
+			;;
 		rofi )
 			mkdir -p $HOME/.config/rofi
 			ln -snf $PWD/rofi/config.rasi $HOME/.config/rofi/config.rasi
@@ -462,6 +466,7 @@ else
 		install ranger
 		install readline
 		install redshift
+		install rider
 		install rofi
 		install terminator
 		install tmux
@@ -523,6 +528,8 @@ else
 		install readline
 	elif [[ $1 = redshift ]]; then
 		install redshift
+	elif [[ $1 = rider ]]; then
+		install rider
 	elif [[ $1 = rofi ]]; then
 		install rofi
 	elif [[ $1 = terminator ]]; then

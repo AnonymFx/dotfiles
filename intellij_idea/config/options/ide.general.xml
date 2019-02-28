@@ -15,5 +15,8 @@
     <entry key="win.editor.thumb.default.fill.max" value="150" />
     <entry key="win.editor.thumb.darcula.fill.min" value="102" />
     <entry key="ide.balloon.shadow.size" value="0" />
+    <entry key="ide.require.transaction.for.model.changes" value="false" />
+    <entry key="search.everywhere.pattern.checking" value="false" />
+    <entry key="actionSystem.fix.alt.gr" value="false" />
   </component>
 </application>
