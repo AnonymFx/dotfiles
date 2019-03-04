@@ -383,7 +383,7 @@ function install_additional() {
 				popd
 			else
 				echo "Installing zsh-autosuggestions"
-				git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+				git clone git@github.com:zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 			fi
 			# Zsh syntax highlighting
 			if [[ -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
@@ -393,7 +393,7 @@ function install_additional() {
 				popd
 			else
 				echo "Installing zsh-syntax-highlighting"
-				git clone git://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+				git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 			fi
 			# spaceship theme
 			echo "Installing/Updating spaceship theme"
