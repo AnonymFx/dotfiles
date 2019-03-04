@@ -399,10 +399,12 @@ function install_additional() {
 			echo "Installing/Updating spaceship theme"
 			SPACESHIP_TARGET="$ZSH_CUSTOM/themes/spaceship-prompt"
 			if [ ! -e "$SPACESHIP_TARGET" ]; then
-				git clone https://github.com/denysdovhan/spaceship-prompt.git "$SPACESHIP_TARGET"
+				git clone git@github.com:denysdovhan/spaceship-prompt.git "$SPACESHIP_TARGET"
 				ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 			else
-				git pull $SPACESHIP_TARGET
+				pushd "$SPACESHIP_TARGET"
+				git pull
+				popd
 			fi
 			;;
 
