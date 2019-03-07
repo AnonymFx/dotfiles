@@ -19,7 +19,7 @@ case $1 in
 	p ) # Private
 		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
 
-		firefox messenger.com web.whatsapp.com mail.google.com &
+		firefox web.whatsapp.com mail.google.com &
 		sleep 3
 		i3-msg "move window to workspace 10"
 

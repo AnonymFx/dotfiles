@@ -2,5 +2,5 @@
 [Desktop Entry]
 Type=Application
 Name=Messaging
-Exec=firefox messenger.com web.whatsapp.com cqse.slack.com mail.google.com/mail/u/0 mail.google.com/mail/u/1 & sleep 0.5 && i3-msg 'move to workspace 10' && i3-msg 'workspace 10'
+Exec=firefox web.whatsapp.com cqse.slack.com mail.google.com/mail/u/0 mail.google.com/mail/u/1 & sleep 0.5 && i3-msg 'move to workspace 10' && i3-msg 'workspace 10'
 Icon=messaging
