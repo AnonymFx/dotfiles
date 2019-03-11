@@ -107,6 +107,15 @@ if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; 
 	bindkey '^I' $fzf_default_completion
 fi
 
+if [[ -e /usr/share/z.lua/z.lua ]]; then
+	eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
+fi
+
+alias zz='z -c'      # restrict matches to subdirs of $PWD
+alias zi='z -i'      # cd with interactive selection
+alias zf='z -I'      # use fzf to select in multiple matches
+alias zb='z -b'      # quickly cd to the parent directory
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.

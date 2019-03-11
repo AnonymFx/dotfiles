@@ -164,7 +164,7 @@ function get_package_list() {
 					return 0
 					;;
 				zsh )
-					echo "zsh curl fzf the_silver_searcher exa"
+					echo "zsh curl fzf the_silver_searcher exa lua z.lua"
 					return 0
 					;;
 				X )
