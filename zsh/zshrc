@@ -76,6 +76,10 @@ autoload -U zmv
 setopt extendedglob
 setopt vi
 
+# Load custom auto-complete suggestions
+fpath=($HOME/.zsh-completions $fpath)
+compinit
+
 # Set 256 colors
 export TERM="xterm-256color"
 
