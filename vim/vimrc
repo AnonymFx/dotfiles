@@ -187,6 +187,7 @@ augroup VimMarkdown
 augroup END
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_folding_disabled = 1
 
 " Vim-tmux-navigator -----------------------------------------------------------
 " Override vim-latex binding, for some reason both lines are necessary for
