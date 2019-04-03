@@ -194,7 +194,7 @@ label = %date% %time%
 format-underline = ${colors.underline}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.underline}
@@ -244,11 +244,11 @@ warn-temperature = ${env:THERMAL_THRESHOLD}
 
 format = <ramp> <label>
 format-underline = ${colors.underline}
-label = %temperature%
+label = %temperature-c%
 
 format-warn = <label-warn>
 format-warn-underline = ${colors.underline}
-label-warn =  %temperature%
+label-warn =  %temperature-c%
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
