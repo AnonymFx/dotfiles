@@ -165,6 +165,8 @@ fi
 # git ##################################
 if git_l="$(type -p git)" && [ -n "$git_l" ]; then
 	alias gdt='git difftool'
+	alias gwa='git worktree add'
+	alias gwr='git worktree remove'
 fi
 
 # xdg-open #############################
