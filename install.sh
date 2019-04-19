@@ -168,7 +168,7 @@ function get_package_list() {
 					return 0
 					;;
 				X )
-					echo "xorg-server"
+					echo "xorg-server xmodmap"
 					return 0
 					;;
 			esac
@@ -351,6 +351,7 @@ function link_config() {
 			ln -snf $PWD/X/Xresources $HOME/.Xresources
 			ln -snf $PWD/X/mimeapps.list $HOME/.config/mimeapps.list
 			ln -snf $PWD/X/xprofile $HOME/.xprofile
+			ln -snf $PWD/X/Xmodmap $HOME/.Xmodmap
 			# Desktop entries
 			mkdir -p $HOME/.local/share/applications $HOME/.icons
 			ln -snf $PWD/X/desktop_entries/*.desktop $HOME/.local/share/applications

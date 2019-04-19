@@ -3,3 +3,5 @@ if gnomekeyringd="$(type -p gnome-keyring-daemon)" && [ -n "$gnomekeyringd" ]; t
 	eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 	export SSH_AUTH_SOCK
 fi
+
+xmodmap ~/.Xmodmap
