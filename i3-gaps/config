@@ -8,7 +8,7 @@ font pango:droidsans 10
 floating_modifier $mod
 
 # binding for  terminal
-bindsym $mod+Return exec "export TERMINAL=kitty; i3-sensible-terminal"
+bindsym $mod+Return exec i3-sensible-terminal
 # binding for browser
 bindsym $mod+b exec firefox
 

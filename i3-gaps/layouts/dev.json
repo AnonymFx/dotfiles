@@ -14,7 +14,7 @@
         {
             "percent": 0.25,
             "swallows": [{
-                "class": "^kitty$"
+                "class": "^terminator$"
             }],
             "type": "con"
         }
