@@ -7,13 +7,6 @@
 " --------------------------------- Vim-Plug -----------------------------------
 " Specify plugin directory
 call plug#begin('~/.vim/plugins')
-
-" YouCompleteMe - code completion engine
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --system-libclang
-			\ --clang-completer --go-completer --js-completer --java-completer'}
-" YouCompleteMe Generator - generate project files for YouCompleteMe
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-
 " fuzzy finding
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -34,9 +27,6 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 " Airline themes
 Plug 'vim-airline/vim-airline-themes'
-
-" EasyMotion - better vim navigations (f, t,...)
-Plug 'easymotion/vim-easymotion'
 
 " Unimpaired - useful keybindings
 Plug 'tpope/vim-unimpaired'
@@ -67,12 +57,6 @@ Plug 'sheerun/vim-polyglot'
 
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
-
-" Automatic tag file generation
-Plug 'ludovicchabant/vim-gutentags', {'for': 'tex'}
-
-" Tagbar
-Plug 'majutsushi/tagbar', {'for': 'tex'}
 
 " Vim-markdown
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
@@ -132,9 +116,6 @@ let g:airline_powerline_fonts = 1 " powerline font
 " ---------------------------- autoformat --------------------------------------
 nnoremap <leader>af :Autoformat<CR>
 
-" Gutentags---------------------------------------------------------------------
-let g:gutentags_ctags_tagfile = '.vimtags'
-
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <leader>bu :Buffers<CR>
@@ -156,9 +137,6 @@ let g:polyglot_disabled = ['']
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
 nnoremap <leader>at :TableModeRealign<CR>
-
-" Tagbar------------------------------------------------------------------------
-nmap <silent> <leader>tb :TagbarToggle<CR>
 
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
@@ -194,21 +172,6 @@ let g:vim_markdown_folding_disabled = 1
 " also enabling resourcing the vimrc
 autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
-
-" ----------------------------- YouCompleteMe ----------------------------------
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-augroup YCMInsertTrigger
-	autocmd!
-	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-augroup END
-let g:ycm_python_binary_path = 'python' " Enable python autocomplete
-let g:EclimCompletionMethod = 'omnifunc' " Use omnifunc for completion
-" Set ycm identifier completion to 5 (problems with enumerate expansion if
-" lower)
-nmap <leader>rr :YcmCompleter RefactorRename
-nmap <leader>gt :YcmCompleter GoTo<CR>
 
 
 " ------------------------------------------------------------------------------
