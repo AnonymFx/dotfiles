@@ -263,7 +263,8 @@ color one
 let g:airline_theme='one' " reset nice airline theme
 highlight Normal ctermbg='none'
 highlight SpellBad cterm=underline ctermbg=88
-highlight Comment ctermfg=245
+highlight Comment ctermfg=246
+highlight LineNr ctermfg=246
 
 
 " ------------------------------------------------------------------------------
