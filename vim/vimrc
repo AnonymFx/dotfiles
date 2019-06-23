@@ -58,9 +58,6 @@ Plug 'sheerun/vim-polyglot'
 " Latex suite
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 
-" Vim-markdown
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-
 " Init plugin system
 call plug#end()
 
@@ -160,6 +157,7 @@ augroup END
 " Vim-markdown -----------------------------------------------------------------
 let g:vim_markdown_toc_autofit = 1
 augroup VimMarkdown
+	autocmd!
 	autocmd FileType markdown set conceallevel=3
 	autocmd FileType markdown nnoremap <silent> <leader>tb :Toc<CR>
 augroup END
@@ -170,7 +168,10 @@ let g:vim_markdown_folding_disabled = 1
 " Vim-tmux-navigator -----------------------------------------------------------
 " Override vim-latex binding, for some reason both lines are necessary for
 " also enabling resourcing the vimrc
-autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+augroup  VimTmux
+	autocmd!
+	autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+augroup END
 nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 
 
@@ -190,9 +191,6 @@ set relativenumber
 
 " Indent configuration
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set smarttab
 set autoindent
 set breakindent
 
@@ -211,7 +209,7 @@ nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
 	let @/ = ''
 	if exists('#auto_highlight')
-		au! auto_highlight
+		autocmd! auto_highlight
 		augroup! auto_highlight
 		echo 'Highlight current word: off'
 		return 0
@@ -252,19 +250,26 @@ set mouse=a
 set display=lastline
 
 " Automatically resize splits when the window gets resized
-autocmd VimResized * wincmd =
+augroup  BufferResize
+	autocmd!
+	autocmd VimResized * wincmd =
+augroup END
 
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
 " Good color alts: monokai (sublime default), one (atom default), OceanicNext
+augroup MyColors
+	autocmd!
+	autocmd ColorScheme * highlight Normal ctermbg='none'
+						\ | highlight SpellBad cterm=underline ctermbg=88
+						\ | highlight Comment ctermfg=246
+						\ | highlight LineNr ctermfg=246
+augroup END
+
 set background=dark
 color one
 let g:airline_theme='one' " reset nice airline theme
-highlight Normal ctermbg='none'
-highlight SpellBad cterm=underline ctermbg=88
-highlight Comment ctermfg=246
-highlight LineNr ctermfg=246
 
 
 " ------------------------------------------------------------------------------
@@ -290,7 +295,10 @@ autocmd FileType python setlocal autoindent
 autocmd FileType python setlocal fileformat=unix
 
 " --------------------- Tex ----------------------
-autocmd FileType tex nmap <C-r>b :w<CR>:!make<CR>
+augroup TexMappings
+	autocmd!
+	autocmd FileType tex nmap <C-r>b :w<CR>:!make<CR>
+augroup END
 autocmd FileType tex setlocal spell
 autocmd FileType tex setlocal foldlevel=100
 " Automatically enter a comment leader when hitting Enter or o/O
