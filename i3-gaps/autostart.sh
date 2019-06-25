@@ -8,7 +8,7 @@ case $1 in
 		sleep 2
 		i3-msg "move window to workspace 10"
 
-		firefox calendar.google.com/b/0 calendar.google.com/b/1 todoist.com https://trello.com/b/aA1xfyVv/my-todos 'https://dev.azure.com/apps-munichre/QualityTools/_sprints'
+		firefox calendar.google.com/b/0 calendar.google.com/b/1 todoist.com 'https://dev.azure.com/apps-munichre/QualityTools/_sprints'
 		sleep 1
 		i3-msg "move window to workspace 9"
 
