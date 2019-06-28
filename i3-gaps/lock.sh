@@ -1,2 +1,3 @@
 #!/usr/bin/env sh
-light-locker-command -l
+# Light locker locks after screen is turned off automatically after some seconds
+xset dpms force off
