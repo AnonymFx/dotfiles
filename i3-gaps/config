@@ -211,6 +211,10 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+# Disable default screen blanking timeouts for X and enable own ones
+exec --no-startup-id xset s off && xset dpms 0 0 600
+exec --no-startup-id $HOME/bin/screensaver enable
+
 # Start Applications
 # ------------------
 # Adapt monitor setup

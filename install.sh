@@ -264,6 +264,8 @@ function link_config() {
 			ln -snf $PWD/i3-gaps/lockscreen $HOME/.config/i3/lockscreen
 			ln -snf $PWD/i3-gaps/scratchpad.py $HOME/.config/i3/scratchpad.py
 			ln -snf $PWD/i3-gaps/layouts $HOME/.config/i3/layouts
+			mkdir -p $HOME/bin
+			ln -snf $PWD/i3-gaps/screensaver.sh $HOME/bin/screensaver
 			;;
 		ideavim )
 			ln -snf $PWD/ideavim/ideavimrc $HOME/.ideavimrc
