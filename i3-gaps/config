@@ -190,7 +190,7 @@ gaps outer -6
 # }
 
 # Bind Lock Screen
-bindsym $mod+shift+x exec --no-startup-id $HOME/.config/i3/lock.sh
+bindsym $mod+shift+x exec --no-startup-id "sleep 0.5 && $HOME/.config/i3/lock.sh"
 
 # Screen Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # Increase screen brightness
