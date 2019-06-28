@@ -7,4 +7,4 @@ Section "Server Flags"
 EndSection
 ```
 
-This sets the screen timeout to 10 minutes
+This sets the screen timeout to 10 minutes. 0 Disables the screen saver.
