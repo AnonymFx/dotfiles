@@ -280,6 +280,7 @@ autocmd FileType javascript setlocal tabstop=4
 
 " ------------------ Markdown --------------------
 autocmd FileType markdown setlocal foldmethod=indent
+autocmd FileType markdown setlocal expandtab
 
 " ------------------ Scratchpad ------------------
 autocmd BufNewFile,BufRead *.scratchpad* setlocal foldlevel=0
