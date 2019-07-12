@@ -4,7 +4,7 @@ case $1 in
 		i3-msg "workspace 1"
 		terminator -x /usr/bin/zsh -i -c cqse
 
-		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
+		i3-msg "exec --no-startup-id spotify & sleep 1 && i3-msg move scratchpad"
 		sleep 1
 
 		firefox cqse.slack.com "https://mail.google.com/mail/u/1" &
