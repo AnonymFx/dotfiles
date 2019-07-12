@@ -1,6 +1,9 @@
 #!/bin/sh
 case $1 in
 	w ) # Work
+		i3-msg "workspace 1"
+		terminator -x /usr/bin/zsh -i -c cqse
+
 		i3-msg "exec --no-startup-id spotify & sleep 0.5 && i3-msg move scratchpad"
 		sleep 1
 
