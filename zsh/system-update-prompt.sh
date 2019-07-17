@@ -14,7 +14,7 @@ function _update_system_update() {
 function _upgrade_system() {
 	# If linux needs an update we need to ask if user wants to restart later
 	sudo pacman -Sy
-	linuxNeedsUpdate="$(pacman -Qu | grep 'guile ')"
+	linuxNeedsUpdate="$(pacman -Qu | grep 'linux ')"
 
 	# Do system update, try AUR helpers first, fallback is pacman
 	if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
@@ -41,7 +41,7 @@ function _upgrade_system() {
 	fi
 
 	# Check if Linux was actually updated
-	linuxStillNeedsUpdate="$(pacman -Qu | grep 'guile ')"
+	linuxStillNeedsUpdate="$(pacman -Qu | grep 'linux ')"
 	
 	if [[ ! -z "$linuxNeedsUpdate" ]] && [[ -z "$linuxStillNeedsUpdate" ]]; then
 		echo "Linux was updated, would you like to restart now? [(y)es/(N)o]: \c"
