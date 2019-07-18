@@ -2,7 +2,7 @@
 case $1 in
 	w ) # Work
 		i3-msg "workspace 1" &&
-		keepassxc "$HOME/Drive_work/pettinger@cqse.kdbx" &
+		keepassxc "$HOME/Drive_work/pettinger@cqse.kdbx" & sleep 1
 		terminator -x /usr/bin/zsh -i -c cqse
 
 		i3-msg "exec --no-startup-id spotify & sleep 1.5 && i3-msg move scratchpad"
