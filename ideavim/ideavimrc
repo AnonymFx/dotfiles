@@ -27,8 +27,12 @@ map \ "
 
 " --------------------------- Navigation ---------------------------------------
 nmap <leader>gd :action GotoDeclaration<CR>
-nmap <leader>fu :action FindUsages<CR>
-nmap <C-p> :action GotoFile<CR>
+nmap <leader>fu :action ShowUsages<CR>
+nmap <leader>gi :action GotoImplementation<CR>
+nmap <leader>th :action TypeHierarchy<CR>
+nmap <leader>st :action ActivateStructureToolWindow<CR>
+nmap <C-n> :action GotoFile<CR>
+nmap <C-p> :action GotoClass<CR>
 nmap <A-l> :action NextSplitter<CR>
 nmap <A-j> :action NextSplitter<CR>
 nmap <A-k> :action PrevSplitter<CR>
@@ -52,7 +56,7 @@ nmap <leader>bu :action CompileDirty<CR>
 nmap <leader>de :action Debug<CR>
 nmap <leader>ru :action Run<CR>
 nmap <leader>re :action Resume<CR>
-nmap <leader>st :action Stop<CR>
+nmap <leader>sp :action Stop<CR>
 nmap <leader>ap :action Android.HotswapChanges<CR>
 nmap <leader>j :action StepOver<CR>
 nmap <leader>l :action StepInto<CR>
