@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 case $1 in
 	w ) # Work
 		i3-msg "workspace 1" &&
@@ -8,13 +8,9 @@ case $1 in
 		i3-msg "exec --no-startup-id spotify & sleep 1.5 && i3-msg move scratchpad"
 		sleep 1
 
-		firefox cqse.slack.com "https://mail.google.com/mail/u/1" &
-		sleep 2
-		i3-msg "move window to workspace 10"
+		$HOME/bin/messaging_work
 
-		firefox calendar.google.com/b/0 calendar.google.com/b/1 todoist.com 'https://dev.azure.com/apps-munichre/QualityTools/_sprints'
-		sleep 1
-		i3-msg "move window to workspace 9"
+		$HOME/bin/organization
 
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh w
@@ -23,13 +19,9 @@ case $1 in
 	p ) # Private
 		i3-msg "exec --no-startup-id spotify & sleep 1.5 && i3-msg move scratchpad"
 
-		firefox web.whatsapp.com mail.google.com &
-		sleep 3
-		i3-msg "move window to workspace 10"
+		$HOME/bin/messaging_private
 
-		firefox calendar.google.com/b/0 todoist.com &
-		sleep 3
-		i3-msg "move window to workspace 9"
+		$HOME/bin/organization
 
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh p
