@@ -1,0 +1,15 @@
+#compdef bt-audio
+
+local -a commands
+local -a devices
+
+commands=( 'connect' 'disconnect' 'reconnect' )
+devices=( 'sony' 'logitech' 'shure' 'jbl' )
+
+if (( CURRENT == 2 )); then
+	_describe -t commands 'commands' commands
+elif (( CURRENT == 3)); then
+	_describe -t devices 'devices' devices
+fi
+
+return 0

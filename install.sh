@@ -30,6 +30,7 @@ function print_help_msg() {
 				tmux
 				vim
 				neovim
+				scripts
 				vimiv
 				vrapper
 				webstorm
@@ -329,6 +330,19 @@ function link_config() {
 			ln -snf $PWD/vim/vim $HOME/.config/nvim
 			ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
 			;;
+		scripts )
+			# Link actual scripts
+			mkdir -p $HOME/bin
+			for scriptfile in $(ls $PWD/scripts/bin); do
+				script="${scriptfile%.*}"
+				ln -snf "$PWD/scripts/bin/$scriptfile" "$HOME/bin/$script"
+			done
+			# Link zsh completions
+			mkdir -p $HOME/.zsh-completions
+			for zshcomp in $(ls $PWD/scripts/zsh-completions); do
+				ln -snf "$PWD/scripts/zsh-completions/$zshcomp" "$HOME/.zsh-completions/$zshcomp"
+			done
+			;;
 		vimiv )
 			ln -snf $PWD/vimiv $HOME/.vimiv
 			;;
@@ -484,6 +498,7 @@ else
 		install tmux
 		install vim
 		install neovim
+		install scripts
 		install vimiv
 		install vrapper
 		install webstorm
@@ -496,6 +511,7 @@ else
 		install git
 		install ranger
 		install readline
+		install scripts
 		install tmux
 		install vim
 		install neovim
@@ -552,6 +568,8 @@ else
 		install vim
 	elif [[ $1 = neovim ]]; then
 		install neovim
+	elif [[ $1 = scripts ]]; then
+		install scripts
 	elif [[ $1 = vimiv ]]; then
 		install vimiv
 	elif [[ $1 = vrapper ]]; then
