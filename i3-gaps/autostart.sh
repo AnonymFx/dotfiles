@@ -5,7 +5,7 @@ case $1 in
 		keepassxc "$HOME/Drive_work/pettinger@cqse.kdbx" & sleep 1
 		terminator -x /usr/bin/zsh -i -c cqse
 
-		i3-msg "exec --no-startup-id spotify & sleep 1.5 && i3-msg move scratchpad"
+		i3-msg "exec --no-startup-id spotify & sleep 3 && i3-msg move scratchpad"
 		sleep 1
 
 		$HOME/bin/messaging_work
@@ -17,7 +17,7 @@ case $1 in
 		fi
 		;;
 	p ) # Private
-		i3-msg "exec --no-startup-id spotify & sleep 1.5 && i3-msg move scratchpad"
+		i3-msg "exec --no-startup-id spotify & sleep 3 && i3-msg move scratchpad"
 
 		$HOME/bin/messaging_private
 
