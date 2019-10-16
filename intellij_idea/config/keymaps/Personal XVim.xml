@@ -169,11 +169,18 @@
     <keyboard-shortcut first-keystroke="ctrl alt b" />
   </action>
   <action id="UnselectPreviousOccurrence" />
+  <action id="UpdateRunningApplication" />
   <action id="Vcs.Log.ShowAllAffected" />
   <action id="Vcs.Push">
     <keyboard-shortcut first-keystroke="ctrl alt p" />
   </action>
   <action id="VcsHistory.ShowAllAffected" />
+  <action id="android.deploy.ApplyChanges">
+    <keyboard-shortcut first-keystroke="ctrl f10" />
+  </action>
+  <action id="android.deploy.CodeSwap">
+    <keyboard-shortcut first-keystroke="ctrl alt f10" />
+  </action>
   <action id="com.teamscale.ide.perform-precommit-analysis-from-teamscale-menu">
     <keyboard-shortcut first-keystroke="shift alt t" />
   </action>
