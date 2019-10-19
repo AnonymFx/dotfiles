@@ -9,6 +9,7 @@ set ignorecase
 set smartcase
 
 set surround
+set commentary
 set multiple-cursors
 
 let mapleader=" "
