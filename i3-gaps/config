@@ -20,7 +20,7 @@ bindsym $mod+d exec rofi -show drun -drun-match-fields name
 # Start rofi (window switcher)
 bindsym $mod+g exec rofi -show window
 # Emoji input
-bindsym $mod+u exec splatmoji copy
+bindsym $mod+u exec rofimoji
 
 # Disable focus follow mouse
 focus_follows_mouse no
