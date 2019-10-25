@@ -9,9 +9,6 @@ case $2 in
 	"sony" )
 		bt_mac="CC:98:8B:93:95:B2"
 		;;
-	"shure" )
-		bt_mac="00:0E:DD:07:C7:93"
-		;;
 	"jbl" )
 		bt_mac="B8:D5:0B:EA:A7:8E"
 		;;
