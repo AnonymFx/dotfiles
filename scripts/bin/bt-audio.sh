@@ -6,6 +6,9 @@ case $2 in
 	"logitech" )
 		bt_mac="04:AA:00:11:3A:2E"
 		;;
+	"samsumg" )
+		bt_mac="EC:AA:25:F3:1B:06"
+		;;
 	"sony" )
 		bt_mac="CC:98:8B:93:95:B2"
 		;;
