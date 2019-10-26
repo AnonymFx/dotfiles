@@ -4,7 +4,7 @@ local -a commands
 local -a devices
 
 commands=( 'connect' 'disconnect' 'reconnect' )
-devices=( 'sony' 'logitech' 'shure' 'jbl' )
+devices=( 'sony' 'logitech' 'samsung' 'jbl' )
 
 if (( CURRENT == 2 )); then
 	_describe -t commands 'commands' commands
