@@ -7,7 +7,7 @@ case $2 in
 		bt_mac="04:AA:00:11:3A:2E"
 		;;
 	"samsung" )
-		bt_mac="EC:AA:25:F3:1B:06"
+		bt_mac="EC:AA:25:16:5C:4F"
 		;;
 	"sony" )
 		bt_mac="CC:98:8B:93:95:B2"
