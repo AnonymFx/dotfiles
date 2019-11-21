@@ -229,9 +229,11 @@ bindsym $mod+ctrl+r exec autorandr --change
 # start xcompmgr on all monitors
 exec_always --no-startup-id compton --unredir-if-possible
 
-# use pulseaudio equalizer and polybar
+# pulseaudio equalizer
 exec_always --no-startup-id pulseaudio-equalizer enable
-exec_always --no-startup-id sleep 2 && $HOME/.config/polybar/launch.sh
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/background
