@@ -224,6 +224,13 @@ if ag_l="$(type -p ag)" && [ -n "$ag_l" ]; then
 	alias ag='ag --color -S'
 	alias -g AG='| ag'
 fi
+
+# ag ###################################
+if dockercompose_l="$(type -p docker-compose)" && [ -n "$dockercompose_l" ]; then
+	alias dcu='docker-compose up -d'
+	alias dcd='docker-compose down'
+fi
+
 # List directory after cd
 function chpwd(){
 	emulate -LR zsh
