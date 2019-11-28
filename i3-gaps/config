@@ -125,6 +125,7 @@ bindsym $mod+i exec notify-send \"Current Window Title\" \"$(xdotool getactivewi
 for_window [title="^VeraCrypt$" window_type="normal"] floating disable
 for_window [class="^Keepassx$"] floating disable
 for_window [title="^Insync$"] floating enable
+for_window [title="^win0$"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
