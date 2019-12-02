@@ -7,6 +7,10 @@
 " --------------------------------- Vim-Plug -----------------------------------
 " Specify plugin directory
 call plug#begin('~/.vim/plugins')
+" YouCompleteMe - code completion engine
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --system-libclang
+			\ --clang-completer --go-completer --js-completer --java-completer'}
+
 " fuzzy finding
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -176,6 +180,19 @@ augroup  VimTmux
 augroup END
 nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 
+" ----------------------------- YouCompleteMe ----------------------------------
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+augroup YCMInsertTrigger
+	autocmd!
+	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
+let g:ycm_python_binary_path = 'python' " Enable python autocomplete
+" Set ycm identifier completion to 5 (problems with enumerate expansion if
+" lower)
+nmap <leader>rr :YcmCompleter RefactorRename
+nmap <leader>gt :YcmCompleter GoTo<CR>
 
 " ------------------------------------------------------------------------------
 " --------------------------------- General ------------------------------------
@@ -255,22 +272,6 @@ set display=lastline
 augroup  BufferResize
 	autocmd!
 	autocmd VimResized * wincmd =
-augroup END
-
-" Omnicomplete
-set omnifunc=syntaxcomplete#Complete
-set completeopt=menuone,noselect,noinsert
-
-" Call omnicomple after keystrokes in insert mode
-function! OpenCompletion()
-    if !pumvisible()
-        call feedkeys("\<C-x>\<C-o>", "n")
-    endif
-endfunction
-
-augroup  OmniComplete
-	autocmd!
-	autocmd InsertCharPre * silent! call OpenCompletion()
 augroup END
 
 " ------------------------------------------------------------------------------
