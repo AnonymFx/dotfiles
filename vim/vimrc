@@ -257,6 +257,22 @@ augroup  BufferResize
 	autocmd VimResized * wincmd =
 augroup END
 
+" Omnicomplete
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menuone,noselect,noinsert
+
+" Call omnicomple after keystrokes in insert mode
+function! OpenCompletion()
+    if !pumvisible()
+        call feedkeys("\<C-x>\<C-o>", "n")
+    endif
+endfunction
+
+augroup  OmniComplete
+	autocmd!
+	autocmd InsertCharPre * call OpenCompletion()
+augroup END
+
 " ------------------------------------------------------------------------------
 " ---------------------------------- Appearance --------------------------------
 " ------------------------------------------------------------------------------
