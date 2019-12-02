@@ -103,9 +103,15 @@ if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; 
 	source /usr/share/fzf/key-bindings.zsh
 	source /usr/share/fzf/completion.zsh
 
-	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-	export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-	export FZF_DEFAULT_OPTS=' --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108 --color info:108,prompt:109,spinner:108,pointer:168,marker:168 '
+	if fd_l="$(type -p fd)" && [ -n "$fd_l" ]; then
+		FD_OPTIONS="--follow"
+		export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+		export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
+	else
+		export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+		export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+	fi
+	export FZF_DEFAULT_OPTS=" --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108 --color info:108,prompt:109,spinner:108,pointer:168,marker:168 --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color always {} || cat {} ) 2> /dev/null | head -300' --preview-window='right:wrap' --bind='f3:execute(bat --sytle=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echoe {+} | pbcopy)'"
 	export FZF_COMPLETION_TRIGGER=''
 	bindkey '^N' fzf-completion
 	bindkey '^I' $fzf_default_completion

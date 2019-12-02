@@ -117,6 +117,8 @@ nnoremap <leader>af :Autoformat<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <leader>bu :Buffers<CR>
 nnoremap <C-p> :Files<CR>
+inoremap <c-n>f <plug>(fzf-complete-file-ag)
+nnoremap <silent> <leader>gl :BLines<CR>
 
 " gitgutter --------------------------------------------------------------------
 set updatetime=100
