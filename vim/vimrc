@@ -270,7 +270,7 @@ endfunction
 
 augroup  OmniComplete
 	autocmd!
-	autocmd InsertCharPre * call OpenCompletion()
+	autocmd InsertCharPre * silent! call OpenCompletion()
 augroup END
 
 " ------------------------------------------------------------------------------
