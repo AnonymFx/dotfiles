@@ -13,7 +13,11 @@ THERMAL_THRESHOLD=80
 BATTERY_FULL=95
 if [ -e ~/.config/polybar/thermal_zone ]; then
 	read THERMAL_ZONE < ~/.config/polybar/thermal_zone
+fi
+if [ -e ~/.config/polybar/thermal_threshold ]; then
 	read THERMAL_THRESHOLD < ~/.config/polybar/thermal_threshold
+fi
+if [ -e ~/.config/polybar/battery_full ]; then
 	read BATTERY_FULL < ~/.config/polybar/battery_full
 fi
 WLAN="$(ls /sys/class/net | grep wl)" \
