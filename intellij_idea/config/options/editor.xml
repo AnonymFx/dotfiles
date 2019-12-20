@@ -6,7 +6,6 @@
   </component>
   <component name="EditorSettings">
     <option name="USE_SOFT_WRAPS" value="CONSOLE" />
-    <option name="SHOW_PARAMETER_NAME_HINTS" value="false" />
   </component>
   <component name="LiveEditOptions" chromeUpdateApp="true" chromeUpdateOnChanges="true" />
 </application>
