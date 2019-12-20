@@ -32,7 +32,7 @@ case $1 in
 		;;
 esac
 
-i3-msg "workspace 1" && keepassxc "$HOME/Drive/Documents/References/passwords.kdbx" &
+i3-msg "workspace 1" && keepassxc "$HOME/Drive/Documents/passwords.kdbx" &
 # Default
 if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 	$HOME/.config/i3/custom_autostart.sh d
