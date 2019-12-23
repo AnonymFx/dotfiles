@@ -95,6 +95,10 @@ cnoremap <C-l> <Right>
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
 
+" Set spell check language to German/English respectively
+nnoremap <silent> <leader>en :set spelllang=en<CR>
+nnoremap <silent> <leader>de :set spelllang=de_de<CR>
+
 " Toggle highlight search
 noremap <leader>hls :set hls!<CR>
 
