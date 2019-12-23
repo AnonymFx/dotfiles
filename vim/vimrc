@@ -302,6 +302,7 @@ autocmd FileType markdown setlocal foldmethod=indent
 
 " ------------------ Scratchpad ------------------
 autocmd BufNewFile,BufRead *.scratchpad* setlocal foldlevel=0
+autocmd BufNewFile,BufRead *.scratchpad* setlocal textwidth=80
 
 " ------------------ Python ----------------------
 autocmd FileType python let python_highlight_all=1
