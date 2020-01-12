@@ -140,6 +140,10 @@ function get_package_list() {
 					echo "rofi ttf-dejavu"
 					return 0
 					;;
+				scripts )
+					echo "jq"
+					return 0
+					;;
 				terminator )
 					echo "terminator ttf-inconsolata"
 					return 0
