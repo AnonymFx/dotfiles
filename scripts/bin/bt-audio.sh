@@ -3,11 +3,11 @@
 # Resolve device name
 bt_mac=""
 case $2 in
+	"jabra" )
+		bt_mac="70:BF:92:A9:E9:C7"
+		;;
 	"logitech" )
 		bt_mac="04:AA:00:11:3A:2E"
-		;;
-	"samsung" )
-		bt_mac="EC:AA:25:16:5C:4F"
 		;;
 	"sony" )
 		bt_mac="CC:98:8B:93:95:B2"
