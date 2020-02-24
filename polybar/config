@@ -53,7 +53,6 @@ modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temper
 tray-position = right
 tray-detached = false
 tray-maxsize = 10
-tray-transparent = true
 
 
 [bar/secondarybar]
