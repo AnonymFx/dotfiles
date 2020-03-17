@@ -14,7 +14,7 @@ set multiple-cursors
 
 let mapleader=" "
 
-set timoutlen=500
+set timoutlen=100
 
 " ------------------------------------------------------------------------------
 " ------------------------- Additional mappings --------------------------------
@@ -42,6 +42,8 @@ nmap <A-h> :action PrevSplitter<CR>
 nmap ]q :action GotoNextError<CR>
 nmap [q :action GotoPreviousError<CR>
 nmap <leader>tb :action FileStructurePopup<CR>
+nmap <A-o> :action Back<CR>
+nmap <A-i> :action Forward<CR>
 
 
 " --------------------------- Editing ------------------------------------------
