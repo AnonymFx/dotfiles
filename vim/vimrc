@@ -9,7 +9,7 @@
 call plug#begin('~/.vim/plugins')
 " YouCompleteMe - code completion engine
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --system-libclang
-			\ --clang-completer --go-completer --js-completer --java-completer'}
+			\ --clang-completer --js-completer'}
 
 " fuzzy finding
 Plug 'junegunn/fzf'
