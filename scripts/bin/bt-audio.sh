@@ -4,7 +4,7 @@
 bt_mac=""
 case $2 in
 	"jabra" )
-		bt_mac="70:BF:92:A9:E9:C7"
+		bt_mac="70:BF:92:CA:59:E8"
 		;;
 	"logitech" )
 		bt_mac="04:AA:00:11:3A:2E"
