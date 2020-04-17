@@ -48,7 +48,7 @@ monitor = ${env:MONITOR}
 
 modules-left = i3 window_title
 modules-center = music
-modules-right = volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
+modules-right = microphone volume xbacklight vpncheck wlan eth filesystem memory cpu temperature battery date powermenu
 
 tray-position = right
 tray-detached = false
@@ -313,6 +313,11 @@ type = custom/script
 interval = 300
 exec = $HOME/.config/polybar/num_updates.sh
 format =  <label>
+
+[module/microphone]
+type = custom/script
+interval = .2
+exec = $HOME/.config/polybar/microphone.sh
 
 [settings]
 screenchange-reload = true
