@@ -8,7 +8,7 @@
 ;=====================================================
 
 [colors]
-background = #00000000
+background = #22000000
 background-alt = #000000
 background-highlight = #ffffff
 foreground = #ffffff
