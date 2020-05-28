@@ -33,8 +33,8 @@ nmap <leader>fu :action ShowUsages<CR>
 nmap <leader>gi :action GotoImplementation<CR>
 nmap <leader>th :action TypeHierarchy<CR>
 nmap <leader>st :action ActivateStructureToolWindow<CR>
-nmap <C-p> :action GotoFile<CR>
-nmap <C-n> :action GotoClass<CR>
+nmap <C-n> :action GotoFile<CR>
+nmap <C-p> :action GotoClass<CR>
 nmap <A-l> :action NextSplitter<CR>
 nmap <A-j> :action NextSplitter<CR>
 nmap <A-k> :action PrevSplitter<CR>
