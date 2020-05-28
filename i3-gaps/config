@@ -227,7 +227,7 @@ exec --no-startup-id $HOME/bin/screensaver enable
 # Start Applications
 # ------------------
 # Adapt monitor setup
-exec --no-startup-id autorandr --change
+exec --no-startup-id sleep 1 && autorandr --change */
 bindsym $mod+ctrl+r exec autorandr --change
 
 # start xcompmgr on all monitors
