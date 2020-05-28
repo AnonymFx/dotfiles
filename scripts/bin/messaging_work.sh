@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-firefox cqse.slack.com https://web.whatsapp.com/ mail.google.com/mail/u/0 mail.google.com/mail/u/1 &
+firefox -P Work cqse.slack.com mail.google.com/mail/u/0 &
 sleep 2
 i3-msg 'move window to workspace 10'

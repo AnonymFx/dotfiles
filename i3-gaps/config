@@ -11,6 +11,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 # binding for browser
 bindsym $mod+b exec firefox
+bindsym $mod+n exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
