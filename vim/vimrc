@@ -135,7 +135,7 @@ set updatetime=100
 let g:NERDTreeIgnore = ['bin', 'node_modules']
 let g:NERDTreeMapJumpNextSibling = '<leader>j'
 let g:NERDTreeMapJumpPreviousSibling = '<leader>k'
-nmap <silent> <leader>nt :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Polyglot ---------------------------------------------------------------------
 let g:polyglot_disabled = ['']
