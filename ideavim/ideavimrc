@@ -24,7 +24,7 @@ map <leader>P "+P
 map <leader>y "+y
 map <leader>d "+d
 map \ "
-nmap <silent> :w<CR> :w<CR>:action ReformatCode<CR>
+nmap <silent> :w<CR> :w<CR>:action OptimizeImports<CR>:action ReformatCode<CR>
 
 
 " --------------------------- Navigation ---------------------------------------
