@@ -11,7 +11,7 @@ case $1 in
 
 		$HOME/bin/messaging_work
 
-		$HOME/bin/organization
+		$HOME/bin/organization_work
 
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh w
