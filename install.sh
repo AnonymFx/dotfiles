@@ -99,7 +99,7 @@ function get_package_list() {
 					return 0
 					;;
 				git )
-					echo "git"
+					echo "git fzf"
 					return 0
 					;;
 				gtk )
@@ -388,6 +388,32 @@ function install_additional() {
 	local TARGET="$1"
 
 	case "$TARGET" in
+		git )
+			GIT_FUZZY_TARGET="/opt/git-fuzzy"
+			if [[ -d "GIT_FUZZY_TARGET" ]]; then
+				echo "Updating git-fuzzy"
+				pushd "$GIT_FUZZY_TARGET"
+				git pull
+				popd
+			else 
+				echo "Installing git-fuzzy"
+				git clone https://github.com/bigH/git-fuzzy.git $GIT_FUZZY_TARGET
+				for executable in $(ls $GIT_FUZZY_TARGET/bin); do
+					ln -snf "$GIT_FUZZY_TARGET/bin/$executable" "$HOME/bin"
+				done
+			fi
+			;;
+		polybar | vim )
+			# Install powerline fonts
+			# clone
+			git clone https://github.com/powerline/fonts.git --depth=1
+			# install
+			cd fonts
+			./install.sh
+			# clean-up a bit
+			cd ..
+			rm -rf fonts
+			;;
 		zsh )
 			# Oh-My-Zsh
 			echo "Installing oh-my-zsh"
@@ -427,18 +453,6 @@ function install_additional() {
 				git pull
 				popd
 			fi
-			;;
-
-		polybar | vim )
-			# Install powerline fonts
-			# clone
-			git clone https://github.com/powerline/fonts.git --depth=1
-			# install
-			cd fonts
-			./install.sh
-			# clean-up a bit
-			cd ..
-			rm -rf fonts
 			;;
 	esac
 }
