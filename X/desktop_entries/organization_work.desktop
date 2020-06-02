@@ -2,5 +2,5 @@
 [Desktop Entry]
 Type=Application
 Name=Organization Work
-Exec=$HOME/bin/organization-work
+Exec=$HOME/bin/organization_work
 Icon=organization
