@@ -235,6 +235,7 @@ fi
 if dockercompose_l="$(type -p docker-compose)" && [ -n "$dockercompose_l" ]; then
 	alias dcu='docker-compose up -d'
 	alias dcd='docker-compose down'
+	alias dcpu='docker-compose pull && docker-compose up -d'
 fi
 
 # List directory after cd
