@@ -263,7 +263,7 @@ exec --no-startup-id $HOME/.config/i3/custom_config.sh
 exec_always --no-startup-id $HOME/.config/i3/custom_config.sh -a
 
 # Prompt for autostarting applications
-exec --no-startup-id sh -c "sleep 2; i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '"
+exec --no-startup-id sh -c "sleep 3; i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '"
 # Bind key for autostart promt (in case it was accidently dismissed)
 bindsym $mod+ctrl+a exec --no-startup-id i3-input -l 1 -F 'exec $HOME/.config/i3/autostart.sh %s' -P 'Start applications for (w)ork or (p)rivate: '
 
