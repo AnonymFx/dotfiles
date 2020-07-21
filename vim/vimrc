@@ -120,6 +120,11 @@ let g:airline_powerline_fonts = 1 " powerline font
 
 " ---------------------------- autoformat --------------------------------------
 nnoremap <leader>af :Autoformat<CR>
+augroup AutoFormat
+	autocmd!
+	autocmd BufWrite * :Autoformat
+augroup END
+
 
 " fzf --------------------------------------------------------------------------
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -285,9 +290,9 @@ augroup END
 augroup MyColors
 	autocmd!
 	autocmd ColorScheme * highlight Normal ctermbg='none'
-						\ | highlight SpellBad cterm=underline ctermbg=88
-						\ | highlight Comment ctermfg=246
-						\ | highlight LineNr ctermfg=246
+				\ | highlight SpellBad cterm=underline ctermbg=88
+				\ | highlight Comment ctermfg=246
+				\ | highlight LineNr ctermfg=246
 augroup END
 
 set background=dark
