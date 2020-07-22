@@ -123,6 +123,7 @@ nnoremap <leader>af :Autoformat<CR>
 augroup AutoFormat
 	autocmd!
 	autocmd BufWrite * :Autoformat
+	autocmd FileType markdown let g:autoformat_remove_trailing_spaces=0
 augroup END
 
 
