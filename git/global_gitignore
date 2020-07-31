@@ -5,3 +5,7 @@
 .vimtags*
 # Teamscale mappings
 teamscale_plugin_mappings.properties
+# Generated Java project files for vim
+.project
+.settings
+.classpath
