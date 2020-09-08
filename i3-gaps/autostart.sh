@@ -10,8 +10,12 @@ case $1 in
 		i3-msg "move scratchpad"
 
 		$HOME/bin/messaging_work
+		sleep 2
+		i3-msg "move workspace 10"
 
 		$HOME/bin/organization_work
+		sleep 1
+		i3-msg "move workspace 9"
 
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh w
@@ -23,8 +27,12 @@ case $1 in
 		i3-msg "move scratchpad"
 
 		$HOME/bin/messaging_private
+		sleep 2
+		i3-msg "move workspace 10"
 
 		$HOME/bin/organization
+		sleep 1
+		i3-msg "move workspace 9"
 
 		if [ -e $HOME/.config/i3/custom_autostart.sh ]; then
 			$HOME/.config/i3/custom_autostart.sh p

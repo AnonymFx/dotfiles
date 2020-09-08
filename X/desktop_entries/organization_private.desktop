@@ -1,0 +1,6 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Organization Private
+Exec=$HOME/bin/organization_private
+Icon=organization
