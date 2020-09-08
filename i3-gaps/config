@@ -201,7 +201,7 @@ gaps outer -6
 # Bind Lock Screen
 bindsym $mod+shift+x exec --no-startup-id dm-tool lock
 # Bind screen blanking
-bindsym $mod+shift+z exec --no-startup-id xset dpms force off
+bindsym $mod+shift+z exec --no-startup-id sleep 1 && xset dpms force off
 
 # Screen Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # Increase screen brightness
