@@ -72,3 +72,4 @@ nmap <leader>bp :action ToggleLineBreakpoint<CR>
 nmap <leader>qd :action QuickJavaDoc<CR>
 nmap <leader>ed :action ShowErrorDescription<CR>
 nmap <leader>ai :action ParameterInfo<CR>
+nmap <leader>pc :action com.teamscale.ide.upload-project-for-precommit-analysis<CR>
