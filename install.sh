@@ -107,7 +107,7 @@ function get_package_list() {
 					return 0
 					;;
 				i3-gaps )
-					echo "i3-gaps light-locker dmenu rofi compton feh autorandr-git udevil gnome-keyring libnotify xdotool imagemagick playerctl network-manager-applet insync polkit polkit-gnome xdg-user-dirs python python-rofi i3ipc-python rofimoji-git paprefs"
+					echo "i3-gaps gnome-screensaver dmenu rofi compton feh autorandr-git udevil gnome-keyring libnotify xdotool imagemagick playerctl network-manager-applet insync polkit polkit-gnome xdg-user-dirs python python-rofi i3ipc-python rofimoji-git paprefs"
 					return 0
 					;;
 				ideavim )
@@ -388,6 +388,9 @@ function install_additional() {
 	local TARGET="$1"
 
 	case "$TARGET" in
+		i3-gaps )
+			gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.config/i3/background"
+			;;
 		zsh )
 			# Oh-My-Zsh
 			echo "Installing oh-my-zsh"

@@ -200,7 +200,8 @@ gaps outer -6
 # }
 
 # Bind Lock Screen
-bindsym $mod+shift+x exec --no-startup-id dm-tool lock
+# bindsym $mod+shift+x exec --no-startup-id light-locker-command -l
+bindsym $mod+shift+x exec --no-startup-id gnome-screensaver-command -l
 # Bind screen blanking
 bindsym $mod+shift+z exec --no-startup-id sleep 1 && xset dpms force off
 
@@ -259,7 +260,8 @@ exec --no-startup-id "sleep 4 && insync start"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Start light-locker
-exec --no-startup-id light-locker
+# exec --no-startup-id light-locker
+exec --no-startup-id gnome-screensaver
 
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
