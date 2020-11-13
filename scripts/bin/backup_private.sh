@@ -5,8 +5,12 @@ if [[ $# != 1 ]]; then
 fi
 borg_archive=$1
 
+export BORG_PASSPHRASE=$(<$HOME/.borg_pw_private)
+
 echo "Backing up personal Drive folder"
 cd $HOME/Drive
-
-export BORG_PASSPHRASE=$(<$HOME/.borg_pw_private)
 borg create --stats --progress "$borg_archive"::"$(date +%F)_drive" *
+
+echo "Backing up personal Photos folder"
+cd $HOME/Pictures/Photos
+borg create --stats --progress "$borg_archive"::"$(date +%F)_photos" *
