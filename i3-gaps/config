@@ -262,6 +262,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Start light-locker
 # exec --no-startup-id light-locker
 exec --no-startup-id gnome-screensaver
+exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command -l"
 
 # Run custom config
 exec --no-startup-id $HOME/.config/i3/custom_config.sh
