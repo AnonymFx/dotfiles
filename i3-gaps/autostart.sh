@@ -6,7 +6,7 @@ case $1 in
 		i3-msg "move scratchpad"
 
 		$HOME/bin/messaging_work
-		sleep 1
+		sleep 2
 		i3-msg "move workspace 10"
 
 		$HOME/bin/organization_work
