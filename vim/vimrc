@@ -143,9 +143,6 @@ let g:NERDTreeMapJumpNextSibling = '<leader>j'
 let g:NERDTreeMapJumpPreviousSibling = '<leader>k'
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
-" Polyglot ---------------------------------------------------------------------
-let g:polyglot_disabled = ['']
-
 " ------------------------------ Table Mode ------------------------------------
 let g:table_mode_header_fillchar= '-'
 let g:table_mode_corner="|"
