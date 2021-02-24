@@ -240,7 +240,7 @@ bindsym $mod+ctrl+r exec autorandr --change
 exec_always --no-startup-id compton --unredir-if-possible
 
 # pulseaudio equalizer
-exec_always --no-startup-id pulseaudio-equalizer enable
+exec_always --no-startup-id "sleep 3 && pulseaudio-equalizer enable"
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
