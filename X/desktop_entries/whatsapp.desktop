@@ -2,5 +2,5 @@
 [Desktop Entry]
 Type=Application
 Name=WhatsApp
-Exec=firefox https://web.whatsapp.com
+Exec=firefox -P default https://web.whatsapp.com
 Icon=whatsapp
