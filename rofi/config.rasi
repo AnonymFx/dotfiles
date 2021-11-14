@@ -48,11 +48,11 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-/*	theme: ;*/
-	color-normal: "#000000, #999999, #000000, #000000, #ffffff";
-	color-urgent: "#000000, #999999, #000000, #000000, #ffffff";
-	color-active: "#000000, #999999, #000000, #000000, #ffffff";
-	color-window: "#000000, #000000";
+/* theme: "Arc-Dark by leofa"; */
+	/* color-normal: "#000000, #999999, #000000, #000000, #ffffff"; */
+	/* color-urgent: "#000000, #999999, #000000, #000000, #ffffff"; */
+	/* color-active: "#000000, #999999, #000000, #000000, #ffffff"; */
+	/* color-window: "#000000, #000000"; */
 /*	plugin-path: "/usr/lib/rofi";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 /*	display-window: ;*/
@@ -70,7 +70,7 @@ configuration {
 	kb-move-word-back: "Control+b";
 	kb-move-word-forward: "Control+w";
 	kb-move-char-back: "Left,Control+h";
-	kb-move-char-forward: "Right,Control+l";
+	kb-move-char-forward: "Right";
 	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";
 	kb-remove-word-forward: "Control+Alt+d";
 	kb-remove-char-forward: "Delete";
@@ -134,3 +134,5 @@ configuration {
 /*	me-accept-entry: "MouseD1";*/
 /*	me-accept-custom: "Control+MouseD1";*/
 }
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/usr/share/rofi/themes/android_notification.rasi"
