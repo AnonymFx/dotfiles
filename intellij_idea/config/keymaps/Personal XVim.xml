@@ -13,9 +13,6 @@
   <action id="CIDR.Lang.IntroduceDefine" />
   <action id="CIDR.Lang.IntroduceParameter" />
   <action id="CIDR.Lang.IntroduceTypedef" />
-  <action id="ChangesView.Commit">
-    <keyboard-shortcut first-keystroke="ctrl alt k" />
-  </action>
   <action id="ChooseDebugConfiguration">
     <keyboard-shortcut first-keystroke="shift ctrl s" />
   </action>
@@ -81,6 +78,7 @@
   <action id="GotoTypeDeclaration">
     <mouse-shortcut keystroke="shift control button1" />
   </action>
+  <action id="Hg.Commit.And.Push.Executor" />
   <action id="Images.ShowThumbnails" />
   <action id="Images.Thumbnails.Hide" />
   <action id="IntroduceParameter" />
