@@ -492,7 +492,6 @@ else
 		install gtk
 		install i3-gaps
 		install ideavim
-		install intellij_idea
 		install kitty
 		install polybar
 		install pycharm
