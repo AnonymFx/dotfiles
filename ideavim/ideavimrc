@@ -53,6 +53,8 @@ nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
 vmap <leader>cs :action SurroundWith<CR>
 nmap <leader>cs :action SurroundWith<CR>
+map <C-w> :action EditorSelectWord<CR>
+map <C-e> :action EditorUnSelectWord<CR>
 
 
 " --------------------------- Run & Debug --------------------------------------
