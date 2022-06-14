@@ -13,11 +13,19 @@ function _update_system_update() {
 
 function _upgrade_system() {
 	# If linux needs an update we need to ask if user wants to restart later
-	sudo pacman -Sy
-	linuxNeedsUpdate="$(pacman -Qu | grep 'linux ')"
+	linuxNeedsUpdate=""
+	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+		sudo pacman -Sy
+		linuxNeedsUpdate="$(pacman -Qu | grep 'linux ')"
+	fi
 
 	# Do system update, try AUR helpers first, fallback is pacman
-	if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
+	if brew_location="$(type -p brew)" && [ -n "$brew_location" ]; then
+		if brew update && brew autoremove && brew upgrade; then
+			# update the system update file
+			_update_system_update
+		fi
+	elif yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
 		if yay --combinedupgrade -Syu; then
 			# update the system update file
 			_update_system_update
@@ -41,7 +49,10 @@ function _upgrade_system() {
 	fi
 
 	# Check if Linux was actually updated
-	linuxStillNeedsUpdate="$(pacman -Qu | grep 'linux ')"
+	linuxStillNeedsUpdate=""
+	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+		linuxStillNeedsUpdate="$(pacman -Qu | grep 'linux ')"
+	fi
 	
 	if [[ ! -z "$linuxNeedsUpdate" ]] && [[ -z "$linuxStillNeedsUpdate" ]]; then
 		echo "Linux was updated, would you like to restart now? [(y)es/(N)o]: \c"
@@ -63,8 +74,6 @@ if mkdir "$lock_folder" 2>/dev/null; then
 	# Remove lock file on interrupt
 	trap 'rmdir "$lock_folder" 2>/dev/null; exit' INT
 	if [ "$1" = "-f" ]; then
-		echo "Please check https://www.archlinux.org/news/ before updating. Press Enter to continue..."
-		read line
 	 	_upgrade_system
 	elif [ -f ~/.system-update ]; then
 		# Source the file with the LAST_EPOCH variable
@@ -81,7 +90,7 @@ if mkdir "$lock_folder" 2>/dev/null; then
 			if [ "$DISABLE_UPDATE_PROMPT" = "true" ]; then
 				_upgrade_system
 			else
-				echo "[System Update] Would you like to check for updates? Please check https://www.archlinux.org/news/ before updating. [(Y)es/(n)o/(p)ostpone]: \c"
+				echo "[System Update] Would you like to check for updates? [(Y)es/(n)o/(p)ostpone]: \c"
 				read line
 				if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 					_upgrade_system
