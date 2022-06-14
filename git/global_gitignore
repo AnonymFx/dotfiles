@@ -9,3 +9,7 @@ teamscale_plugin_mappings.properties
 .project
 .settings
 .classpath
+.DS_Store
+
+.java-version
+debug-data

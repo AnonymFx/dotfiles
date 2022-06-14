@@ -2,7 +2,7 @@
 	email = pettinger.thomas@gmail.com
 	name = Thomas Pettinger
 [core]
-	excludesfile = /home/thomas/.gitignore_global
+	excludesfile = /Users/pete/.gitignore_global
 [diff]
 	tool = vimdiff
 [difftool]
