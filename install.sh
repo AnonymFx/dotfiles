@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 function print_help_msg() {
 	cat <<-EOF
 	Usage: install.sh TARGET
