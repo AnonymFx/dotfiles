@@ -7,9 +7,6 @@
 " --------------------------------- Vim-Plug -----------------------------------
 " Specify plugin directory
 call plug#begin('~/.vim/plugins')
-" YouCompleteMe - code completion engine
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --system-libclang
-			\ --clang-completer --js-completer'}
 
 " fuzzy finding
 Plug 'junegunn/fzf'
@@ -185,20 +182,6 @@ augroup  VimTmux
 	autocmd FileType tex nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 augroup END
 nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
-
-" ----------------------------- YouCompleteMe ----------------------------------
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-augroup YCMInsertTrigger
-	autocmd!
-	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-augroup END
-let g:ycm_python_binary_path = 'python' " Enable python autocomplete
-" Set ycm identifier completion to 5 (problems with enumerate expansion if
-" lower)
-nmap <leader>rr :YcmCompleter RefactorRename
-nmap <leader>gt :YcmCompleter GoTo<CR>
 
 " ------------------------------------------------------------------------------
 " --------------------------------- General ------------------------------------
