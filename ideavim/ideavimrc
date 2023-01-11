@@ -8,6 +8,8 @@ set relativenumber
 set ignorecase
 set smartcase
 
+set ideamarks
+
 set surround
 set commentary
 set multiple-cursors
@@ -28,6 +30,7 @@ map \ "
 
 " --------------------------- Navigation ---------------------------------------
 nmap <leader>gd :action GotoDeclaration<CR>
+nmap <leader>im :action GotoImplementation<CR>
 nmap <leader>fu :action ShowUsages<CR>
 nmap <leader>gi :action GotoImplementation<CR>
 nmap <leader>th :action TypeHierarchy<CR>
