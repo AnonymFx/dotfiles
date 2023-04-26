@@ -48,6 +48,13 @@ function _upgrade_system() {
 		fi
 	fi
 
+	# Update npm packages
+	if npm_location="$(type -p npm)" && [ -n "$pacman_location" ]; then
+		if npm update -g; then
+			_update_system_update
+		fi
+	fi
+
 	# Check if Linux was actually updated
 	linuxStillNeedsUpdate=""
 	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
