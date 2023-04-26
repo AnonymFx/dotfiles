@@ -8,6 +8,8 @@ set relativenumber
 set ignorecase
 set smartcase
 
+set scrolloff=3 " Keep 3 lines below and above the cursor
+
 set ideamarks
 
 set surround
@@ -31,6 +33,8 @@ map \ "
 " --------------------------- Navigation ---------------------------------------
 nmap <leader>gd :action GotoDeclaration<CR>
 nmap <leader>im :action GotoImplementation<CR>
+nmap <leader>sm :action GotoSuperMethod<CR>
+nmap <leader>gt :action GotoTest<CR>
 nmap <leader>fu :action ShowUsages<CR>
 nmap <leader>gi :action GotoImplementation<CR>
 nmap <leader>th :action TypeHierarchy<CR>
@@ -55,9 +59,6 @@ nmap <leader>af :action ReformatCode<CR>
 nmap <leader>oi :action OptimizeImports<CR>
 vmap <leader>cs :action SurroundWith<CR>
 nmap <leader>cs :action SurroundWith<CR>
-map <C-w> :action EditorSelectWord<CR>
-map <C-e> :action EditorUnSelectWord<CR>
-
 
 " --------------------------- Run & Debug --------------------------------------
 nmap <leader>bu :action CompileDirty<CR>
@@ -69,11 +70,12 @@ nmap <leader>ap :action Android.HotswapChanges<CR>
 nmap <leader>j :action StepOver<CR>
 nmap <leader>l :action StepInto<CR>
 nmap <leader>h :action StepOut<CR>
+nmap <leader>bt :action ToggleLineBreakpoint<CR>
 nmap <leader>bp :action ToggleLineBreakpoint<CR>
+nmap <leader>be :action ToggleBreakpointEnabled<CR>
 
 
 " --------------------------- Misc ---------------------------------------------
 nmap <leader>qd :action QuickJavaDoc<CR>
 nmap <leader>ed :action ShowErrorDescription<CR>
 nmap <leader>ai :action ParameterInfo<CR>
-nmap <leader>pc :action com.teamscale.ide.upload-project-for-precommit-analysis<CR>
