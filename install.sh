@@ -190,10 +190,13 @@ function install_packages() {
 	PACKAGER_COMMAND=$(get_packager_cmd)
 	PACKAGES=$(get_package_list $TARGET)
 
-	echo "Installing $PACKAGES with $PACKAGER_COMMAND"
 
 	if [[ ! -z $PACKAGER_COMMAND ]] && [[ ! -z $PACKAGES ]]; then
+		echo "Installing $PACKAGES with $PACKAGER_COMMAND"
+
 		eval $PACKAGER_COMMAND $PACKAGES
+	else
+		echo "Platform not supported for installing packages, please install manually"
 	fi
 }
 
@@ -455,9 +458,9 @@ function install() {
 		read line
 		if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
 			install_packages $TARGET
+			install_additional $TARGET
+			post_install $TARGET
 		fi
-		install_additional $TARGET
-		post_install $TARGET
 		link_config $TARGET
 	fi
 }
