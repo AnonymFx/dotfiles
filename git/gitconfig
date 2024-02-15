@@ -1,8 +1,8 @@
 [user]
-	email = pettinger.thomas@gmail.com
 	name = Thomas Pettinger
+	email = pettinger.thomas@gmail.com
 [core]
-	excludesfile = /Users/pete/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [diff]
 	tool = vimdiff
 [difftool]
@@ -11,3 +11,5 @@
 	tool = vimdiff
 [color]
 	ui = auto
+[include]
+	path = ~/.gitconfig_custom
