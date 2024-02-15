@@ -21,7 +21,7 @@ function _upgrade_system() {
 
 	# Do system update, try AUR helpers first, fallback is pacman
 	if brew_location="$(type -p brew)" && [ -n "$brew_location" ]; then
-		if brew update && brew autoremove && brew upgrade; then
+		if brew upgrade --greedy && brew autoremove; then
 			# update the system update file
 			_update_system_update
 		fi
@@ -44,13 +44,6 @@ function _upgrade_system() {
 	elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
 		if sudo pacman -Syu; then
 			# update the system update file
-			_update_system_update
-		fi
-	fi
-
-	# Update npm packages
-	if npm_location="$(type -p npm)" && [ -n "$pacman_location" ]; then
-		if npm update -g; then
 			_update_system_update
 		fi
 	fi
