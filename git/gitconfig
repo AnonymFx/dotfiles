@@ -5,11 +5,28 @@
 	excludesfile = ~/.gitignore_global
 [diff]
 	tool = vimdiff
+	colorMoved = default
+	algorithm = histogram
 [difftool]
 	prompt = false
 [merge]
 	tool = vimdiff
+	keepbackup = false
 [color]
 	ui = auto
 [include]
 	path = ~/.gitconfig_custom
+[push]
+	autoSetupRemote = true
+	followtags = true
+[pull]
+	rebase = true
+[git]
+	autostash = true
+[rerere]
+	enabled = true
+[fetch]
+	prune = true
+	prunetags = true
+[rebase]
+	updateRefs = true
