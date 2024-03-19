@@ -3,6 +3,7 @@
 	email = pettinger.thomas@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
 [diff]
 	tool = vimdiff
 	colorMoved = default
