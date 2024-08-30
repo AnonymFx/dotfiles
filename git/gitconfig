@@ -31,3 +31,5 @@
 	prunetags = true
 [rebase]
 	updateRefs = true
+[init]
+	defaultBranch = main
