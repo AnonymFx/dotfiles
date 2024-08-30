@@ -241,9 +241,9 @@ if rsync_l="$(type -p rsync)" && [ -n "$rsync_l" ]; then
 fi
 
 # exa ##################################
-if exa_l="$(type -p exa)" && [ -n "$exa_l" ]; then
-	alias la='exa -lag --group-directories-first'
-	alias l='exa -lg --group-directories-first'
+if eza_l="$(type -p eza)" && [ -n "$eza_l" ]; then
+	alias la='eza -lag --group-directories-first'
+	alias l='eza -lg --group-directories-first'
 fi
 
 # ag ###################################
