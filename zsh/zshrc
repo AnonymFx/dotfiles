@@ -259,6 +259,11 @@ if docker_l="$(type -p docker)" && [ -n "$docker_l" ]; then
 	alias dcpu='docker compose pull && docker compose up -d'
 fi
 
+# ngrok ################################
+if ngrok_l="$(type -p ngrok)" && [ -n "$ngrok_l" ]; then
+    eval "$(ngrok completion)"
+fi
+
 # List directory after cd
 function chpwd(){
 	emulate -LR zsh
