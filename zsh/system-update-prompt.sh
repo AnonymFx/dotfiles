@@ -21,7 +21,7 @@ function _upgrade_system() {
 
 	# Do system update, try AUR helpers first, fallback is pacman
 	if brew_location="$(type -p brew)" && [ -n "$brew_location" ]; then
-		if brew upgrade && brew autoremove; then
+		if brew update && brew upgrade && brew autoremove; then
 			# update the system update file
 			_update_system_update
 		fi
