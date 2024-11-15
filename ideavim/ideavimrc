@@ -40,6 +40,7 @@ nmap <leader>gi :action GotoImplementation<CR>
 nmap <leader>th :action TypeHierarchy<CR>
 nmap <leader>ch :action CallHierarchy<CR>
 nmap <leader>st :action FileStructurePopup<CR>
+nmap <leader>cl gg/class<CR>W
 nmap <C-n> :action GotoFile<CR>
 nmap <C-p> :action GotoClass<CR>
 nmap <A-l> :action NextSplitter<CR>
