@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
-for file in $@; do
+for file in "$@"; do
+	echo $file
 	datetimeoriginal="$(exiftool -DateTimeOriginal -S -d %Y%m%d_%H%M%S "$file" | cut -d " " -f 2)"
-	filename=$(basename -- "$file")
+	filename="$(basename -- "$file")"
 	extension="${filename##*.}"
 	newfilename="$datetimeoriginal"
-	if [[ ! -z $datetimeoriginal ]]; then
+	if [[ ! -z "$datetimeoriginal" ]]; then
 		newfilenamewithsuffix="$newfilename"
 		suffix=1
 		while [[ -e "$newfilenamewithsuffix.$extension" ]]; do
