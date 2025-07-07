@@ -29,8 +29,6 @@
 [fetch]
 	prune = true
 	prunetags = true
-[rebase]
-	updateRefs = true
 [init]
 	defaultBranch = main
 [filter "lfs"]
