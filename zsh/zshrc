@@ -92,11 +92,7 @@ fpath=($HOME/.zsh-completions $fpath)
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
 fi
-
-compinit
 
 # Set 256 colors
 export TERM="xterm-256color"
@@ -291,6 +287,13 @@ if system_update_script="$(type -p system-update-prompt)" && [ -n "$system_updat
 	# Run the script
 	system-update-prompt
 fi
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/pete/.docker/completions $fpath)
+# End of Docker CLI completions
+
+autoload -Uz compinit
+compinit
 
 # To enable startup time profiling, uncomment the following line and the one at the top of this file
 # zprof
