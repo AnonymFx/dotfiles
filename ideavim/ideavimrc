@@ -36,6 +36,7 @@ nmap <leader>im :action GotoImplementation<CR>
 nmap <leader>sm :action GotoSuperMethod<CR>
 nmap <leader>gt :action GotoTest<CR>
 nmap <leader>fu :action ShowUsages<CR>
+nmap <leader>su :action FindUsages<CR>
 nmap <leader>gi :action GotoImplementation<CR>
 nmap <leader>th :action TypeHierarchy<CR>
 nmap <leader>ch :action CallHierarchy<CR>
