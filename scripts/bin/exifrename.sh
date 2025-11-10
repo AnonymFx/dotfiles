@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 for file in "$@"; do
-	echo $file
 	datetimeoriginal="$(exiftool -DateTimeOriginal -S -d %Y%m%d_%H%M%S "$file" | cut -d " " -f 2)"
 	filename="$(basename -- "$file")"
 	extension="${filename##*.}"
