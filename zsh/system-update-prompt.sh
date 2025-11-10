@@ -2,6 +2,8 @@
 
 zmodload zsh/datetime
 lock_folder="/tmp/system-update.lock"
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
 function _current_epoch() {
 	echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
