@@ -14,100 +14,6 @@ function print_help_msg() {
 EOF
 }
 
-function get_distribution_name() {
-	IFS="="
-	read -a test < /etc/os-release
-	echo "${test[1]:1:-1}"
-}
-
-function get_packager_cmd() {
-	case "$(get_distribution_name)" in
-		"Arch Linux" )
-			if yay_location="$(type -p yay)" && [ -n "$yay_location" ]; then
-				echo "yay -S"
-				return 0
-			elif trizen_location="$(type -p trizen)" && [ -n "$trizen_location" ]; then
-				echo "trizen -S"
-				return 0
-			elif yaourt_location="$(type -p yaourt)" && [ -n "$yaourt_location" ]; then
-				echo "yaourt -S"
-				return 0
-			elif pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
-				echo "sudo pacman -S"
-				return 0
-			fi
-			;;
-	esac
-	echo ""
-	return 1
-}
-
-function get_package_list() {
-	TARGET="$1"
-	case "$(get_distribution_name)" in
-		"Arch Linux")
-			case $TARGET in
-				git )
-					echo "git"
-					return 0
-					;;
-				ideavim )
-					echo ""
-					return 1
-					;;
-				ranger )
-					echo "ranger"
-					return 0
-					;;
-				scripts )
-					echo "jq"
-					return 0
-					;;
-				vim )
-					echo "gvim ack fzf the_silver_searcher universal-ctags-git vim-spell-de"
-					return 0
-					;;
-				neovim )
-					echo "neovim"
-					return 0
-					;;
-				zsh )
-					echo "zsh curl fzf the_silver_searcher exa lua z.lua fd bat"
-					return 0
-					;;
-			esac
-			;;
-	esac
-
-	echo ""
-	return 1
-}
-
-function install_packages() {
-	local TARGET="$1"
-
-	PACKAGER_COMMAND=$(get_packager_cmd)
-	PACKAGES=$(get_package_list $TARGET)
-
-
-	if [[ ! -z $PACKAGER_COMMAND ]] && [[ ! -z $PACKAGES ]]; then
-		echo "Installing $PACKAGES with $PACKAGER_COMMAND"
-
-		eval $PACKAGER_COMMAND $PACKAGES
-	else
-		echo "Platform not supported for installing packages, please install manually"
-	fi
-}
-
-function post_install() {
-	local TARGET="$1"
-
-	case $TARGET in
-	esac
-
-	echo ""
-	return 1
-}
 
 function link_config() {
 	local TARGET="$1"
@@ -223,18 +129,10 @@ function install() {
 	echo -e "Do you want to install \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
 	read line
 	if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-		echo -e "Do you want to install the packages for \033[1;33m$TARGET\033[0m [(Y)es/(n)o]:"
-		read line
-		if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-			install_packages $TARGET
-			install_additional $TARGET
-			post_install $TARGET
-		fi
+		install_additional $TARGET
 		link_config $TARGET
 	fi
 }
-
-echo "Detected distribution $(get_distribution_name)"
 
 # Check if script is called from the dotfiles folder
 # If not, link creation will not work
