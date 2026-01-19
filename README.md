@@ -22,9 +22,6 @@ Before running the install script, you'll need to install the following packages
 - `universal-ctags`
 - `vim-spell-de` (optional, for German spell checking)
 
-### neovim
-- `neovim`
-
 ### zsh
 - `zsh`
 - `curl`
@@ -54,7 +51,7 @@ To install all tools:
 ./install.sh all
 ```
 
-Available targets: `all`, `git`, `ideavim`, `ranger`, `vim`, `neovim`, `scripts`, `zsh`
+Available targets: `all`, `git`, `ideavim`, `ranger`, `vim`, `scripts`, `zsh`
 
 ## VIM
 To install the plugins, exectue `:PlugInstall` once you've executed the install script in this repo.

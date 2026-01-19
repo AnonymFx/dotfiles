@@ -7,7 +7,6 @@ function print_help_msg() {
 				ideavim
 				ranger
 				vim
-				neovim
 				scripts
 				zsh
 			}
@@ -38,11 +37,6 @@ function link_config() {
 			ln -snf $PWD/vim/vim/autoload $HOME/.vim/autoload
 			ln -snf $PWD/vim/vimrc $HOME/.vimrc
 			ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
-			;;
-		neovim )
-			mkdir -p $HOME/.config/nvim
-			ln -snf $PWD/vim/vim $HOME/.config/nvim
-			ln -snf $PWD/vim/vimrc $HOME/.config/nvim/init.vim
 			;;
 		scripts )
 			# Link actual scripts
@@ -154,7 +148,6 @@ else
 		install ideavim
 		install ranger
 		install vim
-		install neovim
 		install scripts
 		install zsh
 	elif [[ $1 = git ]]; then
@@ -165,8 +158,6 @@ else
 		install ranger
 	elif [[ $1 = vim ]]; then
 		install vim
-	elif [[ $1 = neovim ]]; then
-		install neovim
 	elif [[ $1 = scripts ]]; then
 		install scripts
 	elif [[ $1 = zsh ]]; then
