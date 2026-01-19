@@ -44,12 +44,6 @@ Plug 'tpope/vim-commentary'
 " Autoformat files
 Plug 'Chiel92/vim-autoformat'
 
-" Better navigation between tmux and vim
-Plug 'christoomey/vim-tmux-navigator'
-
-" TableMode - Table creation for vim
-Plug 'dhruvasagar/vim-table-mode'
-
 " One color scheme
 Plug 'rakr/vim-one'
 
@@ -139,10 +133,8 @@ let g:NERDTreeMapJumpNextSibling = '<leader>j'
 let g:NERDTreeMapJumpPreviousSibling = '<leader>k'
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
-" ------------------------------ Table Mode ------------------------------------
-let g:table_mode_header_fillchar= '-'
-let g:table_mode_corner="|"
-nnoremap <leader>at :TableModeRealign<CR>
+" -------------------------------- Polyglot ------------------------------------
+let g:java_ignore_markdown = 1
 
 " ------------------------------ Vim-Latex -------------------------------------
 let g:tex_flavor = 'latex'
