@@ -1,8 +1,0 @@
-keycode 66 = Mode_switch
-
-keycode 43 = h H Left H h H h
-keycode 44 = j J Down J idiaeresis Idiaeresis idiaeresis
-keycode 45 = k K Up K oe OE oe
-keycode 46 = l L Right L oslash Oslash oslash
-keycode  31 = i I Home I iacute Iacute iacute Iacute i I iacute Iacute
-keycode  42 = g G End G g G g G g G g G

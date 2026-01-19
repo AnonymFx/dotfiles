@@ -1,6 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Organization Work
-Exec=$HOME/bin/organization_work
-Icon=organization

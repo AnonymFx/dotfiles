@@ -1,6 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=YNAB
-Exec=firefox https://app.youneedabudget.com
-Icon=ynab

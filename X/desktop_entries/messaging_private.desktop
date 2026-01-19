@@ -1,6 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Messaging Private
-Exec=$HOME/bin/messaging_private
-Icon=messaging
