@@ -2,17 +2,59 @@
 This is a project for my personally used dotfiles.
 Use at own risk.
 
+## Dependencies
+Before running the install script, you'll need to install the following packages manually for each tool:
+
+### git
+- `git`
+
+### ranger
+- `ranger`
+
+### scripts
+- `jq`
+
+### vim
+- `gvim` (or `vim` with GUI support)
+- `ack`
+- `fzf`
+- `the_silver_searcher` (ag)
+- `universal-ctags`
+- `vim-spell-de` (optional, for German spell checking)
+
+### neovim
+- `neovim`
+
+### zsh
+- `zsh`
+- `curl`
+- `fzf`
+- `the_silver_searcher` (ag)
+- `exa`
+- `lua`
+- `z.lua`
+- `fd`
+- `bat`
+
+### ideavim
+No additional packages required.
+
 ## Installation
-There is an install script available for the following distros in their respective branches:
-* Arch (for some packages only available via the AUR, yaourt or trizen is necessary)
-* Ubuntu (only linking currently)
+The install script links configuration files to your home directory and installs additional components (oh-my-zsh, zsh plugins, powerline fonts).
 
-You might want to merge master before installing, it's not guaranteed that the distro branches are up to date.
+**Warning**: The linking is done in force mode, so if the files already exist, they will be overwritten.
 
-**Warning**: The linking currently is only available in force mode, so if the files already exist, they will be overwritten.  
+To install a specific tool:
+```bash
+./install.sh <target>
+```
 
-If you have already installed this before 2017-05-12 and want to do an update/reinstallation, delete your .vim folder in your home directory and execute the install script again.
-This is due to the switch from pathogen to vim-plug as plugin manager for vim.
+To install all tools:
+```bash
+./install.sh all
+```
+
+Available targets: `all`, `git`, `ideavim`, `ranger`, `vim`, `neovim`, `scripts`, `zsh`
 
 ## VIM
 To install the plugins, exectue `:PlugInstall` once you've executed the install script in this repo.
