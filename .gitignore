@@ -1,3 +1,4 @@
 vim/vim/init.vim
 intellij_idea/config/options/usage.statistics.xml
 .idea
+.claude
