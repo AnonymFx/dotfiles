@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+open -na Google\ Chrome --args --user-data-dir=/Users/pete/Library/Application Support/Goole/Chrome/User-With-Disabled-Web-Security --disable-web-security --disable-site-isolation-trials
