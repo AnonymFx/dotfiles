@@ -3,6 +3,7 @@ function print_help_msg() {
 	cat <<-EOF
 	Usage: install.sh TARGET
 	TARGET := { all,
+				claude
 				git
 				ideavim
 				ranger
@@ -20,6 +21,10 @@ function link_config() {
 	echo "Linking config files for $TARGET"
 
 	case "$TARGET" in
+		claude )
+			mkdir -p $HOME/.claude
+			ln -snf $PWD/claude/CLAUDE.md $HOME/.claude/CLAUDE.md
+			;;
 		git )
 			ln -snf $PWD/git/global_gitignore $HOME/.gitignore_global
 			ln -snf $PWD/git/gitconfig $HOME/.gitconfig
@@ -144,12 +149,15 @@ elif [[ $# -gt 1 ]]; then
 	exit 1
 else
 	if [[ $1 = all ]]; then
+		install claude
 		install git
 		install ideavim
 		install ranger
 		install vim
 		install scripts
 		install zsh
+	elif [[ $1 = claude ]]; then
+		install claude
 	elif [[ $1 = git ]]; then
 		install git
 	elif [[ $1 = ideavim ]]; then
