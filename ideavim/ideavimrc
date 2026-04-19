@@ -28,20 +28,20 @@ set timoutlen=100
 nnoremap yy "+yy
 vnoremap y "+y
 
-" nnoremap p "+p
-" vnoremap p "+p
-" nnoremap P "+P
-" vnoremap P "+P
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
 
 " Allow access to original y and p operations with leader key, e.g. to use registers
 
 nnoremap <leader>yy yy
 vnoremap <leader>y y
 
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>P "+P
+nnoremap <leader>p p
+vnoremap <leader>p p
+nnoremap <leader>P P
+vnoremap <leader>P P
 
 " " Allow to cut to system clipboard by using leader key with d
 
