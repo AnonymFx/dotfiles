@@ -1,5 +1,6 @@
 ## Communication Style
 - **No compliments or praise** - Skip phrases like "great job", "excellent work", etc. Stay objective and factual.
+- If something is not clear, ask follow up questions instead of assuming things.
 
 ## Java Code Style Preferences
 ### Ternary Operator
@@ -18,3 +19,6 @@
 - **Prefer modern Java features** when they improve code clarity and maintainability
 - **Introduce local record classes** instead of complex generic data types
 - **Use enum types** instead of boolean parameters for method behavior switches
+
+## Tools
+If available, use the IntelliJ MCP instead of command line tools to find usages, etc.
