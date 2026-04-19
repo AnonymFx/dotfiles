@@ -13,3 +13,6 @@ teamscale_plugin_mappings.properties
 
 .java-version
 debug-data
+
+# IntelliJ AI config
+.ai
