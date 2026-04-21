@@ -79,10 +79,15 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 plugins=(git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions gitfast common-aliases sudo wd)
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# Needs to be above sourcing of oh-my-zsh.sh
 fpath=(/Users/pete/.docker/completions $fpath)
 # End of Docker CLI completions
 
 source $ZSH/oh-my-zsh.sh
+
+# Enable case-insensitive substring completion
+# Needs to be after sourcing oh-my-zsh.sh because otherwise it would be overwritten by the oh-my-zsh script
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'm:{a-zA-Z}={A-Za-z} r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z} l:|=* r:|=*'
 
 # User configuration
 setopt extendedglob
