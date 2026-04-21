@@ -3,9 +3,6 @@
 
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH="$HOME/bin:${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk-linux/platform-tools"
-
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
