@@ -95,6 +95,7 @@ setopt vi
 
 # Load custom auto-complete suggestions
 fpath=($HOME/.zsh-completions $fpath)
+
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
