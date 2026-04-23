@@ -44,10 +44,11 @@ function link_config() {
 			ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
 			;;
 		scripts )
-			mkdir -p $HOME/bin
-			for scriptfile in $(ls $PWD/scripts/bin); do
-				script="${scriptfile%.*}"
-				ln -snf "$PWD/scripts/bin/$scriptfile" "$HOME/bin/$script"
+			mkdir -p "$HOME/bin"
+			for scriptfile in "$PWD"/scripts/bin/*; do
+				basename="${scriptfile##*/}"
+				script="${basename%.*}"
+				ln -snf "$scriptfile" "$HOME/bin/$script"
 			done
 			;;
 		zsh )

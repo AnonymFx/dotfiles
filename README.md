@@ -20,6 +20,6 @@ To install all tools:
 Available targets: `all`, `claude`, `git`, `ideavim`, `ranger`, `vim`, `scripts`, `zsh`
 
 ## VIM
-To install the plugins, exectue `:PlugInstall` once you've executed the install script in this repo.
+To install the plugins, execute `:PlugInstall` once you've executed the install script in this repo.
 
 For autoformat, global formatting programs have to be installed. For available options see its Github [page](https://github.com/Chiel92/vim-autoformat).

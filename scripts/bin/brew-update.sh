@@ -1,2 +1,2 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 brew update && brew upgrade && brew autoremove && brew cleanup

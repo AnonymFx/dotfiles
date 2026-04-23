@@ -1,26 +1,33 @@
 #!/bin/bash
 function isSupportedImageFile() {
-	expr "$1" : '.*\.jpg\|JPG\|jpeg\|JPEG$' > /dev/null
-	echo $?
+	local filename="$1"
+	[[ "$filename" =~ \.(jpg|JPG|jpeg|JPEG)$ ]]
 }
 
 num_renamed=0
 num_failed=0
-for image in $@; do
+for image in "$@"; do
 	filename=$(basename -- "$image")
-	extension="${filename##*.}"
-	filename="${filename%.*}"
-	dirname="$(dirname -- $image)"
 
-	datestring=`expr "$filename" : '.*\([0-9]\{8\}[-_][0-9]\{6\}\).*'`
-	if [[ "$datestring" ]] && [[ "$(isSupportedImageFile "$image")" -ne 0 ]]; then
-		exiftool -DateTimeOriginal="${datestring:0:4}:${datestring:4:2}:${datestring:6:2} ${datestring:9:2}:${datestring:11:2}:${datestring:13:2}" "$image" > /dev/null
-		if [[ $? ]]; then
-			num_renamed=$((num_renamed+1))
-		else
-			num_failed=$((num_failed+1))
-		fi
+	if ! isSupportedImageFile "$filename"; then
+		continue
+	fi
+
+	stripped="${filename%.*}"
+	datestring=$(expr "$stripped" : '.*\([0-9]\{8\}[-_][0-9]\{6\}\).*')
+	if [[ -z "$datestring" ]]; then
+		continue
+	fi
+
+	formatted="${datestring:0:4}:${datestring:4:2}:${datestring:6:2} ${datestring:9:2}:${datestring:11:2}:${datestring:13:2}"
+	if exiftool -DateTimeOriginal="$formatted" "$image" > /dev/null; then
+		num_renamed=$((num_renamed+1))
+	else
+		num_failed=$((num_failed+1))
 	fi
 done
 
-exit $num_failed
+echo "Renamed: $num_renamed, Failed: $num_failed"
+if (( num_failed > 0 )); then
+	exit 1
+fi

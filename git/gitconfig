@@ -22,7 +22,7 @@
 	followtags = true
 [pull]
 	rebase = true
-[git]
+[rebase]
 	autostash = true
 [rerere]
 	enabled = true
