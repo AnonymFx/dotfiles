@@ -13,6 +13,7 @@
 [merge]
 	tool = vimdiff
 	keepbackup = false
+	conflictStyle = zdiff3
 [color]
 	ui = auto
 [include]

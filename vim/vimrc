@@ -60,7 +60,7 @@ call plug#end()
 " --------------------------------- Key bindings -------------------------------
 " ------------------------------------------------------------------------------
 
-set timeoutlen=500
+set timeoutlen=100
 set ttimeoutlen=10
 let mapleader=" "
 noremap \ "

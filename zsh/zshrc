@@ -116,11 +116,11 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; then
+if (( $+commands[fzf] )) && (( $+commands[ag] )) && [[ -r /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
 	source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 	source /opt/homebrew/opt/fzf/shell/completion.zsh
 
-	if fd_l="$(type -p fd)" && [ -n "$fd_l" ]; then
+	if (( $+commands[fd] )); then
 		FD_OPTIONS="--follow"
 		export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 		export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
@@ -153,32 +153,32 @@ autoload -U zmv
 alias mmv='noglob zmv -W'
 
 # vim ##################################
-if vim_l="$(type -p vim)" && [ -n "$vim_l" ]; then
+if (( $+commands[vim] )); then
 	alias vin='vim -c NERDTree'
 	alias vi='vim'
 fi
 
 # git ##################################
-if git_l="$(type -p git)" && [ -n "$git_l" ]; then
+if (( $+commands[git] )); then
 	alias gdt='git difftool'
 	alias gwa='git worktree add'
 	alias gwr='git worktree remove'
 fi
 
 # eza ##################################
-if eza_l="$(type -p eza)" && [ -n "$eza_l" ]; then
+if (( $+commands[eza] )); then
 	alias la='eza -lag --group-directories-first'
 	alias l='eza -lg --group-directories-first'
 fi
 
 # ag ###################################
-if ag_l="$(type -p ag)" && [ -n "$ag_l" ]; then
+if (( $+commands[ag] )); then
 	alias ag='ag --color -S'
 	alias -g AG='| ag'
 fi
 
 # docker ###############################
-if docker_l="$(type -p docker)" && [ -n "$docker_l" ]; then
+if (( $+commands[docker] )); then
 	alias dcu='docker compose up -d'
 	alias dcd='docker compose down'
 	alias dcpu='docker compose pull && docker compose up -d'
@@ -187,9 +187,9 @@ fi
 # ngrok ################################
 # `ngrok completion` spawns a subshell that costs ~80ms on every startup.
 # Cache its output to a file and re-generate only when the ngrok binary changes.
-if ngrok_l="$(type -p ngrok)" && [ -n "$ngrok_l" ]; then
+if (( $+commands[ngrok] )); then
 	ngrok_completion_cache="$HOME/.zsh-completions/ngrok-completion.zsh"
-	if [[ ! -s "$ngrok_completion_cache" || "$ngrok_l" -nt "$ngrok_completion_cache" ]]; then
+	if [[ ! -s "$ngrok_completion_cache" || "$commands[ngrok]" -nt "$ngrok_completion_cache" ]]; then
 		mkdir -p "${ngrok_completion_cache:h}"
 		ngrok completion > "$ngrok_completion_cache"
 	fi
@@ -217,7 +217,7 @@ bindkey "^?" backward-delete-char
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Check for system update if script is in PATH
-if system_update_script="$(type -p system-update-prompt)" && [ -n "$system_update_script" ]; then
+if (( $+commands[system-update-prompt] )); then
 	# Set the amount of days past for system update prompt
 	export UPDATE_SYSTEM_DAYS=7
 	# Run the script

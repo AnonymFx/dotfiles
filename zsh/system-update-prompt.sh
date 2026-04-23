@@ -9,6 +9,14 @@ function _current_epoch() {
 	echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
 }
 
+# Outputs the 'linux' package update line if pacman is installed and a linux
+# kernel update is pending; otherwise outputs nothing.
+function _linux_update_line() {
+	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
+		pacman -Qu 2>/dev/null | grep 'linux '
+	fi
+}
+
 function _update_system_update() {
 	echo "LAST_EPOCH=$(_current_epoch)" >! $HOME/.system-update
 }
@@ -18,7 +26,7 @@ function _upgrade_system() {
 	linuxNeedsUpdate=""
 	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
 		sudo pacman -Sy
-		linuxNeedsUpdate="$(pacman -Qu | grep 'linux ')"
+		linuxNeedsUpdate="$(_linux_update_line)"
 	fi
 
 	# Do system update, try AUR helpers first, fallback is pacman
@@ -51,10 +59,7 @@ function _upgrade_system() {
 	fi
 
 	# Check if Linux was actually updated
-	linuxStillNeedsUpdate=""
-	if pacman_location="$(type -p pacman)" && [ -n "$pacman_location" ]; then
-		linuxStillNeedsUpdate="$(pacman -Qu | grep 'linux ')"
-	fi
+	linuxStillNeedsUpdate="$(_linux_update_line)"
 	
 	if [[ ! -z "$linuxNeedsUpdate" ]] && [[ -z "$linuxStillNeedsUpdate" ]]; then
 		echo "Linux was updated, would you like to restart now? [(y)es/(N)o]: \c"
@@ -73,8 +78,9 @@ if [[ -z "$epoch_target" ]]; then
 fi
 
 if mkdir "$lock_folder" 2>/dev/null; then
-	# Remove lock file on interrupt
-	trap 'rmdir "$lock_folder" 2>/dev/null; exit' INT
+	# Release lock on normal exit and on signals (INT/TERM)
+	trap 'rmdir "$lock_folder" 2>/dev/null' EXIT
+	trap exit INT TERM
 	if [ "$1" = "-f" ]; then
 	 	_upgrade_system
 	elif [ -f ~/.system-update ]; then
@@ -105,8 +111,4 @@ if mkdir "$lock_folder" 2>/dev/null; then
 		# create the system update file
 		_update_system_update
 	fi
-
-	rmdir "$lock_folder"
-	# Restore default interrupt
-	trap - INT
 fi
