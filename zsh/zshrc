@@ -261,8 +261,15 @@ if docker_l="$(type -p docker)" && [ -n "$docker_l" ]; then
 fi
 
 # ngrok ################################
+# `ngrok completion` spawns a subshell that costs ~80ms on every startup.
+# Cache its output to a file and re-generate only when the ngrok binary changes.
 if ngrok_l="$(type -p ngrok)" && [ -n "$ngrok_l" ]; then
-    eval "$(ngrok completion)"
+	ngrok_completion_cache="$HOME/.zsh-completions/ngrok-completion.zsh"
+	if [[ ! -s "$ngrok_completion_cache" || "$ngrok_l" -nt "$ngrok_completion_cache" ]]; then
+		mkdir -p "${ngrok_completion_cache:h}"
+		ngrok completion > "$ngrok_completion_cache"
+	fi
+	source "$ngrok_completion_cache"
 fi
 
 # List directory after cd
