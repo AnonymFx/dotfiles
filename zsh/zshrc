@@ -137,15 +137,6 @@ if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; 
 	bindkey '^I' $fzf_default_completion
 fi
 
-if [[ -e /usr/share/z.lua/z.lua ]]; then
-	eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
-fi
-
-alias zz='z -c'      # restrict matches to subdirs of $PWD
-alias zi='z -i'      # cd with interactive selection
-alias zf='z -I'      # use fzf to select in multiple matches
-alias zb='z -b'      # quickly cd to the parent directory
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -166,24 +157,7 @@ alias cd..='cd ..'
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-# pacman ###############################
-if pacman_l="$(type -p pacman)" && [ -n "$pacman_l" ]; then
-	alias paccc='sudo pacman -Sc'
-fi
-
-if yay_l="$(type -p yay)" && [ -n "$yay_l" ]; then
-	alias yayupg='yay --combinedupgrade -Syu'
-	alias yayin='yay -S'
-	alias yayins='yay -U'
-	alias yayrem='yay -Rns'
-	alias yayre='yay -R'
-fi
-
 # vim ##################################
-if gvim_l="$(type -p gvim)" && [ -n "$gvim_l" ]; then
-	alias gv='gvim --remote-silent'
-	alias gvn='gvim -c NERDTree'
-fi
 if vim_l="$(type -p vim)" && [ -n "$vim_l" ]; then
 	alias vin='vim -c NERDTree'
 	alias vi='vim'
@@ -196,51 +170,7 @@ if git_l="$(type -p git)" && [ -n "$git_l" ]; then
 	alias gwr='git worktree remove'
 fi
 
-# xdg-open #############################
-if xdg_open_l="$(type -p xdg-open)" && [ -n "$xdg_open_l" ]; then
-	alias open='xdg-open 2>/dev/null 1>&2'
-fi
-
-# dedicated graphics card ##############
-if optirun_l="$(type -p optirun)" && [ -n "$optirun_l" ]; then
-	alias gpu='optirun'
-else
-	alias gpu='DRI_PRIME=1'
-fi
-
-
-# Google Drive
-if drive_l="$(type -p drive)" && [ -n "$drive_l" ]; then
-	alias dup='drive pull'
-	alias dupnp='drive pull -no-prompt'
-	alias dp='drive push'
-	alias dpnp='drive push -no-prompt'
-	alias ddi='drive diff -skip-content-check'
-fi
-
-# tmux
-if tmux_l="$(type -p tmux)" && [ -n "$tmux_l" ]; then
-	alias tmux='TERM=xterm-256color tmux'
-	alias tks='tmux kill-session -t'
-	alias ta='tmux attach -t'
-	alias tls='tmux ls'
-	alias tns='tmux new-session -d -s'
-fi
-
-# adb
-if adb_l="$(type -p adb)" && [ -n "$adb_l" ]; then
-	alias adbba="adb backup -apk -obb -all -f"
-	alias adbb="adb backup -apk -obb -f"
-	alias adblp='adb shell "pm list packages -f"'
-fi
-
-# rsync ################################
-if rsync_l="$(type -p rsync)" && [ -n "$rsync_l" ]; then
-	alias rscp='rsync --progress -avz -e ssh'
-	alias pcp='rsync --info=progress2'
-fi
-
-# exa ##################################
+# eza ##################################
 if eza_l="$(type -p eza)" && [ -n "$eza_l" ]; then
 	alias la='eza -lag --group-directories-first'
 	alias l='eza -lg --group-directories-first'
