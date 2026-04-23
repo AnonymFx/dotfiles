@@ -1,6 +1,9 @@
 # To enable startup time profiling, uncomment the following line and the one at the end of this file
 # zmodload zsh/zprof
 
+# Prevent PATH duplication when this file is re-sourced (e.g. `exec zsh`).
+typeset -U path PATH
+
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 if [[ "$OSTYPE" == darwin* ]]; then
