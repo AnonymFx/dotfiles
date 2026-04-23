@@ -4,10 +4,12 @@ sudo_file="/etc/pam.d/sudo"
 backup_location="/Users/pete/Downloads"
 if [[ ! -f "$sudo_file" ]]; then
 	echo "sudo file $sudo_file does not exist. Aborting."
+	exit 1
 fi
 
 if [[ ! -d "$backup_location" ]]; then
 	echo Backup location "$backup_location does not exist or is not a folder. Aborting."
+	exit 1
 fi
 
 echo "Backing up $sudo_file to $backup_location"
