@@ -121,10 +121,8 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 if fzf="$(type -p fzf)" && [ -n "$fzf" ] && ag="$(type -p ag)" && [ -n "$ag" ]; then
-	fzf_bindings_location="$(find /opt/homebrew/Cellar/fzf -iname '*key-bindings.zsh')"
-	source "$fzf_bindings_location"
-	fzf_completion_location="$(find /opt/homebrew/Cellar/fzf -iname '*completion.zsh')"
-	source "$fzf_completion_location"
+	source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+	source /opt/homebrew/opt/fzf/shell/completion.zsh
 
 	if fd_l="$(type -p fd)" && [ -n "$fd_l" ]; then
 		FD_OPTIONS="--follow"
