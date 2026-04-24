@@ -7,8 +7,8 @@ function print_help_msg() {
 				git
 				ideavim
 				ranger
-				vim
 				scripts
+				vim
 				zsh
 			}
 EOF
@@ -147,8 +147,8 @@ else
 		install git
 		install ideavim
 		install ranger
-		install vim
 		install scripts
+		install vim
 		install zsh
 	elif [[ $1 = claude ]]; then
 		install claude
