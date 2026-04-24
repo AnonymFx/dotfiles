@@ -89,7 +89,7 @@ if mkdir "$lock_folder" 2>/dev/null; then
 
 		if [[ -z "$LAST_EPOCH" ]]; then
 			# if variable does not exist in the file, override it and exit
-			_update_system_update && return 0;
+			_update_system_update && exit 0
 		fi
 
 		# Check if last update was longer than epoch_target days ago and do update if necessary

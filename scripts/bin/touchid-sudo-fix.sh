@@ -1,28 +1,30 @@
 #!/usr/bin/env zsh
-# Add required string after the first line of the sudo file
-sudo_file="/etc/pam.d/sudo"
-backup_location="/Users/pete/Downloads"
-if [[ ! -f "$sudo_file" ]]; then
-	echo "sudo file $sudo_file does not exist. Aborting."
+# Enable TouchID for sudo by editing /etc/pam.d/sudo_local. Unlike
+# /etc/pam.d/sudo, sudo_local is preserved across macOS updates.
+# Apple ships /etc/pam.d/sudo_local.template as the starting point.
+
+set -euo pipefail
+
+template="/etc/pam.d/sudo_local.template"
+target="/etc/pam.d/sudo_local"
+
+if [[ ! -f "$template" ]]; then
+	echo "Template $template does not exist. Is this macOS 14+?"
 	exit 1
 fi
 
-if [[ ! -d "$backup_location" ]]; then
-	echo Backup location "$backup_location does not exist or is not a folder. Aborting."
-	exit 1
+if [[ -f "$target" ]] && grep -qE '^\s*auth\s+sufficient\s+pam_tid\.so' "$target"; then
+	echo "TouchID for sudo already enabled in $target."
+	exit 0
 fi
 
-echo "Backing up $sudo_file to $backup_location"
-sudo cp "$sudo_file" "$backup_location"
-
-touchid_sudo_text="auth sufficient pam_tid.so"
-second_line=`cat $sudo_file | head -2 | tail -1`
-if [[ ! $second_line == $touchid_sudo_text ]]; then
-	# Add line after first line (so 2nd line)
-	sudo sed -i "1a\\auth sufficient pam_tid.so" "$sudo_file"
-else
-	echo "Sudo with TouchID is already set up."
+if [[ ! -f "$target" ]]; then
+	echo "Creating $target from $template"
+	sudo cp "$template" "$target"
 fi
 
-echo "New content of the sudo file at $sudo_file"
-cat "$sudo_file"
+# Uncomment the pam_tid.so line (matches '#auth       sufficient     pam_tid.so')
+sudo sed -i '' -E 's|^[[:space:]]*#[[:space:]]*(auth[[:space:]]+sufficient[[:space:]]+pam_tid\.so)|\1|' "$target"
+
+echo "New content of $target:"
+cat "$target"

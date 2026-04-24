@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 function isSupportedImageFile() {
 	local filename="$1"
 	[[ "$filename" =~ \.(jpg|JPG|jpeg|JPEG)$ ]]

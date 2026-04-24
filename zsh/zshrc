@@ -148,7 +148,10 @@ fi
 
 # Disable interactive mode (set by plugin 'common-aliases') for
 # basic commands
-unalias rm mv cp
+for _cmd in rm mv cp; do
+	(( $+aliases[$_cmd] )) && unalias $_cmd
+done
+unset _cmd
 
 alias cd..='cd ..'
 

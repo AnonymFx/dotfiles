@@ -22,7 +22,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " ALE Linter
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Airline - Status line
 Plug 'vim-airline/vim-airline'
@@ -42,7 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
 " Autoformat files
-Plug 'Chiel92/vim-autoformat'
+Plug 'vim-autoformat/vim-autoformat'
 
 " One color scheme
 Plug 'rakr/vim-one'

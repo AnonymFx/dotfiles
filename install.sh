@@ -1,4 +1,9 @@
 #!/usr/bin/env zsh
+set -eo pipefail
+
+# Single source of truth for available targets.
+valid_targets=(claude git ideavim ranger scripts vim zsh)
+
 function print_help_msg() {
 	cat <<-EOF
 	Usage: install.sh TARGET
@@ -40,7 +45,6 @@ function link_config() {
 			mkdir -p $HOME/.vim
 			ln -snf $PWD/vim/vim/autoload $HOME/.vim/autoload
 			ln -snf $PWD/vim/vimrc $HOME/.vimrc
-			ln -snf $PWD/vim/gvimrc $HOME/.gvimrc
 			;;
 		scripts )
 			mkdir -p "$HOME/bin"
@@ -141,31 +145,14 @@ if [[ $# -eq 0 ]]; then
 elif [[ $# -gt 1 ]]; then
 	echo "You can only specify one target"
 	exit 1
+elif [[ $1 == all ]]; then
+	for target in $valid_targets; do
+		install $target
+	done
+elif (( ${valid_targets[(Ie)$1]} )); then
+	install $1
 else
-	if [[ $1 = all ]]; then
-		install claude
-		install git
-		install ideavim
-		install ranger
-		install scripts
-		install vim
-		install zsh
-	elif [[ $1 = claude ]]; then
-		install claude
-	elif [[ $1 = git ]]; then
-		install git
-	elif [[ $1 = ideavim ]]; then
-		install ideavim
-	elif [[ $1 = ranger ]]; then
-		install ranger
-	elif [[ $1 = vim ]]; then
-		install vim
-	elif [[ $1 = scripts ]]; then
-		install scripts
-	elif [[ $1 = zsh ]]; then
-		install zsh
-	else
-		echo "$1 is not a valid Target"
-		print_help_msg
-	fi
+	echo "$1 is not a valid target"
+	print_help_msg
+	exit 1
 fi
