@@ -23,8 +23,8 @@ if [[ ! -f "$target" ]]; then
 	sudo cp "$template" "$target"
 fi
 
-# Uncomment the pam_tid.so line (matches '#auth       sufficient     pam_tid.so')
-sudo sed -i '' -E 's|^[[:space:]]*#[[:space:]]*(auth[[:space:]]+sufficient[[:space:]]+pam_tid\.so)|\1|' "$target"
+# Uncomment the pam_tid.so line (matches '#auth       sufficient     pam_tid.so').
+sudo /usr/bin/sed -i '' -E 's|^[[:space:]]*#[[:space:]]*(auth[[:space:]]+sufficient[[:space:]]+pam_tid\.so)|\1|' "$target"
 
 echo "New content of $target:"
 cat "$target"
