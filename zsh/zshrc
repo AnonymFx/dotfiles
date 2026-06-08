@@ -202,6 +202,10 @@ if (( $+commands[ngrok] )); then
 	source "$ngrok_completion_cache"
 fi
 
+if [[ "$(type -p lt)" ]]; then
+	unalias lt
+fi
+
 # List directory after cd
 function chpwd(){
 	emulate -LR zsh
