@@ -190,18 +190,6 @@ if (( $+commands[docker] )); then
 	alias dcpu='docker compose pull && docker compose up -d'
 fi
 
-# ngrok ################################
-# `ngrok completion` spawns a subshell that costs ~80ms on every startup.
-# Cache its output to a file and re-generate only when the ngrok binary changes.
-if (( $+commands[ngrok] )); then
-	ngrok_completion_cache="$HOME/.zsh-completions/ngrok-completion.zsh"
-	if [[ ! -s "$ngrok_completion_cache" || "$commands[ngrok]" -nt "$ngrok_completion_cache" ]]; then
-		mkdir -p "${ngrok_completion_cache:h}"
-		ngrok completion > "$ngrok_completion_cache"
-	fi
-	source "$ngrok_completion_cache"
-fi
-
 if [[ "$(type -p lt)" ]]; then
 	unalias lt
 fi
