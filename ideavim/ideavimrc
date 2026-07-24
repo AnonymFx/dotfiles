@@ -28,6 +28,8 @@ set timeoutlen=500
 nnoremap yy "+yy
 vnoremap y "+y
 
+vnoremap x "+x
+
 nnoremap p "+p
 vnoremap p "+p
 nnoremap P "+P
