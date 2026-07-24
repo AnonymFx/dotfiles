@@ -20,5 +20,8 @@
 - **Introduce local record classes** instead of complex generic data types
 - **Use enum types** instead of boolean parameters for method behavior switches
 
+### Method Outputs
+- **Return outputs; never pass them as parameters.** A method's results belong in its return value, not in a collection or builder handed in as an argument to be filled (no "output parameters"). When a method must produce several outputs, return a small (local) record rather than mutating caller-provided arguments. Accumulating into a method's own local variables, or into instance fields that represent run state, is fine — the rule is specifically about not writing results into parameters.
+
 ## Tools
 If available, use the IntelliJ MCP instead of command line tools to find usages, etc.
