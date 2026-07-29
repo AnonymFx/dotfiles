@@ -31,9 +31,7 @@ vnoremap y "+y
 vnoremap x "+x
 
 nnoremap p "+p
-vnoremap p "+p
 nnoremap P "+P
-vnoremap P "+P
 
 " Allow access to original y and p operations with leader key, e.g. to use registers
 
