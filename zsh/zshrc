@@ -197,7 +197,9 @@ fi
 # List directory after cd
 function chpwd(){
 	emulate -LR zsh
-	(( $+aliases[l] )) && l
+	# Only list in a terminal: without a path and with piped stdin, eza reads file names from stdin and blocks.
+	[[ -t 0 && -t 1 ]] || return 0
+	(( $+aliases[l] )) && l .
 }
 
 # (Nearly) remove key timeout for escape
